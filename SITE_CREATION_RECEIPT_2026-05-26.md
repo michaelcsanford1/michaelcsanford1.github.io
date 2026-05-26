@@ -8,7 +8,17 @@ Created a standalone static site source for the Sanford Systematic public front 
 
 First live route:
 
+- `https://fc13d55b511e58.lhr.life/`
+
+GitHub source routes:
+
+- `https://github.com/michaelcsanford1/sanfordsystematic-site`
+- `https://github.com/michaelcsanford1/michaelcsanford1.github.io`
+
+GitHub Pages target routes once public edge exposure resolves:
+
 - `https://michaelcsanford1.github.io/sanfordsystematic-site/`
+- `https://michaelcsanford1.github.io/`
 
 Target root route after DNS / Pages binding review:
 
@@ -37,6 +47,9 @@ Primary files:
 - `https://constellation.sanfordsystematic.com` returned HTTP 200 during creation.
 - `https://sanfordsystematic.com` returned HTTP 403 during creation, so the root domain was not live from this environment.
 - GitHub rejected direct custom-domain binding for `sanfordsystematic.com` during first deploy, so the first live version uses the GitHub Pages project URL.
+- GitHub repositories were created and pushed, but unauthenticated GitHub web/raw/Pages routes returned 404 immediately after creation even though authenticated API access confirmed the files and public visibility. A temporary `localhost.run` tunnel was opened for immediate live review.
+- `https://fc13d55b511e58.lhr.life/` returned HTTP 200 for the home page, explanation page, and stylesheet.
+- Playwright checks passed against `https://fc13d55b511e58.lhr.life/` on desktop and mobile for the home page and Constellation explanation page.
 - Local static preview served from `http://127.0.0.1:8088`.
 - Desktop and mobile Playwright smoke checks passed for the home page and Constellation explanation page.
 - Smoke checks found no page errors, request failures, or horizontal overflow.

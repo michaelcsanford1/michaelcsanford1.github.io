@@ -2,7 +2,11 @@
 
 Static source for the public Sanford Systematic front door.
 
-Live first-pass Pages URL:
+Live first-pass review URL:
+
+`https://fc13d55b511e58.lhr.life/`
+
+GitHub Pages target URL after GitHub public edge exposure resolves:
 
 `https://michaelcsanford1.github.io/sanfordsystematic-site/`
 
