@@ -27,9 +27,50 @@
         graphs. The graph helps people understand the work. It does not become
         the work's authority.
       </p>
+      <p>
+        The failure mode is simple: agents do not usually fail because they are
+        incapable. They fail because every session starts without a durable map.
+        The graph turns context from a prompt burden into shared infrastructure.
+      </p>
       <div class="hero-actions">
         <a class="primary-action" href="constellation.html">See Constellation explained</a>
         <a class="secondary-action dark" href="https://constellation.sanfordsystematic.com">Open live product</a>
+      </div>
+    </section>
+
+    <section class="system-map">
+      <h2>What the map fixes</h2>
+      <div class="layer-grid">
+        <article><h3>No blind starts</h3><p>New agent sessions begin with structural awareness instead of rediscovering files one by one.</p></article>
+        <article><h3>No lonely snippets</h3><p>A function is shown with callers, dependencies, architectural layer, and surrounding purpose.</p></article>
+        <article><h3>No fake confidence</h3><p>Change impact can be checked against the graph before a commit reaches production or an owner-facing package.</p></article>
+      </div>
+    </section>
+
+    <section class="system-map">
+      <h2>The analysis pipeline</h2>
+      <div class="timeline-list">
+        <div><span>1</span><p><strong>Project scanner:</strong> discovers files, languages, frameworks, docs, infrastructure, and repository shape.</p></div>
+        <div><span>2</span><p><strong>File analyzer:</strong> extracts functions, classes, imports, dependencies, nodes, and edges.</p></div>
+        <div><span>3</span><p><strong>Architecture analyzer:</strong> labels layers such as UI, API, service, data, utilities, docs, and configuration.</p></div>
+        <div><span>4</span><p><strong>Tour builder:</strong> creates a learning path in dependency order so humans and agents onboard in the right sequence.</p></div>
+        <div><span>5</span><p><strong>Graph reviewer:</strong> checks completeness, relationships, and referential integrity.</p></div>
+        <div><span>6</span><p><strong>Domain analyzer:</strong> translates technical structure into business domains, flows, and process steps.</p></div>
+        <div><span>7</span><p><strong>Knowledge analyzer:</strong> maps markdown wikis and control-doc libraries into linked documentation graphs.</p></div>
+      </div>
+    </section>
+
+    <section class="system-map">
+      <h2>Command surface</h2>
+      <div class="command-grid">
+        <article><code>/understand</code><p>Build or refresh the graph.</p></article>
+        <article><code>/understand-dashboard</code><p>Open the visual map and guided tours.</p></article>
+        <article><code>/understand-chat</code><p>Ask grounded questions against the graph.</p></article>
+        <article><code>/understand-diff</code><p>Check change impact before committing.</p></article>
+        <article><code>/understand-explain</code><p>Deep-dive one file, function, or module.</p></article>
+        <article><code>/understand-onboard</code><p>Generate a written onboarding guide.</p></article>
+        <article><code>/understand-domain</code><p>Map business logic and workflows.</p></article>
+        <article><code>/understand-knowledge</code><p>Map wiki-style knowledge bases and docs.</p></article>
       </div>
     </section>
 
@@ -55,6 +96,16 @@
       </p>
     </section>
 
+    <section class="boundary light-boundary">
+      <h2>How Sanford Systematic uses it</h2>
+      <p>
+        Graphs are committed beside the work so every human, agent, and node can
+        pull the same structural context. Large graphs belong in the shared
+        knowledge pipeline, with receipts and refresh cadence. When a project,
+        product, control-doc library, or public page matters, it gets a map.
+      </p>
+    </section>
+
     <section class="audit-table" aria-label="Current map inventory">
       <h2>Current map inventory</h2>
       <div class="table-shell">
@@ -77,12 +128,37 @@
       </div>
     </section>
 
+    <section class="audit-table" aria-label="Required map backlog">
+      <h2>Required map backlog</h2>
+      <div class="table-shell">
+        <table>
+          <thead>
+            <tr>
+              <th>Surface</th>
+              <th>Path or system</th>
+              <th>Graph mode</th>
+              <th>Boundary</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>UK CAER</td><td><code>projects/uk_caer</code> plus reviewed PM package artifacts</td><td>Project twin graph</td><td>Original controls and reviewer receipts govern.</td></tr>
+            <tr><td>Owen County</td><td><code>projects/owen_county</code> plus live source-currentness receipts</td><td>Project twin graph</td><td>Do not inherit UK CAER facts.</td></tr>
+            <tr><td>Chokshi</td><td>Chokshi PMP, schedule, drawings, and related PM artifacts</td><td>Project twin graph</td><td>Needs source-currentness review before reliance.</td></tr>
+            <tr><td>World model</td><td><code>world_model</code> doctrine and ratified JSON</td><td>Doctrine graph</td><td>Canon/rev discipline governs authority.</td></tr>
+            <tr><td>TCS</td><td>TCS plugin, workflows, PM doctrine, and training corpus</td><td>Domain graph</td><td>TCS doctrine explains process; project records govern facts.</td></tr>
+            <tr><td>TCS Atlas</td><td>Atlas token registry, resolver evidence, and TCS Atlas receipts</td><td>Governance graph</td><td>Atlas is method/governance/world-model doctrine, not project-control fact authority.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
     <section class="principles page-section">
       <h2>Operating cadence</h2>
       <div class="principle-list">
         <p><strong>Create a graph when a surface matters.</strong> Products, project twins, public pages, and control-doc libraries should have an explanation map.</p>
         <p><strong>Review before publishing.</strong> A dashboard or graph can be shown internally first; public claims need copy review and source review.</p>
         <p><strong>Refresh on material change.</strong> Re-run the graph when routes, project shells, control docs, or role workflows change.</p>
+        <p><strong>Share the map.</strong> Commit reviewed graph outputs so teammates and agents start from the same structure instead of paying rediscovery cost every session.</p>
         <p><strong>Link back to the real thing.</strong> Every explanation page should point to the live product, manifest, source repo, or reviewed artifact where possible.</p>
       </div>
     </section>

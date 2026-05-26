@@ -217,7 +217,9 @@ h1 {
 .explain-copy p,
 .boundary p,
 .layer-grid p,
-.flow-steps p {
+.flow-steps p,
+.timeline-list p,
+.command-grid p {
   margin-top: 14px;
   color: #303943;
   font-size: 1rem;
@@ -322,13 +324,15 @@ footer {
 }
 
 .flow-steps,
-.layer-grid {
+.layer-grid,
+.timeline-list {
   display: grid;
   gap: 12px;
   margin-top: 28px;
 }
 
-.flow-steps div {
+.flow-steps div,
+.timeline-list div {
   display: grid;
   grid-template-columns: 42px 1fr;
   gap: 12px;
@@ -339,7 +343,8 @@ footer {
   background: var(--white);
 }
 
-.flow-steps span {
+.flow-steps span,
+.timeline-list span {
   display: grid;
   width: 32px;
   height: 32px;
@@ -350,8 +355,33 @@ footer {
   font-weight: 900;
 }
 
-.flow-steps p {
+.flow-steps p,
+.timeline-list p {
   margin-top: 0;
+}
+
+.command-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.command-grid article {
+  min-height: 132px;
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--white);
+}
+
+.command-grid code {
+  color: var(--signal);
+  font-weight: 900;
+}
+
+.command-grid p {
+  margin-top: 12px;
 }
 
 .system-map,
@@ -386,6 +416,15 @@ footer {
 .boundary p {
   max-width: 900px;
   color: var(--paper);
+}
+
+.light-boundary {
+  color: var(--ink);
+  background: var(--white);
+}
+
+.light-boundary p {
+  color: #303943;
 }
 
 .audit-table {
@@ -452,7 +491,8 @@ th {
   .product-band,
   .principle-list,
   .explain-layout,
-  .layer-grid {
+  .layer-grid,
+  .command-grid {
     grid-template-columns: 1fr;
   }
 
