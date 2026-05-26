@@ -28,6 +28,7 @@ Primary files:
 
 - `index.html` - public front door for Sanford Systematic.
 - `explain/constellation.html` - plain-English Constellation explanation page.
+- `explain/understand-anything.html` - public explanation of the Understand Anything map layer.
 - `styles.css` - responsive visual system.
 - `data/explanation-manifest.json` - generated explanation manifest from the local Constellation Understand Anything graph.
 - `tools/update_explanation_manifest.py` - repeatable manifest refresh script.
@@ -50,6 +51,7 @@ Primary files:
 - GitHub repositories were created and pushed, but unauthenticated GitHub web/raw/Pages routes returned 404 immediately after creation even though authenticated API access confirmed the files and public visibility. A temporary `localhost.run` tunnel was opened for immediate live review.
 - `https://fc13d55b511e58.lhr.life/` returned HTTP 200 for the home page, explanation page, and stylesheet.
 - Playwright checks passed against `https://fc13d55b511e58.lhr.life/` on desktop and mobile for the home page and Constellation explanation page.
+- Understand Anything map inventory page added to clarify that graphs explain system structure but do not create project authority.
 - Local static preview served from `http://127.0.0.1:8088`.
 - Desktop and mobile Playwright smoke checks passed for the home page and Constellation explanation page.
 - Smoke checks found no page errors, request failures, or horizontal overflow.
