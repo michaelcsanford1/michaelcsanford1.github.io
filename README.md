@@ -1,6 +1,14 @@
 # Sanford Systematic Site
 
-Static source for the public `sanfordsystematic.com` front door.
+Static source for the public Sanford Systematic front door.
+
+Live first-pass Pages URL:
+
+`https://michaelcsanford1.github.io/sanfordsystematic-site/`
+
+Target root domain after DNS / Pages binding review:
+
+`https://sanfordsystematic.com`
 
 The site is designed as an explanation layer, not a project-control authority.
 It links to live product surfaces and real artifacts while preserving source

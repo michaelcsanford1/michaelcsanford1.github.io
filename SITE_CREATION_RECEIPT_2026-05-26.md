@@ -4,7 +4,15 @@ Date: 2026-05-26
 
 ## What Was Created
 
-Created a standalone static site source for `sanfordsystematic.com`.
+Created a standalone static site source for the Sanford Systematic public front door.
+
+First live route:
+
+- `https://michaelcsanford1.github.io/sanfordsystematic-site/`
+
+Target root route after DNS / Pages binding review:
+
+- `https://sanfordsystematic.com`
 
 Primary files:
 
@@ -27,7 +35,8 @@ Primary files:
 ## Verification
 
 - `https://constellation.sanfordsystematic.com` returned HTTP 200 during creation.
-- `https://sanfordsystematic.com` returned HTTP 403 during creation, so the root domain is not live from this environment.
+- `https://sanfordsystematic.com` returned HTTP 403 during creation, so the root domain was not live from this environment.
+- GitHub rejected direct custom-domain binding for `sanfordsystematic.com` during first deploy, so the first live version uses the GitHub Pages project URL.
 - Local static preview served from `http://127.0.0.1:8088`.
 - Desktop and mobile Playwright smoke checks passed for the home page and Constellation explanation page.
 - Smoke checks found no page errors, request failures, or horizontal overflow.
