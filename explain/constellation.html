@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Plain-English explanation of Constellation, the Sanford Systematic digital-twin control surface.">
+  <title>Constellation Explained | Sanford Systematic</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header class="site-nav light">
+    <a class="brand" href="/">Sanford Systematic</a>
+    <nav aria-label="Primary navigation">
+      <a href="/">Home</a>
+      <a href="https://constellation.sanfordsystematic.com">Live Product</a>
+      <a href="/data/explanation-manifest.json">Manifest</a>
+    </nav>
+  </header>
+
+  <main class="explain-main">
+    <section class="explain-hero">
+      <p class="eyebrow">Constellation explained</p>
+      <h1>The control surface for a governed project twin.</h1>
+      <p>
+        Constellation is the place a human can see project state, ask grounded
+        questions, and understand what is ready, what is inferred, and what still
+        needs a source or reviewer.
+      </p>
+      <a class="primary-action" href="https://constellation.sanfordsystematic.com">Open the live product</a>
+    </section>
+
+    <section class="explain-layout">
+      <aside>
+        <img src="/assets/jr-waving.png" alt="Jr waving">
+        <p>Jr is the approachable face. The machinery underneath stays governed.</p>
+      </aside>
+      <div class="explain-copy">
+        <h2>How to think about it</h2>
+        <p>
+          The dashboard is the face. Jr is the guide. NotebookLM handles grounded
+          text questions. Multimodal RAG is the intended path for drawings and
+          visuals. The world model holds structured state. Human review decides
+          what can be relied on.
+        </p>
+        <div class="flow-steps">
+          <div><span>1</span><p>Human asks a question or opens a project view.</p></div>
+          <div><span>2</span><p>Constellation routes the request to the right role, notebook, skill, or data loader.</p></div>
+          <div><span>3</span><p>The answer returns with a source chain, an inference marker, or a stop condition.</p></div>
+          <div><span>4</span><p>A reviewer upgrades authority only when the source and approval path support it.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="system-map">
+      <h2>System layers</h2>
+      <div class="layer-grid">
+        <article><h3>Thin harness</h3><p>Flask routes, pages, static assets, and deterministic seams.</p></article>
+        <article><h3>Configuration and data</h3><p>Project definitions, role definitions, notebook routing, and project data loaders.</p></article>
+        <article><h3>Intent resolver</h3><p>Maps questions to the right Jr mode, skill, and answer shape.</p></article>
+        <article><h3>Fat skills</h3><p>Markdown work instructions carry judgment, process, and construction doctrine.</p></article>
+        <article><h3>Grounding engines</h3><p>NotebookLM for source-backed text. Visual RAG for drawings and photos when approved.</p></article>
+        <article><h3>World model</h3><p>Structured objects with source reference, authority level, validation state, owners, and next action.</p></article>
+      </div>
+    </section>
+
+    <section class="boundary">
+      <h2>Boundary</h2>
+      <p>
+        This explanation is not contract authority, Sage authority, owner approval,
+        field direction, payment support, or project-control validation. It is a
+        map of how the system works and where the real sources must be checked.
+      </p>
+    </section>
+  </main>
+</body>
+</html>

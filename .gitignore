@@ -1,0 +1,5 @@
+.DS_Store
+home-*.png
+/constellation-*.png
+*.log
+node_modules/

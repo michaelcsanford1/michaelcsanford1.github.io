@@ -1,0 +1,30 @@
+# Sanford Systematic Site
+
+Static source for the public `sanfordsystematic.com` front door.
+
+The site is designed as an explanation layer, not a project-control authority.
+It links to live product surfaces and real artifacts while preserving source
+boundaries.
+
+## Local Preview
+
+```bash
+python3 -m http.server 8088
+```
+
+Then open `http://127.0.0.1:8088`.
+
+## Update Explanation Data
+
+```bash
+python3 tools/update_explanation_manifest.py
+```
+
+The updater reads the Constellation Understand Anything graph and writes
+`data/explanation-manifest.json`.
+
+## Authority Boundary
+
+This site may explain systems, workflows, and public architecture. It must not
+publish live Devere project facts, Sage state, owner/client reliance claims,
+private canon, credentials, or unreviewed customer artifacts.

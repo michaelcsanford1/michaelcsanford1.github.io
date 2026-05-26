@@ -1,0 +1,94 @@
+{
+  "updated_at": "2026-05-26T10:03:55+00:00",
+  "source": {
+    "graph_path": "/Users/michael/Emperor-Palantir/constellation/.understand-anything/knowledge-graph.json",
+    "graph_analyzed_at": "2026-05-24T14:15:00Z",
+    "graph_commit_hash": "0962d6f2f5dd336e8326aad9c0b2f0d4ce418348",
+    "node_count": 92,
+    "edge_count": 46,
+    "node_types": {
+      "file": 57,
+      "function": 18,
+      "concept": 6,
+      "service": 2,
+      "table": 1,
+      "config": 1,
+      "document": 7
+    }
+  },
+  "live_links": {
+    "constellation": "https://constellation.sanfordsystematic.com",
+    "constellation_dashboard": "https://constellation.sanfordsystematic.com/dashboard"
+  },
+  "layers": [
+    {
+      "name": "Thin Harness",
+      "description": "Flask application shell, routes, blueprints, and static asset serving. Minimal deterministic code that orchestrates skills and modules."
+    },
+    {
+      "name": "Configuration & Data",
+      "description": "Central config, data loaders, and database schema. Deterministic modules loaded once at startup."
+    },
+    {
+      "name": "Intent Resolver",
+      "description": "Question routing, skill loading, and prompt building. The router that connects user intent to the right skill and Jr mode."
+    },
+    {
+      "name": "UI Templates",
+      "description": "Jinja2 HTML templates for role-based dashboards, project views, zone views, and the landing page. Dark theme with CSS variables."
+    },
+    {
+      "name": "Skills (Fat)",
+      "description": "Markdown skill files encoding judgment, process, and work instructions. The intelligence layer. 35+ skills covering PM, resolver, improvement, failure analysis, and 28 SageCM work instructions."
+    },
+    {
+      "name": "Static Assets",
+      "description": "Image assets for Jr character states and UI elements."
+    },
+    {
+      "name": "Documentation",
+      "description": "Architecture documentation, doctrine, fix reports, and receipts."
+    },
+    {
+      "name": "Core Concepts",
+      "description": "Architectural principles and concepts that define the system's design philosophy."
+    },
+    {
+      "name": "External Services",
+      "description": "External tools and services integrated into the system."
+    }
+  ],
+  "tour": [
+    {
+      "order": 1,
+      "title": "Project Overview",
+      "description": "Constellation is a TCS Control Surface \u2014 a thin Flask harness for construction project management. Intelligence lives in markdown skills; execution lives in deterministic Python modules. Start with the main application entry point."
+    },
+    {
+      "order": 2,
+      "title": "Configuration & Projects",
+      "description": "The config module defines all projects (UK CAER, Owen County, Chokshi, Richmond), roles (Owner, CPO, PM, Super, Foreman, Safety, Office), Jr modes, and NotebookLM notebook registry. This is the deterministic backbone."
+    },
+    {
+      "order": 3,
+      "title": "The Resolver \u2014 Intent Router",
+      "description": "The resolver is the heart of the system. It maps user questions to intents, selects Jr operating modes, loads the right skill markdown files, and builds complete prompts. This is the 'thin harness, fat skills' principle in action."
+    },
+    {
+      "order": 4,
+      "title": "API Layer & AI Routing",
+      "description": "The API blueprint handles all backend operations. The /api/ai endpoint implements multi-tier fallback: free NotebookLM grounded answers first, then deterministic local data, then paid provider (explicit opt-in). Tracks citation status and answer authority."
+    },
+    {
+      "order": 5,
+      "title": "Skills \u2014 The Intelligence Layer",
+      "description": "35+ markdown skill files encode judgment, process, and work instructions. From PM authority rules to 28 SageCM construction work instructions (safety walks, daily logs, QC audits, RFIs, submittals, etc.). Skills are the 'fat' in thin harness, fat skills."
+    },
+    {
+      "order": 6,
+      "title": "UI Layer \u2014 Role-Based Dashboards",
+      "description": "Jinja2 templates render role-specific dashboards. Owner sees portfolio snapshot with real UK CAER data. CPO sees command view with fleet status. Other roles see generic dashboards with Jr chat widgets. All templates extend base.html with shared dark theme."
+    }
+  ],
+  "authority_boundary": "Explanation layer only. Not contract authority, Sage authority, owner approval, field direction, or project-control validation."
+}
