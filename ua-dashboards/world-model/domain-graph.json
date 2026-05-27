@@ -1,0 +1,66 @@
+{
+  "project": "World Model",
+  "type": "domain-flow",
+  "version": "2.0.0",
+  "generated_at": "2026-05-27T12:30:00Z",
+  "generated_by": "Hermes \u2014 construction business domain flow (NOT file-type buckets)",
+  "nodes": [
+    {
+      "id": "world-model-domain",
+      "type": "domain-root",
+      "label": "World Model Business Domains",
+      "description": "Construction business domain flow for World Model"
+    },
+    {
+      "id": "doctrine",
+      "type": "domain",
+      "label": "Doctrine & Standards",
+      "description": "Altitude Mesh OS doctrine, world model architecture, domain boundaries"
+    },
+    {
+      "id": "verification",
+      "type": "domain",
+      "label": "Verification & Mapping",
+      "description": "Doctrine verification, mapping validation, consistency checks"
+    },
+    {
+      "id": "ratification",
+      "type": "domain",
+      "label": "Ratification Process",
+      "description": "Doctrine ratification workflow, approval chains, version control"
+    }
+  ],
+  "edges": [
+    {
+      "source": "doctrine",
+      "target": "world-model-domain",
+      "relation": "part_of"
+    },
+    {
+      "source": "verification",
+      "target": "world-model-domain",
+      "relation": "part_of"
+    },
+    {
+      "source": "ratification",
+      "target": "world-model-domain",
+      "relation": "part_of"
+    },
+    {
+      "source": "doctrine",
+      "target": "verification",
+      "relation": "requires"
+    },
+    {
+      "source": "verification",
+      "target": "ratification",
+      "relation": "enables"
+    }
+  ],
+  "stats": {
+    "total_nodes": 4,
+    "total_edges": 5,
+    "domains": 3,
+    "business_flows": 2
+  }
+}

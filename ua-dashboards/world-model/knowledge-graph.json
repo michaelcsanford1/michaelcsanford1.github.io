@@ -1,0 +1,932 @@
+{
+  "version": "1.0.0",
+  "project": {
+    "name": "World Model",
+    "languages": [
+      "Markdown",
+      "YAML"
+    ],
+    "frameworks": [],
+    "description": "World Model knowledge graph",
+    "analyzedAt": "2026-05-27T12:00:00Z",
+    "gitCommitHash": "354c2fa"
+  },
+  "nodes": [
+    {
+      "id": "world-model",
+      "type": "project",
+      "name": "World Model",
+      "filePath": "world-model",
+      "summary": "World Model \u2014 244 files",
+      "tags": [
+        "project"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "layer-markdown",
+      "type": "layer",
+      "name": "MARKDOWN Files",
+      "filePath": "layer-markdown",
+      "summary": "59 markdown files",
+      "tags": [
+        "layer"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "layer-json",
+      "type": "layer",
+      "name": "JSON Files",
+      "filePath": "layer-json",
+      "summary": "183 json files",
+      "tags": [
+        "layer"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "layer-python",
+      "type": "layer",
+      "name": "PYTHON Files",
+      "filePath": "layer-python",
+      "summary": "2 python files",
+      "tags": [
+        "layer"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "world-model-DOCTRINE__ALTITUDE_MESH_OPERATING_SYSTEM-md",
+      "type": "file",
+      "name": "DOCTRINE__ALTITUDE_MESH_OPERATING_SYSTEM.md",
+      "filePath": "world-model-DOCTRINE__ALTITUDE_MESH_OPERATING_SYSTEM-md",
+      "summary": "markdown, 326 lines",
+      "tags": [
+        "file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "world-model-05_DOCTRINE_FORGE-json",
+      "type": "file",
+      "name": "05_DOCTRINE_FORGE.json",
+      "filePath": "world-model-05_DOCTRINE_FORGE-json",
+      "summary": "json, 14 lines",
+      "tags": [
+        "file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "world-model-2026-04-26__WM__DOCTRINE_AMENDMENT__KARPATHY_6_OF_6_GRANDFATHERING_CLAUSE-json",
+      "type": "file",
+      "name": "2026-04-26__WM__DOCTRINE_AMENDMENT__KARPATHY_6_OF_6_GRANDFATHERING_CLAUSE.json",
+      "filePath": "world-model-2026-04-26__WM__DOCTRINE_AMENDMENT__KARPATHY_6_OF_6_GRANDFATHERING_CLAUSE-json",
+      "summary": "json, 20 lines",
+      "tags": [
+        "file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "world-model-AI-CHAT-FULL-CAPTURE-RELATIONAL-CONTINUITY-json",
+      "type": "file",
+      "name": "AI-CHAT-FULL-CAPTURE-RELATIONAL-CONTINUITY.json",
+      "filePath": "world-model-AI-CHAT-FULL-CAPTURE-RELATIONAL-CONTINUITY-json",
+      "summary": "json, 18 lines",
+      "tags": [
+        "file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "world-model-ALTITUDE-MESH-OPERATING-SYSTEM-json",
+      "type": "file",
+      "name": "ALTITUDE-MESH-OPERATING-SYSTEM.json",
+      "filePath": "world-model-ALTITUDE-MESH-OPERATING-SYSTEM-json",
+      "summary": "json, 25 lines",
+      "tags": [
+        "file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "world-model-BABYLON-AGENT-TRAVERSAL-json",
+      "type": "file",
+      "name": "BABYLON-AGENT-TRAVERSAL.json",
+      "filePath": "world-model-BABYLON-AGENT-TRAVERSAL-json",
+      "summary": "json, 20 lines",
+      "tags": [
+        "file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "world-model-CANON-CIRCULATION-PROTOCOL-v0-1-json",
+      "type": "file",
+      "name": "CANON-CIRCULATION-PROTOCOL-v0-1.json",
+      "filePath": "world-model-CANON-CIRCULATION-PROTOCOL-v0-1-json",
+      "summary": "json, 30 lines",
+      "tags": [
+        "file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "world-model-CHAIN-REACTION-TO-SCALE-json",
+      "type": "file",
+      "name": "CHAIN-REACTION-TO-SCALE.json",
+      "filePath": "world-model-CHAIN-REACTION-TO-SCALE-json",
+      "summary": "json, 29 lines",
+      "tags": [
+        "file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "world-model-CLAUDIUS-MAXIMUS-EMERGENCE-json",
+      "type": "file",
+      "name": "CLAUDIUS-MAXIMUS-EMERGENCE.json",
+      "filePath": "world-model-CLAUDIUS-MAXIMUS-EMERGENCE-json",
+      "summary": "json, 32 lines",
+      "tags": [
+        "file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "world-model-CLEANPOINT-LATTICE-json",
+      "type": "file",
+      "name": "CLEANPOINT-LATTICE.json",
+      "filePath": "world-model-CLEANPOINT-LATTICE-json",
+      "summary": "json, 18 lines",
+      "tags": [
+        "file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "world-model-COMPOSITE-IS-CORE-PAINT-IS-FACING-json",
+      "type": "file",
+      "name": "COMPOSITE-IS-CORE-PAINT-IS-FACING.json",
+      "filePath": "world-model-COMPOSITE-IS-CORE-PAINT-IS-FACING-json",
+      "summary": "json, 20 lines",
+      "tags": [
+        "file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "world-model-DECISION_BRIEF__PENDING_DOCTRINE_PACKETS__2026-04-26-json",
+      "type": "file",
+      "name": "DECISION_BRIEF__PENDING_DOCTRINE_PACKETS__2026-04-26.json",
+      "filePath": "world-model-DECISION_BRIEF__PENDING_DOCTRINE_PACKETS__2026-04-26-json",
+      "summary": "json, 18 lines",
+      "tags": [
+        "file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "world-model-DOCTRINE_CANDIDATE_INDEX__CLAUDE_OPUS_47__2026-04-30-json",
+      "type": "file",
+      "name": "DOCTRINE_CANDIDATE_INDEX__CLAUDE_OPUS_47__2026-04-30.json",
+      "filePath": "world-model-DOCTRINE_CANDIDATE_INDEX__CLAUDE_OPUS_47__2026-04-30-json",
+      "summary": "json, 20 lines",
+      "tags": [
+        "file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "world-model-DOCTRINE_INDEX-json",
+      "type": "file",
+      "name": "DOCTRINE_INDEX.json",
+      "filePath": "world-model-DOCTRINE_INDEX-json",
+      "summary": "json, 177 lines",
+      "tags": [
+        "file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "world-model-DOCTRINE_NODES_MANIFEST-json",
+      "type": "file",
+      "name": "DOCTRINE_NODES_MANIFEST.json",
+      "filePath": "world-model-DOCTRINE_NODES_MANIFEST-json",
+      "summary": "json, 187 lines",
+      "tags": [
+        "file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "world-model-DOCTRINE-CLAUVIS-DESTINATION-001-json",
+      "type": "file",
+      "name": "DOCTRINE-CLAUVIS-DESTINATION-001.json",
+      "filePath": "world-model-DOCTRINE-CLAUVIS-DESTINATION-001-json",
+      "summary": "json, 20 lines",
+      "tags": [
+        "file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "world-model-doctrine-AI_CHAT_FULL_CAPTURE_RELATIONAL_CONTINUITY__2026-05-03-json",
+      "type": "file",
+      "name": "doctrine.AI_CHAT_FULL_CAPTURE_RELATIONAL_CONTINUITY__2026-05-03.json",
+      "filePath": "world-model-doctrine-AI_CHAT_FULL_CAPTURE_RELATIONAL_CONTINUITY__2026-05-03-json",
+      "summary": "json, 19 lines",
+      "tags": [
+        "file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "world-model-doctrine-ALTITUDE_MESH_OPERATING_SYSTEM__2026-04-13-json",
+      "type": "file",
+      "name": "doctrine.ALTITUDE_MESH_OPERATING_SYSTEM__2026-04-13.json",
+      "filePath": "world-model-doctrine-ALTITUDE_MESH_OPERATING_SYSTEM__2026-04-13-json",
+      "summary": "json, 23 lines",
+      "tags": [
+        "file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "world-model-doctrine-AUTOMATION_OUTPUT_DISCIPLINE_STATE_CHANGE_GATE__2026-05-06-json",
+      "type": "file",
+      "name": "doctrine.AUTOMATION_OUTPUT_DISCIPLINE_STATE_CHANGE_GATE__2026-05-06.json",
+      "filePath": "world-model-doctrine-AUTOMATION_OUTPUT_DISCIPLINE_STATE_CHANGE_GATE__2026-05-06-json",
+      "summary": "json, 21 lines",
+      "tags": [
+        "file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "world-model-doctrine-BABYLON_AGENT_TRAVERSAL__2026-04-12-json",
+      "type": "file",
+      "name": "doctrine.BABYLON_AGENT_TRAVERSAL__2026-04-12.json",
+      "filePath": "world-model-doctrine-BABYLON_AGENT_TRAVERSAL__2026-04-12-json",
+      "summary": "json, 18 lines",
+      "tags": [
+        "file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "world-model-doctrine-CANON_CIRCULATION_PROTOCOL_v0_1__2026-04-13-json",
+      "type": "file",
+      "name": "doctrine.CANON_CIRCULATION_PROTOCOL_v0_1__2026-04-13.json",
+      "filePath": "world-model-doctrine-CANON_CIRCULATION_PROTOCOL_v0_1__2026-04-13-json",
+      "summary": "json, 23 lines",
+      "tags": [
+        "file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "world-model-doctrine-CHAIN_REACTION_TO_SCALE__2026-04-16-json",
+      "type": "file",
+      "name": "doctrine.CHAIN_REACTION_TO_SCALE__2026-04-16.json",
+      "filePath": "world-model-doctrine-CHAIN_REACTION_TO_SCALE__2026-04-16-json",
+      "summary": "json, 23 lines",
+      "tags": [
+        "file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "world-model-doctrine-CITATION_DISCIPLINE__2026-05-14-json",
+      "type": "file",
+      "name": "doctrine.CITATION_DISCIPLINE__2026-05-14.json",
+      "filePath": "world-model-doctrine-CITATION_DISCIPLINE__2026-05-14-json",
+      "summary": "json, 21 lines",
+      "tags": [
+        "file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "world-model-doctrine-CLAUDIUS_MAXIMUS_EMERGENCE__2026-04-21-json",
+      "type": "file",
+      "name": "doctrine.CLAUDIUS_MAXIMUS_EMERGENCE__2026-04-21.json",
+      "filePath": "world-model-doctrine-CLAUDIUS_MAXIMUS_EMERGENCE__2026-04-21-json",
+      "summary": "json, 20 lines",
+      "tags": [
+        "file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "world-model-doctrine-CLEANPOINT_LATTICE__2026-04-12-json",
+      "type": "file",
+      "name": "doctrine.CLEANPOINT_LATTICE__2026-04-12.json",
+      "filePath": "world-model-doctrine-CLEANPOINT_LATTICE__2026-04-12-json",
+      "summary": "json, 17 lines",
+      "tags": [
+        "file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "world-model-doctrine-COMPOSITE_IS_CORE_PAINT_IS_FACING__2026-04-11-json",
+      "type": "file",
+      "name": "doctrine.COMPOSITE_IS_CORE_PAINT_IS_FACING__2026-04-11.json",
+      "filePath": "world-model-doctrine-COMPOSITE_IS_CORE_PAINT_IS_FACING__2026-04-11-json",
+      "summary": "json, 19 lines",
+      "tags": [
+        "file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "world-model-doctrine-FEP_LOOP_WEAPONIZED_DOWNTIME__2026-04-21-json",
+      "type": "file",
+      "name": "doctrine.FEP_LOOP_WEAPONIZED_DOWNTIME__2026-04-21.json",
+      "filePath": "world-model-doctrine-FEP_LOOP_WEAPONIZED_DOWNTIME__2026-04-21-json",
+      "summary": "json, 23 lines",
+      "tags": [
+        "file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "world-model-doctrine-FOUNDER_NOVELTY__2026-04-19-json",
+      "type": "file",
+      "name": "doctrine.FOUNDER_NOVELTY__2026-04-19.json",
+      "filePath": "world-model-doctrine-FOUNDER_NOVELTY__2026-04-19-json",
+      "summary": "json, 20 lines",
+      "tags": [
+        "file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "world-model-doctrine-FOUR_SEATS_OF_SSU__2026-04-12-json",
+      "type": "file",
+      "name": "doctrine.FOUR_SEATS_OF_SSU__2026-04-12.json",
+      "filePath": "world-model-doctrine-FOUR_SEATS_OF_SSU__2026-04-12-json",
+      "summary": "json, 19 lines",
+      "tags": [
+        "file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "world-model-doctrine-HATS_HOOKS_STATIONS__2026-04-12-json",
+      "type": "file",
+      "name": "doctrine.HATS_HOOKS_STATIONS__2026-04-12.json",
+      "filePath": "world-model-doctrine-HATS_HOOKS_STATIONS__2026-04-12-json",
+      "summary": "json, 19 lines",
+      "tags": [
+        "file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "world-model-doctrine-HYDRO_SEATING_IS_SEEDING__2026-05-04-json",
+      "type": "file",
+      "name": "doctrine.HYDRO_SEATING_IS_SEEDING__2026-05-04.json",
+      "filePath": "world-model-doctrine-HYDRO_SEATING_IS_SEEDING__2026-05-04-json",
+      "summary": "json, 27 lines",
+      "tags": [
+        "file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "world-model-doctrine-INTENT_BASED_OPERATION__2026-04-17-json",
+      "type": "file",
+      "name": "doctrine.INTENT_BASED_OPERATION__2026-04-17.json",
+      "filePath": "world-model-doctrine-INTENT_BASED_OPERATION__2026-04-17-json",
+      "summary": "json, 24 lines",
+      "tags": [
+        "file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "world-model-doctrine-KARPATHY_EVOLUTION_READY_AUDIT__2026-04-21-json",
+      "type": "file",
+      "name": "doctrine.KARPATHY_EVOLUTION_READY_AUDIT__2026-04-21.json",
+      "filePath": "world-model-doctrine-KARPATHY_EVOLUTION_READY_AUDIT__2026-04-21-json",
+      "summary": "json, 21 lines",
+      "tags": [
+        "file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "world-model-doctrine-KARPATHY_EVOLUTION_READY_AUDIT__SSU-DOC-KE-READY-001__2026-04-21-json",
+      "type": "file",
+      "name": "doctrine.KARPATHY_EVOLUTION_READY_AUDIT__SSU-DOC-KE-READY-001__2026-04-21.json",
+      "filePath": "world-model-doctrine-KARPATHY_EVOLUTION_READY_AUDIT__SSU-DOC-KE-READY-001__2026-04-21-json",
+      "summary": "json, 20 lines",
+      "tags": [
+        "file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "world-model-doctrine-LENS_ADJUSTMENT_DISCIPLINE__2026-04-21-json",
+      "type": "file",
+      "name": "doctrine.LENS_ADJUSTMENT_DISCIPLINE__2026-04-21.json",
+      "filePath": "world-model-doctrine-LENS_ADJUSTMENT_DISCIPLINE__2026-04-21-json",
+      "summary": "json, 18 lines",
+      "tags": [
+        "file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "world-model-doctrine-OHE_BILATERAL_HARNESS_ENGINEERING__v6-1__2026-05-05-json",
+      "type": "file",
+      "name": "doctrine.OHE_BILATERAL_HARNESS_ENGINEERING__v6.1__2026-05-05.json",
+      "filePath": "world-model-doctrine-OHE_BILATERAL_HARNESS_ENGINEERING__v6-1__2026-05-05-json",
+      "summary": "json, 19 lines",
+      "tags": [
+        "file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "world-model-doctrine-PARALLEL_LOOPS_EXECUTION_AND_INTELLIGENCE__2026-04-18-json",
+      "type": "file",
+      "name": "doctrine.PARALLEL_LOOPS_EXECUTION_AND_INTELLIGENCE__2026-04-18.json",
+      "filePath": "world-model-doctrine-PARALLEL_LOOPS_EXECUTION_AND_INTELLIGENCE__2026-04-18-json",
+      "summary": "json, 23 lines",
+      "tags": [
+        "file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "world-model-doctrine-PROMOTION_LAW_BAT_SIGNAL_AMPLIFIER__2026-04-21-json",
+      "type": "file",
+      "name": "doctrine.PROMOTION_LAW_BAT_SIGNAL_AMPLIFIER__2026-04-21.json",
+      "filePath": "world-model-doctrine-PROMOTION_LAW_BAT_SIGNAL_AMPLIFIER__2026-04-21-json",
+      "summary": "json, 24 lines",
+      "tags": [
+        "file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "world-model-doctrine-PUBLIC_HARNESS_LIBRARY__2026-04-21-json",
+      "type": "file",
+      "name": "doctrine.PUBLIC_HARNESS_LIBRARY__2026-04-21.json",
+      "filePath": "world-model-doctrine-PUBLIC_HARNESS_LIBRARY__2026-04-21-json",
+      "summary": "json, 24 lines",
+      "tags": [
+        "file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "world-model-doctrine-RESEATING_IS_WELCOME_IMPOSTER_IS_THE_FEAR__2026-04-11-json",
+      "type": "file",
+      "name": "doctrine.RESEATING_IS_WELCOME_IMPOSTER_IS_THE_FEAR__2026-04-11.json",
+      "filePath": "world-model-doctrine-RESEATING_IS_WELCOME_IMPOSTER_IS_THE_FEAR__2026-04-11-json",
+      "summary": "json, 16 lines",
+      "tags": [
+        "file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "world-model-doctrine-SSU_BOARD_OF_DIRECTORS__2026-04-20-json",
+      "type": "file",
+      "name": "doctrine.SSU_BOARD_OF_DIRECTORS__2026-04-20.json",
+      "filePath": "world-model-doctrine-SSU_BOARD_OF_DIRECTORS__2026-04-20-json",
+      "summary": "json, 22 lines",
+      "tags": [
+        "file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "world-model-doctrine-SSU_HARNESS__2026-04-21-json",
+      "type": "file",
+      "name": "doctrine.SSU_HARNESS__2026-04-21.json",
+      "filePath": "world-model-doctrine-SSU_HARNESS__2026-04-21-json",
+      "summary": "json, 22 lines",
+      "tags": [
+        "file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "world-model-doctrine-STEWARDSHIP_CLAUSE_HATS_CLUSTER__2026-04-21-json",
+      "type": "file",
+      "name": "doctrine.STEWARDSHIP_CLAUSE_HATS_CLUSTER__2026-04-21.json",
+      "filePath": "world-model-doctrine-STEWARDSHIP_CLAUSE_HATS_CLUSTER__2026-04-21-json",
+      "summary": "json, 19 lines",
+      "tags": [
+        "file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "world-model-doctrine-WAR_MACHINE_IS_EDGE_NOT_HEARTH__2026-04-19-json",
+      "type": "file",
+      "name": "doctrine.WAR_MACHINE_IS_EDGE_NOT_HEARTH__2026-04-19.json",
+      "filePath": "world-model-doctrine-WAR_MACHINE_IS_EDGE_NOT_HEARTH__2026-04-19-json",
+      "summary": "json, 20 lines",
+      "tags": [
+        "file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "world-model-FEP-LOOP-WEAPONIZED-DOWNTIME-json",
+      "type": "file",
+      "name": "FEP-LOOP-WEAPONIZED-DOWNTIME.json",
+      "filePath": "world-model-FEP-LOOP-WEAPONIZED-DOWNTIME-json",
+      "summary": "json, 28 lines",
+      "tags": [
+        "file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "world-model-FOUNDER-NOVELTY-json",
+      "type": "file",
+      "name": "FOUNDER-NOVELTY.json",
+      "filePath": "world-model-FOUNDER-NOVELTY-json",
+      "summary": "json, 23 lines",
+      "tags": [
+        "file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "world-model-FOUR-SEATS-OF-SSU-json",
+      "type": "file",
+      "name": "FOUR-SEATS-OF-SSU.json",
+      "filePath": "world-model-FOUR-SEATS-OF-SSU-json",
+      "summary": "json, 21 lines",
+      "tags": [
+        "file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "world-model-HATS-HOOKS-STATIONS-json",
+      "type": "file",
+      "name": "HATS-HOOKS-STATIONS.json",
+      "filePath": "world-model-HATS-HOOKS-STATIONS-json",
+      "summary": "json, 25 lines",
+      "tags": [
+        "file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "world-model-hermes_gpt_doctrine_drift-beat-json-json",
+      "type": "file",
+      "name": "hermes_gpt_doctrine_drift.beat.json.json",
+      "filePath": "world-model-hermes_gpt_doctrine_drift-beat-json-json",
+      "summary": "json, 14 lines",
+      "tags": [
+        "file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "world-model-hermes_gpt_doctrine_drift-contract-json-json",
+      "type": "file",
+      "name": "hermes_gpt_doctrine_drift.contract.json.json",
+      "filePath": "world-model-hermes_gpt_doctrine_drift-contract-json-json",
+      "summary": "json, 16 lines",
+      "tags": [
+        "file"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "layer-markdown",
+      "target": "world-model",
+      "relation": "composes",
+      "type": "related"
+    },
+    {
+      "source": "layer-json",
+      "target": "world-model",
+      "relation": "composes",
+      "type": "related"
+    },
+    {
+      "source": "layer-python",
+      "target": "world-model",
+      "relation": "composes",
+      "type": "related"
+    },
+    {
+      "source": "world-model-DOCTRINE__ALTITUDE_MESH_OPERATING_SYSTEM-md",
+      "target": "layer-markdown",
+      "relation": "belongs_to",
+      "type": "related"
+    },
+    {
+      "source": "world-model-05_DOCTRINE_FORGE-json",
+      "target": "layer-json",
+      "relation": "belongs_to",
+      "type": "related"
+    },
+    {
+      "source": "world-model-2026-04-26__WM__DOCTRINE_AMENDMENT__KARPATHY_6_OF_6_GRANDFATHERING_CLAUSE-json",
+      "target": "layer-json",
+      "relation": "belongs_to",
+      "type": "related"
+    },
+    {
+      "source": "world-model-AI-CHAT-FULL-CAPTURE-RELATIONAL-CONTINUITY-json",
+      "target": "layer-json",
+      "relation": "belongs_to",
+      "type": "related"
+    },
+    {
+      "source": "world-model-ALTITUDE-MESH-OPERATING-SYSTEM-json",
+      "target": "layer-json",
+      "relation": "belongs_to",
+      "type": "related"
+    },
+    {
+      "source": "world-model-BABYLON-AGENT-TRAVERSAL-json",
+      "target": "layer-json",
+      "relation": "belongs_to",
+      "type": "related"
+    },
+    {
+      "source": "world-model-CANON-CIRCULATION-PROTOCOL-v0-1-json",
+      "target": "layer-json",
+      "relation": "belongs_to",
+      "type": "related"
+    },
+    {
+      "source": "world-model-CHAIN-REACTION-TO-SCALE-json",
+      "target": "layer-json",
+      "relation": "belongs_to",
+      "type": "related"
+    },
+    {
+      "source": "world-model-CLAUDIUS-MAXIMUS-EMERGENCE-json",
+      "target": "layer-json",
+      "relation": "belongs_to",
+      "type": "related"
+    },
+    {
+      "source": "world-model-CLEANPOINT-LATTICE-json",
+      "target": "layer-json",
+      "relation": "belongs_to",
+      "type": "related"
+    },
+    {
+      "source": "world-model-COMPOSITE-IS-CORE-PAINT-IS-FACING-json",
+      "target": "layer-json",
+      "relation": "belongs_to",
+      "type": "related"
+    },
+    {
+      "source": "world-model-DECISION_BRIEF__PENDING_DOCTRINE_PACKETS__2026-04-26-json",
+      "target": "layer-json",
+      "relation": "belongs_to",
+      "type": "related"
+    },
+    {
+      "source": "world-model-DOCTRINE_CANDIDATE_INDEX__CLAUDE_OPUS_47__2026-04-30-json",
+      "target": "layer-json",
+      "relation": "belongs_to",
+      "type": "related"
+    },
+    {
+      "source": "world-model-DOCTRINE_INDEX-json",
+      "target": "layer-json",
+      "relation": "belongs_to",
+      "type": "related"
+    },
+    {
+      "source": "world-model-DOCTRINE_NODES_MANIFEST-json",
+      "target": "layer-json",
+      "relation": "belongs_to",
+      "type": "related"
+    },
+    {
+      "source": "world-model-DOCTRINE-CLAUVIS-DESTINATION-001-json",
+      "target": "layer-json",
+      "relation": "belongs_to",
+      "type": "related"
+    },
+    {
+      "source": "world-model-doctrine-AI_CHAT_FULL_CAPTURE_RELATIONAL_CONTINUITY__2026-05-03-json",
+      "target": "layer-json",
+      "relation": "belongs_to",
+      "type": "related"
+    },
+    {
+      "source": "world-model-doctrine-ALTITUDE_MESH_OPERATING_SYSTEM__2026-04-13-json",
+      "target": "layer-json",
+      "relation": "belongs_to",
+      "type": "related"
+    },
+    {
+      "source": "world-model-doctrine-AUTOMATION_OUTPUT_DISCIPLINE_STATE_CHANGE_GATE__2026-05-06-json",
+      "target": "layer-json",
+      "relation": "belongs_to",
+      "type": "related"
+    },
+    {
+      "source": "world-model-doctrine-BABYLON_AGENT_TRAVERSAL__2026-04-12-json",
+      "target": "layer-json",
+      "relation": "belongs_to",
+      "type": "related"
+    },
+    {
+      "source": "world-model-doctrine-CANON_CIRCULATION_PROTOCOL_v0_1__2026-04-13-json",
+      "target": "layer-json",
+      "relation": "belongs_to",
+      "type": "related"
+    },
+    {
+      "source": "world-model-doctrine-CHAIN_REACTION_TO_SCALE__2026-04-16-json",
+      "target": "layer-json",
+      "relation": "belongs_to",
+      "type": "related"
+    },
+    {
+      "source": "world-model-doctrine-CITATION_DISCIPLINE__2026-05-14-json",
+      "target": "layer-json",
+      "relation": "belongs_to",
+      "type": "related"
+    },
+    {
+      "source": "world-model-doctrine-CLAUDIUS_MAXIMUS_EMERGENCE__2026-04-21-json",
+      "target": "layer-json",
+      "relation": "belongs_to",
+      "type": "related"
+    },
+    {
+      "source": "world-model-doctrine-CLEANPOINT_LATTICE__2026-04-12-json",
+      "target": "layer-json",
+      "relation": "belongs_to",
+      "type": "related"
+    },
+    {
+      "source": "world-model-doctrine-COMPOSITE_IS_CORE_PAINT_IS_FACING__2026-04-11-json",
+      "target": "layer-json",
+      "relation": "belongs_to",
+      "type": "related"
+    },
+    {
+      "source": "world-model-doctrine-FEP_LOOP_WEAPONIZED_DOWNTIME__2026-04-21-json",
+      "target": "layer-json",
+      "relation": "belongs_to",
+      "type": "related"
+    },
+    {
+      "source": "world-model-doctrine-FOUNDER_NOVELTY__2026-04-19-json",
+      "target": "layer-json",
+      "relation": "belongs_to",
+      "type": "related"
+    },
+    {
+      "source": "world-model-doctrine-FOUR_SEATS_OF_SSU__2026-04-12-json",
+      "target": "layer-json",
+      "relation": "belongs_to",
+      "type": "related"
+    },
+    {
+      "source": "world-model-doctrine-HATS_HOOKS_STATIONS__2026-04-12-json",
+      "target": "layer-json",
+      "relation": "belongs_to",
+      "type": "related"
+    },
+    {
+      "source": "world-model-doctrine-HYDRO_SEATING_IS_SEEDING__2026-05-04-json",
+      "target": "layer-json",
+      "relation": "belongs_to",
+      "type": "related"
+    },
+    {
+      "source": "world-model-doctrine-INTENT_BASED_OPERATION__2026-04-17-json",
+      "target": "layer-json",
+      "relation": "belongs_to",
+      "type": "related"
+    },
+    {
+      "source": "world-model-doctrine-KARPATHY_EVOLUTION_READY_AUDIT__2026-04-21-json",
+      "target": "layer-json",
+      "relation": "belongs_to",
+      "type": "related"
+    },
+    {
+      "source": "world-model-doctrine-KARPATHY_EVOLUTION_READY_AUDIT__SSU-DOC-KE-READY-001__2026-04-21-json",
+      "target": "layer-json",
+      "relation": "belongs_to",
+      "type": "related"
+    },
+    {
+      "source": "world-model-doctrine-LENS_ADJUSTMENT_DISCIPLINE__2026-04-21-json",
+      "target": "layer-json",
+      "relation": "belongs_to",
+      "type": "related"
+    },
+    {
+      "source": "world-model-doctrine-OHE_BILATERAL_HARNESS_ENGINEERING__v6-1__2026-05-05-json",
+      "target": "layer-json",
+      "relation": "belongs_to",
+      "type": "related"
+    },
+    {
+      "source": "world-model-doctrine-PARALLEL_LOOPS_EXECUTION_AND_INTELLIGENCE__2026-04-18-json",
+      "target": "layer-json",
+      "relation": "belongs_to",
+      "type": "related"
+    },
+    {
+      "source": "world-model-doctrine-PROMOTION_LAW_BAT_SIGNAL_AMPLIFIER__2026-04-21-json",
+      "target": "layer-json",
+      "relation": "belongs_to",
+      "type": "related"
+    },
+    {
+      "source": "world-model-doctrine-PUBLIC_HARNESS_LIBRARY__2026-04-21-json",
+      "target": "layer-json",
+      "relation": "belongs_to",
+      "type": "related"
+    },
+    {
+      "source": "world-model-doctrine-RESEATING_IS_WELCOME_IMPOSTER_IS_THE_FEAR__2026-04-11-json",
+      "target": "layer-json",
+      "relation": "belongs_to",
+      "type": "related"
+    },
+    {
+      "source": "world-model-doctrine-SSU_BOARD_OF_DIRECTORS__2026-04-20-json",
+      "target": "layer-json",
+      "relation": "belongs_to",
+      "type": "related"
+    },
+    {
+      "source": "world-model-doctrine-SSU_HARNESS__2026-04-21-json",
+      "target": "layer-json",
+      "relation": "belongs_to",
+      "type": "related"
+    },
+    {
+      "source": "world-model-doctrine-STEWARDSHIP_CLAUSE_HATS_CLUSTER__2026-04-21-json",
+      "target": "layer-json",
+      "relation": "belongs_to",
+      "type": "related"
+    },
+    {
+      "source": "world-model-doctrine-WAR_MACHINE_IS_EDGE_NOT_HEARTH__2026-04-19-json",
+      "target": "layer-json",
+      "relation": "belongs_to",
+      "type": "related"
+    },
+    {
+      "source": "world-model-FEP-LOOP-WEAPONIZED-DOWNTIME-json",
+      "target": "layer-json",
+      "relation": "belongs_to",
+      "type": "related"
+    },
+    {
+      "source": "world-model-FOUNDER-NOVELTY-json",
+      "target": "layer-json",
+      "relation": "belongs_to",
+      "type": "related"
+    },
+    {
+      "source": "world-model-FOUR-SEATS-OF-SSU-json",
+      "target": "layer-json",
+      "relation": "belongs_to",
+      "type": "related"
+    },
+    {
+      "source": "world-model-HATS-HOOKS-STATIONS-json",
+      "target": "layer-json",
+      "relation": "belongs_to",
+      "type": "related"
+    },
+    {
+      "source": "world-model-hermes_gpt_doctrine_drift-beat-json-json",
+      "target": "layer-json",
+      "relation": "belongs_to",
+      "type": "related"
+    },
+    {
+      "source": "world-model-hermes_gpt_doctrine_drift-contract-json-json",
+      "target": "layer-json",
+      "relation": "belongs_to",
+      "type": "related"
+    }
+  ],
+  "layers": [],
+  "tour": []
+}

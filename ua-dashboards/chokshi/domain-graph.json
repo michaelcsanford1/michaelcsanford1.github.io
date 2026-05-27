@@ -1,0 +1,66 @@
+{
+  "project": "Chokshi",
+  "type": "domain-flow",
+  "version": "2.0.0",
+  "generated_at": "2026-05-27T12:30:00Z",
+  "generated_by": "Hermes \u2014 construction business domain flow (NOT file-type buckets)",
+  "nodes": [
+    {
+      "id": "chokshi-domain",
+      "type": "domain-root",
+      "label": "Chokshi Business Domains",
+      "description": "Construction business domain flow for Chokshi"
+    },
+    {
+      "id": "project-management",
+      "type": "domain",
+      "label": "Project Management",
+      "description": "PMP, scope definition, schedule baseline, cost management"
+    },
+    {
+      "id": "design",
+      "type": "domain",
+      "label": "Design & Engineering",
+      "description": "Construction drawings, specifications, design intent"
+    },
+    {
+      "id": "scheduling",
+      "type": "domain",
+      "label": "Scheduling & Planning",
+      "description": "Project schedule, milestones, critical path, resource allocation"
+    }
+  ],
+  "edges": [
+    {
+      "source": "project-management",
+      "target": "chokshi-domain",
+      "relation": "part_of"
+    },
+    {
+      "source": "design",
+      "target": "chokshi-domain",
+      "relation": "part_of"
+    },
+    {
+      "source": "scheduling",
+      "target": "chokshi-domain",
+      "relation": "part_of"
+    },
+    {
+      "source": "design",
+      "target": "project-management",
+      "relation": "informs"
+    },
+    {
+      "source": "scheduling",
+      "target": "project-management",
+      "relation": "drives"
+    }
+  ],
+  "stats": {
+    "total_nodes": 4,
+    "total_edges": 5,
+    "domains": 3,
+    "business_flows": 2
+  }
+}

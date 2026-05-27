@@ -1,0 +1,133 @@
+{
+  "version": "1.0.0",
+  "project": {
+    "name": "Owen County",
+    "languages": [
+      "Markdown",
+      "YAML"
+    ],
+    "frameworks": [],
+    "description": "Owen County knowledge graph",
+    "analyzedAt": "2026-05-27T12:00:00Z",
+    "gitCommitHash": "354c2fa"
+  },
+  "nodes": [
+    {
+      "id": "owen-county",
+      "type": "project",
+      "name": "Owen County",
+      "filePath": "owen-county",
+      "summary": "Owen County \u2014 5 files",
+      "tags": [
+        "project"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "layer-markdown",
+      "type": "layer",
+      "name": "MARKDOWN Files",
+      "filePath": "layer-markdown",
+      "summary": "5 markdown files",
+      "tags": [
+        "layer"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "owen-county-AGENT_BOOT-md",
+      "type": "file",
+      "name": "AGENT_BOOT.md",
+      "filePath": "owen-county-AGENT_BOOT-md",
+      "summary": "markdown, 79 lines",
+      "tags": [
+        "file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "owen-county-DOCTRINE__ALTITUDE_MESH_OPERATING_SYSTEM-md",
+      "type": "file",
+      "name": "DOCTRINE__ALTITUDE_MESH_OPERATING_SYSTEM.md",
+      "filePath": "owen-county-DOCTRINE__ALTITUDE_MESH_OPERATING_SYSTEM-md",
+      "summary": "markdown, 326 lines",
+      "tags": [
+        "file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "owen-county-GATE_READINESS-md",
+      "type": "file",
+      "name": "GATE_READINESS.md",
+      "filePath": "owen-county-GATE_READINESS-md",
+      "summary": "markdown, 105 lines",
+      "tags": [
+        "file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "owen-county-SOURCE_MAP-md",
+      "type": "file",
+      "name": "SOURCE_MAP.md",
+      "filePath": "owen-county-SOURCE_MAP-md",
+      "summary": "markdown, 90 lines",
+      "tags": [
+        "file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "owen-county-TWIN_STATE-md",
+      "type": "file",
+      "name": "TWIN_STATE.md",
+      "filePath": "owen-county-TWIN_STATE-md",
+      "summary": "markdown, 95 lines",
+      "tags": [
+        "file"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "layer-markdown",
+      "target": "owen-county",
+      "relation": "composes",
+      "type": "related"
+    },
+    {
+      "source": "owen-county-AGENT_BOOT-md",
+      "target": "layer-markdown",
+      "relation": "belongs_to",
+      "type": "related"
+    },
+    {
+      "source": "owen-county-DOCTRINE__ALTITUDE_MESH_OPERATING_SYSTEM-md",
+      "target": "layer-markdown",
+      "relation": "belongs_to",
+      "type": "related"
+    },
+    {
+      "source": "owen-county-GATE_READINESS-md",
+      "target": "layer-markdown",
+      "relation": "belongs_to",
+      "type": "related"
+    },
+    {
+      "source": "owen-county-SOURCE_MAP-md",
+      "target": "layer-markdown",
+      "relation": "belongs_to",
+      "type": "related"
+    },
+    {
+      "source": "owen-county-TWIN_STATE-md",
+      "target": "layer-markdown",
+      "relation": "belongs_to",
+      "type": "related"
+    }
+  ],
+  "layers": [],
+  "tour": []
+}

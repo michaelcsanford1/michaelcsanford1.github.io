@@ -1,0 +1,82 @@
+{
+  "version": "1.0.0",
+  "project": {
+    "name": "Chokshi",
+    "languages": [
+      "Markdown",
+      "YAML"
+    ],
+    "frameworks": [],
+    "description": "Chokshi knowledge graph",
+    "analyzedAt": "2026-05-27T12:00:00Z",
+    "gitCommitHash": "354c2fa"
+  },
+  "nodes": [
+    {
+      "id": "chokshi",
+      "type": "project",
+      "name": "Chokshi",
+      "filePath": "chokshi",
+      "summary": "Chokshi \u2014 2 files",
+      "tags": [
+        "project"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "layer-docx",
+      "type": "layer",
+      "name": "DOCX Files",
+      "filePath": "layer-docx",
+      "summary": "2 docx files",
+      "tags": [
+        "layer"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "chokshi-CHOKSHI PMP-docx",
+      "type": "file",
+      "name": "CHOKSHI PMP.docx",
+      "filePath": "chokshi-CHOKSHI PMP-docx",
+      "summary": "docx, 14475 lines",
+      "tags": [
+        "file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "chokshi-Project Schedule: Chokshi 8-25-25-docx",
+      "type": "file",
+      "name": "Project Schedule: Chokshi 8-25-25.docx",
+      "filePath": "chokshi-Project Schedule: Chokshi 8-25-25-docx",
+      "summary": "docx, 67 lines",
+      "tags": [
+        "file"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "layer-docx",
+      "target": "chokshi",
+      "relation": "composes",
+      "type": "related"
+    },
+    {
+      "source": "chokshi-CHOKSHI PMP-docx",
+      "target": "layer-docx",
+      "relation": "belongs_to",
+      "type": "related"
+    },
+    {
+      "source": "chokshi-Project Schedule: Chokshi 8-25-25-docx",
+      "target": "layer-docx",
+      "relation": "belongs_to",
+      "type": "related"
+    }
+  ],
+  "layers": [],
+  "tour": []
+}

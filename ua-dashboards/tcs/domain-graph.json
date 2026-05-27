@@ -1,0 +1,66 @@
+{
+  "project": "TCS",
+  "type": "domain-flow",
+  "version": "2.0.0",
+  "generated_at": "2026-05-27T12:30:00Z",
+  "generated_by": "Hermes \u2014 construction business domain flow (NOT file-type buckets)",
+  "nodes": [
+    {
+      "id": "tcs-domain",
+      "type": "domain-root",
+      "label": "TCS Business Domains",
+      "description": "Construction business domain flow for TCS"
+    },
+    {
+      "id": "construction-skills",
+      "type": "domain",
+      "label": "Construction Skills",
+      "description": "Domain-specific skills for construction project management"
+    },
+    {
+      "id": "plugin-framework",
+      "type": "domain",
+      "label": "Plugin Framework",
+      "description": "TCS plugin architecture, skill loading, integration points"
+    },
+    {
+      "id": "project-control",
+      "type": "domain",
+      "label": "Project Control",
+      "description": "Gate management, evidence tracking, deliverable coordination"
+    }
+  ],
+  "edges": [
+    {
+      "source": "construction-skills",
+      "target": "tcs-domain",
+      "relation": "part_of"
+    },
+    {
+      "source": "plugin-framework",
+      "target": "tcs-domain",
+      "relation": "part_of"
+    },
+    {
+      "source": "project-control",
+      "target": "tcs-domain",
+      "relation": "part_of"
+    },
+    {
+      "source": "plugin-framework",
+      "target": "construction-skills",
+      "relation": "hosts"
+    },
+    {
+      "source": "construction-skills",
+      "target": "project-control",
+      "relation": "implements"
+    }
+  ],
+  "stats": {
+    "total_nodes": 4,
+    "total_edges": 5,
+    "domains": 3,
+    "business_flows": 2
+  }
+}

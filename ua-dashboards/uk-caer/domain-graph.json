@@ -1,0 +1,178 @@
+{
+  "project": "UK CAER",
+  "type": "domain-flow",
+  "version": "2.0.0",
+  "generated_at": "2026-05-27T12:30:00Z",
+  "generated_by": "Hermes \u2014 construction business domain flow (NOT file-type buckets)",
+  "nodes": [
+    {
+      "id": "uk-caer-domain",
+      "type": "domain-root",
+      "label": "UK CAER Business Domains",
+      "description": "Construction business domain flow for UK CAER"
+    },
+    {
+      "id": "gate-readiness",
+      "type": "domain",
+      "label": "Gate Readiness",
+      "description": "Project gate checkpoints (A1, A2, B1, B2, B3, B4, B5, B6, C1, C2, C3) with evidence requirements and approval workflows"
+    },
+    {
+      "id": "pm-command-center",
+      "type": "domain",
+      "label": "PM Command Center",
+      "description": "Daily PM operating board, executive dashboards, role rollout, asset navigation"
+    },
+    {
+      "id": "procurement",
+      "type": "domain",
+      "label": "Procurement & Contracts",
+      "description": "Prime contract execution, subcontractor packages, cost SOV commitment, BOQ/BOM mapping"
+    },
+    {
+      "id": "field-operations",
+      "type": "domain",
+      "label": "Field Operations",
+      "description": "Work instructions, preinstall meetings, high-risk trade packets, field WI/ITP packages"
+    },
+    {
+      "id": "evidence-compliance",
+      "type": "domain",
+      "label": "Evidence & Compliance",
+      "description": "Evidence closure packets, receipt validation ledgers, sage verification, submittal tracking"
+    },
+    {
+      "id": "cost-control",
+      "type": "domain",
+      "label": "Cost Control",
+      "description": "Cost SOV, commitment readiness, change orders, payment applications"
+    },
+    {
+      "id": "risk-management",
+      "type": "domain",
+      "label": "Risk Management",
+      "description": "High-risk preinstall meetings, risk registers, mitigation plans"
+    },
+    {
+      "id": "document-control",
+      "type": "domain",
+      "label": "Document Control",
+      "description": "Control document revision boards, RFI management, source registers"
+    },
+    {
+      "id": "human-resources",
+      "type": "domain",
+      "label": "Human Resources",
+      "description": "Day-1 role rollout, PM onboarding, training records, competency tracking"
+    },
+    {
+      "id": "reporting",
+      "type": "domain",
+      "label": "Reporting & Analytics",
+      "description": "Weekly PM snapshots, executive packages, deliverables completion roadmaps"
+    }
+  ],
+  "edges": [
+    {
+      "source": "gate-readiness",
+      "target": "uk-caer-domain",
+      "relation": "part_of"
+    },
+    {
+      "source": "pm-command-center",
+      "target": "uk-caer-domain",
+      "relation": "part_of"
+    },
+    {
+      "source": "procurement",
+      "target": "uk-caer-domain",
+      "relation": "part_of"
+    },
+    {
+      "source": "field-operations",
+      "target": "uk-caer-domain",
+      "relation": "part_of"
+    },
+    {
+      "source": "evidence-compliance",
+      "target": "uk-caer-domain",
+      "relation": "part_of"
+    },
+    {
+      "source": "cost-control",
+      "target": "uk-caer-domain",
+      "relation": "part_of"
+    },
+    {
+      "source": "risk-management",
+      "target": "uk-caer-domain",
+      "relation": "part_of"
+    },
+    {
+      "source": "document-control",
+      "target": "uk-caer-domain",
+      "relation": "part_of"
+    },
+    {
+      "source": "human-resources",
+      "target": "uk-caer-domain",
+      "relation": "part_of"
+    },
+    {
+      "source": "reporting",
+      "target": "uk-caer-domain",
+      "relation": "part_of"
+    },
+    {
+      "source": "gate-readiness",
+      "target": "pm-command-center",
+      "relation": "drives"
+    },
+    {
+      "source": "procurement",
+      "target": "cost-control",
+      "relation": "feeds"
+    },
+    {
+      "source": "field-operations",
+      "target": "evidence-compliance",
+      "relation": "generates"
+    },
+    {
+      "source": "evidence-compliance",
+      "target": "gate-readiness",
+      "relation": "proves"
+    },
+    {
+      "source": "cost-control",
+      "target": "reporting",
+      "relation": "informs"
+    },
+    {
+      "source": "risk-management",
+      "target": "field-operations",
+      "relation": "governs"
+    },
+    {
+      "source": "document-control",
+      "target": "procurement",
+      "relation": "supports"
+    },
+    {
+      "source": "human-resources",
+      "target": "field-operations",
+      "relation": "staffs"
+    },
+    {
+      "source": "pm-command-center",
+      "target": "reporting",
+      "relation": "orchestrates"
+    }
+  ],
+  "stats": {
+    "total_nodes": 11,
+    "total_edges": 19,
+    "domains": 10,
+    "business_flows": 9
+  }
+}

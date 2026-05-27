@@ -1,0 +1,66 @@
+{
+  "project": "Owen County",
+  "type": "domain-flow",
+  "version": "2.0.0",
+  "generated_at": "2026-05-27T12:30:00Z",
+  "generated_by": "Hermes \u2014 construction business domain flow (NOT file-type buckets)",
+  "nodes": [
+    {
+      "id": "owen-county-domain",
+      "type": "domain-root",
+      "label": "Owen County Business Domains",
+      "description": "Construction business domain flow for Owen County"
+    },
+    {
+      "id": "project-activation",
+      "type": "domain",
+      "label": "Project Activation",
+      "description": "Gate readiness criteria, project boot sequence, twin state initialization"
+    },
+    {
+      "id": "agent-operations",
+      "type": "domain",
+      "label": "Agent Operations",
+      "description": "Agent boot protocols, source mapping, operating procedures"
+    },
+    {
+      "id": "compliance",
+      "type": "domain",
+      "label": "Compliance & Standards",
+      "description": "Altitude Mesh OS compliance, doctrine adherence, verification"
+    }
+  ],
+  "edges": [
+    {
+      "source": "project-activation",
+      "target": "owen-county-domain",
+      "relation": "part_of"
+    },
+    {
+      "source": "agent-operations",
+      "target": "owen-county-domain",
+      "relation": "part_of"
+    },
+    {
+      "source": "compliance",
+      "target": "owen-county-domain",
+      "relation": "part_of"
+    },
+    {
+      "source": "project-activation",
+      "target": "agent-operations",
+      "relation": "enables"
+    },
+    {
+      "source": "agent-operations",
+      "target": "compliance",
+      "relation": "validates"
+    }
+  ],
+  "stats": {
+    "total_nodes": 4,
+    "total_edges": 5,
+    "domains": 3,
+    "business_flows": 2
+  }
+}

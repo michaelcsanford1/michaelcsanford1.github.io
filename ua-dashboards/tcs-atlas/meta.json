@@ -1,0 +1,9 @@
+{
+  "project": "tcs-atlas",
+  "generated_at": "2026-05-27T12:30:00Z",
+  "demo_mode": true,
+  "files": {
+    "knowledge_graph": "knowledge-graph.json",
+    "domain_graph": "domain-graph.json"
+  }
+}

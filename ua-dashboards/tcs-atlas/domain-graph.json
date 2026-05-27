@@ -1,0 +1,151 @@
+{
+  "project": "TCS Atlas",
+  "type": "domain-flow",
+  "version": "2.0.0",
+  "generated_at": "2026-05-27T12:30:00Z",
+  "generated_by": "Hermes \u2014 construction business domain flow (NOT file-type buckets)",
+  "nodes": [
+    {
+      "id": "tcs-atlas-domain",
+      "type": "domain-root",
+      "label": "TCS Atlas Business Domains",
+      "description": "Construction business domain flow for TCS Atlas"
+    },
+    {
+      "id": "sop",
+      "type": "domain",
+      "label": "SOP - Standard Operating Procedure",
+      "description": "Top-level procedure defining how work is performed. Authoritative control document."
+    },
+    {
+      "id": "swk",
+      "type": "domain",
+      "label": "SWK - Safe Work Method Statement",
+      "description": "Risk assessment and safe work method derived from SOP."
+    },
+    {
+      "id": "wi",
+      "type": "domain",
+      "label": "WI - Work Instruction",
+      "description": "Step-by-step instruction for executing a specific task."
+    },
+    {
+      "id": "checklist",
+      "type": "domain",
+      "label": "Checklist",
+      "description": "Verification points ensuring WI compliance before proceeding."
+    },
+    {
+      "id": "action-plan",
+      "type": "domain",
+      "label": "Action Plan",
+      "description": "Planned actions with owners, dates, and deliverables."
+    },
+    {
+      "id": "lms",
+      "type": "domain",
+      "label": "LMS - Learning Management System",
+      "description": "Training delivery, competency tracking, and certification records."
+    },
+    {
+      "id": "token-registry",
+      "type": "domain",
+      "label": "Atlas Token Registry",
+      "description": "26,748 tokens, 53,317 aliases, unified resolver substrate."
+    },
+    {
+      "id": "verification",
+      "type": "domain",
+      "label": "Verification & Audit",
+      "description": "Continuous token validation, cross-corpus audit, watchdog monitoring."
+    }
+  ],
+  "edges": [
+    {
+      "source": "sop",
+      "target": "tcs-atlas-domain",
+      "relation": "part_of"
+    },
+    {
+      "source": "swk",
+      "target": "tcs-atlas-domain",
+      "relation": "part_of"
+    },
+    {
+      "source": "wi",
+      "target": "tcs-atlas-domain",
+      "relation": "part_of"
+    },
+    {
+      "source": "checklist",
+      "target": "tcs-atlas-domain",
+      "relation": "part_of"
+    },
+    {
+      "source": "action-plan",
+      "target": "tcs-atlas-domain",
+      "relation": "part_of"
+    },
+    {
+      "source": "lms",
+      "target": "tcs-atlas-domain",
+      "relation": "part_of"
+    },
+    {
+      "source": "token-registry",
+      "target": "tcs-atlas-domain",
+      "relation": "part_of"
+    },
+    {
+      "source": "verification",
+      "target": "tcs-atlas-domain",
+      "relation": "part_of"
+    },
+    {
+      "source": "sop",
+      "target": "swk",
+      "relation": "derives"
+    },
+    {
+      "source": "swk",
+      "target": "wi",
+      "relation": "implements"
+    },
+    {
+      "source": "wi",
+      "target": "checklist",
+      "relation": "verifies"
+    },
+    {
+      "source": "checklist",
+      "target": "action-plan",
+      "relation": "executes"
+    },
+    {
+      "source": "action-plan",
+      "target": "lms",
+      "relation": "trains_for"
+    },
+    {
+      "source": "lms",
+      "target": "sop",
+      "relation": "certifies"
+    },
+    {
+      "source": "token-registry",
+      "target": "sop",
+      "relation": "governs"
+    },
+    {
+      "source": "verification",
+      "target": "token-registry",
+      "relation": "validates"
+    }
+  ],
+  "stats": {
+    "total_nodes": 9,
+    "total_edges": 16,
+    "domains": 8,
+    "business_flows": 8
+  }
+}

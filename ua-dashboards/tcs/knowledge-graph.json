@@ -1,0 +1,646 @@
+{
+  "version": "1.0.0",
+  "project": {
+    "name": "TCS",
+    "languages": [
+      "TypeScript",
+      "YAML",
+      "Markdown"
+    ],
+    "frameworks": [
+      "Node.js"
+    ],
+    "description": "TCS knowledge graph",
+    "analyzedAt": "2026-05-27T12:00:00Z",
+    "gitCommitHash": "354c2fa"
+  },
+  "nodes": [
+    {
+      "id": "tcs",
+      "type": "project",
+      "name": "TCS",
+      "filePath": "tcs",
+      "summary": "TCS \u2014 34 files",
+      "tags": [
+        "project"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "layer-json",
+      "type": "layer",
+      "name": "JSON Files",
+      "filePath": "layer-json",
+      "summary": "1 json files",
+      "tags": [
+        "layer"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "layer-markdown",
+      "type": "layer",
+      "name": "MARKDOWN Files",
+      "filePath": "layer-markdown",
+      "summary": "33 markdown files",
+      "tags": [
+        "layer"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "tcs-plugin-json",
+      "type": "file",
+      "name": "plugin.json",
+      "filePath": "tcs-plugin-json",
+      "summary": "json, 7 lines",
+      "tags": [
+        "file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "tcs-README-md",
+      "type": "file",
+      "name": "README.md",
+      "filePath": "tcs-README-md",
+      "summary": "markdown, 48 lines",
+      "tags": [
+        "file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "tcs-SKILL-md",
+      "type": "file",
+      "name": "SKILL.md",
+      "filePath": "tcs-SKILL-md",
+      "summary": "markdown, 37 lines",
+      "tags": [
+        "file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "tcs-SKILL-md",
+      "type": "file",
+      "name": "SKILL.md",
+      "filePath": "tcs-SKILL-md",
+      "summary": "markdown, 37 lines",
+      "tags": [
+        "file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "tcs-SKILL-md",
+      "type": "file",
+      "name": "SKILL.md",
+      "filePath": "tcs-SKILL-md",
+      "summary": "markdown, 37 lines",
+      "tags": [
+        "file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "tcs-SKILL-md",
+      "type": "file",
+      "name": "SKILL.md",
+      "filePath": "tcs-SKILL-md",
+      "summary": "markdown, 37 lines",
+      "tags": [
+        "file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "tcs-SKILL-md",
+      "type": "file",
+      "name": "SKILL.md",
+      "filePath": "tcs-SKILL-md",
+      "summary": "markdown, 37 lines",
+      "tags": [
+        "file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "tcs-SKILL-md",
+      "type": "file",
+      "name": "SKILL.md",
+      "filePath": "tcs-SKILL-md",
+      "summary": "markdown, 37 lines",
+      "tags": [
+        "file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "tcs-SKILL-md",
+      "type": "file",
+      "name": "SKILL.md",
+      "filePath": "tcs-SKILL-md",
+      "summary": "markdown, 37 lines",
+      "tags": [
+        "file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "tcs-SKILL-md",
+      "type": "file",
+      "name": "SKILL.md",
+      "filePath": "tcs-SKILL-md",
+      "summary": "markdown, 37 lines",
+      "tags": [
+        "file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "tcs-SKILL-md",
+      "type": "file",
+      "name": "SKILL.md",
+      "filePath": "tcs-SKILL-md",
+      "summary": "markdown, 37 lines",
+      "tags": [
+        "file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "tcs-SKILL-md",
+      "type": "file",
+      "name": "SKILL.md",
+      "filePath": "tcs-SKILL-md",
+      "summary": "markdown, 37 lines",
+      "tags": [
+        "file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "tcs-SKILL-md",
+      "type": "file",
+      "name": "SKILL.md",
+      "filePath": "tcs-SKILL-md",
+      "summary": "markdown, 37 lines",
+      "tags": [
+        "file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "tcs-SKILL-md",
+      "type": "file",
+      "name": "SKILL.md",
+      "filePath": "tcs-SKILL-md",
+      "summary": "markdown, 37 lines",
+      "tags": [
+        "file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "tcs-SKILL-md",
+      "type": "file",
+      "name": "SKILL.md",
+      "filePath": "tcs-SKILL-md",
+      "summary": "markdown, 37 lines",
+      "tags": [
+        "file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "tcs-SKILL-md",
+      "type": "file",
+      "name": "SKILL.md",
+      "filePath": "tcs-SKILL-md",
+      "summary": "markdown, 37 lines",
+      "tags": [
+        "file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "tcs-SKILL-md",
+      "type": "file",
+      "name": "SKILL.md",
+      "filePath": "tcs-SKILL-md",
+      "summary": "markdown, 37 lines",
+      "tags": [
+        "file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "tcs-SKILL-md",
+      "type": "file",
+      "name": "SKILL.md",
+      "filePath": "tcs-SKILL-md",
+      "summary": "markdown, 37 lines",
+      "tags": [
+        "file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "tcs-SKILL-md",
+      "type": "file",
+      "name": "SKILL.md",
+      "filePath": "tcs-SKILL-md",
+      "summary": "markdown, 37 lines",
+      "tags": [
+        "file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "tcs-SKILL-md",
+      "type": "file",
+      "name": "SKILL.md",
+      "filePath": "tcs-SKILL-md",
+      "summary": "markdown, 37 lines",
+      "tags": [
+        "file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "tcs-SKILL-md",
+      "type": "file",
+      "name": "SKILL.md",
+      "filePath": "tcs-SKILL-md",
+      "summary": "markdown, 37 lines",
+      "tags": [
+        "file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "tcs-SKILL-md",
+      "type": "file",
+      "name": "SKILL.md",
+      "filePath": "tcs-SKILL-md",
+      "summary": "markdown, 37 lines",
+      "tags": [
+        "file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "tcs-SKILL-md",
+      "type": "file",
+      "name": "SKILL.md",
+      "filePath": "tcs-SKILL-md",
+      "summary": "markdown, 37 lines",
+      "tags": [
+        "file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "tcs-SKILL-md",
+      "type": "file",
+      "name": "SKILL.md",
+      "filePath": "tcs-SKILL-md",
+      "summary": "markdown, 37 lines",
+      "tags": [
+        "file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "tcs-SKILL-md",
+      "type": "file",
+      "name": "SKILL.md",
+      "filePath": "tcs-SKILL-md",
+      "summary": "markdown, 37 lines",
+      "tags": [
+        "file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "tcs-SKILL-md",
+      "type": "file",
+      "name": "SKILL.md",
+      "filePath": "tcs-SKILL-md",
+      "summary": "markdown, 37 lines",
+      "tags": [
+        "file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "tcs-SKILL-md",
+      "type": "file",
+      "name": "SKILL.md",
+      "filePath": "tcs-SKILL-md",
+      "summary": "markdown, 37 lines",
+      "tags": [
+        "file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "tcs-SKILL-md",
+      "type": "file",
+      "name": "SKILL.md",
+      "filePath": "tcs-SKILL-md",
+      "summary": "markdown, 37 lines",
+      "tags": [
+        "file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "tcs-SKILL-md",
+      "type": "file",
+      "name": "SKILL.md",
+      "filePath": "tcs-SKILL-md",
+      "summary": "markdown, 37 lines",
+      "tags": [
+        "file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "tcs-SKILL-md",
+      "type": "file",
+      "name": "SKILL.md",
+      "filePath": "tcs-SKILL-md",
+      "summary": "markdown, 37 lines",
+      "tags": [
+        "file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "tcs-SKILL-md",
+      "type": "file",
+      "name": "SKILL.md",
+      "filePath": "tcs-SKILL-md",
+      "summary": "markdown, 37 lines",
+      "tags": [
+        "file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "tcs-SKILL-md",
+      "type": "file",
+      "name": "SKILL.md",
+      "filePath": "tcs-SKILL-md",
+      "summary": "markdown, 37 lines",
+      "tags": [
+        "file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "tcs-SKILL-md",
+      "type": "file",
+      "name": "SKILL.md",
+      "filePath": "tcs-SKILL-md",
+      "summary": "markdown, 37 lines",
+      "tags": [
+        "file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "tcs-SKILL-md",
+      "type": "file",
+      "name": "SKILL.md",
+      "filePath": "tcs-SKILL-md",
+      "summary": "markdown, 37 lines",
+      "tags": [
+        "file"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "layer-json",
+      "target": "tcs",
+      "relation": "composes",
+      "type": "related"
+    },
+    {
+      "source": "layer-markdown",
+      "target": "tcs",
+      "relation": "composes",
+      "type": "related"
+    },
+    {
+      "source": "tcs-plugin-json",
+      "target": "layer-json",
+      "relation": "belongs_to",
+      "type": "related"
+    },
+    {
+      "source": "tcs-README-md",
+      "target": "layer-markdown",
+      "relation": "belongs_to",
+      "type": "related"
+    },
+    {
+      "source": "tcs-SKILL-md",
+      "target": "layer-markdown",
+      "relation": "belongs_to",
+      "type": "related"
+    },
+    {
+      "source": "tcs-SKILL-md",
+      "target": "layer-markdown",
+      "relation": "belongs_to",
+      "type": "related"
+    },
+    {
+      "source": "tcs-SKILL-md",
+      "target": "layer-markdown",
+      "relation": "belongs_to",
+      "type": "related"
+    },
+    {
+      "source": "tcs-SKILL-md",
+      "target": "layer-markdown",
+      "relation": "belongs_to",
+      "type": "related"
+    },
+    {
+      "source": "tcs-SKILL-md",
+      "target": "layer-markdown",
+      "relation": "belongs_to",
+      "type": "related"
+    },
+    {
+      "source": "tcs-SKILL-md",
+      "target": "layer-markdown",
+      "relation": "belongs_to",
+      "type": "related"
+    },
+    {
+      "source": "tcs-SKILL-md",
+      "target": "layer-markdown",
+      "relation": "belongs_to",
+      "type": "related"
+    },
+    {
+      "source": "tcs-SKILL-md",
+      "target": "layer-markdown",
+      "relation": "belongs_to",
+      "type": "related"
+    },
+    {
+      "source": "tcs-SKILL-md",
+      "target": "layer-markdown",
+      "relation": "belongs_to",
+      "type": "related"
+    },
+    {
+      "source": "tcs-SKILL-md",
+      "target": "layer-markdown",
+      "relation": "belongs_to",
+      "type": "related"
+    },
+    {
+      "source": "tcs-SKILL-md",
+      "target": "layer-markdown",
+      "relation": "belongs_to",
+      "type": "related"
+    },
+    {
+      "source": "tcs-SKILL-md",
+      "target": "layer-markdown",
+      "relation": "belongs_to",
+      "type": "related"
+    },
+    {
+      "source": "tcs-SKILL-md",
+      "target": "layer-markdown",
+      "relation": "belongs_to",
+      "type": "related"
+    },
+    {
+      "source": "tcs-SKILL-md",
+      "target": "layer-markdown",
+      "relation": "belongs_to",
+      "type": "related"
+    },
+    {
+      "source": "tcs-SKILL-md",
+      "target": "layer-markdown",
+      "relation": "belongs_to",
+      "type": "related"
+    },
+    {
+      "source": "tcs-SKILL-md",
+      "target": "layer-markdown",
+      "relation": "belongs_to",
+      "type": "related"
+    },
+    {
+      "source": "tcs-SKILL-md",
+      "target": "layer-markdown",
+      "relation": "belongs_to",
+      "type": "related"
+    },
+    {
+      "source": "tcs-SKILL-md",
+      "target": "layer-markdown",
+      "relation": "belongs_to",
+      "type": "related"
+    },
+    {
+      "source": "tcs-SKILL-md",
+      "target": "layer-markdown",
+      "relation": "belongs_to",
+      "type": "related"
+    },
+    {
+      "source": "tcs-SKILL-md",
+      "target": "layer-markdown",
+      "relation": "belongs_to",
+      "type": "related"
+    },
+    {
+      "source": "tcs-SKILL-md",
+      "target": "layer-markdown",
+      "relation": "belongs_to",
+      "type": "related"
+    },
+    {
+      "source": "tcs-SKILL-md",
+      "target": "layer-markdown",
+      "relation": "belongs_to",
+      "type": "related"
+    },
+    {
+      "source": "tcs-SKILL-md",
+      "target": "layer-markdown",
+      "relation": "belongs_to",
+      "type": "related"
+    },
+    {
+      "source": "tcs-SKILL-md",
+      "target": "layer-markdown",
+      "relation": "belongs_to",
+      "type": "related"
+    },
+    {
+      "source": "tcs-SKILL-md",
+      "target": "layer-markdown",
+      "relation": "belongs_to",
+      "type": "related"
+    },
+    {
+      "source": "tcs-SKILL-md",
+      "target": "layer-markdown",
+      "relation": "belongs_to",
+      "type": "related"
+    },
+    {
+      "source": "tcs-SKILL-md",
+      "target": "layer-markdown",
+      "relation": "belongs_to",
+      "type": "related"
+    },
+    {
+      "source": "tcs-SKILL-md",
+      "target": "layer-markdown",
+      "relation": "belongs_to",
+      "type": "related"
+    },
+    {
+      "source": "tcs-SKILL-md",
+      "target": "layer-markdown",
+      "relation": "belongs_to",
+      "type": "related"
+    },
+    {
+      "source": "tcs-SKILL-md",
+      "target": "layer-markdown",
+      "relation": "belongs_to",
+      "type": "related"
+    },
+    {
+      "source": "tcs-SKILL-md",
+      "target": "layer-markdown",
+      "relation": "belongs_to",
+      "type": "related"
+    },
+    {
+      "source": "tcs-SKILL-md",
+      "target": "layer-markdown",
+      "relation": "belongs_to",
+      "type": "related"
+    }
+  ],
+  "layers": [],
+  "tour": []
+}

@@ -1,0 +1,287 @@
+{
+  "version": "1.0.0",
+  "project": {
+    "name": "TCS Atlas",
+    "languages": [
+      "JSON",
+      "Markdown",
+      "YAML"
+    ],
+    "frameworks": [],
+    "description": "TCS Atlas knowledge graph",
+    "analyzedAt": "2026-05-27T12:00:00Z",
+    "gitCommitHash": "354c2fa"
+  },
+  "nodes": [
+    {
+      "id": "tcs-atlas",
+      "type": "project",
+      "name": "TCS Atlas",
+      "filePath": "tcs-atlas",
+      "summary": "TCS Atlas \u2014 13 files",
+      "tags": [
+        "project"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "layer-json",
+      "type": "layer",
+      "name": "JSON Files",
+      "filePath": "layer-json",
+      "summary": "10 json files",
+      "tags": [
+        "layer"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "layer-markdown",
+      "type": "layer",
+      "name": "MARKDOWN Files",
+      "filePath": "layer-markdown",
+      "summary": "3 markdown files",
+      "tags": [
+        "layer"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "tcs-atlas-atlas_token_registry-json",
+      "type": "file",
+      "name": "atlas_token_registry.json",
+      "filePath": "tcs-atlas-atlas_token_registry-json",
+      "summary": "json, 675371 lines",
+      "tags": [
+        "file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "tcs-atlas-ATLAS_TOKEN_REGISTRY-md",
+      "type": "file",
+      "name": "ATLAS_TOKEN_REGISTRY.md",
+      "filePath": "tcs-atlas-ATLAS_TOKEN_REGISTRY-md",
+      "summary": "markdown, 46 lines",
+      "tags": [
+        "file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "tcs-atlas-atlas_token_resolver_smoke_2026-05-11-json",
+      "type": "file",
+      "name": "atlas_token_resolver_smoke_2026-05-11.json",
+      "filePath": "tcs-atlas-atlas_token_resolver_smoke_2026-05-11-json",
+      "summary": "json, 48 lines",
+      "tags": [
+        "file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "tcs-atlas-atlas_token_verification_2026-05-11-json",
+      "type": "file",
+      "name": "atlas_token_verification_2026-05-11.json",
+      "filePath": "tcs-atlas-atlas_token_verification_2026-05-11-json",
+      "summary": "json, 12 lines",
+      "tags": [
+        "file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "tcs-atlas-atlas_token_verification_watchdog_2026-05-11T0844Z-json",
+      "type": "file",
+      "name": "atlas_token_verification_watchdog_2026-05-11T0844Z.json",
+      "filePath": "tcs-atlas-atlas_token_verification_watchdog_2026-05-11T0844Z-json",
+      "summary": "json, 12 lines",
+      "tags": [
+        "file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "tcs-atlas-atlas_token_verification_watchdog_2026-05-11T0949Z-json",
+      "type": "file",
+      "name": "atlas_token_verification_watchdog_2026-05-11T0949Z.json",
+      "filePath": "tcs-atlas-atlas_token_verification_watchdog_2026-05-11T0949Z-json",
+      "summary": "json, 12 lines",
+      "tags": [
+        "file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "tcs-atlas-atlas_token_verification_watchdog_20260511T124822Z-json",
+      "type": "file",
+      "name": "atlas_token_verification_watchdog_20260511T124822Z.json",
+      "filePath": "tcs-atlas-atlas_token_verification_watchdog_20260511T124822Z-json",
+      "summary": "json, 12 lines",
+      "tags": [
+        "file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "tcs-atlas-atlas_token_verification_watchdog_20260511T132135Z-json",
+      "type": "file",
+      "name": "atlas_token_verification_watchdog_20260511T132135Z.json",
+      "filePath": "tcs-atlas-atlas_token_verification_watchdog_20260511T132135Z-json",
+      "summary": "json, 12 lines",
+      "tags": [
+        "file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "tcs-atlas-atlas_token_verification_watchdog_20260511T142248Z-json",
+      "type": "file",
+      "name": "atlas_token_verification_watchdog_20260511T142248Z.json",
+      "filePath": "tcs-atlas-atlas_token_verification_watchdog_20260511T142248Z-json",
+      "summary": "json, 12 lines",
+      "tags": [
+        "file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "tcs-atlas-atlas_token_verification_watchdog_20260511T190206Z-json",
+      "type": "file",
+      "name": "atlas_token_verification_watchdog_20260511T190206Z.json",
+      "filePath": "tcs-atlas-atlas_token_verification_watchdog_20260511T190206Z-json",
+      "summary": "json, 12 lines",
+      "tags": [
+        "file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "tcs-atlas-atlas_token_xref-json",
+      "type": "file",
+      "name": "atlas_token_xref.json",
+      "filePath": "tcs-atlas-atlas_token_xref-json",
+      "summary": "json, 257903 lines",
+      "tags": [
+        "file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "tcs-atlas-BD5_CROSS_CORPUS_AUDIT_20260511T195752Z-md",
+      "type": "file",
+      "name": "BD5_CROSS_CORPUS_AUDIT_20260511T195752Z.md",
+      "filePath": "tcs-atlas-BD5_CROSS_CORPUS_AUDIT_20260511T195752Z-md",
+      "summary": "markdown, 55 lines",
+      "tags": [
+        "file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "tcs-atlas-BD5_CROSS_CORPUS_AUDIT_20260511T195932Z-md",
+      "type": "file",
+      "name": "BD5_CROSS_CORPUS_AUDIT_20260511T195932Z.md",
+      "filePath": "tcs-atlas-BD5_CROSS_CORPUS_AUDIT_20260511T195932Z-md",
+      "summary": "markdown, 55 lines",
+      "tags": [
+        "file"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "layer-json",
+      "target": "tcs-atlas",
+      "relation": "composes",
+      "type": "related"
+    },
+    {
+      "source": "layer-markdown",
+      "target": "tcs-atlas",
+      "relation": "composes",
+      "type": "related"
+    },
+    {
+      "source": "tcs-atlas-atlas_token_registry-json",
+      "target": "layer-json",
+      "relation": "belongs_to",
+      "type": "related"
+    },
+    {
+      "source": "tcs-atlas-ATLAS_TOKEN_REGISTRY-md",
+      "target": "layer-markdown",
+      "relation": "belongs_to",
+      "type": "related"
+    },
+    {
+      "source": "tcs-atlas-atlas_token_resolver_smoke_2026-05-11-json",
+      "target": "layer-json",
+      "relation": "belongs_to",
+      "type": "related"
+    },
+    {
+      "source": "tcs-atlas-atlas_token_verification_2026-05-11-json",
+      "target": "layer-json",
+      "relation": "belongs_to",
+      "type": "related"
+    },
+    {
+      "source": "tcs-atlas-atlas_token_verification_watchdog_2026-05-11T0844Z-json",
+      "target": "layer-json",
+      "relation": "belongs_to",
+      "type": "related"
+    },
+    {
+      "source": "tcs-atlas-atlas_token_verification_watchdog_2026-05-11T0949Z-json",
+      "target": "layer-json",
+      "relation": "belongs_to",
+      "type": "related"
+    },
+    {
+      "source": "tcs-atlas-atlas_token_verification_watchdog_20260511T124822Z-json",
+      "target": "layer-json",
+      "relation": "belongs_to",
+      "type": "related"
+    },
+    {
+      "source": "tcs-atlas-atlas_token_verification_watchdog_20260511T132135Z-json",
+      "target": "layer-json",
+      "relation": "belongs_to",
+      "type": "related"
+    },
+    {
+      "source": "tcs-atlas-atlas_token_verification_watchdog_20260511T142248Z-json",
+      "target": "layer-json",
+      "relation": "belongs_to",
+      "type": "related"
+    },
+    {
+      "source": "tcs-atlas-atlas_token_verification_watchdog_20260511T190206Z-json",
+      "target": "layer-json",
+      "relation": "belongs_to",
+      "type": "related"
+    },
+    {
+      "source": "tcs-atlas-atlas_token_xref-json",
+      "target": "layer-json",
+      "relation": "belongs_to",
+      "type": "related"
+    },
+    {
+      "source": "tcs-atlas-BD5_CROSS_CORPUS_AUDIT_20260511T195752Z-md",
+      "target": "layer-markdown",
+      "relation": "belongs_to",
+      "type": "related"
+    },
+    {
+      "source": "tcs-atlas-BD5_CROSS_CORPUS_AUDIT_20260511T195932Z-md",
+      "target": "layer-markdown",
+      "relation": "belongs_to",
+      "type": "related"
+    }
+  ],
+  "layers": [],
+  "tour": []
+}

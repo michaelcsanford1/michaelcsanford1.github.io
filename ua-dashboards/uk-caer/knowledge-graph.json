@@ -1,0 +1,1072 @@
+{
+  "version": "1.0.0",
+  "project": {
+    "name": "UK CAER (Active)",
+    "languages": [
+      "Python",
+      "Markdown",
+      "YAML"
+    ],
+    "frameworks": [
+      "FastAPI",
+      "Pydantic"
+    ],
+    "description": "UK CAER (Active) knowledge graph",
+    "analyzedAt": "2026-05-27T12:00:00Z",
+    "gitCommitHash": "354c2fa"
+  },
+  "nodes": [
+    {
+      "id": "uk-caer-active",
+      "type": "project",
+      "name": "UK CAER (Active)",
+      "filePath": "uk-caer-active",
+      "summary": "UK CAER (Active) \u2014 371 files",
+      "tags": [
+        "project"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "layer-python",
+      "type": "layer",
+      "name": "PYTHON Files",
+      "filePath": "layer-python",
+      "summary": "51 python files",
+      "tags": [
+        "layer"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "layer-javascript",
+      "type": "layer",
+      "name": "JAVASCRIPT Files",
+      "filePath": "layer-javascript",
+      "summary": "1 javascript files",
+      "tags": [
+        "layer"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "layer-markdown",
+      "type": "layer",
+      "name": "MARKDOWN Files",
+      "filePath": "layer-markdown",
+      "summary": "225 markdown files",
+      "tags": [
+        "layer"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "layer-html",
+      "type": "layer",
+      "name": "HTML Files",
+      "filePath": "layer-html",
+      "summary": "22 html files",
+      "tags": [
+        "layer"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "layer-pptx",
+      "type": "layer",
+      "name": "PPTX Files",
+      "filePath": "layer-pptx",
+      "summary": "6 pptx files",
+      "tags": [
+        "layer"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "layer-txt",
+      "type": "layer",
+      "name": "TXT Files",
+      "filePath": "layer-txt",
+      "summary": "21 txt files",
+      "tags": [
+        "layer"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "layer-excalidraw",
+      "type": "layer",
+      "name": "EXCALIDRAW Files",
+      "filePath": "layer-excalidraw",
+      "summary": "1 excalidraw files",
+      "tags": [
+        "layer"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "layer-json",
+      "type": "layer",
+      "name": "JSON Files",
+      "filePath": "layer-json",
+      "summary": "4 json files",
+      "tags": [
+        "layer"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "layer-yaml",
+      "type": "layer",
+      "name": "YAML Files",
+      "filePath": "layer-yaml",
+      "summary": "3 yaml files",
+      "tags": [
+        "layer"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "layer-xlsx",
+      "type": "layer",
+      "name": "XLSX Files",
+      "filePath": "layer-xlsx",
+      "summary": "36 xlsx files",
+      "tags": [
+        "layer"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "layer-m4a",
+      "type": "layer",
+      "name": "M4A Files",
+      "filePath": "layer-m4a",
+      "summary": "1 m4a files",
+      "tags": [
+        "layer"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "uk-caer-active-build_uk_caer_9_gate_readiness_board-py",
+      "type": "file",
+      "name": "build_uk_caer_9_gate_readiness_board.py",
+      "filePath": "uk-caer-active-build_uk_caer_9_gate_readiness_board-py",
+      "summary": "python, 447 lines",
+      "tags": [
+        "file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "uk-caer-active-build_uk_caer_a1_a2_evidence_closure_packet-py",
+      "type": "file",
+      "name": "build_uk_caer_a1_a2_evidence_closure_packet.py",
+      "filePath": "uk-caer-active-build_uk_caer_a1_a2_evidence_closure_packet-py",
+      "summary": "python, 489 lines",
+      "tags": [
+        "file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "uk-caer-active-build_uk_caer_a1_a2_receipt_validation_ledger-py",
+      "type": "file",
+      "name": "build_uk_caer_a1_a2_receipt_validation_ledger.py",
+      "filePath": "uk-caer-active-build_uk_caer_a1_a2_receipt_validation_ledger-py",
+      "summary": "python, 448 lines",
+      "tags": [
+        "file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "uk-caer-active-build_uk_caer_a1_a2_sage_verification_package-py",
+      "type": "file",
+      "name": "build_uk_caer_a1_a2_sage_verification_package.py",
+      "filePath": "uk-caer-active-build_uk_caer_a1_a2_sage_verification_package-py",
+      "summary": "python, 385 lines",
+      "tags": [
+        "file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "uk-caer-active-build_uk_caer_action_plan_package-py",
+      "type": "file",
+      "name": "build_uk_caer_action_plan_package.py",
+      "filePath": "uk-caer-active-build_uk_caer_action_plan_package-py",
+      "summary": "python, 548 lines",
+      "tags": [
+        "file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "uk-caer-active-build_uk_caer_b1_b2_procurement_activation_board-py",
+      "type": "file",
+      "name": "build_uk_caer_b1_b2_procurement_activation_board.py",
+      "filePath": "uk-caer-active-build_uk_caer_b1_b2_procurement_activation_board-py",
+      "summary": "python, 509 lines",
+      "tags": [
+        "file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "uk-caer-active-build_uk_caer_boq_bom_cost_mapping-py",
+      "type": "file",
+      "name": "build_uk_caer_boq_bom_cost_mapping.py",
+      "filePath": "uk-caer-active-build_uk_caer_boq_bom_cost_mapping-py",
+      "summary": "python, 740 lines",
+      "tags": [
+        "file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "uk-caer-active-build_uk_caer_control_doc_revision_board-py",
+      "type": "file",
+      "name": "build_uk_caer_control_doc_revision_board.py",
+      "filePath": "uk-caer-active-build_uk_caer_control_doc_revision_board-py",
+      "summary": "python, 542 lines",
+      "tags": [
+        "file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "uk-caer-active-build_uk_caer_cost_sov_commitment_readiness_board-py",
+      "type": "file",
+      "name": "build_uk_caer_cost_sov_commitment_readiness_board.py",
+      "filePath": "uk-caer-active-build_uk_caer_cost_sov_commitment_readiness_board-py",
+      "summary": "python, 476 lines",
+      "tags": [
+        "file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "uk-caer-active-build_uk_caer_daily_pm_operating_board-py",
+      "type": "file",
+      "name": "build_uk_caer_daily_pm_operating_board.py",
+      "filePath": "uk-caer-active-build_uk_caer_daily_pm_operating_board-py",
+      "summary": "python, 573 lines",
+      "tags": [
+        "file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "uk-caer-active-build_uk_caer_day1_role_rollout_package-py",
+      "type": "file",
+      "name": "build_uk_caer_day1_role_rollout_package.py",
+      "filePath": "uk-caer-active-build_uk_caer_day1_role_rollout_package-py",
+      "summary": "python, 478 lines",
+      "tags": [
+        "file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "uk-caer-active-build_uk_caer_deliverables_completion_roadmap-py",
+      "type": "file",
+      "name": "build_uk_caer_deliverables_completion_roadmap.py",
+      "filePath": "uk-caer-active-build_uk_caer_deliverables_completion_roadmap-py",
+      "summary": "python, 467 lines",
+      "tags": [
+        "file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "uk-caer-active-build_uk_caer_draft_skill_forward_test_packet-py",
+      "type": "file",
+      "name": "build_uk_caer_draft_skill_forward_test_packet.py",
+      "filePath": "uk-caer-active-build_uk_caer_draft_skill_forward_test_packet-py",
+      "summary": "python, 455 lines",
+      "tags": [
+        "file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "uk-caer-active-build_uk_caer_executive_package_overview-py",
+      "type": "file",
+      "name": "build_uk_caer_executive_package_overview.py",
+      "filePath": "uk-caer-active-build_uk_caer_executive_package_overview-py",
+      "summary": "python, 449 lines",
+      "tags": [
+        "file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "uk-caer-active-build_uk_caer_field_wi_itp_package-py",
+      "type": "file",
+      "name": "build_uk_caer_field_wi_itp_package.py",
+      "filePath": "uk-caer-active-build_uk_caer_field_wi_itp_package-py",
+      "summary": "python, 303 lines",
+      "tags": [
+        "file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "uk-caer-active-build_uk_caer_first_pm_product_review_packet-py",
+      "type": "file",
+      "name": "build_uk_caer_first_pm_product_review_packet.py",
+      "filePath": "uk-caer-active-build_uk_caer_first_pm_product_review_packet-py",
+      "summary": "python, 558 lines",
+      "tags": [
+        "file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "uk-caer-active-build_uk_caer_high_risk_preinstall_meeting_packets-py",
+      "type": "file",
+      "name": "build_uk_caer_high_risk_preinstall_meeting_packets.py",
+      "filePath": "uk-caer-active-build_uk_caer_high_risk_preinstall_meeting_packets-py",
+      "summary": "python, 714 lines",
+      "tags": [
+        "file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "uk-caer-active-build_uk_caer_high_risk_trade_packets-py",
+      "type": "file",
+      "name": "build_uk_caer_high_risk_trade_packets.py",
+      "filePath": "uk-caer-active-build_uk_caer_high_risk_trade_packets-py",
+      "summary": "python, 680 lines",
+      "tags": [
+        "file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "uk-caer-active-build_uk_caer_human_pm_onboarding_board-py",
+      "type": "file",
+      "name": "build_uk_caer_human_pm_onboarding_board.py",
+      "filePath": "uk-caer-active-build_uk_caer_human_pm_onboarding_board-py",
+      "summary": "python, 726 lines",
+      "tags": [
+        "file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "uk-caer-active-build_uk_caer_live_action_approval_ledger-py",
+      "type": "file",
+      "name": "build_uk_caer_live_action_approval_ledger.py",
+      "filePath": "uk-caer-active-build_uk_caer_live_action_approval_ledger-py",
+      "summary": "python, 305 lines",
+      "tags": [
+        "file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "uk-caer-active-build_uk_caer_owner_progress_review_package-py",
+      "type": "file",
+      "name": "build_uk_caer_owner_progress_review_package.py",
+      "filePath": "uk-caer-active-build_uk_caer_owner_progress_review_package-py",
+      "summary": "python, 593 lines",
+      "tags": [
+        "file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "uk-caer-active-build_uk_caer_p0_evidence_intake_board-py",
+      "type": "file",
+      "name": "build_uk_caer_p0_evidence_intake_board.py",
+      "filePath": "uk-caer-active-build_uk_caer_p0_evidence_intake_board-py",
+      "summary": "python, 582 lines",
+      "tags": [
+        "file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "uk-caer-active-build_uk_caer_package_index-py",
+      "type": "file",
+      "name": "build_uk_caer_package_index.py",
+      "filePath": "uk-caer-active-build_uk_caer_package_index-py",
+      "summary": "python, 1598 lines",
+      "tags": [
+        "file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "uk-caer-active-build_uk_caer_package_qa_audit-py",
+      "type": "file",
+      "name": "build_uk_caer_package_qa_audit.py",
+      "filePath": "uk-caer-active-build_uk_caer_package_qa_audit-py",
+      "summary": "python, 523 lines",
+      "tags": [
+        "file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "uk-caer-active-build_uk_caer_package_qa_skill_draft_package-py",
+      "type": "file",
+      "name": "build_uk_caer_package_qa_skill_draft_package.py",
+      "filePath": "uk-caer-active-build_uk_caer_package_qa_skill_draft_package-py",
+      "summary": "python, 327 lines",
+      "tags": [
+        "file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "uk-caer-active-build_uk_caer_pm_asset_navigator-py",
+      "type": "file",
+      "name": "build_uk_caer_pm_asset_navigator.py",
+      "filePath": "uk-caer-active-build_uk_caer_pm_asset_navigator-py",
+      "summary": "python, 890 lines",
+      "tags": [
+        "file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "uk-caer-active-build_uk_caer_pm_command_center-py",
+      "type": "file",
+      "name": "build_uk_caer_pm_command_center.py",
+      "filePath": "uk-caer-active-build_uk_caer_pm_command_center-py",
+      "summary": "python, 621 lines",
+      "tags": [
+        "file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "uk-caer-active-build_uk_caer_pm_data_spine_asset_graph-py",
+      "type": "file",
+      "name": "build_uk_caer_pm_data_spine_asset_graph.py",
+      "filePath": "uk-caer-active-build_uk_caer_pm_data_spine_asset_graph-py",
+      "summary": "python, 899 lines",
+      "tags": [
+        "file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "uk-caer-active-build_uk_caer_pm_decision_action_ledger-py",
+      "type": "file",
+      "name": "build_uk_caer_pm_decision_action_ledger.py",
+      "filePath": "uk-caer-active-build_uk_caer_pm_decision_action_ledger-py",
+      "summary": "python, 564 lines",
+      "tags": [
+        "file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "uk-caer-active-build_uk_caer_pm_event_calendar-py",
+      "type": "file",
+      "name": "build_uk_caer_pm_event_calendar.py",
+      "filePath": "uk-caer-active-build_uk_caer_pm_event_calendar-py",
+      "summary": "python, 461 lines",
+      "tags": [
+        "file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "uk-caer-active-build_uk_caer_pm_evidence_token_standard-py",
+      "type": "file",
+      "name": "build_uk_caer_pm_evidence_token_standard.py",
+      "filePath": "uk-caer-active-build_uk_caer_pm_evidence_token_standard-py",
+      "summary": "python, 713 lines",
+      "tags": [
+        "file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "uk-caer-active-build_uk_caer_pm_harness_continuity-py",
+      "type": "file",
+      "name": "build_uk_caer_pm_harness_continuity.py",
+      "filePath": "uk-caer-active-build_uk_caer_pm_harness_continuity-py",
+      "summary": "python, 170 lines",
+      "tags": [
+        "file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "uk-caer-active-build_uk_caer_pm_master_control-mjs",
+      "type": "file",
+      "name": "build_uk_caer_pm_master_control.mjs",
+      "filePath": "uk-caer-active-build_uk_caer_pm_master_control-mjs",
+      "summary": "javascript, 605 lines",
+      "tags": [
+        "file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "uk-caer-active-build_uk_caer_pm_package-py",
+      "type": "file",
+      "name": "build_uk_caer_pm_package.py",
+      "filePath": "uk-caer-active-build_uk_caer_pm_package-py",
+      "summary": "python, 494 lines",
+      "tags": [
+        "file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "uk-caer-active-build_uk_caer_pm_product_review_conductor_board-py",
+      "type": "file",
+      "name": "build_uk_caer_pm_product_review_conductor_board.py",
+      "filePath": "uk-caer-active-build_uk_caer_pm_product_review_conductor_board-py",
+      "summary": "python, 494 lines",
+      "tags": [
+        "file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "uk-caer-active-build_uk_caer_pm_productization_board-py",
+      "type": "file",
+      "name": "build_uk_caer_pm_productization_board.py",
+      "filePath": "uk-caer-active-build_uk_caer_pm_productization_board-py",
+      "summary": "python, 946 lines",
+      "tags": [
+        "file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "uk-caer-active-build_uk_caer_pm_training_package-py",
+      "type": "file",
+      "name": "build_uk_caer_pm_training_package.py",
+      "filePath": "uk-caer-active-build_uk_caer_pm_training_package-py",
+      "summary": "python, 450 lines",
+      "tags": [
+        "file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "uk-caer-active-build_uk_caer_pm_validation_architecture-py",
+      "type": "file",
+      "name": "build_uk_caer_pm_validation_architecture.py",
+      "filePath": "uk-caer-active-build_uk_caer_pm_validation_architecture-py",
+      "summary": "python, 509 lines",
+      "tags": [
+        "file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "uk-caer-active-build_uk_caer_pm_validation_queue-py",
+      "type": "file",
+      "name": "build_uk_caer_pm_validation_queue.py",
+      "filePath": "uk-caer-active-build_uk_caer_pm_validation_queue-py",
+      "summary": "python, 581 lines",
+      "tags": [
+        "file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "uk-caer-active-build_uk_caer_rfi_register-py",
+      "type": "file",
+      "name": "build_uk_caer_rfi_register.py",
+      "filePath": "uk-caer-active-build_uk_caer_rfi_register-py",
+      "summary": "python, 449 lines",
+      "tags": [
+        "file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "uk-caer-active-build_uk_caer_safety_quality_plans-py",
+      "type": "file",
+      "name": "build_uk_caer_safety_quality_plans.py",
+      "filePath": "uk-caer-active-build_uk_caer_safety_quality_plans-py",
+      "summary": "python, 605 lines",
+      "tags": [
+        "file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "uk-caer-active-build_uk_caer_sage_onedrive_governance_board-py",
+      "type": "file",
+      "name": "build_uk_caer_sage_onedrive_governance_board.py",
+      "filePath": "uk-caer-active-build_uk_caer_sage_onedrive_governance_board-py",
+      "summary": "python, 477 lines",
+      "tags": [
+        "file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "uk-caer-active-build_uk_caer_schedule_logic-py",
+      "type": "file",
+      "name": "build_uk_caer_schedule_logic.py",
+      "filePath": "uk-caer-active-build_uk_caer_schedule_logic-py",
+      "summary": "python, 366 lines",
+      "tags": [
+        "file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "uk-caer-active-build_uk_caer_source_query_receipt_skill_draft_package-py",
+      "type": "file",
+      "name": "build_uk_caer_source_query_receipt_skill_draft_package.py",
+      "filePath": "uk-caer-active-build_uk_caer_source_query_receipt_skill_draft_package-py",
+      "summary": "python, 571 lines",
+      "tags": [
+        "file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "uk-caer-active-build_uk_caer_submittal_schedule-py",
+      "type": "file",
+      "name": "build_uk_caer_submittal_schedule.py",
+      "filePath": "uk-caer-active-build_uk_caer_submittal_schedule-py",
+      "summary": "python, 720 lines",
+      "tags": [
+        "file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "uk-caer-active-build_uk_caer_tcs_control_pack-py",
+      "type": "file",
+      "name": "build_uk_caer_tcs_control_pack.py",
+      "filePath": "uk-caer-active-build_uk_caer_tcs_control_pack-py",
+      "summary": "python, 588 lines",
+      "tags": [
+        "file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "uk-caer-active-build_uk_caer_tcs_first_skill_draft_package-py",
+      "type": "file",
+      "name": "build_uk_caer_tcs_first_skill_draft_package.py",
+      "filePath": "uk-caer-active-build_uk_caer_tcs_first_skill_draft_package-py",
+      "summary": "python, 497 lines",
+      "tags": [
+        "file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "uk-caer-active-build_uk_caer_tcs_reusable_skill_flow_package-py",
+      "type": "file",
+      "name": "build_uk_caer_tcs_reusable_skill_flow_package.py",
+      "filePath": "uk-caer-active-build_uk_caer_tcs_reusable_skill_flow_package-py",
+      "summary": "python, 531 lines",
+      "tags": [
+        "file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "uk-caer-active-build_uk_caer_tcs_wbs-py",
+      "type": "file",
+      "name": "build_uk_caer_tcs_wbs.py",
+      "filePath": "uk-caer-active-build_uk_caer_tcs_wbs-py",
+      "summary": "python, 581 lines",
+      "tags": [
+        "file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "uk-caer-active-build_uk_caer_tpm_release_readiness_board-py",
+      "type": "file",
+      "name": "build_uk_caer_tpm_release_readiness_board.py",
+      "filePath": "uk-caer-active-build_uk_caer_tpm_release_readiness_board-py",
+      "summary": "python, 557 lines",
+      "tags": [
+        "file"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "layer-python",
+      "target": "uk-caer-active",
+      "relation": "composes",
+      "type": "related"
+    },
+    {
+      "source": "layer-javascript",
+      "target": "uk-caer-active",
+      "relation": "composes",
+      "type": "related"
+    },
+    {
+      "source": "layer-markdown",
+      "target": "uk-caer-active",
+      "relation": "composes",
+      "type": "related"
+    },
+    {
+      "source": "layer-html",
+      "target": "uk-caer-active",
+      "relation": "composes",
+      "type": "related"
+    },
+    {
+      "source": "layer-pptx",
+      "target": "uk-caer-active",
+      "relation": "composes",
+      "type": "related"
+    },
+    {
+      "source": "layer-txt",
+      "target": "uk-caer-active",
+      "relation": "composes",
+      "type": "related"
+    },
+    {
+      "source": "layer-excalidraw",
+      "target": "uk-caer-active",
+      "relation": "composes",
+      "type": "related"
+    },
+    {
+      "source": "layer-json",
+      "target": "uk-caer-active",
+      "relation": "composes",
+      "type": "related"
+    },
+    {
+      "source": "layer-yaml",
+      "target": "uk-caer-active",
+      "relation": "composes",
+      "type": "related"
+    },
+    {
+      "source": "layer-xlsx",
+      "target": "uk-caer-active",
+      "relation": "composes",
+      "type": "related"
+    },
+    {
+      "source": "layer-m4a",
+      "target": "uk-caer-active",
+      "relation": "composes",
+      "type": "related"
+    },
+    {
+      "source": "uk-caer-active-build_uk_caer_9_gate_readiness_board-py",
+      "target": "layer-python",
+      "relation": "belongs_to",
+      "type": "related"
+    },
+    {
+      "source": "uk-caer-active-build_uk_caer_a1_a2_evidence_closure_packet-py",
+      "target": "layer-python",
+      "relation": "belongs_to",
+      "type": "related"
+    },
+    {
+      "source": "uk-caer-active-build_uk_caer_a1_a2_receipt_validation_ledger-py",
+      "target": "layer-python",
+      "relation": "belongs_to",
+      "type": "related"
+    },
+    {
+      "source": "uk-caer-active-build_uk_caer_a1_a2_sage_verification_package-py",
+      "target": "layer-python",
+      "relation": "belongs_to",
+      "type": "related"
+    },
+    {
+      "source": "uk-caer-active-build_uk_caer_action_plan_package-py",
+      "target": "layer-python",
+      "relation": "belongs_to",
+      "type": "related"
+    },
+    {
+      "source": "uk-caer-active-build_uk_caer_b1_b2_procurement_activation_board-py",
+      "target": "layer-python",
+      "relation": "belongs_to",
+      "type": "related"
+    },
+    {
+      "source": "uk-caer-active-build_uk_caer_boq_bom_cost_mapping-py",
+      "target": "layer-python",
+      "relation": "belongs_to",
+      "type": "related"
+    },
+    {
+      "source": "uk-caer-active-build_uk_caer_control_doc_revision_board-py",
+      "target": "layer-python",
+      "relation": "belongs_to",
+      "type": "related"
+    },
+    {
+      "source": "uk-caer-active-build_uk_caer_cost_sov_commitment_readiness_board-py",
+      "target": "layer-python",
+      "relation": "belongs_to",
+      "type": "related"
+    },
+    {
+      "source": "uk-caer-active-build_uk_caer_daily_pm_operating_board-py",
+      "target": "layer-python",
+      "relation": "belongs_to",
+      "type": "related"
+    },
+    {
+      "source": "uk-caer-active-build_uk_caer_day1_role_rollout_package-py",
+      "target": "layer-python",
+      "relation": "belongs_to",
+      "type": "related"
+    },
+    {
+      "source": "uk-caer-active-build_uk_caer_deliverables_completion_roadmap-py",
+      "target": "layer-python",
+      "relation": "belongs_to",
+      "type": "related"
+    },
+    {
+      "source": "uk-caer-active-build_uk_caer_draft_skill_forward_test_packet-py",
+      "target": "layer-python",
+      "relation": "belongs_to",
+      "type": "related"
+    },
+    {
+      "source": "uk-caer-active-build_uk_caer_executive_package_overview-py",
+      "target": "layer-python",
+      "relation": "belongs_to",
+      "type": "related"
+    },
+    {
+      "source": "uk-caer-active-build_uk_caer_field_wi_itp_package-py",
+      "target": "layer-python",
+      "relation": "belongs_to",
+      "type": "related"
+    },
+    {
+      "source": "uk-caer-active-build_uk_caer_first_pm_product_review_packet-py",
+      "target": "layer-python",
+      "relation": "belongs_to",
+      "type": "related"
+    },
+    {
+      "source": "uk-caer-active-build_uk_caer_high_risk_preinstall_meeting_packets-py",
+      "target": "layer-python",
+      "relation": "belongs_to",
+      "type": "related"
+    },
+    {
+      "source": "uk-caer-active-build_uk_caer_high_risk_trade_packets-py",
+      "target": "layer-python",
+      "relation": "belongs_to",
+      "type": "related"
+    },
+    {
+      "source": "uk-caer-active-build_uk_caer_human_pm_onboarding_board-py",
+      "target": "layer-python",
+      "relation": "belongs_to",
+      "type": "related"
+    },
+    {
+      "source": "uk-caer-active-build_uk_caer_live_action_approval_ledger-py",
+      "target": "layer-python",
+      "relation": "belongs_to",
+      "type": "related"
+    },
+    {
+      "source": "uk-caer-active-build_uk_caer_owner_progress_review_package-py",
+      "target": "layer-python",
+      "relation": "belongs_to",
+      "type": "related"
+    },
+    {
+      "source": "uk-caer-active-build_uk_caer_p0_evidence_intake_board-py",
+      "target": "layer-python",
+      "relation": "belongs_to",
+      "type": "related"
+    },
+    {
+      "source": "uk-caer-active-build_uk_caer_package_index-py",
+      "target": "layer-python",
+      "relation": "belongs_to",
+      "type": "related"
+    },
+    {
+      "source": "uk-caer-active-build_uk_caer_package_qa_audit-py",
+      "target": "layer-python",
+      "relation": "belongs_to",
+      "type": "related"
+    },
+    {
+      "source": "uk-caer-active-build_uk_caer_package_qa_skill_draft_package-py",
+      "target": "layer-python",
+      "relation": "belongs_to",
+      "type": "related"
+    },
+    {
+      "source": "uk-caer-active-build_uk_caer_pm_asset_navigator-py",
+      "target": "layer-python",
+      "relation": "belongs_to",
+      "type": "related"
+    },
+    {
+      "source": "uk-caer-active-build_uk_caer_pm_command_center-py",
+      "target": "layer-python",
+      "relation": "belongs_to",
+      "type": "related"
+    },
+    {
+      "source": "uk-caer-active-build_uk_caer_pm_data_spine_asset_graph-py",
+      "target": "layer-python",
+      "relation": "belongs_to",
+      "type": "related"
+    },
+    {
+      "source": "uk-caer-active-build_uk_caer_pm_decision_action_ledger-py",
+      "target": "layer-python",
+      "relation": "belongs_to",
+      "type": "related"
+    },
+    {
+      "source": "uk-caer-active-build_uk_caer_pm_event_calendar-py",
+      "target": "layer-python",
+      "relation": "belongs_to",
+      "type": "related"
+    },
+    {
+      "source": "uk-caer-active-build_uk_caer_pm_evidence_token_standard-py",
+      "target": "layer-python",
+      "relation": "belongs_to",
+      "type": "related"
+    },
+    {
+      "source": "uk-caer-active-build_uk_caer_pm_harness_continuity-py",
+      "target": "layer-python",
+      "relation": "belongs_to",
+      "type": "related"
+    },
+    {
+      "source": "uk-caer-active-build_uk_caer_pm_master_control-mjs",
+      "target": "layer-javascript",
+      "relation": "belongs_to",
+      "type": "related"
+    },
+    {
+      "source": "uk-caer-active-build_uk_caer_pm_package-py",
+      "target": "layer-python",
+      "relation": "belongs_to",
+      "type": "related"
+    },
+    {
+      "source": "uk-caer-active-build_uk_caer_pm_product_review_conductor_board-py",
+      "target": "layer-python",
+      "relation": "belongs_to",
+      "type": "related"
+    },
+    {
+      "source": "uk-caer-active-build_uk_caer_pm_productization_board-py",
+      "target": "layer-python",
+      "relation": "belongs_to",
+      "type": "related"
+    },
+    {
+      "source": "uk-caer-active-build_uk_caer_pm_training_package-py",
+      "target": "layer-python",
+      "relation": "belongs_to",
+      "type": "related"
+    },
+    {
+      "source": "uk-caer-active-build_uk_caer_pm_validation_architecture-py",
+      "target": "layer-python",
+      "relation": "belongs_to",
+      "type": "related"
+    },
+    {
+      "source": "uk-caer-active-build_uk_caer_pm_validation_queue-py",
+      "target": "layer-python",
+      "relation": "belongs_to",
+      "type": "related"
+    },
+    {
+      "source": "uk-caer-active-build_uk_caer_rfi_register-py",
+      "target": "layer-python",
+      "relation": "belongs_to",
+      "type": "related"
+    },
+    {
+      "source": "uk-caer-active-build_uk_caer_safety_quality_plans-py",
+      "target": "layer-python",
+      "relation": "belongs_to",
+      "type": "related"
+    },
+    {
+      "source": "uk-caer-active-build_uk_caer_sage_onedrive_governance_board-py",
+      "target": "layer-python",
+      "relation": "belongs_to",
+      "type": "related"
+    },
+    {
+      "source": "uk-caer-active-build_uk_caer_schedule_logic-py",
+      "target": "layer-python",
+      "relation": "belongs_to",
+      "type": "related"
+    },
+    {
+      "source": "uk-caer-active-build_uk_caer_source_query_receipt_skill_draft_package-py",
+      "target": "layer-python",
+      "relation": "belongs_to",
+      "type": "related"
+    },
+    {
+      "source": "uk-caer-active-build_uk_caer_submittal_schedule-py",
+      "target": "layer-python",
+      "relation": "belongs_to",
+      "type": "related"
+    },
+    {
+      "source": "uk-caer-active-build_uk_caer_tcs_control_pack-py",
+      "target": "layer-python",
+      "relation": "belongs_to",
+      "type": "related"
+    },
+    {
+      "source": "uk-caer-active-build_uk_caer_tcs_first_skill_draft_package-py",
+      "target": "layer-python",
+      "relation": "belongs_to",
+      "type": "related"
+    },
+    {
+      "source": "uk-caer-active-build_uk_caer_tcs_reusable_skill_flow_package-py",
+      "target": "layer-python",
+      "relation": "belongs_to",
+      "type": "related"
+    },
+    {
+      "source": "uk-caer-active-build_uk_caer_tcs_wbs-py",
+      "target": "layer-python",
+      "relation": "belongs_to",
+      "type": "related"
+    },
+    {
+      "source": "uk-caer-active-build_uk_caer_tpm_release_readiness_board-py",
+      "target": "layer-python",
+      "relation": "belongs_to",
+      "type": "related"
+    }
+  ],
+  "layers": [],
+  "tour": []
+}
