@@ -18,8 +18,28 @@
   },
   "live_links": {
     "constellation": "https://constellation.sanfordsystematic.com",
-    "constellation_dashboard": "https://constellation.sanfordsystematic.com/dashboard"
+    "constellation_dashboard": "https://constellation.sanfordsystematic.com/dashboard",
+    "understand_anything_explainer": "/explain/understand-anything.html",
+    "tcs_construction_harness": "/explain/tcs-construction-harness.html",
+    "public_graph_dashboards": "/ua-dashboards/"
   },
+  "public_explainers": [
+    {
+      "name": "Constellation",
+      "path": "/explain/constellation.html",
+      "purpose": "Plain-English walkthrough of the project-twin control surface."
+    },
+    {
+      "name": "Understand Anything Layer",
+      "path": "/explain/understand-anything.html",
+      "purpose": "Explanation-map layer for codebases, knowledge folders, and domain systems."
+    },
+    {
+      "name": "TCS Construction Harness",
+      "path": "/explain/tcs-construction-harness.html",
+      "purpose": "Architecture overview of the governed construction intelligence harness."
+    }
+  ],
   "layers": [
     {
       "name": "Thin Harness",

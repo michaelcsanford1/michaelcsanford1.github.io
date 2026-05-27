@@ -1,60 +1,115 @@
 {
-  "project": "Chokshi",
+  "project": {
+    "name": "Chokshi",
+    "languages": [],
+    "frameworks": [],
+    "description": "Chokshi domain graph",
+    "analyzedAt": "2026-05-27T12:30:00Z",
+    "gitCommitHash": "public-dashboard"
+  },
   "type": "domain-flow",
   "version": "2.0.0",
   "generated_at": "2026-05-27T12:30:00Z",
-  "generated_by": "Hermes \u2014 construction business domain flow (NOT file-type buckets)",
+  "generated_by": "Hermes — construction business domain flow (NOT file-type buckets)",
   "nodes": [
     {
       "id": "chokshi-domain",
-      "type": "domain-root",
+      "type": "domain",
       "label": "Chokshi Business Domains",
-      "description": "Construction business domain flow for Chokshi"
+      "description": "Construction business domain flow for Chokshi",
+      "name": "Chokshi Business Domains",
+      "filePath": "chokshi-domain",
+      "summary": "Construction business domain flow for Chokshi",
+      "tags": [
+        "domain"
+      ],
+      "complexity": "simple"
     },
     {
       "id": "project-management",
       "type": "domain",
       "label": "Project Management",
-      "description": "PMP, scope definition, schedule baseline, cost management"
+      "description": "PMP, scope definition, schedule baseline, cost management",
+      "name": "Project Management",
+      "filePath": "project-management",
+      "summary": "PMP, scope definition, schedule baseline, cost management",
+      "tags": [
+        "domain"
+      ],
+      "complexity": "simple"
     },
     {
       "id": "design",
       "type": "domain",
       "label": "Design & Engineering",
-      "description": "Construction drawings, specifications, design intent"
+      "description": "Construction drawings, specifications, design intent",
+      "name": "Design & Engineering",
+      "filePath": "design",
+      "summary": "Construction drawings, specifications, design intent",
+      "tags": [
+        "domain"
+      ],
+      "complexity": "simple"
     },
     {
       "id": "scheduling",
       "type": "domain",
       "label": "Scheduling & Planning",
-      "description": "Project schedule, milestones, critical path, resource allocation"
+      "description": "Project schedule, milestones, critical path, resource allocation",
+      "name": "Scheduling & Planning",
+      "filePath": "scheduling",
+      "summary": "Project schedule, milestones, critical path, resource allocation",
+      "tags": [
+        "domain"
+      ],
+      "complexity": "simple"
     }
   ],
   "edges": [
     {
+      "id": "edge-0",
       "source": "project-management",
       "target": "chokshi-domain",
-      "relation": "part_of"
+      "type": "part_of",
+      "direction": "forward",
+      "weight": 0.5,
+      "label": "part_of"
     },
     {
+      "id": "edge-1",
       "source": "design",
       "target": "chokshi-domain",
-      "relation": "part_of"
+      "type": "part_of",
+      "direction": "forward",
+      "weight": 0.5,
+      "label": "part_of"
     },
     {
+      "id": "edge-2",
       "source": "scheduling",
       "target": "chokshi-domain",
-      "relation": "part_of"
+      "type": "part_of",
+      "direction": "forward",
+      "weight": 0.5,
+      "label": "part_of"
     },
     {
+      "id": "edge-3",
       "source": "design",
       "target": "project-management",
-      "relation": "informs"
+      "type": "informs",
+      "direction": "forward",
+      "weight": 0.5,
+      "label": "informs"
     },
     {
+      "id": "edge-4",
       "source": "scheduling",
       "target": "project-management",
-      "relation": "drives"
+      "type": "drives",
+      "direction": "forward",
+      "weight": 0.5,
+      "label": "drives"
     }
   ],
   "stats": {
@@ -62,5 +117,19 @@
     "total_edges": 5,
     "domains": 3,
     "business_flows": 2
-  }
+  },
+  "layers": [
+    {
+      "id": "layer-domain",
+      "name": "Domain Nodes",
+      "description": "4 domain nodes",
+      "nodeIds": [
+        "chokshi-domain",
+        "project-management",
+        "design",
+        "scheduling"
+      ]
+    }
+  ],
+  "tour": []
 }

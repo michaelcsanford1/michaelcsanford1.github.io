@@ -1,60 +1,115 @@
 {
-  "project": "Owen County",
+  "project": {
+    "name": "Owen County",
+    "languages": [],
+    "frameworks": [],
+    "description": "Owen County domain graph",
+    "analyzedAt": "2026-05-27T12:30:00Z",
+    "gitCommitHash": "public-dashboard"
+  },
   "type": "domain-flow",
   "version": "2.0.0",
   "generated_at": "2026-05-27T12:30:00Z",
-  "generated_by": "Hermes \u2014 construction business domain flow (NOT file-type buckets)",
+  "generated_by": "Hermes — construction business domain flow (NOT file-type buckets)",
   "nodes": [
     {
       "id": "owen-county-domain",
-      "type": "domain-root",
+      "type": "domain",
       "label": "Owen County Business Domains",
-      "description": "Construction business domain flow for Owen County"
+      "description": "Construction business domain flow for Owen County",
+      "name": "Owen County Business Domains",
+      "filePath": "owen-county-domain",
+      "summary": "Construction business domain flow for Owen County",
+      "tags": [
+        "domain"
+      ],
+      "complexity": "simple"
     },
     {
       "id": "project-activation",
       "type": "domain",
       "label": "Project Activation",
-      "description": "Gate readiness criteria, project boot sequence, twin state initialization"
+      "description": "Gate readiness criteria, project boot sequence, twin state initialization",
+      "name": "Project Activation",
+      "filePath": "project-activation",
+      "summary": "Gate readiness criteria, project boot sequence, twin state initialization",
+      "tags": [
+        "domain"
+      ],
+      "complexity": "simple"
     },
     {
       "id": "agent-operations",
       "type": "domain",
       "label": "Agent Operations",
-      "description": "Agent boot protocols, source mapping, operating procedures"
+      "description": "Agent boot protocols, source mapping, operating procedures",
+      "name": "Agent Operations",
+      "filePath": "agent-operations",
+      "summary": "Agent boot protocols, source mapping, operating procedures",
+      "tags": [
+        "domain"
+      ],
+      "complexity": "simple"
     },
     {
       "id": "compliance",
       "type": "domain",
       "label": "Compliance & Standards",
-      "description": "Altitude Mesh OS compliance, doctrine adherence, verification"
+      "description": "Altitude Mesh OS compliance, doctrine adherence, verification",
+      "name": "Compliance & Standards",
+      "filePath": "compliance",
+      "summary": "Altitude Mesh OS compliance, doctrine adherence, verification",
+      "tags": [
+        "domain"
+      ],
+      "complexity": "simple"
     }
   ],
   "edges": [
     {
+      "id": "edge-0",
       "source": "project-activation",
       "target": "owen-county-domain",
-      "relation": "part_of"
+      "type": "part_of",
+      "direction": "forward",
+      "weight": 0.5,
+      "label": "part_of"
     },
     {
+      "id": "edge-1",
       "source": "agent-operations",
       "target": "owen-county-domain",
-      "relation": "part_of"
+      "type": "part_of",
+      "direction": "forward",
+      "weight": 0.5,
+      "label": "part_of"
     },
     {
+      "id": "edge-2",
       "source": "compliance",
       "target": "owen-county-domain",
-      "relation": "part_of"
+      "type": "part_of",
+      "direction": "forward",
+      "weight": 0.5,
+      "label": "part_of"
     },
     {
+      "id": "edge-3",
       "source": "project-activation",
       "target": "agent-operations",
-      "relation": "enables"
+      "type": "enables",
+      "direction": "forward",
+      "weight": 0.5,
+      "label": "enables"
     },
     {
+      "id": "edge-4",
       "source": "agent-operations",
       "target": "compliance",
-      "relation": "validates"
+      "type": "validates",
+      "direction": "forward",
+      "weight": 0.5,
+      "label": "validates"
     }
   ],
   "stats": {
@@ -62,5 +117,19 @@
     "total_edges": 5,
     "domains": 3,
     "business_flows": 2
-  }
+  },
+  "layers": [
+    {
+      "id": "layer-domain",
+      "name": "Domain Nodes",
+      "description": "4 domain nodes",
+      "nodeIds": [
+        "owen-county-domain",
+        "project-activation",
+        "agent-operations",
+        "compliance"
+      ]
+    }
+  ],
+  "tour": []
 }

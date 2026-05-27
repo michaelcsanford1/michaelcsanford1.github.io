@@ -14,10 +14,10 @@
   "nodes": [
     {
       "id": "chokshi",
-      "type": "project",
+      "type": "concept",
       "name": "Chokshi",
       "filePath": "chokshi",
-      "summary": "Chokshi \u2014 2 files",
+      "summary": "Chokshi — 2 files",
       "tags": [
         "project"
       ],
@@ -25,7 +25,7 @@
     },
     {
       "id": "layer-docx",
-      "type": "layer",
+      "type": "concept",
       "name": "DOCX Files",
       "filePath": "layer-docx",
       "summary": "2 docx files",
@@ -59,24 +59,52 @@
   ],
   "edges": [
     {
+      "id": "edge-0",
       "source": "layer-docx",
       "target": "chokshi",
-      "relation": "composes",
-      "type": "related"
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5,
+      "label": "composes"
     },
     {
+      "id": "edge-1",
       "source": "chokshi-CHOKSHI PMP-docx",
       "target": "layer-docx",
-      "relation": "belongs_to",
-      "type": "related"
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5,
+      "label": "belongs_to"
     },
     {
+      "id": "edge-2",
       "source": "chokshi-Project Schedule: Chokshi 8-25-25-docx",
       "target": "layer-docx",
-      "relation": "belongs_to",
-      "type": "related"
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5,
+      "label": "belongs_to"
     }
   ],
-  "layers": [],
+  "layers": [
+    {
+      "id": "layer-concept",
+      "name": "Concept Nodes",
+      "description": "2 concept nodes",
+      "nodeIds": [
+        "chokshi",
+        "layer-docx"
+      ]
+    },
+    {
+      "id": "layer-file",
+      "name": "File Nodes",
+      "description": "2 file nodes",
+      "nodeIds": [
+        "chokshi-CHOKSHI PMP-docx",
+        "chokshi-Project Schedule: Chokshi 8-25-25-docx"
+      ]
+    }
+  ],
   "tour": []
 }

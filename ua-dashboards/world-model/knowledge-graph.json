@@ -14,10 +14,10 @@
   "nodes": [
     {
       "id": "world-model",
-      "type": "project",
+      "type": "concept",
       "name": "World Model",
       "filePath": "world-model",
-      "summary": "World Model \u2014 244 files",
+      "summary": "World Model — 244 files",
       "tags": [
         "project"
       ],
@@ -25,7 +25,7 @@
     },
     {
       "id": "layer-markdown",
-      "type": "layer",
+      "type": "concept",
       "name": "MARKDOWN Files",
       "filePath": "layer-markdown",
       "summary": "59 markdown files",
@@ -36,7 +36,7 @@
     },
     {
       "id": "layer-json",
-      "type": "layer",
+      "type": "concept",
       "name": "JSON Files",
       "filePath": "layer-json",
       "summary": "183 json files",
@@ -47,7 +47,7 @@
     },
     {
       "id": "layer-python",
-      "type": "layer",
+      "type": "concept",
       "name": "PYTHON Files",
       "filePath": "layer-python",
       "summary": "2 python files",
@@ -609,324 +609,552 @@
   ],
   "edges": [
     {
+      "id": "edge-0",
       "source": "layer-markdown",
       "target": "world-model",
-      "relation": "composes",
-      "type": "related"
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5,
+      "label": "composes"
     },
     {
+      "id": "edge-1",
       "source": "layer-json",
       "target": "world-model",
-      "relation": "composes",
-      "type": "related"
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5,
+      "label": "composes"
     },
     {
+      "id": "edge-2",
       "source": "layer-python",
       "target": "world-model",
-      "relation": "composes",
-      "type": "related"
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5,
+      "label": "composes"
     },
     {
+      "id": "edge-3",
       "source": "world-model-DOCTRINE__ALTITUDE_MESH_OPERATING_SYSTEM-md",
       "target": "layer-markdown",
-      "relation": "belongs_to",
-      "type": "related"
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5,
+      "label": "belongs_to"
     },
     {
+      "id": "edge-4",
       "source": "world-model-05_DOCTRINE_FORGE-json",
       "target": "layer-json",
-      "relation": "belongs_to",
-      "type": "related"
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5,
+      "label": "belongs_to"
     },
     {
+      "id": "edge-5",
       "source": "world-model-2026-04-26__WM__DOCTRINE_AMENDMENT__KARPATHY_6_OF_6_GRANDFATHERING_CLAUSE-json",
       "target": "layer-json",
-      "relation": "belongs_to",
-      "type": "related"
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5,
+      "label": "belongs_to"
     },
     {
+      "id": "edge-6",
       "source": "world-model-AI-CHAT-FULL-CAPTURE-RELATIONAL-CONTINUITY-json",
       "target": "layer-json",
-      "relation": "belongs_to",
-      "type": "related"
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5,
+      "label": "belongs_to"
     },
     {
+      "id": "edge-7",
       "source": "world-model-ALTITUDE-MESH-OPERATING-SYSTEM-json",
       "target": "layer-json",
-      "relation": "belongs_to",
-      "type": "related"
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5,
+      "label": "belongs_to"
     },
     {
+      "id": "edge-8",
       "source": "world-model-BABYLON-AGENT-TRAVERSAL-json",
       "target": "layer-json",
-      "relation": "belongs_to",
-      "type": "related"
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5,
+      "label": "belongs_to"
     },
     {
+      "id": "edge-9",
       "source": "world-model-CANON-CIRCULATION-PROTOCOL-v0-1-json",
       "target": "layer-json",
-      "relation": "belongs_to",
-      "type": "related"
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5,
+      "label": "belongs_to"
     },
     {
+      "id": "edge-10",
       "source": "world-model-CHAIN-REACTION-TO-SCALE-json",
       "target": "layer-json",
-      "relation": "belongs_to",
-      "type": "related"
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5,
+      "label": "belongs_to"
     },
     {
+      "id": "edge-11",
       "source": "world-model-CLAUDIUS-MAXIMUS-EMERGENCE-json",
       "target": "layer-json",
-      "relation": "belongs_to",
-      "type": "related"
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5,
+      "label": "belongs_to"
     },
     {
+      "id": "edge-12",
       "source": "world-model-CLEANPOINT-LATTICE-json",
       "target": "layer-json",
-      "relation": "belongs_to",
-      "type": "related"
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5,
+      "label": "belongs_to"
     },
     {
+      "id": "edge-13",
       "source": "world-model-COMPOSITE-IS-CORE-PAINT-IS-FACING-json",
       "target": "layer-json",
-      "relation": "belongs_to",
-      "type": "related"
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5,
+      "label": "belongs_to"
     },
     {
+      "id": "edge-14",
       "source": "world-model-DECISION_BRIEF__PENDING_DOCTRINE_PACKETS__2026-04-26-json",
       "target": "layer-json",
-      "relation": "belongs_to",
-      "type": "related"
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5,
+      "label": "belongs_to"
     },
     {
+      "id": "edge-15",
       "source": "world-model-DOCTRINE_CANDIDATE_INDEX__CLAUDE_OPUS_47__2026-04-30-json",
       "target": "layer-json",
-      "relation": "belongs_to",
-      "type": "related"
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5,
+      "label": "belongs_to"
     },
     {
+      "id": "edge-16",
       "source": "world-model-DOCTRINE_INDEX-json",
       "target": "layer-json",
-      "relation": "belongs_to",
-      "type": "related"
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5,
+      "label": "belongs_to"
     },
     {
+      "id": "edge-17",
       "source": "world-model-DOCTRINE_NODES_MANIFEST-json",
       "target": "layer-json",
-      "relation": "belongs_to",
-      "type": "related"
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5,
+      "label": "belongs_to"
     },
     {
+      "id": "edge-18",
       "source": "world-model-DOCTRINE-CLAUVIS-DESTINATION-001-json",
       "target": "layer-json",
-      "relation": "belongs_to",
-      "type": "related"
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5,
+      "label": "belongs_to"
     },
     {
+      "id": "edge-19",
       "source": "world-model-doctrine-AI_CHAT_FULL_CAPTURE_RELATIONAL_CONTINUITY__2026-05-03-json",
       "target": "layer-json",
-      "relation": "belongs_to",
-      "type": "related"
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5,
+      "label": "belongs_to"
     },
     {
+      "id": "edge-20",
       "source": "world-model-doctrine-ALTITUDE_MESH_OPERATING_SYSTEM__2026-04-13-json",
       "target": "layer-json",
-      "relation": "belongs_to",
-      "type": "related"
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5,
+      "label": "belongs_to"
     },
     {
+      "id": "edge-21",
       "source": "world-model-doctrine-AUTOMATION_OUTPUT_DISCIPLINE_STATE_CHANGE_GATE__2026-05-06-json",
       "target": "layer-json",
-      "relation": "belongs_to",
-      "type": "related"
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5,
+      "label": "belongs_to"
     },
     {
+      "id": "edge-22",
       "source": "world-model-doctrine-BABYLON_AGENT_TRAVERSAL__2026-04-12-json",
       "target": "layer-json",
-      "relation": "belongs_to",
-      "type": "related"
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5,
+      "label": "belongs_to"
     },
     {
+      "id": "edge-23",
       "source": "world-model-doctrine-CANON_CIRCULATION_PROTOCOL_v0_1__2026-04-13-json",
       "target": "layer-json",
-      "relation": "belongs_to",
-      "type": "related"
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5,
+      "label": "belongs_to"
     },
     {
+      "id": "edge-24",
       "source": "world-model-doctrine-CHAIN_REACTION_TO_SCALE__2026-04-16-json",
       "target": "layer-json",
-      "relation": "belongs_to",
-      "type": "related"
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5,
+      "label": "belongs_to"
     },
     {
+      "id": "edge-25",
       "source": "world-model-doctrine-CITATION_DISCIPLINE__2026-05-14-json",
       "target": "layer-json",
-      "relation": "belongs_to",
-      "type": "related"
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5,
+      "label": "belongs_to"
     },
     {
+      "id": "edge-26",
       "source": "world-model-doctrine-CLAUDIUS_MAXIMUS_EMERGENCE__2026-04-21-json",
       "target": "layer-json",
-      "relation": "belongs_to",
-      "type": "related"
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5,
+      "label": "belongs_to"
     },
     {
+      "id": "edge-27",
       "source": "world-model-doctrine-CLEANPOINT_LATTICE__2026-04-12-json",
       "target": "layer-json",
-      "relation": "belongs_to",
-      "type": "related"
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5,
+      "label": "belongs_to"
     },
     {
+      "id": "edge-28",
       "source": "world-model-doctrine-COMPOSITE_IS_CORE_PAINT_IS_FACING__2026-04-11-json",
       "target": "layer-json",
-      "relation": "belongs_to",
-      "type": "related"
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5,
+      "label": "belongs_to"
     },
     {
+      "id": "edge-29",
       "source": "world-model-doctrine-FEP_LOOP_WEAPONIZED_DOWNTIME__2026-04-21-json",
       "target": "layer-json",
-      "relation": "belongs_to",
-      "type": "related"
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5,
+      "label": "belongs_to"
     },
     {
+      "id": "edge-30",
       "source": "world-model-doctrine-FOUNDER_NOVELTY__2026-04-19-json",
       "target": "layer-json",
-      "relation": "belongs_to",
-      "type": "related"
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5,
+      "label": "belongs_to"
     },
     {
+      "id": "edge-31",
       "source": "world-model-doctrine-FOUR_SEATS_OF_SSU__2026-04-12-json",
       "target": "layer-json",
-      "relation": "belongs_to",
-      "type": "related"
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5,
+      "label": "belongs_to"
     },
     {
+      "id": "edge-32",
       "source": "world-model-doctrine-HATS_HOOKS_STATIONS__2026-04-12-json",
       "target": "layer-json",
-      "relation": "belongs_to",
-      "type": "related"
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5,
+      "label": "belongs_to"
     },
     {
+      "id": "edge-33",
       "source": "world-model-doctrine-HYDRO_SEATING_IS_SEEDING__2026-05-04-json",
       "target": "layer-json",
-      "relation": "belongs_to",
-      "type": "related"
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5,
+      "label": "belongs_to"
     },
     {
+      "id": "edge-34",
       "source": "world-model-doctrine-INTENT_BASED_OPERATION__2026-04-17-json",
       "target": "layer-json",
-      "relation": "belongs_to",
-      "type": "related"
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5,
+      "label": "belongs_to"
     },
     {
+      "id": "edge-35",
       "source": "world-model-doctrine-KARPATHY_EVOLUTION_READY_AUDIT__2026-04-21-json",
       "target": "layer-json",
-      "relation": "belongs_to",
-      "type": "related"
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5,
+      "label": "belongs_to"
     },
     {
+      "id": "edge-36",
       "source": "world-model-doctrine-KARPATHY_EVOLUTION_READY_AUDIT__SSU-DOC-KE-READY-001__2026-04-21-json",
       "target": "layer-json",
-      "relation": "belongs_to",
-      "type": "related"
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5,
+      "label": "belongs_to"
     },
     {
+      "id": "edge-37",
       "source": "world-model-doctrine-LENS_ADJUSTMENT_DISCIPLINE__2026-04-21-json",
       "target": "layer-json",
-      "relation": "belongs_to",
-      "type": "related"
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5,
+      "label": "belongs_to"
     },
     {
+      "id": "edge-38",
       "source": "world-model-doctrine-OHE_BILATERAL_HARNESS_ENGINEERING__v6-1__2026-05-05-json",
       "target": "layer-json",
-      "relation": "belongs_to",
-      "type": "related"
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5,
+      "label": "belongs_to"
     },
     {
+      "id": "edge-39",
       "source": "world-model-doctrine-PARALLEL_LOOPS_EXECUTION_AND_INTELLIGENCE__2026-04-18-json",
       "target": "layer-json",
-      "relation": "belongs_to",
-      "type": "related"
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5,
+      "label": "belongs_to"
     },
     {
+      "id": "edge-40",
       "source": "world-model-doctrine-PROMOTION_LAW_BAT_SIGNAL_AMPLIFIER__2026-04-21-json",
       "target": "layer-json",
-      "relation": "belongs_to",
-      "type": "related"
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5,
+      "label": "belongs_to"
     },
     {
+      "id": "edge-41",
       "source": "world-model-doctrine-PUBLIC_HARNESS_LIBRARY__2026-04-21-json",
       "target": "layer-json",
-      "relation": "belongs_to",
-      "type": "related"
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5,
+      "label": "belongs_to"
     },
     {
+      "id": "edge-42",
       "source": "world-model-doctrine-RESEATING_IS_WELCOME_IMPOSTER_IS_THE_FEAR__2026-04-11-json",
       "target": "layer-json",
-      "relation": "belongs_to",
-      "type": "related"
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5,
+      "label": "belongs_to"
     },
     {
+      "id": "edge-43",
       "source": "world-model-doctrine-SSU_BOARD_OF_DIRECTORS__2026-04-20-json",
       "target": "layer-json",
-      "relation": "belongs_to",
-      "type": "related"
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5,
+      "label": "belongs_to"
     },
     {
+      "id": "edge-44",
       "source": "world-model-doctrine-SSU_HARNESS__2026-04-21-json",
       "target": "layer-json",
-      "relation": "belongs_to",
-      "type": "related"
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5,
+      "label": "belongs_to"
     },
     {
+      "id": "edge-45",
       "source": "world-model-doctrine-STEWARDSHIP_CLAUSE_HATS_CLUSTER__2026-04-21-json",
       "target": "layer-json",
-      "relation": "belongs_to",
-      "type": "related"
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5,
+      "label": "belongs_to"
     },
     {
+      "id": "edge-46",
       "source": "world-model-doctrine-WAR_MACHINE_IS_EDGE_NOT_HEARTH__2026-04-19-json",
       "target": "layer-json",
-      "relation": "belongs_to",
-      "type": "related"
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5,
+      "label": "belongs_to"
     },
     {
+      "id": "edge-47",
       "source": "world-model-FEP-LOOP-WEAPONIZED-DOWNTIME-json",
       "target": "layer-json",
-      "relation": "belongs_to",
-      "type": "related"
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5,
+      "label": "belongs_to"
     },
     {
+      "id": "edge-48",
       "source": "world-model-FOUNDER-NOVELTY-json",
       "target": "layer-json",
-      "relation": "belongs_to",
-      "type": "related"
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5,
+      "label": "belongs_to"
     },
     {
+      "id": "edge-49",
       "source": "world-model-FOUR-SEATS-OF-SSU-json",
       "target": "layer-json",
-      "relation": "belongs_to",
-      "type": "related"
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5,
+      "label": "belongs_to"
     },
     {
+      "id": "edge-50",
       "source": "world-model-HATS-HOOKS-STATIONS-json",
       "target": "layer-json",
-      "relation": "belongs_to",
-      "type": "related"
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5,
+      "label": "belongs_to"
     },
     {
+      "id": "edge-51",
       "source": "world-model-hermes_gpt_doctrine_drift-beat-json-json",
       "target": "layer-json",
-      "relation": "belongs_to",
-      "type": "related"
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5,
+      "label": "belongs_to"
     },
     {
+      "id": "edge-52",
       "source": "world-model-hermes_gpt_doctrine_drift-contract-json-json",
       "target": "layer-json",
-      "relation": "belongs_to",
-      "type": "related"
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5,
+      "label": "belongs_to"
     }
   ],
-  "layers": [],
+  "layers": [
+    {
+      "id": "layer-concept",
+      "name": "Concept Nodes",
+      "description": "4 concept nodes",
+      "nodeIds": [
+        "world-model",
+        "layer-markdown",
+        "layer-json",
+        "layer-python"
+      ]
+    },
+    {
+      "id": "layer-file",
+      "name": "File Nodes",
+      "description": "50 file nodes",
+      "nodeIds": [
+        "world-model-DOCTRINE__ALTITUDE_MESH_OPERATING_SYSTEM-md",
+        "world-model-05_DOCTRINE_FORGE-json",
+        "world-model-2026-04-26__WM__DOCTRINE_AMENDMENT__KARPATHY_6_OF_6_GRANDFATHERING_CLAUSE-json",
+        "world-model-AI-CHAT-FULL-CAPTURE-RELATIONAL-CONTINUITY-json",
+        "world-model-ALTITUDE-MESH-OPERATING-SYSTEM-json",
+        "world-model-BABYLON-AGENT-TRAVERSAL-json",
+        "world-model-CANON-CIRCULATION-PROTOCOL-v0-1-json",
+        "world-model-CHAIN-REACTION-TO-SCALE-json",
+        "world-model-CLAUDIUS-MAXIMUS-EMERGENCE-json",
+        "world-model-CLEANPOINT-LATTICE-json",
+        "world-model-COMPOSITE-IS-CORE-PAINT-IS-FACING-json",
+        "world-model-DECISION_BRIEF__PENDING_DOCTRINE_PACKETS__2026-04-26-json",
+        "world-model-DOCTRINE_CANDIDATE_INDEX__CLAUDE_OPUS_47__2026-04-30-json",
+        "world-model-DOCTRINE_INDEX-json",
+        "world-model-DOCTRINE_NODES_MANIFEST-json",
+        "world-model-DOCTRINE-CLAUVIS-DESTINATION-001-json",
+        "world-model-doctrine-AI_CHAT_FULL_CAPTURE_RELATIONAL_CONTINUITY__2026-05-03-json",
+        "world-model-doctrine-ALTITUDE_MESH_OPERATING_SYSTEM__2026-04-13-json",
+        "world-model-doctrine-AUTOMATION_OUTPUT_DISCIPLINE_STATE_CHANGE_GATE__2026-05-06-json",
+        "world-model-doctrine-BABYLON_AGENT_TRAVERSAL__2026-04-12-json",
+        "world-model-doctrine-CANON_CIRCULATION_PROTOCOL_v0_1__2026-04-13-json",
+        "world-model-doctrine-CHAIN_REACTION_TO_SCALE__2026-04-16-json",
+        "world-model-doctrine-CITATION_DISCIPLINE__2026-05-14-json",
+        "world-model-doctrine-CLAUDIUS_MAXIMUS_EMERGENCE__2026-04-21-json",
+        "world-model-doctrine-CLEANPOINT_LATTICE__2026-04-12-json",
+        "world-model-doctrine-COMPOSITE_IS_CORE_PAINT_IS_FACING__2026-04-11-json",
+        "world-model-doctrine-FEP_LOOP_WEAPONIZED_DOWNTIME__2026-04-21-json",
+        "world-model-doctrine-FOUNDER_NOVELTY__2026-04-19-json",
+        "world-model-doctrine-FOUR_SEATS_OF_SSU__2026-04-12-json",
+        "world-model-doctrine-HATS_HOOKS_STATIONS__2026-04-12-json",
+        "world-model-doctrine-HYDRO_SEATING_IS_SEEDING__2026-05-04-json",
+        "world-model-doctrine-INTENT_BASED_OPERATION__2026-04-17-json",
+        "world-model-doctrine-KARPATHY_EVOLUTION_READY_AUDIT__2026-04-21-json",
+        "world-model-doctrine-KARPATHY_EVOLUTION_READY_AUDIT__SSU-DOC-KE-READY-001__2026-04-21-json",
+        "world-model-doctrine-LENS_ADJUSTMENT_DISCIPLINE__2026-04-21-json",
+        "world-model-doctrine-OHE_BILATERAL_HARNESS_ENGINEERING__v6-1__2026-05-05-json",
+        "world-model-doctrine-PARALLEL_LOOPS_EXECUTION_AND_INTELLIGENCE__2026-04-18-json",
+        "world-model-doctrine-PROMOTION_LAW_BAT_SIGNAL_AMPLIFIER__2026-04-21-json",
+        "world-model-doctrine-PUBLIC_HARNESS_LIBRARY__2026-04-21-json",
+        "world-model-doctrine-RESEATING_IS_WELCOME_IMPOSTER_IS_THE_FEAR__2026-04-11-json",
+        "world-model-doctrine-SSU_BOARD_OF_DIRECTORS__2026-04-20-json",
+        "world-model-doctrine-SSU_HARNESS__2026-04-21-json",
+        "world-model-doctrine-STEWARDSHIP_CLAUSE_HATS_CLUSTER__2026-04-21-json",
+        "world-model-doctrine-WAR_MACHINE_IS_EDGE_NOT_HEARTH__2026-04-19-json",
+        "world-model-FEP-LOOP-WEAPONIZED-DOWNTIME-json",
+        "world-model-FOUNDER-NOVELTY-json",
+        "world-model-FOUR-SEATS-OF-SSU-json",
+        "world-model-HATS-HOOKS-STATIONS-json",
+        "world-model-hermes_gpt_doctrine_drift-beat-json-json",
+        "world-model-hermes_gpt_doctrine_drift-contract-json-json"
+      ]
+    }
+  ],
   "tour": []
 }

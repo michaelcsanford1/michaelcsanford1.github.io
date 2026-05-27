@@ -1,60 +1,115 @@
 {
-  "project": "TCS",
+  "project": {
+    "name": "TCS",
+    "languages": [],
+    "frameworks": [],
+    "description": "TCS domain graph",
+    "analyzedAt": "2026-05-27T12:30:00Z",
+    "gitCommitHash": "public-dashboard"
+  },
   "type": "domain-flow",
   "version": "2.0.0",
   "generated_at": "2026-05-27T12:30:00Z",
-  "generated_by": "Hermes \u2014 construction business domain flow (NOT file-type buckets)",
+  "generated_by": "Hermes — construction business domain flow (NOT file-type buckets)",
   "nodes": [
     {
       "id": "tcs-domain",
-      "type": "domain-root",
+      "type": "domain",
       "label": "TCS Business Domains",
-      "description": "Construction business domain flow for TCS"
+      "description": "Construction business domain flow for TCS",
+      "name": "TCS Business Domains",
+      "filePath": "tcs-domain",
+      "summary": "Construction business domain flow for TCS",
+      "tags": [
+        "domain"
+      ],
+      "complexity": "simple"
     },
     {
       "id": "construction-skills",
       "type": "domain",
       "label": "Construction Skills",
-      "description": "Domain-specific skills for construction project management"
+      "description": "Domain-specific skills for construction project management",
+      "name": "Construction Skills",
+      "filePath": "construction-skills",
+      "summary": "Domain-specific skills for construction project management",
+      "tags": [
+        "domain"
+      ],
+      "complexity": "simple"
     },
     {
       "id": "plugin-framework",
       "type": "domain",
       "label": "Plugin Framework",
-      "description": "TCS plugin architecture, skill loading, integration points"
+      "description": "TCS plugin architecture, skill loading, integration points",
+      "name": "Plugin Framework",
+      "filePath": "plugin-framework",
+      "summary": "TCS plugin architecture, skill loading, integration points",
+      "tags": [
+        "domain"
+      ],
+      "complexity": "simple"
     },
     {
       "id": "project-control",
       "type": "domain",
       "label": "Project Control",
-      "description": "Gate management, evidence tracking, deliverable coordination"
+      "description": "Gate management, evidence tracking, deliverable coordination",
+      "name": "Project Control",
+      "filePath": "project-control",
+      "summary": "Gate management, evidence tracking, deliverable coordination",
+      "tags": [
+        "domain"
+      ],
+      "complexity": "simple"
     }
   ],
   "edges": [
     {
+      "id": "edge-0",
       "source": "construction-skills",
       "target": "tcs-domain",
-      "relation": "part_of"
+      "type": "part_of",
+      "direction": "forward",
+      "weight": 0.5,
+      "label": "part_of"
     },
     {
+      "id": "edge-1",
       "source": "plugin-framework",
       "target": "tcs-domain",
-      "relation": "part_of"
+      "type": "part_of",
+      "direction": "forward",
+      "weight": 0.5,
+      "label": "part_of"
     },
     {
+      "id": "edge-2",
       "source": "project-control",
       "target": "tcs-domain",
-      "relation": "part_of"
+      "type": "part_of",
+      "direction": "forward",
+      "weight": 0.5,
+      "label": "part_of"
     },
     {
+      "id": "edge-3",
       "source": "plugin-framework",
       "target": "construction-skills",
-      "relation": "hosts"
+      "type": "hosts",
+      "direction": "forward",
+      "weight": 0.5,
+      "label": "hosts"
     },
     {
+      "id": "edge-4",
       "source": "construction-skills",
       "target": "project-control",
-      "relation": "implements"
+      "type": "implements",
+      "direction": "forward",
+      "weight": 0.5,
+      "label": "implements"
     }
   ],
   "stats": {
@@ -62,5 +117,19 @@
     "total_edges": 5,
     "domains": 3,
     "business_flows": 2
-  }
+  },
+  "layers": [
+    {
+      "id": "layer-domain",
+      "name": "Domain Nodes",
+      "description": "4 domain nodes",
+      "nodeIds": [
+        "tcs-domain",
+        "construction-skills",
+        "plugin-framework",
+        "project-control"
+      ]
+    }
+  ],
+  "tour": []
 }

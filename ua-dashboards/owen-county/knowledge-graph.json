@@ -14,10 +14,10 @@
   "nodes": [
     {
       "id": "owen-county",
-      "type": "project",
+      "type": "concept",
       "name": "Owen County",
       "filePath": "owen-county",
-      "summary": "Owen County \u2014 5 files",
+      "summary": "Owen County — 5 files",
       "tags": [
         "project"
       ],
@@ -25,7 +25,7 @@
     },
     {
       "id": "layer-markdown",
-      "type": "layer",
+      "type": "concept",
       "name": "MARKDOWN Files",
       "filePath": "layer-markdown",
       "summary": "5 markdown files",
@@ -92,42 +92,82 @@
   ],
   "edges": [
     {
+      "id": "edge-0",
       "source": "layer-markdown",
       "target": "owen-county",
-      "relation": "composes",
-      "type": "related"
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5,
+      "label": "composes"
     },
     {
+      "id": "edge-1",
       "source": "owen-county-AGENT_BOOT-md",
       "target": "layer-markdown",
-      "relation": "belongs_to",
-      "type": "related"
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5,
+      "label": "belongs_to"
     },
     {
+      "id": "edge-2",
       "source": "owen-county-DOCTRINE__ALTITUDE_MESH_OPERATING_SYSTEM-md",
       "target": "layer-markdown",
-      "relation": "belongs_to",
-      "type": "related"
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5,
+      "label": "belongs_to"
     },
     {
+      "id": "edge-3",
       "source": "owen-county-GATE_READINESS-md",
       "target": "layer-markdown",
-      "relation": "belongs_to",
-      "type": "related"
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5,
+      "label": "belongs_to"
     },
     {
+      "id": "edge-4",
       "source": "owen-county-SOURCE_MAP-md",
       "target": "layer-markdown",
-      "relation": "belongs_to",
-      "type": "related"
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5,
+      "label": "belongs_to"
     },
     {
+      "id": "edge-5",
       "source": "owen-county-TWIN_STATE-md",
       "target": "layer-markdown",
-      "relation": "belongs_to",
-      "type": "related"
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5,
+      "label": "belongs_to"
     }
   ],
-  "layers": [],
+  "layers": [
+    {
+      "id": "layer-concept",
+      "name": "Concept Nodes",
+      "description": "2 concept nodes",
+      "nodeIds": [
+        "owen-county",
+        "layer-markdown"
+      ]
+    },
+    {
+      "id": "layer-file",
+      "name": "File Nodes",
+      "description": "5 file nodes",
+      "nodeIds": [
+        "owen-county-AGENT_BOOT-md",
+        "owen-county-DOCTRINE__ALTITUDE_MESH_OPERATING_SYSTEM-md",
+        "owen-county-GATE_READINESS-md",
+        "owen-county-SOURCE_MAP-md",
+        "owen-county-TWIN_STATE-md"
+      ]
+    }
+  ],
   "tour": []
 }

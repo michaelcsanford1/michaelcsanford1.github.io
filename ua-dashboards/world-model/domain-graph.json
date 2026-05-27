@@ -1,60 +1,115 @@
 {
-  "project": "World Model",
+  "project": {
+    "name": "World Model",
+    "languages": [],
+    "frameworks": [],
+    "description": "World Model domain graph",
+    "analyzedAt": "2026-05-27T12:30:00Z",
+    "gitCommitHash": "public-dashboard"
+  },
   "type": "domain-flow",
   "version": "2.0.0",
   "generated_at": "2026-05-27T12:30:00Z",
-  "generated_by": "Hermes \u2014 construction business domain flow (NOT file-type buckets)",
+  "generated_by": "Hermes — construction business domain flow (NOT file-type buckets)",
   "nodes": [
     {
       "id": "world-model-domain",
-      "type": "domain-root",
+      "type": "domain",
       "label": "World Model Business Domains",
-      "description": "Construction business domain flow for World Model"
+      "description": "Construction business domain flow for World Model",
+      "name": "World Model Business Domains",
+      "filePath": "world-model-domain",
+      "summary": "Construction business domain flow for World Model",
+      "tags": [
+        "domain"
+      ],
+      "complexity": "simple"
     },
     {
       "id": "doctrine",
       "type": "domain",
       "label": "Doctrine & Standards",
-      "description": "Altitude Mesh OS doctrine, world model architecture, domain boundaries"
+      "description": "Altitude Mesh OS doctrine, world model architecture, domain boundaries",
+      "name": "Doctrine & Standards",
+      "filePath": "doctrine",
+      "summary": "Altitude Mesh OS doctrine, world model architecture, domain boundaries",
+      "tags": [
+        "domain"
+      ],
+      "complexity": "simple"
     },
     {
       "id": "verification",
       "type": "domain",
       "label": "Verification & Mapping",
-      "description": "Doctrine verification, mapping validation, consistency checks"
+      "description": "Doctrine verification, mapping validation, consistency checks",
+      "name": "Verification & Mapping",
+      "filePath": "verification",
+      "summary": "Doctrine verification, mapping validation, consistency checks",
+      "tags": [
+        "domain"
+      ],
+      "complexity": "simple"
     },
     {
       "id": "ratification",
       "type": "domain",
       "label": "Ratification Process",
-      "description": "Doctrine ratification workflow, approval chains, version control"
+      "description": "Doctrine ratification workflow, approval chains, version control",
+      "name": "Ratification Process",
+      "filePath": "ratification",
+      "summary": "Doctrine ratification workflow, approval chains, version control",
+      "tags": [
+        "domain"
+      ],
+      "complexity": "simple"
     }
   ],
   "edges": [
     {
+      "id": "edge-0",
       "source": "doctrine",
       "target": "world-model-domain",
-      "relation": "part_of"
+      "type": "part_of",
+      "direction": "forward",
+      "weight": 0.5,
+      "label": "part_of"
     },
     {
+      "id": "edge-1",
       "source": "verification",
       "target": "world-model-domain",
-      "relation": "part_of"
+      "type": "part_of",
+      "direction": "forward",
+      "weight": 0.5,
+      "label": "part_of"
     },
     {
+      "id": "edge-2",
       "source": "ratification",
       "target": "world-model-domain",
-      "relation": "part_of"
+      "type": "part_of",
+      "direction": "forward",
+      "weight": 0.5,
+      "label": "part_of"
     },
     {
+      "id": "edge-3",
       "source": "doctrine",
       "target": "verification",
-      "relation": "requires"
+      "type": "requires",
+      "direction": "forward",
+      "weight": 0.5,
+      "label": "requires"
     },
     {
+      "id": "edge-4",
       "source": "verification",
       "target": "ratification",
-      "relation": "enables"
+      "type": "enables",
+      "direction": "forward",
+      "weight": 0.5,
+      "label": "enables"
     }
   ],
   "stats": {
@@ -62,5 +117,19 @@
     "total_edges": 5,
     "domains": 3,
     "business_flows": 2
-  }
+  },
+  "layers": [
+    {
+      "id": "layer-domain",
+      "name": "Domain Nodes",
+      "description": "4 domain nodes",
+      "nodeIds": [
+        "world-model-domain",
+        "doctrine",
+        "verification",
+        "ratification"
+      ]
+    }
+  ],
+  "tour": []
 }

@@ -1,172 +1,332 @@
 {
-  "project": "UK CAER",
+  "project": {
+    "name": "UK CAER",
+    "languages": [],
+    "frameworks": [],
+    "description": "UK CAER domain graph",
+    "analyzedAt": "2026-05-27T12:30:00Z",
+    "gitCommitHash": "public-dashboard"
+  },
   "type": "domain-flow",
   "version": "2.0.0",
   "generated_at": "2026-05-27T12:30:00Z",
-  "generated_by": "Hermes \u2014 construction business domain flow (NOT file-type buckets)",
+  "generated_by": "Hermes — construction business domain flow (NOT file-type buckets)",
   "nodes": [
     {
       "id": "uk-caer-domain",
-      "type": "domain-root",
+      "type": "domain",
       "label": "UK CAER Business Domains",
-      "description": "Construction business domain flow for UK CAER"
+      "description": "Construction business domain flow for UK CAER",
+      "name": "UK CAER Business Domains",
+      "filePath": "uk-caer-domain",
+      "summary": "Construction business domain flow for UK CAER",
+      "tags": [
+        "domain"
+      ],
+      "complexity": "simple"
     },
     {
       "id": "gate-readiness",
       "type": "domain",
       "label": "Gate Readiness",
-      "description": "Project gate checkpoints (A1, A2, B1, B2, B3, B4, B5, B6, C1, C2, C3) with evidence requirements and approval workflows"
+      "description": "Project gate checkpoints (A1, A2, B1, B2, B3, B4, B5, B6, C1, C2, C3) with evidence requirements and approval workflows",
+      "name": "Gate Readiness",
+      "filePath": "gate-readiness",
+      "summary": "Project gate checkpoints (A1, A2, B1, B2, B3, B4, B5, B6, C1, C2, C3) with evidence requirements and approval workflows",
+      "tags": [
+        "domain"
+      ],
+      "complexity": "simple"
     },
     {
       "id": "pm-command-center",
       "type": "domain",
       "label": "PM Command Center",
-      "description": "Daily PM operating board, executive dashboards, role rollout, asset navigation"
+      "description": "Daily PM operating board, executive dashboards, role rollout, asset navigation",
+      "name": "PM Command Center",
+      "filePath": "pm-command-center",
+      "summary": "Daily PM operating board, executive dashboards, role rollout, asset navigation",
+      "tags": [
+        "domain"
+      ],
+      "complexity": "simple"
     },
     {
       "id": "procurement",
       "type": "domain",
       "label": "Procurement & Contracts",
-      "description": "Prime contract execution, subcontractor packages, cost SOV commitment, BOQ/BOM mapping"
+      "description": "Prime contract execution, subcontractor packages, cost SOV commitment, BOQ/BOM mapping",
+      "name": "Procurement & Contracts",
+      "filePath": "procurement",
+      "summary": "Prime contract execution, subcontractor packages, cost SOV commitment, BOQ/BOM mapping",
+      "tags": [
+        "domain"
+      ],
+      "complexity": "simple"
     },
     {
       "id": "field-operations",
       "type": "domain",
       "label": "Field Operations",
-      "description": "Work instructions, preinstall meetings, high-risk trade packets, field WI/ITP packages"
+      "description": "Work instructions, preinstall meetings, high-risk trade packets, field WI/ITP packages",
+      "name": "Field Operations",
+      "filePath": "field-operations",
+      "summary": "Work instructions, preinstall meetings, high-risk trade packets, field WI/ITP packages",
+      "tags": [
+        "domain"
+      ],
+      "complexity": "simple"
     },
     {
       "id": "evidence-compliance",
       "type": "domain",
       "label": "Evidence & Compliance",
-      "description": "Evidence closure packets, receipt validation ledgers, sage verification, submittal tracking"
+      "description": "Evidence closure packets, receipt validation ledgers, sage verification, submittal tracking",
+      "name": "Evidence & Compliance",
+      "filePath": "evidence-compliance",
+      "summary": "Evidence closure packets, receipt validation ledgers, sage verification, submittal tracking",
+      "tags": [
+        "domain"
+      ],
+      "complexity": "simple"
     },
     {
       "id": "cost-control",
       "type": "domain",
       "label": "Cost Control",
-      "description": "Cost SOV, commitment readiness, change orders, payment applications"
+      "description": "Cost SOV, commitment readiness, change orders, payment applications",
+      "name": "Cost Control",
+      "filePath": "cost-control",
+      "summary": "Cost SOV, commitment readiness, change orders, payment applications",
+      "tags": [
+        "domain"
+      ],
+      "complexity": "simple"
     },
     {
       "id": "risk-management",
       "type": "domain",
       "label": "Risk Management",
-      "description": "High-risk preinstall meetings, risk registers, mitigation plans"
+      "description": "High-risk preinstall meetings, risk registers, mitigation plans",
+      "name": "Risk Management",
+      "filePath": "risk-management",
+      "summary": "High-risk preinstall meetings, risk registers, mitigation plans",
+      "tags": [
+        "domain"
+      ],
+      "complexity": "simple"
     },
     {
       "id": "document-control",
       "type": "domain",
       "label": "Document Control",
-      "description": "Control document revision boards, RFI management, source registers"
+      "description": "Control document revision boards, RFI management, source registers",
+      "name": "Document Control",
+      "filePath": "document-control",
+      "summary": "Control document revision boards, RFI management, source registers",
+      "tags": [
+        "domain"
+      ],
+      "complexity": "simple"
     },
     {
       "id": "human-resources",
       "type": "domain",
       "label": "Human Resources",
-      "description": "Day-1 role rollout, PM onboarding, training records, competency tracking"
+      "description": "Day-1 role rollout, PM onboarding, training records, competency tracking",
+      "name": "Human Resources",
+      "filePath": "human-resources",
+      "summary": "Day-1 role rollout, PM onboarding, training records, competency tracking",
+      "tags": [
+        "domain"
+      ],
+      "complexity": "simple"
     },
     {
       "id": "reporting",
       "type": "domain",
       "label": "Reporting & Analytics",
-      "description": "Weekly PM snapshots, executive packages, deliverables completion roadmaps"
+      "description": "Weekly PM snapshots, executive packages, deliverables completion roadmaps",
+      "name": "Reporting & Analytics",
+      "filePath": "reporting",
+      "summary": "Weekly PM snapshots, executive packages, deliverables completion roadmaps",
+      "tags": [
+        "domain"
+      ],
+      "complexity": "simple"
     }
   ],
   "edges": [
     {
+      "id": "edge-0",
       "source": "gate-readiness",
       "target": "uk-caer-domain",
-      "relation": "part_of"
+      "type": "part_of",
+      "direction": "forward",
+      "weight": 0.5,
+      "label": "part_of"
     },
     {
+      "id": "edge-1",
       "source": "pm-command-center",
       "target": "uk-caer-domain",
-      "relation": "part_of"
+      "type": "part_of",
+      "direction": "forward",
+      "weight": 0.5,
+      "label": "part_of"
     },
     {
+      "id": "edge-2",
       "source": "procurement",
       "target": "uk-caer-domain",
-      "relation": "part_of"
+      "type": "part_of",
+      "direction": "forward",
+      "weight": 0.5,
+      "label": "part_of"
     },
     {
+      "id": "edge-3",
       "source": "field-operations",
       "target": "uk-caer-domain",
-      "relation": "part_of"
+      "type": "part_of",
+      "direction": "forward",
+      "weight": 0.5,
+      "label": "part_of"
     },
     {
+      "id": "edge-4",
       "source": "evidence-compliance",
       "target": "uk-caer-domain",
-      "relation": "part_of"
+      "type": "part_of",
+      "direction": "forward",
+      "weight": 0.5,
+      "label": "part_of"
     },
     {
+      "id": "edge-5",
       "source": "cost-control",
       "target": "uk-caer-domain",
-      "relation": "part_of"
+      "type": "part_of",
+      "direction": "forward",
+      "weight": 0.5,
+      "label": "part_of"
     },
     {
+      "id": "edge-6",
       "source": "risk-management",
       "target": "uk-caer-domain",
-      "relation": "part_of"
+      "type": "part_of",
+      "direction": "forward",
+      "weight": 0.5,
+      "label": "part_of"
     },
     {
+      "id": "edge-7",
       "source": "document-control",
       "target": "uk-caer-domain",
-      "relation": "part_of"
+      "type": "part_of",
+      "direction": "forward",
+      "weight": 0.5,
+      "label": "part_of"
     },
     {
+      "id": "edge-8",
       "source": "human-resources",
       "target": "uk-caer-domain",
-      "relation": "part_of"
+      "type": "part_of",
+      "direction": "forward",
+      "weight": 0.5,
+      "label": "part_of"
     },
     {
+      "id": "edge-9",
       "source": "reporting",
       "target": "uk-caer-domain",
-      "relation": "part_of"
+      "type": "part_of",
+      "direction": "forward",
+      "weight": 0.5,
+      "label": "part_of"
     },
     {
+      "id": "edge-10",
       "source": "gate-readiness",
       "target": "pm-command-center",
-      "relation": "drives"
+      "type": "drives",
+      "direction": "forward",
+      "weight": 0.5,
+      "label": "drives"
     },
     {
+      "id": "edge-11",
       "source": "procurement",
       "target": "cost-control",
-      "relation": "feeds"
+      "type": "feeds",
+      "direction": "forward",
+      "weight": 0.5,
+      "label": "feeds"
     },
     {
+      "id": "edge-12",
       "source": "field-operations",
       "target": "evidence-compliance",
-      "relation": "generates"
+      "type": "generates",
+      "direction": "forward",
+      "weight": 0.5,
+      "label": "generates"
     },
     {
+      "id": "edge-13",
       "source": "evidence-compliance",
       "target": "gate-readiness",
-      "relation": "proves"
+      "type": "proves",
+      "direction": "forward",
+      "weight": 0.5,
+      "label": "proves"
     },
     {
+      "id": "edge-14",
       "source": "cost-control",
       "target": "reporting",
-      "relation": "informs"
+      "type": "informs",
+      "direction": "forward",
+      "weight": 0.5,
+      "label": "informs"
     },
     {
+      "id": "edge-15",
       "source": "risk-management",
       "target": "field-operations",
-      "relation": "governs"
+      "type": "governs",
+      "direction": "forward",
+      "weight": 0.5,
+      "label": "governs"
     },
     {
+      "id": "edge-16",
       "source": "document-control",
       "target": "procurement",
-      "relation": "supports"
+      "type": "supports",
+      "direction": "forward",
+      "weight": 0.5,
+      "label": "supports"
     },
     {
+      "id": "edge-17",
       "source": "human-resources",
       "target": "field-operations",
-      "relation": "staffs"
+      "type": "staffs",
+      "direction": "forward",
+      "weight": 0.5,
+      "label": "staffs"
     },
     {
+      "id": "edge-18",
       "source": "pm-command-center",
       "target": "reporting",
-      "relation": "orchestrates"
+      "type": "orchestrates",
+      "direction": "forward",
+      "weight": 0.5,
+      "label": "orchestrates"
     }
   ],
   "stats": {
@@ -174,5 +334,26 @@
     "total_edges": 19,
     "domains": 10,
     "business_flows": 9
-  }
+  },
+  "layers": [
+    {
+      "id": "layer-domain",
+      "name": "Domain Nodes",
+      "description": "11 domain nodes",
+      "nodeIds": [
+        "uk-caer-domain",
+        "gate-readiness",
+        "pm-command-center",
+        "procurement",
+        "field-operations",
+        "evidence-compliance",
+        "cost-control",
+        "risk-management",
+        "document-control",
+        "human-resources",
+        "reporting"
+      ]
+    }
+  ],
+  "tour": []
 }
