@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Human-readable Sanford Systematic explanation manifest.">
+  <title>Explanation Manifest | Sanford Systematic</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-nav light">
+    <a class="brand" href="./">Sanford Systematic</a>
+    <nav aria-label="Primary navigation">
+      <a href="./">Home</a>
+      <a href="explain/constellation.html">Constellation</a>
+      <a href="explain/tcs-construction-harness.html">Harness</a>
+      <a href="explain/understand-anything.html">Maps</a>
+      <a href="ua-dashboards/">Graph Rebuild</a>
+      <a href="data/explanation-manifest.json">Raw JSON</a>
+    </nav>
+  </header>
+
+  <main class="explain-main">
+    <section class="explain-hero">
+      <p class="eyebrow">Explanation manifest</p>
+      <h1>The public map of what is showable.</h1>
+      <p>
+        This manifest tells a human what each public page is for, what it can
+        safely explain, and where reliance stops. The raw JSON remains available
+        for agents and automation.
+      </p>
+    </section>
+
+    <section class="audit-table" aria-label="Public pages">
+      <h2>Public pages</h2>
+      <div class="table-shell">
+        <table>
+          <thead>
+            <tr>
+              <th>Surface</th>
+              <th>Purpose</th>
+              <th>Open</th>
+              <th>Boundary</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Constellation</td>
+              <td>Plain-English product view for the governed project-twin control surface.</td>
+              <td><a class="text-link table-link" href="explain/constellation.html">Open</a></td>
+              <td>Explains current product intent; does not certify project facts.</td>
+            </tr>
+            <tr>
+              <td>TCS Construction Harness</td>
+              <td>Explains the operating architecture underneath construction project intelligence.</td>
+              <td><a class="text-link table-link" href="explain/tcs-construction-harness.html">Open</a></td>
+              <td>Maps explain; contracts, Sage, drawings, specs, and reviewers govern.</td>
+            </tr>
+            <tr>
+              <td>Understand Anything Layer</td>
+              <td>Explains how graph maps support humans and agents without becoming authority.</td>
+              <td><a class="text-link table-link" href="explain/understand-anything.html">Open</a></td>
+              <td>Graph output is an orientation layer until separately reviewed.</td>
+            </tr>
+            <tr>
+              <td>Graph Dashboards</td>
+              <td>Held for rebuild after the current artifacts failed source-file, domain-flow, tour, and browser-QC standards.</td>
+              <td><a class="text-link table-link" href="ua-dashboards/">Status</a></td>
+              <td>Not owner-presentable until rebuilt by area-owning agents using real sources and skill/plugin receipts.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="boundary light-boundary">
+      <h2>QC rule</h2>
+      <p>
+        This site should not be handed to Michael, an owner, or a reviewer until
+        a browser pass has checked page loads, links, navigation, images,
+        dashboard access, and console errors.
+      </p>
+    </section>
+  </main>
+</body>
+</html>
