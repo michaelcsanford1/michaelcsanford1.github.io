@@ -1,1332 +1,399 @@
 {
   "version": "1.0.0",
   "project": {
-    "name": "UK CAER (Active)",
-    "languages": [
-      "Python",
-      "Markdown",
-      "YAML"
-    ],
-    "frameworks": [
-      "FastAPI",
-      "Pydantic"
-    ],
-    "description": "UK CAER (Active) knowledge graph",
-    "analyzedAt": "2026-05-27T12:00:00Z",
-    "gitCommitHash": "354c2fa"
+    "name": "UK CAER TCS Digital Twin PM Package",
+    "languages": ["Python", "JavaScript", "Markdown", "HTML", "XLSX"],
+    "frameworks": ["openpyxl", "Node.js"],
+    "description": "371-file construction PM system implementing TCS (Total Control System) digital-twin package for UK CAER Outreach & Education Center (DeVere Construction). 51 Python builders generate XLSX workbooks and HTML interactive boards across 10 business domains.",
+    "analyzedAt": "2026-05-28T14:30:00-04:00",
+    "gitCommitHash": "live-scan"
   },
   "nodes": [
     {
-      "id": "uk-caer-active",
+      "id": "uk-caer-root",
       "type": "concept",
-      "name": "UK CAER (Active)",
-      "filePath": "uk-caer-active",
-      "summary": "UK CAER (Active) — 371 files",
-      "tags": [
-        "project"
-      ],
+      "name": "UK CAER TCS Package",
+      "filePath": "uk-caer-root",
+      "summary": "371-file digital-twin PM package — 51 Python builders, 36 XLSX workbooks, 22 HTML boards, 225 Markdown docs, 10 business domains",
+      "tags": ["project", "root"],
+      "complexity": "complex"
+    },
+    {
+      "id": "layer-build-scripts",
+      "type": "concept",
+      "name": "Build Scripts (51 Python + 1 JS)",
+      "filePath": "layer-build-scripts",
+      "summary": "51 Python scripts (build_uk_caer_*.py) each generate one TCS deliverable. 1 Node.js orchestrator (build_uk_caer_pm_master_control.mjs) sequences all builds.",
+      "tags": ["layer", "python", "generators"],
+      "complexity": "complex"
+    },
+    {
+      "id": "layer-governance-docs",
+      "type": "concept",
+      "name": "Governance & Control Docs (80+ MD)",
+      "filePath": "layer-governance-docs",
+      "summary": "Gate readiness READMEs, Sage governance brief, validation architecture, PM harness continuity, premobilization ledgers, doctrine, evidence token standards, receipts",
+      "tags": ["layer", "markdown", "governance"],
+      "complexity": "complex"
+    },
+    {
+      "id": "layer-onboarding",
+      "type": "concept",
+      "name": "TCS Onboarding Package (112+ MD)",
+      "filePath": "layer-onboarding",
+      "summary": "8-week syllabus, RACI matrix, exercises, project packs (Richmond, Chokshi, Franklin, Owen County), Day-1 field guides, buildspecs, 6 PPTX slide decks",
+      "tags": ["layer", "markdown", "training"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "layer-generated-workbooks",
+      "type": "concept",
+      "name": "Generated Workbooks (36 XLSX)",
+      "filePath": "layer-generated-workbooks",
+      "summary": "TCS deliverable workbooks: WBS, Control Pack, Schedule Logic, Action Plans, Field WI/ITP, BOQ/BOM, Safety/Quality, RFI Register, PM Command Center, Executive Overview",
+      "tags": ["layer", "xlsx", "deliverables"],
+      "complexity": "complex"
+    },
+    {
+      "id": "layer-interactive-boards",
+      "type": "concept",
+      "name": "Interactive Boards (22 HTML)",
+      "filePath": "layer-interactive-boards",
+      "summary": "16 generated TCS boards (Gate Readiness, Evidence Intake, Procurement, Daily PM, Validation Zone, PM Asset Navigator) + 3 workflow visuals + Owner View + Compliance Milestones",
+      "tags": ["layer", "html", "dashboards"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "layer-source-data",
+      "type": "concept",
+      "name": "Source Data (21 TXT, 4 JSON, 4 PDF)",
+      "filePath": "layer-source-data",
+      "summary": "PDF extraction caches (specs/drawings/addenda), Owen County email transcripts, NotebookLM studio exports, owner review audio script",
+      "tags": ["layer", "txt", "source-data"],
       "complexity": "simple"
     },
     {
-      "id": "layer-python",
+      "id": "layer-skill-drafts",
       "type": "concept",
-      "name": "PYTHON Files",
-      "filePath": "layer-python",
-      "summary": "51 python files",
-      "tags": [
-        "layer"
-      ],
-      "complexity": "simple"
+      "name": "Skill Drafts & Agent Configs (3 YAML)",
+      "filePath": "layer-skill-drafts",
+      "summary": "OpenAI agent YAML configs for TCS skills: sage-governance-check, package-qa-audit, source-query-receipt — early productization of PM patterns",
+      "tags": ["layer", "yaml", "agents"],
+      "complexity": "moderate"
     },
     {
-      "id": "layer-javascript",
-      "type": "concept",
-      "name": "JAVASCRIPT Files",
-      "filePath": "layer-javascript",
-      "summary": "1 javascript files",
-      "tags": [
-        "layer"
-      ],
-      "complexity": "simple"
+      "id": "domain-gate-readiness",
+      "type": "domain",
+      "name": "Gate Readiness",
+      "filePath": "domain-gate-readiness",
+      "summary": "A1-C3 gate progression with evidence requirements and approval workflows. A1/A2: contract/Sage setup. B1-B6: procurement/NTP. C1-C3: field/closeout.",
+      "tags": ["domain", "gate-readiness"],
+      "complexity": "complex"
     },
     {
-      "id": "layer-markdown",
-      "type": "concept",
-      "name": "MARKDOWN Files",
-      "filePath": "layer-markdown",
-      "summary": "225 markdown files",
-      "tags": [
-        "layer"
-      ],
-      "complexity": "simple"
+      "id": "domain-pm-command",
+      "type": "domain",
+      "name": "PM Command Center",
+      "filePath": "domain-pm-command",
+      "summary": "Daily operating nerve center: PM operating board, command center workbook, asset navigator, data spine, product review conductor",
+      "tags": ["domain", "pm-command"],
+      "complexity": "complex"
     },
     {
-      "id": "layer-html",
-      "type": "concept",
-      "name": "HTML Files",
-      "filePath": "layer-html",
-      "summary": "22 html files",
-      "tags": [
-        "layer"
-      ],
-      "complexity": "simple"
+      "id": "domain-procurement",
+      "type": "domain",
+      "name": "Procurement & Contracts",
+      "filePath": "domain-procurement",
+      "summary": "Prime contract, subcontractor packages, BOQ/BOM cost code mapping, B1/B2 procurement activation, vendor compliance",
+      "tags": ["domain", "procurement"],
+      "complexity": "complex"
     },
     {
-      "id": "layer-pptx",
-      "type": "concept",
-      "name": "PPTX Files",
-      "filePath": "layer-pptx",
-      "summary": "6 pptx files",
-      "tags": [
-        "layer"
-      ],
-      "complexity": "simple"
+      "id": "domain-field-ops",
+      "type": "domain",
+      "name": "Field Operations",
+      "filePath": "domain-field-ops",
+      "summary": "Work instructions, ITPs, preinstall meetings, high-risk trade packets, safety/quality plans for active construction",
+      "tags": ["domain", "field-ops"],
+      "complexity": "complex"
     },
     {
-      "id": "layer-txt",
-      "type": "concept",
-      "name": "TXT Files",
-      "filePath": "layer-txt",
-      "summary": "21 txt files",
-      "tags": [
-        "layer"
-      ],
-      "complexity": "simple"
+      "id": "domain-evidence",
+      "type": "domain",
+      "name": "Evidence & Compliance",
+      "filePath": "domain-evidence",
+      "summary": "Evidence closure packets, receipt validation, Sage verification, evidence token standards, validation zone boards, P0 intake pipeline",
+      "tags": ["domain", "evidence"],
+      "complexity": "complex"
     },
     {
-      "id": "layer-excalidraw",
-      "type": "concept",
-      "name": "EXCALIDRAW Files",
-      "filePath": "layer-excalidraw",
-      "summary": "1 excalidraw files",
-      "tags": [
-        "layer"
-      ],
-      "complexity": "simple"
+      "id": "domain-cost",
+      "type": "domain",
+      "name": "Cost Control",
+      "filePath": "domain-cost",
+      "summary": "SOV, commitment readiness, change orders, payment applications, live action approval ledgers, Sage CM financial alignment",
+      "tags": ["domain", "cost-control"],
+      "complexity": "moderate"
     },
     {
-      "id": "layer-json",
-      "type": "concept",
-      "name": "JSON Files",
-      "filePath": "layer-json",
-      "summary": "4 json files",
-      "tags": [
-        "layer"
-      ],
-      "complexity": "simple"
+      "id": "domain-risk",
+      "type": "domain",
+      "name": "Risk Management",
+      "filePath": "domain-risk",
+      "summary": "High-risk preinstall meetings, risk registers, high-risk trade issue packets, mitigation planning, constraint clearing",
+      "tags": ["domain", "risk"],
+      "complexity": "moderate"
     },
     {
-      "id": "layer-yaml",
-      "type": "concept",
-      "name": "YAML Files",
-      "filePath": "layer-yaml",
-      "summary": "3 yaml files",
-      "tags": [
-        "layer"
-      ],
-      "complexity": "simple"
+      "id": "domain-doc-control",
+      "type": "domain",
+      "name": "Document Control",
+      "filePath": "domain-doc-control",
+      "summary": "Control document revision boards, RFI register/management, source registers, Sage/OneDrive governance",
+      "tags": ["domain", "document-control"],
+      "complexity": "moderate"
     },
     {
-      "id": "layer-xlsx",
-      "type": "concept",
-      "name": "XLSX Files",
-      "filePath": "layer-xlsx",
-      "summary": "36 xlsx files",
-      "tags": [
-        "layer"
-      ],
-      "complexity": "simple"
+      "id": "domain-hr",
+      "type": "domain",
+      "name": "Human Resources",
+      "filePath": "domain-hr",
+      "summary": "Day-1 role rollout (PM/Super/Foreman), PM onboarding board, training tracker, 8-week syllabus, RACI matrix, competency tracking",
+      "tags": ["domain", "hr"],
+      "complexity": "moderate"
     },
     {
-      "id": "layer-m4a",
-      "type": "concept",
-      "name": "M4A Files",
-      "filePath": "layer-m4a",
-      "summary": "1 m4a files",
-      "tags": [
-        "layer"
-      ],
-      "complexity": "simple"
+      "id": "domain-reporting",
+      "type": "domain",
+      "name": "Reporting & Analytics",
+      "filePath": "domain-reporting",
+      "summary": "Weekly PM snapshots, executive packages, owner progress review, deliverables completion roadmap, TCS compliance milestones",
+      "tags": ["domain", "reporting"],
+      "complexity": "moderate"
     },
     {
-      "id": "uk-caer-active-build_uk_caer_9_gate_readiness_board-py",
+      "id": "file-gate-board",
       "type": "file",
       "name": "build_uk_caer_9_gate_readiness_board.py",
-      "filePath": "uk-caer-active-build_uk_caer_9_gate_readiness_board-py",
-      "summary": "python, 447 lines",
-      "tags": [
-        "file"
-      ],
-      "complexity": "simple"
+      "filePath": "build_uk_caer_9_gate_readiness_board.py",
+      "summary": "Generates 9-gate readiness board HTML — A1-C3 gate status tracking with evidence requirements and approval workflows",
+      "tags": ["gate-readiness", "python", "builder"],
+      "complexity": "complex"
     },
     {
-      "id": "uk-caer-active-build_uk_caer_a1_a2_evidence_closure_packet-py",
-      "type": "file",
-      "name": "build_uk_caer_a1_a2_evidence_closure_packet.py",
-      "filePath": "uk-caer-active-build_uk_caer_a1_a2_evidence_closure_packet-py",
-      "summary": "python, 489 lines",
-      "tags": [
-        "file"
-      ],
-      "complexity": "simple"
-    },
-    {
-      "id": "uk-caer-active-build_uk_caer_a1_a2_receipt_validation_ledger-py",
-      "type": "file",
-      "name": "build_uk_caer_a1_a2_receipt_validation_ledger.py",
-      "filePath": "uk-caer-active-build_uk_caer_a1_a2_receipt_validation_ledger-py",
-      "summary": "python, 448 lines",
-      "tags": [
-        "file"
-      ],
-      "complexity": "simple"
-    },
-    {
-      "id": "uk-caer-active-build_uk_caer_a1_a2_sage_verification_package-py",
-      "type": "file",
-      "name": "build_uk_caer_a1_a2_sage_verification_package.py",
-      "filePath": "uk-caer-active-build_uk_caer_a1_a2_sage_verification_package-py",
-      "summary": "python, 385 lines",
-      "tags": [
-        "file"
-      ],
-      "complexity": "simple"
-    },
-    {
-      "id": "uk-caer-active-build_uk_caer_action_plan_package-py",
-      "type": "file",
-      "name": "build_uk_caer_action_plan_package.py",
-      "filePath": "uk-caer-active-build_uk_caer_action_plan_package-py",
-      "summary": "python, 548 lines",
-      "tags": [
-        "file"
-      ],
-      "complexity": "simple"
-    },
-    {
-      "id": "uk-caer-active-build_uk_caer_b1_b2_procurement_activation_board-py",
-      "type": "file",
-      "name": "build_uk_caer_b1_b2_procurement_activation_board.py",
-      "filePath": "uk-caer-active-build_uk_caer_b1_b2_procurement_activation_board-py",
-      "summary": "python, 509 lines",
-      "tags": [
-        "file"
-      ],
-      "complexity": "simple"
-    },
-    {
-      "id": "uk-caer-active-build_uk_caer_boq_bom_cost_mapping-py",
-      "type": "file",
-      "name": "build_uk_caer_boq_bom_cost_mapping.py",
-      "filePath": "uk-caer-active-build_uk_caer_boq_bom_cost_mapping-py",
-      "summary": "python, 740 lines",
-      "tags": [
-        "file"
-      ],
-      "complexity": "simple"
-    },
-    {
-      "id": "uk-caer-active-build_uk_caer_control_doc_revision_board-py",
-      "type": "file",
-      "name": "build_uk_caer_control_doc_revision_board.py",
-      "filePath": "uk-caer-active-build_uk_caer_control_doc_revision_board-py",
-      "summary": "python, 542 lines",
-      "tags": [
-        "file"
-      ],
-      "complexity": "simple"
-    },
-    {
-      "id": "uk-caer-active-build_uk_caer_cost_sov_commitment_readiness_board-py",
-      "type": "file",
-      "name": "build_uk_caer_cost_sov_commitment_readiness_board.py",
-      "filePath": "uk-caer-active-build_uk_caer_cost_sov_commitment_readiness_board-py",
-      "summary": "python, 476 lines",
-      "tags": [
-        "file"
-      ],
-      "complexity": "simple"
-    },
-    {
-      "id": "uk-caer-active-build_uk_caer_daily_pm_operating_board-py",
-      "type": "file",
-      "name": "build_uk_caer_daily_pm_operating_board.py",
-      "filePath": "uk-caer-active-build_uk_caer_daily_pm_operating_board-py",
-      "summary": "python, 573 lines",
-      "tags": [
-        "file"
-      ],
-      "complexity": "simple"
-    },
-    {
-      "id": "uk-caer-active-build_uk_caer_day1_role_rollout_package-py",
-      "type": "file",
-      "name": "build_uk_caer_day1_role_rollout_package.py",
-      "filePath": "uk-caer-active-build_uk_caer_day1_role_rollout_package-py",
-      "summary": "python, 478 lines",
-      "tags": [
-        "file"
-      ],
-      "complexity": "simple"
-    },
-    {
-      "id": "uk-caer-active-build_uk_caer_deliverables_completion_roadmap-py",
-      "type": "file",
-      "name": "build_uk_caer_deliverables_completion_roadmap.py",
-      "filePath": "uk-caer-active-build_uk_caer_deliverables_completion_roadmap-py",
-      "summary": "python, 467 lines",
-      "tags": [
-        "file"
-      ],
-      "complexity": "simple"
-    },
-    {
-      "id": "uk-caer-active-build_uk_caer_draft_skill_forward_test_packet-py",
-      "type": "file",
-      "name": "build_uk_caer_draft_skill_forward_test_packet.py",
-      "filePath": "uk-caer-active-build_uk_caer_draft_skill_forward_test_packet-py",
-      "summary": "python, 455 lines",
-      "tags": [
-        "file"
-      ],
-      "complexity": "simple"
-    },
-    {
-      "id": "uk-caer-active-build_uk_caer_executive_package_overview-py",
-      "type": "file",
-      "name": "build_uk_caer_executive_package_overview.py",
-      "filePath": "uk-caer-active-build_uk_caer_executive_package_overview-py",
-      "summary": "python, 449 lines",
-      "tags": [
-        "file"
-      ],
-      "complexity": "simple"
-    },
-    {
-      "id": "uk-caer-active-build_uk_caer_field_wi_itp_package-py",
-      "type": "file",
-      "name": "build_uk_caer_field_wi_itp_package.py",
-      "filePath": "uk-caer-active-build_uk_caer_field_wi_itp_package-py",
-      "summary": "python, 303 lines",
-      "tags": [
-        "file"
-      ],
-      "complexity": "simple"
-    },
-    {
-      "id": "uk-caer-active-build_uk_caer_first_pm_product_review_packet-py",
-      "type": "file",
-      "name": "build_uk_caer_first_pm_product_review_packet.py",
-      "filePath": "uk-caer-active-build_uk_caer_first_pm_product_review_packet-py",
-      "summary": "python, 558 lines",
-      "tags": [
-        "file"
-      ],
-      "complexity": "simple"
-    },
-    {
-      "id": "uk-caer-active-build_uk_caer_high_risk_preinstall_meeting_packets-py",
-      "type": "file",
-      "name": "build_uk_caer_high_risk_preinstall_meeting_packets.py",
-      "filePath": "uk-caer-active-build_uk_caer_high_risk_preinstall_meeting_packets-py",
-      "summary": "python, 714 lines",
-      "tags": [
-        "file"
-      ],
-      "complexity": "simple"
-    },
-    {
-      "id": "uk-caer-active-build_uk_caer_high_risk_trade_packets-py",
-      "type": "file",
-      "name": "build_uk_caer_high_risk_trade_packets.py",
-      "filePath": "uk-caer-active-build_uk_caer_high_risk_trade_packets-py",
-      "summary": "python, 680 lines",
-      "tags": [
-        "file"
-      ],
-      "complexity": "simple"
-    },
-    {
-      "id": "uk-caer-active-build_uk_caer_human_pm_onboarding_board-py",
-      "type": "file",
-      "name": "build_uk_caer_human_pm_onboarding_board.py",
-      "filePath": "uk-caer-active-build_uk_caer_human_pm_onboarding_board-py",
-      "summary": "python, 726 lines",
-      "tags": [
-        "file"
-      ],
-      "complexity": "simple"
-    },
-    {
-      "id": "uk-caer-active-build_uk_caer_live_action_approval_ledger-py",
-      "type": "file",
-      "name": "build_uk_caer_live_action_approval_ledger.py",
-      "filePath": "uk-caer-active-build_uk_caer_live_action_approval_ledger-py",
-      "summary": "python, 305 lines",
-      "tags": [
-        "file"
-      ],
-      "complexity": "simple"
-    },
-    {
-      "id": "uk-caer-active-build_uk_caer_owner_progress_review_package-py",
-      "type": "file",
-      "name": "build_uk_caer_owner_progress_review_package.py",
-      "filePath": "uk-caer-active-build_uk_caer_owner_progress_review_package-py",
-      "summary": "python, 593 lines",
-      "tags": [
-        "file"
-      ],
-      "complexity": "simple"
-    },
-    {
-      "id": "uk-caer-active-build_uk_caer_p0_evidence_intake_board-py",
-      "type": "file",
-      "name": "build_uk_caer_p0_evidence_intake_board.py",
-      "filePath": "uk-caer-active-build_uk_caer_p0_evidence_intake_board-py",
-      "summary": "python, 582 lines",
-      "tags": [
-        "file"
-      ],
-      "complexity": "simple"
-    },
-    {
-      "id": "uk-caer-active-build_uk_caer_package_index-py",
-      "type": "file",
-      "name": "build_uk_caer_package_index.py",
-      "filePath": "uk-caer-active-build_uk_caer_package_index-py",
-      "summary": "python, 1598 lines",
-      "tags": [
-        "file"
-      ],
-      "complexity": "simple"
-    },
-    {
-      "id": "uk-caer-active-build_uk_caer_package_qa_audit-py",
-      "type": "file",
-      "name": "build_uk_caer_package_qa_audit.py",
-      "filePath": "uk-caer-active-build_uk_caer_package_qa_audit-py",
-      "summary": "python, 523 lines",
-      "tags": [
-        "file"
-      ],
-      "complexity": "simple"
-    },
-    {
-      "id": "uk-caer-active-build_uk_caer_package_qa_skill_draft_package-py",
-      "type": "file",
-      "name": "build_uk_caer_package_qa_skill_draft_package.py",
-      "filePath": "uk-caer-active-build_uk_caer_package_qa_skill_draft_package-py",
-      "summary": "python, 327 lines",
-      "tags": [
-        "file"
-      ],
-      "complexity": "simple"
-    },
-    {
-      "id": "uk-caer-active-build_uk_caer_pm_asset_navigator-py",
-      "type": "file",
-      "name": "build_uk_caer_pm_asset_navigator.py",
-      "filePath": "uk-caer-active-build_uk_caer_pm_asset_navigator-py",
-      "summary": "python, 890 lines",
-      "tags": [
-        "file"
-      ],
-      "complexity": "simple"
-    },
-    {
-      "id": "uk-caer-active-build_uk_caer_pm_command_center-py",
+      "id": "file-pm-command",
       "type": "file",
       "name": "build_uk_caer_pm_command_center.py",
-      "filePath": "uk-caer-active-build_uk_caer_pm_command_center-py",
-      "summary": "python, 621 lines",
-      "tags": [
-        "file"
-      ],
-      "complexity": "simple"
+      "filePath": "build_uk_caer_pm_command_center.py",
+      "summary": "Generates PM Command Center XLSX — daily operating nerve center aggregating all domain status",
+      "tags": ["pm-command", "python", "builder"],
+      "complexity": "complex"
     },
     {
-      "id": "uk-caer-active-build_uk_caer_pm_data_spine_asset_graph-py",
+      "id": "file-daily-board",
       "type": "file",
-      "name": "build_uk_caer_pm_data_spine_asset_graph.py",
-      "filePath": "uk-caer-active-build_uk_caer_pm_data_spine_asset_graph-py",
-      "summary": "python, 899 lines",
-      "tags": [
-        "file"
-      ],
-      "complexity": "simple"
+      "name": "build_uk_caer_daily_pm_operating_board.py",
+      "filePath": "build_uk_caer_daily_pm_operating_board.py",
+      "summary": "Generates Daily PM Operating Board HTML — real-time operational dashboard for daily standup",
+      "tags": ["pm-command", "python", "builder"],
+      "complexity": "complex"
     },
     {
-      "id": "uk-caer-active-build_uk_caer_pm_decision_action_ledger-py",
+      "id": "file-evidence-closure",
       "type": "file",
-      "name": "build_uk_caer_pm_decision_action_ledger.py",
-      "filePath": "uk-caer-active-build_uk_caer_pm_decision_action_ledger-py",
-      "summary": "python, 564 lines",
-      "tags": [
-        "file"
-      ],
-      "complexity": "simple"
+      "name": "build_uk_caer_a1_a2_evidence_closure_packet.py",
+      "filePath": "build_uk_caer_a1_a2_evidence_closure_packet.py",
+      "summary": "Generates A1/A2 evidence closure packet HTML — contract execution and Sage verification evidence assembly",
+      "tags": ["evidence", "python", "builder"],
+      "complexity": "complex"
     },
     {
-      "id": "uk-caer-active-build_uk_caer_pm_event_calendar-py",
+      "id": "file-sage-verify",
       "type": "file",
-      "name": "build_uk_caer_pm_event_calendar.py",
-      "filePath": "uk-caer-active-build_uk_caer_pm_event_calendar-py",
-      "summary": "python, 461 lines",
-      "tags": [
-        "file"
-      ],
-      "complexity": "simple"
+      "name": "build_uk_caer_a1_a2_sage_verification_package.py",
+      "filePath": "build_uk_caer_a1_a2_sage_verification_package.py",
+      "summary": "Generates Sage CM verification XLSX — validates prime contract, job cost codes, budget setup against live Sage",
+      "tags": ["evidence", "python", "builder"],
+      "complexity": "complex"
     },
     {
-      "id": "uk-caer-active-build_uk_caer_pm_evidence_token_standard-py",
+      "id": "file-procurement-board",
       "type": "file",
-      "name": "build_uk_caer_pm_evidence_token_standard.py",
-      "filePath": "uk-caer-active-build_uk_caer_pm_evidence_token_standard-py",
-      "summary": "python, 713 lines",
-      "tags": [
-        "file"
-      ],
-      "complexity": "simple"
+      "name": "build_uk_caer_b1_b2_procurement_activation_board.py",
+      "filePath": "build_uk_caer_b1_b2_procurement_activation_board.py",
+      "summary": "Generates B1/B2 Procurement Activation Board HTML — subcontractor/vendor commitment tracking with NTP gates",
+      "tags": ["procurement", "python", "builder"],
+      "complexity": "complex"
     },
     {
-      "id": "uk-caer-active-build_uk_caer_pm_harness_continuity-py",
+      "id": "file-boq-bom",
       "type": "file",
-      "name": "build_uk_caer_pm_harness_continuity.py",
-      "filePath": "uk-caer-active-build_uk_caer_pm_harness_continuity-py",
-      "summary": "python, 170 lines",
-      "tags": [
-        "file"
-      ],
-      "complexity": "simple"
+      "name": "build_uk_caer_boq_bom_cost_mapping.py",
+      "filePath": "build_uk_caer_boq_bom_cost_mapping.py",
+      "summary": "Generates BOQ/BOM Cost Code Mapping XLSX — maps bill of quantities/materials to Sage cost codes (740 lines, largest builder)",
+      "tags": ["cost-control", "procurement", "python", "builder"],
+      "complexity": "complex"
     },
     {
-      "id": "uk-caer-active-build_uk_caer_pm_master_control-mjs",
+      "id": "file-cost-sov",
       "type": "file",
-      "name": "build_uk_caer_pm_master_control.mjs",
-      "filePath": "uk-caer-active-build_uk_caer_pm_master_control-mjs",
-      "summary": "javascript, 605 lines",
-      "tags": [
-        "file"
-      ],
-      "complexity": "simple"
+      "name": "build_uk_caer_cost_sov_commitment_readiness_board.py",
+      "filePath": "build_uk_caer_cost_sov_commitment_readiness_board.py",
+      "summary": "Generates Cost/SOV Commitment Readiness Board HTML — schedule of values, commitment tracking, change orders",
+      "tags": ["cost-control", "python", "builder"],
+      "complexity": "complex"
     },
     {
-      "id": "uk-caer-active-build_uk_caer_pm_package-py",
+      "id": "file-field-wi-itp",
       "type": "file",
-      "name": "build_uk_caer_pm_package.py",
-      "filePath": "uk-caer-active-build_uk_caer_pm_package-py",
-      "summary": "python, 494 lines",
-      "tags": [
-        "file"
-      ],
-      "complexity": "simple"
+      "name": "build_uk_caer_field_wi_itp_package.py",
+      "filePath": "build_uk_caer_field_wi_itp_package.py",
+      "summary": "Generates Field WI/ITP Checklist Package XLSX — work instructions, inspection test plans, hold-point checklists",
+      "tags": ["field-ops", "python", "builder"],
+      "complexity": "complex"
     },
     {
-      "id": "uk-caer-active-build_uk_caer_pm_product_review_conductor_board-py",
+      "id": "file-high-risk",
       "type": "file",
-      "name": "build_uk_caer_pm_product_review_conductor_board.py",
-      "filePath": "uk-caer-active-build_uk_caer_pm_product_review_conductor_board-py",
-      "summary": "python, 494 lines",
-      "tags": [
-        "file"
-      ],
-      "complexity": "simple"
+      "name": "build_uk_caer_high_risk_trade_packets.py",
+      "filePath": "build_uk_caer_high_risk_trade_packets.py",
+      "summary": "Generates high-risk trade issue packets XLSX — flagged trades requiring enhanced oversight and mitigation",
+      "tags": ["risk", "python", "builder"],
+      "complexity": "moderate"
     },
     {
-      "id": "uk-caer-active-build_uk_caer_pm_productization_board-py",
-      "type": "file",
-      "name": "build_uk_caer_pm_productization_board.py",
-      "filePath": "uk-caer-active-build_uk_caer_pm_productization_board-py",
-      "summary": "python, 946 lines",
-      "tags": [
-        "file"
-      ],
-      "complexity": "simple"
-    },
-    {
-      "id": "uk-caer-active-build_uk_caer_pm_training_package-py",
-      "type": "file",
-      "name": "build_uk_caer_pm_training_package.py",
-      "filePath": "uk-caer-active-build_uk_caer_pm_training_package-py",
-      "summary": "python, 450 lines",
-      "tags": [
-        "file"
-      ],
-      "complexity": "simple"
-    },
-    {
-      "id": "uk-caer-active-build_uk_caer_pm_validation_architecture-py",
-      "type": "file",
-      "name": "build_uk_caer_pm_validation_architecture.py",
-      "filePath": "uk-caer-active-build_uk_caer_pm_validation_architecture-py",
-      "summary": "python, 509 lines",
-      "tags": [
-        "file"
-      ],
-      "complexity": "simple"
-    },
-    {
-      "id": "uk-caer-active-build_uk_caer_pm_validation_queue-py",
-      "type": "file",
-      "name": "build_uk_caer_pm_validation_queue.py",
-      "filePath": "uk-caer-active-build_uk_caer_pm_validation_queue-py",
-      "summary": "python, 581 lines",
-      "tags": [
-        "file"
-      ],
-      "complexity": "simple"
-    },
-    {
-      "id": "uk-caer-active-build_uk_caer_rfi_register-py",
+      "id": "file-rfi-register",
       "type": "file",
       "name": "build_uk_caer_rfi_register.py",
-      "filePath": "uk-caer-active-build_uk_caer_rfi_register-py",
-      "summary": "python, 449 lines",
-      "tags": [
-        "file"
-      ],
-      "complexity": "simple"
+      "filePath": "build_uk_caer_rfi_register.py",
+      "summary": "Generates standalone RFI Register XLSX — RFI tracking with status, responsibility, dates, linked drawings",
+      "tags": ["document-control", "python", "builder"],
+      "complexity": "moderate"
     },
     {
-      "id": "uk-caer-active-build_uk_caer_safety_quality_plans-py",
+      "id": "file-hr-onboarding",
       "type": "file",
-      "name": "build_uk_caer_safety_quality_plans.py",
-      "filePath": "uk-caer-active-build_uk_caer_safety_quality_plans-py",
-      "summary": "python, 605 lines",
-      "tags": [
-        "file"
-      ],
-      "complexity": "simple"
+      "name": "build_uk_caer_human_pm_onboarding_board.py",
+      "filePath": "build_uk_caer_human_pm_onboarding_board.py",
+      "summary": "Generates Human PM Onboarding Board HTML — PM/Super/Foreman onboarding progress through TCS training",
+      "tags": ["hr", "python", "builder"],
+      "complexity": "moderate"
     },
     {
-      "id": "uk-caer-active-build_uk_caer_sage_onedrive_governance_board-py",
+      "id": "file-weekly-snapshot",
       "type": "file",
-      "name": "build_uk_caer_sage_onedrive_governance_board.py",
-      "filePath": "uk-caer-active-build_uk_caer_sage_onedrive_governance_board-py",
-      "summary": "python, 477 lines",
-      "tags": [
-        "file"
-      ],
-      "complexity": "simple"
+      "name": "build_uk_caer_weekly_pm_snapshot_package.py",
+      "filePath": "build_uk_caer_weekly_pm_snapshot_package.py",
+      "summary": "Generates Weekly PM Snapshot XLSX — weekly project health summary across all TCS domains",
+      "tags": ["reporting", "python", "builder"],
+      "complexity": "moderate"
     },
     {
-      "id": "uk-caer-active-build_uk_caer_schedule_logic-py",
+      "id": "file-executive-overview",
       "type": "file",
-      "name": "build_uk_caer_schedule_logic.py",
-      "filePath": "uk-caer-active-build_uk_caer_schedule_logic-py",
-      "summary": "python, 366 lines",
-      "tags": [
-        "file"
-      ],
-      "complexity": "simple"
+      "name": "build_uk_caer_executive_package_overview.py",
+      "filePath": "build_uk_caer_executive_package_overview.py",
+      "summary": "Generates PM Package Executive Overview XLSX — high-level status for owner/executive review",
+      "tags": ["reporting", "python", "builder"],
+      "complexity": "moderate"
     },
     {
-      "id": "uk-caer-active-build_uk_caer_source_query_receipt_skill_draft_package-py",
+      "id": "file-asset-navigator",
       "type": "file",
-      "name": "build_uk_caer_source_query_receipt_skill_draft_package.py",
-      "filePath": "uk-caer-active-build_uk_caer_source_query_receipt_skill_draft_package-py",
-      "summary": "python, 571 lines",
-      "tags": [
-        "file"
-      ],
-      "complexity": "simple"
+      "name": "build_uk_caer_pm_asset_navigator.py",
+      "filePath": "build_uk_caer_pm_asset_navigator.py",
+      "summary": "Generates PM Asset Navigator HTML — interactive browser for navigating all PM package assets and relationships",
+      "tags": ["pm-command", "python", "builder"],
+      "complexity": "complex"
     },
     {
-      "id": "uk-caer-active-build_uk_caer_submittal_schedule-py",
+      "id": "file-master-control",
       "type": "file",
-      "name": "build_uk_caer_submittal_schedule.py",
-      "filePath": "uk-caer-active-build_uk_caer_submittal_schedule-py",
-      "summary": "python, 720 lines",
-      "tags": [
-        "file"
-      ],
-      "complexity": "simple"
+      "name": "build_uk_caer_pm_master_control.mjs",
+      "filePath": "build_uk_caer_pm_master_control.mjs",
+      "summary": "Node.js orchestrator sequencing all 51 Python build scripts to regenerate the complete TCS package",
+      "tags": ["orchestration", "javascript"],
+      "complexity": "moderate"
     },
     {
-      "id": "uk-caer-active-build_uk_caer_tcs_control_pack-py",
+      "id": "file-sage-governance",
       "type": "file",
-      "name": "build_uk_caer_tcs_control_pack.py",
-      "filePath": "uk-caer-active-build_uk_caer_tcs_control_pack-py",
-      "summary": "python, 588 lines",
-      "tags": [
-        "file"
-      ],
-      "complexity": "simple"
+      "name": "UK_CAER_SAGE_TCS_GOVERNANCE_BRIEF.md",
+      "filePath": "UK_CAER_SAGE_TCS_GOVERNANCE_BRIEF.md",
+      "summary": "Operating control: Sage CM/OneDrive/TCS system roles, no-move verification rules, UK CAER application status",
+      "tags": ["governance", "evidence", "markdown"],
+      "complexity": "complex"
     },
     {
-      "id": "uk-caer-active-build_uk_caer_tcs_first_skill_draft_package-py",
+      "id": "file-work-area-map",
       "type": "file",
-      "name": "build_uk_caer_tcs_first_skill_draft_package.py",
-      "filePath": "uk-caer-active-build_uk_caer_tcs_first_skill_draft_package-py",
-      "summary": "python, 497 lines",
-      "tags": [
-        "file"
-      ],
-      "complexity": "simple"
+      "name": "UK_CAER_PM_WORK_AREA_MAP.md",
+      "filePath": "UK_CAER_PM_WORK_AREA_MAP.md",
+      "summary": "Local disk vs OneDrive operating principle with 21+ numbered folder structure mapping",
+      "tags": ["governance", "document-control", "markdown"],
+      "complexity": "moderate"
     },
     {
-      "id": "uk-caer-active-build_uk_caer_tcs_reusable_skill_flow_package-py",
+      "id": "file-agent-boot",
       "type": "file",
-      "name": "build_uk_caer_tcs_reusable_skill_flow_package.py",
-      "filePath": "uk-caer-active-build_uk_caer_tcs_reusable_skill_flow_package-py",
-      "summary": "python, 531 lines",
-      "tags": [
-        "file"
-      ],
-      "complexity": "simple"
-    },
-    {
-      "id": "uk-caer-active-build_uk_caer_tcs_wbs-py",
-      "type": "file",
-      "name": "build_uk_caer_tcs_wbs.py",
-      "filePath": "uk-caer-active-build_uk_caer_tcs_wbs-py",
-      "summary": "python, 581 lines",
-      "tags": [
-        "file"
-      ],
-      "complexity": "simple"
-    },
-    {
-      "id": "uk-caer-active-build_uk_caer_tpm_release_readiness_board-py",
-      "type": "file",
-      "name": "build_uk_caer_tpm_release_readiness_board.py",
-      "filePath": "uk-caer-active-build_uk_caer_tpm_release_readiness_board-py",
-      "summary": "python, 557 lines",
-      "tags": [
-        "file"
-      ],
-      "complexity": "simple"
+      "name": "UK_CAER_PM_AGENT_BOOT_START_HERE.md",
+      "filePath": "UK_CAER_PM_AGENT_BOOT_START_HERE.md",
+      "summary": "AI agent boot file — context loading, operating constraints, first-action checklist for UK CAER work",
+      "tags": ["governance", "pm-command", "markdown"],
+      "complexity": "moderate"
     }
   ],
   "edges": [
-    {
-      "id": "edge-0",
-      "source": "layer-python",
-      "target": "uk-caer-active",
-      "type": "related",
-      "direction": "forward",
-      "weight": 0.5,
-      "label": "composes"
-    },
-    {
-      "id": "edge-1",
-      "source": "layer-javascript",
-      "target": "uk-caer-active",
-      "type": "related",
-      "direction": "forward",
-      "weight": 0.5,
-      "label": "composes"
-    },
-    {
-      "id": "edge-2",
-      "source": "layer-markdown",
-      "target": "uk-caer-active",
-      "type": "related",
-      "direction": "forward",
-      "weight": 0.5,
-      "label": "composes"
-    },
-    {
-      "id": "edge-3",
-      "source": "layer-html",
-      "target": "uk-caer-active",
-      "type": "related",
-      "direction": "forward",
-      "weight": 0.5,
-      "label": "composes"
-    },
-    {
-      "id": "edge-4",
-      "source": "layer-pptx",
-      "target": "uk-caer-active",
-      "type": "related",
-      "direction": "forward",
-      "weight": 0.5,
-      "label": "composes"
-    },
-    {
-      "id": "edge-5",
-      "source": "layer-txt",
-      "target": "uk-caer-active",
-      "type": "related",
-      "direction": "forward",
-      "weight": 0.5,
-      "label": "composes"
-    },
-    {
-      "id": "edge-6",
-      "source": "layer-excalidraw",
-      "target": "uk-caer-active",
-      "type": "related",
-      "direction": "forward",
-      "weight": 0.5,
-      "label": "composes"
-    },
-    {
-      "id": "edge-7",
-      "source": "layer-json",
-      "target": "uk-caer-active",
-      "type": "related",
-      "direction": "forward",
-      "weight": 0.5,
-      "label": "composes"
-    },
-    {
-      "id": "edge-8",
-      "source": "layer-yaml",
-      "target": "uk-caer-active",
-      "type": "related",
-      "direction": "forward",
-      "weight": 0.5,
-      "label": "composes"
-    },
-    {
-      "id": "edge-9",
-      "source": "layer-xlsx",
-      "target": "uk-caer-active",
-      "type": "related",
-      "direction": "forward",
-      "weight": 0.5,
-      "label": "composes"
-    },
-    {
-      "id": "edge-10",
-      "source": "layer-m4a",
-      "target": "uk-caer-active",
-      "type": "related",
-      "direction": "forward",
-      "weight": 0.5,
-      "label": "composes"
-    },
-    {
-      "id": "edge-11",
-      "source": "uk-caer-active-build_uk_caer_9_gate_readiness_board-py",
-      "target": "layer-python",
-      "type": "related",
-      "direction": "forward",
-      "weight": 0.5,
-      "label": "belongs_to"
-    },
-    {
-      "id": "edge-12",
-      "source": "uk-caer-active-build_uk_caer_a1_a2_evidence_closure_packet-py",
-      "target": "layer-python",
-      "type": "related",
-      "direction": "forward",
-      "weight": 0.5,
-      "label": "belongs_to"
-    },
-    {
-      "id": "edge-13",
-      "source": "uk-caer-active-build_uk_caer_a1_a2_receipt_validation_ledger-py",
-      "target": "layer-python",
-      "type": "related",
-      "direction": "forward",
-      "weight": 0.5,
-      "label": "belongs_to"
-    },
-    {
-      "id": "edge-14",
-      "source": "uk-caer-active-build_uk_caer_a1_a2_sage_verification_package-py",
-      "target": "layer-python",
-      "type": "related",
-      "direction": "forward",
-      "weight": 0.5,
-      "label": "belongs_to"
-    },
-    {
-      "id": "edge-15",
-      "source": "uk-caer-active-build_uk_caer_action_plan_package-py",
-      "target": "layer-python",
-      "type": "related",
-      "direction": "forward",
-      "weight": 0.5,
-      "label": "belongs_to"
-    },
-    {
-      "id": "edge-16",
-      "source": "uk-caer-active-build_uk_caer_b1_b2_procurement_activation_board-py",
-      "target": "layer-python",
-      "type": "related",
-      "direction": "forward",
-      "weight": 0.5,
-      "label": "belongs_to"
-    },
-    {
-      "id": "edge-17",
-      "source": "uk-caer-active-build_uk_caer_boq_bom_cost_mapping-py",
-      "target": "layer-python",
-      "type": "related",
-      "direction": "forward",
-      "weight": 0.5,
-      "label": "belongs_to"
-    },
-    {
-      "id": "edge-18",
-      "source": "uk-caer-active-build_uk_caer_control_doc_revision_board-py",
-      "target": "layer-python",
-      "type": "related",
-      "direction": "forward",
-      "weight": 0.5,
-      "label": "belongs_to"
-    },
-    {
-      "id": "edge-19",
-      "source": "uk-caer-active-build_uk_caer_cost_sov_commitment_readiness_board-py",
-      "target": "layer-python",
-      "type": "related",
-      "direction": "forward",
-      "weight": 0.5,
-      "label": "belongs_to"
-    },
-    {
-      "id": "edge-20",
-      "source": "uk-caer-active-build_uk_caer_daily_pm_operating_board-py",
-      "target": "layer-python",
-      "type": "related",
-      "direction": "forward",
-      "weight": 0.5,
-      "label": "belongs_to"
-    },
-    {
-      "id": "edge-21",
-      "source": "uk-caer-active-build_uk_caer_day1_role_rollout_package-py",
-      "target": "layer-python",
-      "type": "related",
-      "direction": "forward",
-      "weight": 0.5,
-      "label": "belongs_to"
-    },
-    {
-      "id": "edge-22",
-      "source": "uk-caer-active-build_uk_caer_deliverables_completion_roadmap-py",
-      "target": "layer-python",
-      "type": "related",
-      "direction": "forward",
-      "weight": 0.5,
-      "label": "belongs_to"
-    },
-    {
-      "id": "edge-23",
-      "source": "uk-caer-active-build_uk_caer_draft_skill_forward_test_packet-py",
-      "target": "layer-python",
-      "type": "related",
-      "direction": "forward",
-      "weight": 0.5,
-      "label": "belongs_to"
-    },
-    {
-      "id": "edge-24",
-      "source": "uk-caer-active-build_uk_caer_executive_package_overview-py",
-      "target": "layer-python",
-      "type": "related",
-      "direction": "forward",
-      "weight": 0.5,
-      "label": "belongs_to"
-    },
-    {
-      "id": "edge-25",
-      "source": "uk-caer-active-build_uk_caer_field_wi_itp_package-py",
-      "target": "layer-python",
-      "type": "related",
-      "direction": "forward",
-      "weight": 0.5,
-      "label": "belongs_to"
-    },
-    {
-      "id": "edge-26",
-      "source": "uk-caer-active-build_uk_caer_first_pm_product_review_packet-py",
-      "target": "layer-python",
-      "type": "related",
-      "direction": "forward",
-      "weight": 0.5,
-      "label": "belongs_to"
-    },
-    {
-      "id": "edge-27",
-      "source": "uk-caer-active-build_uk_caer_high_risk_preinstall_meeting_packets-py",
-      "target": "layer-python",
-      "type": "related",
-      "direction": "forward",
-      "weight": 0.5,
-      "label": "belongs_to"
-    },
-    {
-      "id": "edge-28",
-      "source": "uk-caer-active-build_uk_caer_high_risk_trade_packets-py",
-      "target": "layer-python",
-      "type": "related",
-      "direction": "forward",
-      "weight": 0.5,
-      "label": "belongs_to"
-    },
-    {
-      "id": "edge-29",
-      "source": "uk-caer-active-build_uk_caer_human_pm_onboarding_board-py",
-      "target": "layer-python",
-      "type": "related",
-      "direction": "forward",
-      "weight": 0.5,
-      "label": "belongs_to"
-    },
-    {
-      "id": "edge-30",
-      "source": "uk-caer-active-build_uk_caer_live_action_approval_ledger-py",
-      "target": "layer-python",
-      "type": "related",
-      "direction": "forward",
-      "weight": 0.5,
-      "label": "belongs_to"
-    },
-    {
-      "id": "edge-31",
-      "source": "uk-caer-active-build_uk_caer_owner_progress_review_package-py",
-      "target": "layer-python",
-      "type": "related",
-      "direction": "forward",
-      "weight": 0.5,
-      "label": "belongs_to"
-    },
-    {
-      "id": "edge-32",
-      "source": "uk-caer-active-build_uk_caer_p0_evidence_intake_board-py",
-      "target": "layer-python",
-      "type": "related",
-      "direction": "forward",
-      "weight": 0.5,
-      "label": "belongs_to"
-    },
-    {
-      "id": "edge-33",
-      "source": "uk-caer-active-build_uk_caer_package_index-py",
-      "target": "layer-python",
-      "type": "related",
-      "direction": "forward",
-      "weight": 0.5,
-      "label": "belongs_to"
-    },
-    {
-      "id": "edge-34",
-      "source": "uk-caer-active-build_uk_caer_package_qa_audit-py",
-      "target": "layer-python",
-      "type": "related",
-      "direction": "forward",
-      "weight": 0.5,
-      "label": "belongs_to"
-    },
-    {
-      "id": "edge-35",
-      "source": "uk-caer-active-build_uk_caer_package_qa_skill_draft_package-py",
-      "target": "layer-python",
-      "type": "related",
-      "direction": "forward",
-      "weight": 0.5,
-      "label": "belongs_to"
-    },
-    {
-      "id": "edge-36",
-      "source": "uk-caer-active-build_uk_caer_pm_asset_navigator-py",
-      "target": "layer-python",
-      "type": "related",
-      "direction": "forward",
-      "weight": 0.5,
-      "label": "belongs_to"
-    },
-    {
-      "id": "edge-37",
-      "source": "uk-caer-active-build_uk_caer_pm_command_center-py",
-      "target": "layer-python",
-      "type": "related",
-      "direction": "forward",
-      "weight": 0.5,
-      "label": "belongs_to"
-    },
-    {
-      "id": "edge-38",
-      "source": "uk-caer-active-build_uk_caer_pm_data_spine_asset_graph-py",
-      "target": "layer-python",
-      "type": "related",
-      "direction": "forward",
-      "weight": 0.5,
-      "label": "belongs_to"
-    },
-    {
-      "id": "edge-39",
-      "source": "uk-caer-active-build_uk_caer_pm_decision_action_ledger-py",
-      "target": "layer-python",
-      "type": "related",
-      "direction": "forward",
-      "weight": 0.5,
-      "label": "belongs_to"
-    },
-    {
-      "id": "edge-40",
-      "source": "uk-caer-active-build_uk_caer_pm_event_calendar-py",
-      "target": "layer-python",
-      "type": "related",
-      "direction": "forward",
-      "weight": 0.5,
-      "label": "belongs_to"
-    },
-    {
-      "id": "edge-41",
-      "source": "uk-caer-active-build_uk_caer_pm_evidence_token_standard-py",
-      "target": "layer-python",
-      "type": "related",
-      "direction": "forward",
-      "weight": 0.5,
-      "label": "belongs_to"
-    },
-    {
-      "id": "edge-42",
-      "source": "uk-caer-active-build_uk_caer_pm_harness_continuity-py",
-      "target": "layer-python",
-      "type": "related",
-      "direction": "forward",
-      "weight": 0.5,
-      "label": "belongs_to"
-    },
-    {
-      "id": "edge-43",
-      "source": "uk-caer-active-build_uk_caer_pm_master_control-mjs",
-      "target": "layer-javascript",
-      "type": "related",
-      "direction": "forward",
-      "weight": 0.5,
-      "label": "belongs_to"
-    },
-    {
-      "id": "edge-44",
-      "source": "uk-caer-active-build_uk_caer_pm_package-py",
-      "target": "layer-python",
-      "type": "related",
-      "direction": "forward",
-      "weight": 0.5,
-      "label": "belongs_to"
-    },
-    {
-      "id": "edge-45",
-      "source": "uk-caer-active-build_uk_caer_pm_product_review_conductor_board-py",
-      "target": "layer-python",
-      "type": "related",
-      "direction": "forward",
-      "weight": 0.5,
-      "label": "belongs_to"
-    },
-    {
-      "id": "edge-46",
-      "source": "uk-caer-active-build_uk_caer_pm_productization_board-py",
-      "target": "layer-python",
-      "type": "related",
-      "direction": "forward",
-      "weight": 0.5,
-      "label": "belongs_to"
-    },
-    {
-      "id": "edge-47",
-      "source": "uk-caer-active-build_uk_caer_pm_training_package-py",
-      "target": "layer-python",
-      "type": "related",
-      "direction": "forward",
-      "weight": 0.5,
-      "label": "belongs_to"
-    },
-    {
-      "id": "edge-48",
-      "source": "uk-caer-active-build_uk_caer_pm_validation_architecture-py",
-      "target": "layer-python",
-      "type": "related",
-      "direction": "forward",
-      "weight": 0.5,
-      "label": "belongs_to"
-    },
-    {
-      "id": "edge-49",
-      "source": "uk-caer-active-build_uk_caer_pm_validation_queue-py",
-      "target": "layer-python",
-      "type": "related",
-      "direction": "forward",
-      "weight": 0.5,
-      "label": "belongs_to"
-    },
-    {
-      "id": "edge-50",
-      "source": "uk-caer-active-build_uk_caer_rfi_register-py",
-      "target": "layer-python",
-      "type": "related",
-      "direction": "forward",
-      "weight": 0.5,
-      "label": "belongs_to"
-    },
-    {
-      "id": "edge-51",
-      "source": "uk-caer-active-build_uk_caer_safety_quality_plans-py",
-      "target": "layer-python",
-      "type": "related",
-      "direction": "forward",
-      "weight": 0.5,
-      "label": "belongs_to"
-    },
-    {
-      "id": "edge-52",
-      "source": "uk-caer-active-build_uk_caer_sage_onedrive_governance_board-py",
-      "target": "layer-python",
-      "type": "related",
-      "direction": "forward",
-      "weight": 0.5,
-      "label": "belongs_to"
-    },
-    {
-      "id": "edge-53",
-      "source": "uk-caer-active-build_uk_caer_schedule_logic-py",
-      "target": "layer-python",
-      "type": "related",
-      "direction": "forward",
-      "weight": 0.5,
-      "label": "belongs_to"
-    },
-    {
-      "id": "edge-54",
-      "source": "uk-caer-active-build_uk_caer_source_query_receipt_skill_draft_package-py",
-      "target": "layer-python",
-      "type": "related",
-      "direction": "forward",
-      "weight": 0.5,
-      "label": "belongs_to"
-    },
-    {
-      "id": "edge-55",
-      "source": "uk-caer-active-build_uk_caer_submittal_schedule-py",
-      "target": "layer-python",
-      "type": "related",
-      "direction": "forward",
-      "weight": 0.5,
-      "label": "belongs_to"
-    },
-    {
-      "id": "edge-56",
-      "source": "uk-caer-active-build_uk_caer_tcs_control_pack-py",
-      "target": "layer-python",
-      "type": "related",
-      "direction": "forward",
-      "weight": 0.5,
-      "label": "belongs_to"
-    },
-    {
-      "id": "edge-57",
-      "source": "uk-caer-active-build_uk_caer_tcs_first_skill_draft_package-py",
-      "target": "layer-python",
-      "type": "related",
-      "direction": "forward",
-      "weight": 0.5,
-      "label": "belongs_to"
-    },
-    {
-      "id": "edge-58",
-      "source": "uk-caer-active-build_uk_caer_tcs_reusable_skill_flow_package-py",
-      "target": "layer-python",
-      "type": "related",
-      "direction": "forward",
-      "weight": 0.5,
-      "label": "belongs_to"
-    },
-    {
-      "id": "edge-59",
-      "source": "uk-caer-active-build_uk_caer_tcs_wbs-py",
-      "target": "layer-python",
-      "type": "related",
-      "direction": "forward",
-      "weight": 0.5,
-      "label": "belongs_to"
-    },
-    {
-      "id": "edge-60",
-      "source": "uk-caer-active-build_uk_caer_tpm_release_readiness_board-py",
-      "target": "layer-python",
-      "type": "related",
-      "direction": "forward",
-      "weight": 0.5,
-      "label": "belongs_to"
-    }
-  ],
-  "layers": [
-    {
-      "id": "layer-concept",
-      "name": "Concept Nodes",
-      "description": "12 concept nodes",
-      "nodeIds": [
-        "uk-caer-active",
-        "layer-python",
-        "layer-javascript",
-        "layer-markdown",
-        "layer-html",
-        "layer-pptx",
-        "layer-txt",
-        "layer-excalidraw",
-        "layer-json",
-        "layer-yaml",
-        "layer-xlsx",
-        "layer-m4a"
-      ]
-    },
-    {
-      "id": "layer-file",
-      "name": "File Nodes",
-      "description": "50 file nodes",
-      "nodeIds": [
-        "uk-caer-active-build_uk_caer_9_gate_readiness_board-py",
-        "uk-caer-active-build_uk_caer_a1_a2_evidence_closure_packet-py",
-        "uk-caer-active-build_uk_caer_a1_a2_receipt_validation_ledger-py",
-        "uk-caer-active-build_uk_caer_a1_a2_sage_verification_package-py",
-        "uk-caer-active-build_uk_caer_action_plan_package-py",
-        "uk-caer-active-build_uk_caer_b1_b2_procurement_activation_board-py",
-        "uk-caer-active-build_uk_caer_boq_bom_cost_mapping-py",
-        "uk-caer-active-build_uk_caer_control_doc_revision_board-py",
-        "uk-caer-active-build_uk_caer_cost_sov_commitment_readiness_board-py",
-        "uk-caer-active-build_uk_caer_daily_pm_operating_board-py",
-        "uk-caer-active-build_uk_caer_day1_role_rollout_package-py",
-        "uk-caer-active-build_uk_caer_deliverables_completion_roadmap-py",
-        "uk-caer-active-build_uk_caer_draft_skill_forward_test_packet-py",
-        "uk-caer-active-build_uk_caer_executive_package_overview-py",
-        "uk-caer-active-build_uk_caer_field_wi_itp_package-py",
-        "uk-caer-active-build_uk_caer_first_pm_product_review_packet-py",
-        "uk-caer-active-build_uk_caer_high_risk_preinstall_meeting_packets-py",
-        "uk-caer-active-build_uk_caer_high_risk_trade_packets-py",
-        "uk-caer-active-build_uk_caer_human_pm_onboarding_board-py",
-        "uk-caer-active-build_uk_caer_live_action_approval_ledger-py",
-        "uk-caer-active-build_uk_caer_owner_progress_review_package-py",
-        "uk-caer-active-build_uk_caer_p0_evidence_intake_board-py",
-        "uk-caer-active-build_uk_caer_package_index-py",
-        "uk-caer-active-build_uk_caer_package_qa_audit-py",
-        "uk-caer-active-build_uk_caer_package_qa_skill_draft_package-py",
-        "uk-caer-active-build_uk_caer_pm_asset_navigator-py",
-        "uk-caer-active-build_uk_caer_pm_command_center-py",
-        "uk-caer-active-build_uk_caer_pm_data_spine_asset_graph-py",
-        "uk-caer-active-build_uk_caer_pm_decision_action_ledger-py",
-        "uk-caer-active-build_uk_caer_pm_event_calendar-py",
-        "uk-caer-active-build_uk_caer_pm_evidence_token_standard-py",
-        "uk-caer-active-build_uk_caer_pm_harness_continuity-py",
-        "uk-caer-active-build_uk_caer_pm_master_control-mjs",
-        "uk-caer-active-build_uk_caer_pm_package-py",
-        "uk-caer-active-build_uk_caer_pm_product_review_conductor_board-py",
-        "uk-caer-active-build_uk_caer_pm_productization_board-py",
-        "uk-caer-active-build_uk_caer_pm_training_package-py",
-        "uk-caer-active-build_uk_caer_pm_validation_architecture-py",
-        "uk-caer-active-build_uk_caer_pm_validation_queue-py",
-        "uk-caer-active-build_uk_caer_rfi_register-py",
-        "uk-caer-active-build_uk_caer_safety_quality_plans-py",
-        "uk-caer-active-build_uk_caer_sage_onedrive_governance_board-py",
-        "uk-caer-active-build_uk_caer_schedule_logic-py",
-        "uk-caer-active-build_uk_caer_source_query_receipt_skill_draft_package-py",
-        "uk-caer-active-build_uk_caer_submittal_schedule-py",
-        "uk-caer-active-build_uk_caer_tcs_control_pack-py",
-        "uk-caer-active-build_uk_caer_tcs_first_skill_draft_package-py",
-        "uk-caer-active-build_uk_caer_tcs_reusable_skill_flow_package-py",
-        "uk-caer-active-build_uk_caer_tcs_wbs-py",
-        "uk-caer-active-build_uk_caer_tpm_release_readiness_board-py"
-      ]
-    }
-  ],
-  "tour": []
+    { "source": "layer-build-scripts", "target": "uk-caer-root", "label": "part_of" },
+    { "source": "layer-governance-docs", "target": "uk-caer-root", "label": "part_of" },
+    { "source": "layer-onboarding", "target": "uk-caer-root", "label": "part_of" },
+    { "source": "layer-generated-workbooks", "target": "uk-caer-root", "label": "part_of" },
+    { "source": "layer-interactive-boards", "target": "uk-caer-root", "label": "part_of" },
+    { "source": "layer-source-data", "target": "uk-caer-root", "label": "part_of" },
+    { "source": "layer-skill-drafts", "target": "uk-caer-root", "label": "part_of" },
+    { "source": "layer-build-scripts", "target": "layer-generated-workbooks", "label": "generates" },
+    { "source": "layer-build-scripts", "target": "layer-interactive-boards", "label": "generates" },
+    { "source": "layer-source-data", "target": "layer-build-scripts", "label": "feeds_data_to" },
+    { "source": "layer-governance-docs", "target": "layer-build-scripts", "label": "governs" },
+    { "source": "domain-gate-readiness", "target": "uk-caer-root", "label": "domain_of" },
+    { "source": "domain-pm-command", "target": "uk-caer-root", "label": "domain_of" },
+    { "source": "domain-procurement", "target": "uk-caer-root", "label": "domain_of" },
+    { "source": "domain-field-ops", "target": "uk-caer-root", "label": "domain_of" },
+    { "source": "domain-evidence", "target": "uk-caer-root", "label": "domain_of" },
+    { "source": "domain-cost", "target": "uk-caer-root", "label": "domain_of" },
+    { "source": "domain-risk", "target": "uk-caer-root", "label": "domain_of" },
+    { "source": "domain-doc-control", "target": "uk-caer-root", "label": "domain_of" },
+    { "source": "domain-hr", "target": "uk-caer-root", "label": "domain_of" },
+    { "source": "domain-reporting", "target": "uk-caer-root", "label": "domain_of" },
+    { "source": "file-gate-board", "target": "domain-gate-readiness", "label": "implements" },
+    { "source": "file-pm-command", "target": "domain-pm-command", "label": "implements" },
+    { "source": "file-daily-board", "target": "domain-pm-command", "label": "implements" },
+    { "source": "file-asset-navigator", "target": "domain-pm-command", "label": "implements" },
+    { "source": "file-evidence-closure", "target": "domain-evidence", "label": "implements" },
+    { "source": "file-sage-verify", "target": "domain-evidence", "label": "implements" },
+    { "source": "file-procurement-board", "target": "domain-procurement", "label": "implements" },
+    { "source": "file-boq-bom", "target": "domain-procurement", "label": "implements" },
+    { "source": "file-boq-bom", "target": "domain-cost", "label": "feeds" },
+    { "source": "file-cost-sov", "target": "domain-cost", "label": "implements" },
+    { "source": "file-field-wi-itp", "target": "domain-field-ops", "label": "implements" },
+    { "source": "file-high-risk", "target": "domain-risk", "label": "implements" },
+    { "source": "file-rfi-register", "target": "domain-doc-control", "label": "implements" },
+    { "source": "file-hr-onboarding", "target": "domain-hr", "label": "implements" },
+    { "source": "file-weekly-snapshot", "target": "domain-reporting", "label": "implements" },
+    { "source": "file-executive-overview", "target": "domain-reporting", "label": "implements" },
+    { "source": "file-master-control", "target": "layer-build-scripts", "label": "orchestrates" },
+    { "source": "file-sage-governance", "target": "domain-evidence", "label": "governs" },
+    { "source": "file-sage-governance", "target": "domain-gate-readiness", "label": "governs" },
+    { "source": "file-work-area-map", "target": "domain-doc-control", "label": "governs" },
+    { "source": "file-agent-boot", "target": "domain-pm-command", "label": "bootstraps" },
+    { "source": "domain-gate-readiness", "target": "domain-pm-command", "label": "drives" },
+    { "source": "domain-procurement", "target": "domain-cost", "label": "feeds" },
+    { "source": "domain-field-ops", "target": "domain-evidence", "label": "generates_evidence" },
+    { "source": "domain-evidence", "target": "domain-gate-readiness", "label": "proves" },
+    { "source": "domain-cost", "target": "domain-reporting", "label": "informs" },
+    { "source": "domain-risk", "target": "domain-field-ops", "label": "governs" },
+    { "source": "domain-doc-control", "target": "domain-procurement", "label": "supports" },
+    { "source": "domain-hr", "target": "domain-field-ops", "label": "staffs" },
+    { "source": "domain-pm-command", "target": "domain-reporting", "label": "orchestrates" }
+  ]
 }

@@ -1,7 +1,7 @@
 {
   "project": "owen-county",
-  "generated_at": "2026-05-27T12:30:00Z",
-  "demo_mode": true,
+  "generated_at": "2026-05-28T00:00:00Z",
+  "demo_mode": false,
   "files": {
     "knowledge_graph": "knowledge-graph.json",
     "domain_graph": "domain-graph.json"

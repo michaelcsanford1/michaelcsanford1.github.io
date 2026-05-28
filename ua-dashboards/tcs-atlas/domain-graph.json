@@ -1,304 +1,114 @@
 {
+  "version": "2.0.0",
+  "type": "domain-flow",
   "project": {
-    "name": "TCS Atlas",
+    "name": "TCS Atlas Token Registry",
     "languages": [],
     "frameworks": [],
-    "description": "TCS Atlas domain graph",
-    "analyzedAt": "2026-05-27T12:30:00Z",
-    "gitCommitHash": "public-dashboard"
+    "description": "Construction business domain flow: SOP-to-LMS governed work spine with Atlas Token Registry governance layer",
+    "analyzedAt": "2026-05-28T12:00:00Z",
+    "gitCommitHash": "ua-pipeline-v2"
   },
-  "type": "domain-flow",
-  "version": "2.0.0",
-  "generated_at": "2026-05-27T12:30:00Z",
-  "generated_by": "Hermes — construction business domain flow (NOT file-type buckets)",
+  "generated_at": "2026-05-28T12:00:00Z",
+  "generated_by": "Understand Anything Pipeline v2.0 — construction business domain flow (NOT file-type buckets)",
   "nodes": [
-    {
-      "id": "tcs-atlas-domain",
-      "type": "domain",
-      "label": "TCS Atlas Business Domains",
-      "description": "Construction business domain flow for TCS Atlas",
-      "name": "TCS Atlas Business Domains",
-      "filePath": "tcs-atlas-domain",
-      "summary": "Construction business domain flow for TCS Atlas",
-      "tags": [
-        "domain"
-      ],
-      "complexity": "simple"
-    },
     {
       "id": "sop",
       "type": "domain",
-      "label": "SOP - Standard Operating Procedure",
-      "description": "Top-level procedure defining how work is performed. Authoritative control document.",
       "name": "SOP - Standard Operating Procedure",
       "filePath": "sop",
-      "summary": "Top-level procedure defining how work is performed. Authoritative control document.",
-      "tags": [
-        "domain"
-      ],
-      "complexity": "simple"
+      "summary": "Authoritative control document defining how work is performed. Top of the governed work spine. Establishes the method, safety requirements, and compliance framework for each construction activity.",
+      "tags": ["domain", "spine"],
+      "complexity": "moderate"
     },
     {
       "id": "swk",
       "type": "domain",
-      "label": "SWK - Safe Work Method Statement",
-      "description": "Risk assessment and safe work method derived from SOP.",
       "name": "SWK - Safe Work Method Statement",
       "filePath": "swk",
-      "summary": "Risk assessment and safe work method derived from SOP.",
-      "tags": [
-        "domain"
-      ],
-      "complexity": "simple"
+      "summary": "Risk assessment and safe work method derived from SOP. Identifies hazards, controls, and PPE requirements for field execution.",
+      "tags": ["domain", "spine"],
+      "complexity": "moderate"
     },
     {
       "id": "wi",
       "type": "domain",
-      "label": "WI - Work Instruction",
-      "description": "Step-by-step instruction for executing a specific task.",
       "name": "WI - Work Instruction",
       "filePath": "wi",
-      "summary": "Step-by-step instruction for executing a specific task.",
-      "tags": [
-        "domain"
-      ],
-      "complexity": "simple"
+      "summary": "Step-by-step execution instruction verifying SWK compliance. The granular task sequence a worker follows on site.",
+      "tags": ["domain", "spine"],
+      "complexity": "moderate"
     },
     {
       "id": "checklist",
       "type": "domain",
-      "label": "Checklist",
-      "description": "Verification points ensuring WI compliance before proceeding.",
       "name": "Checklist",
       "filePath": "checklist",
-      "summary": "Verification points ensuring WI compliance before proceeding.",
-      "tags": [
-        "domain"
-      ],
+      "summary": "Verification instrument confirming WI steps were executed. Each item maps to a WI step with pass/fail/NA and evidence.",
+      "tags": ["domain", "spine"],
       "complexity": "simple"
     },
     {
       "id": "action-plan",
       "type": "domain",
-      "label": "Action Plan",
-      "description": "Planned actions with owners, dates, and deliverables.",
       "name": "Action Plan",
       "filePath": "action-plan",
-      "summary": "Planned actions with owners, dates, and deliverables.",
-      "tags": [
-        "domain"
-      ],
+      "summary": "Training and corrective action plan. Assigns owners, dates, and deliverables to close gaps from checklists or audits.",
+      "tags": ["domain", "spine"],
       "complexity": "simple"
     },
     {
       "id": "lms",
       "type": "domain",
-      "label": "LMS - Learning Management System",
-      "description": "Training delivery, competency tracking, and certification records.",
       "name": "LMS - Learning Management System",
       "filePath": "lms",
-      "summary": "Training delivery, competency tracking, and certification records.",
-      "tags": [
-        "domain"
-      ],
-      "complexity": "simple"
+      "summary": "Training delivery and competency tracking. Certifies personnel have completed required training. Feeds back into SOP review cycle.",
+      "tags": ["domain", "spine"],
+      "complexity": "moderate"
     },
     {
       "id": "token-registry",
       "type": "domain",
-      "label": "Atlas Token Registry",
-      "description": "26,748 tokens, 53,317 aliases, unified resolver substrate.",
       "name": "Atlas Token Registry",
-      "filePath": "token-registry",
-      "summary": "26,748 tokens, 53,317 aliases, unified resolver substrate.",
-      "tags": [
-        "domain"
-      ],
-      "complexity": "simple"
+      "filePath": "CANON/atlas_tokens/atlas_token_registry.json",
+      "summary": "Machine-built resolver substrate: 26,748 canonical tokens, 53,317 aliases, 10 kinds. Governs all document references across the work spine.",
+      "tags": ["domain", "governance", "registry"],
+      "complexity": "complex"
     },
     {
       "id": "verification",
       "type": "domain",
-      "label": "Verification & Audit",
-      "description": "Continuous token validation, cross-corpus audit, watchdog monitoring.",
-      "name": "Verification & Audit",
-      "filePath": "verification",
-      "summary": "Continuous token validation, cross-corpus audit, watchdog monitoring.",
-      "tags": [
-        "domain"
-      ],
-      "complexity": "simple"
+      "name": "Token Verification & Watchdog",
+      "filePath": "CANON/atlas_tokens",
+      "summary": "Continuous verification: 1,921 citations, 495 unique tokens, 100% resolution. Six watchdog runs confirmed zero drift on 2026-05-11.",
+      "tags": ["domain", "verification"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "bd5-audit",
+      "type": "domain",
+      "name": "BD5 Cross-Corpus Audit",
+      "filePath": "CANON/atlas_tokens/audits",
+      "summary": "M6 substrate hardening across 6 corpora: 11,944 nodes, 16,047 edges, 1,258 communities. Same-tick remediation for CANON corpus.",
+      "tags": ["domain", "audit"],
+      "complexity": "moderate"
     }
   ],
   "edges": [
-    {
-      "id": "edge-0",
-      "source": "sop",
-      "target": "tcs-atlas-domain",
-      "type": "part_of",
-      "direction": "forward",
-      "weight": 0.5,
-      "label": "part_of"
-    },
-    {
-      "id": "edge-1",
-      "source": "swk",
-      "target": "tcs-atlas-domain",
-      "type": "part_of",
-      "direction": "forward",
-      "weight": 0.5,
-      "label": "part_of"
-    },
-    {
-      "id": "edge-2",
-      "source": "wi",
-      "target": "tcs-atlas-domain",
-      "type": "part_of",
-      "direction": "forward",
-      "weight": 0.5,
-      "label": "part_of"
-    },
-    {
-      "id": "edge-3",
-      "source": "checklist",
-      "target": "tcs-atlas-domain",
-      "type": "part_of",
-      "direction": "forward",
-      "weight": 0.5,
-      "label": "part_of"
-    },
-    {
-      "id": "edge-4",
-      "source": "action-plan",
-      "target": "tcs-atlas-domain",
-      "type": "part_of",
-      "direction": "forward",
-      "weight": 0.5,
-      "label": "part_of"
-    },
-    {
-      "id": "edge-5",
-      "source": "lms",
-      "target": "tcs-atlas-domain",
-      "type": "part_of",
-      "direction": "forward",
-      "weight": 0.5,
-      "label": "part_of"
-    },
-    {
-      "id": "edge-6",
-      "source": "token-registry",
-      "target": "tcs-atlas-domain",
-      "type": "part_of",
-      "direction": "forward",
-      "weight": 0.5,
-      "label": "part_of"
-    },
-    {
-      "id": "edge-7",
-      "source": "verification",
-      "target": "tcs-atlas-domain",
-      "type": "part_of",
-      "direction": "forward",
-      "weight": 0.5,
-      "label": "part_of"
-    },
-    {
-      "id": "edge-8",
-      "source": "sop",
-      "target": "swk",
-      "type": "derives",
-      "direction": "forward",
-      "weight": 0.5,
-      "label": "derives"
-    },
-    {
-      "id": "edge-9",
-      "source": "swk",
-      "target": "wi",
-      "type": "implements",
-      "direction": "forward",
-      "weight": 0.5,
-      "label": "implements"
-    },
-    {
-      "id": "edge-10",
-      "source": "wi",
-      "target": "checklist",
-      "type": "verifies",
-      "direction": "forward",
-      "weight": 0.5,
-      "label": "verifies"
-    },
-    {
-      "id": "edge-11",
-      "source": "checklist",
-      "target": "action-plan",
-      "type": "executes",
-      "direction": "forward",
-      "weight": 0.5,
-      "label": "executes"
-    },
-    {
-      "id": "edge-12",
-      "source": "action-plan",
-      "target": "lms",
-      "type": "trains_for",
-      "direction": "forward",
-      "weight": 0.5,
-      "label": "trains_for"
-    },
-    {
-      "id": "edge-13",
-      "source": "lms",
-      "target": "sop",
-      "type": "certifies",
-      "direction": "forward",
-      "weight": 0.5,
-      "label": "certifies"
-    },
-    {
-      "id": "edge-14",
-      "source": "token-registry",
-      "target": "sop",
-      "type": "governs",
-      "direction": "forward",
-      "weight": 0.5,
-      "label": "governs"
-    },
-    {
-      "id": "edge-15",
-      "source": "verification",
-      "target": "token-registry",
-      "type": "validates",
-      "direction": "forward",
-      "weight": 0.5,
-      "label": "validates"
-    }
-  ],
-  "stats": {
-    "total_nodes": 9,
-    "total_edges": 16,
-    "domains": 8,
-    "business_flows": 8
-  },
-  "layers": [
-    {
-      "id": "layer-domain",
-      "name": "Domain Nodes",
-      "description": "9 domain nodes",
-      "nodeIds": [
-        "tcs-atlas-domain",
-        "sop",
-        "swk",
-        "wi",
-        "checklist",
-        "action-plan",
-        "lms",
-        "token-registry",
-        "verification"
-      ]
-    }
-  ],
-  "tour": []
+    { "source": "sop", "target": "swk", "label": "derives" },
+    { "source": "swk", "target": "wi", "label": "implements" },
+    { "source": "wi", "target": "checklist", "label": "verifies" },
+    { "source": "checklist", "target": "action-plan", "label": "executes" },
+    { "source": "action-plan", "target": "lms", "label": "trains_for" },
+    { "source": "lms", "target": "sop", "label": "certifies" },
+    { "source": "token-registry", "target": "sop", "label": "governs" },
+    { "source": "token-registry", "target": "swk", "label": "governs" },
+    { "source": "token-registry", "target": "wi", "label": "governs" },
+    { "source": "token-registry", "target": "checklist", "label": "governs" },
+    { "source": "token-registry", "target": "action-plan", "label": "governs" },
+    { "source": "token-registry", "target": "lms", "label": "governs" },
+    { "source": "verification", "target": "token-registry", "label": "validates" },
+    { "source": "bd5-audit", "target": "token-registry", "label": "audits" },
+    { "source": "bd5-audit", "target": "verification", "label": "measures" }
+  ]
 }

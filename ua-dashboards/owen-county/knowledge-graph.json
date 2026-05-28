@@ -2,172 +2,122 @@
   "version": "1.0.0",
   "project": {
     "name": "Owen County",
-    "languages": [
-      "Markdown",
-      "YAML"
-    ],
+    "languages": ["markdown", "json", "html"],
     "frameworks": [],
-    "description": "Owen County knowledge graph",
-    "analyzedAt": "2026-05-27T12:00:00Z",
-    "gitCommitHash": "354c2fa"
+    "description": "Owen County Schools Upgrades & Athletics (Job #3620251) - Level 1 Project Digital Twin Shell under Devere/TCS. Construction project managed via Altitude Mesh Operating System doctrine with 11 gates, 9 validation queue seeds, and 5 staged currentness work orders. Currently in review-only posture.",
+    "analyzedAt": "2026-05-28T00:00:00Z",
+    "gitCommitHash": "n/a"
   },
   "nodes": [
     {
-      "id": "owen-county",
-      "type": "concept",
-      "name": "Owen County",
-      "filePath": "owen-county",
-      "summary": "Owen County — 5 files",
-      "tags": [
-        "project"
-      ],
-      "complexity": "simple"
-    },
-    {
-      "id": "layer-markdown",
-      "type": "concept",
-      "name": "MARKDOWN Files",
-      "filePath": "layer-markdown",
-      "summary": "5 markdown files",
-      "tags": [
-        "layer"
-      ],
-      "complexity": "simple"
-    },
-    {
-      "id": "owen-county-AGENT_BOOT-md",
+      "id": "agent-boot",
       "type": "file",
       "name": "AGENT_BOOT.md",
-      "filePath": "owen-county-AGENT_BOOT-md",
-      "summary": "markdown, 79 lines",
-      "tags": [
-        "file"
-      ],
-      "complexity": "simple"
+      "filePath": "AGENT_BOOT.md",
+      "summary": "Agent initialization file defining project identity (Owen County Schools Upgrades & Athletics, #3620251), authority stack (6 ranks from executed contract to chats/OCR), non-inheritance rule from UK CAER, required read order for next agent, live folder pointer, and stop rules.",
+      "tags": ["boot", "identity", "authority", "stop-rules"],
+      "complexity": "medium"
     },
     {
-      "id": "owen-county-DOCTRINE__ALTITUDE_MESH_OPERATING_SYSTEM-md",
+      "id": "doctrine-altitude-mesh",
       "type": "file",
       "name": "DOCTRINE__ALTITUDE_MESH_OPERATING_SYSTEM.md",
-      "filePath": "owen-county-DOCTRINE__ALTITUDE_MESH_OPERATING_SYSTEM-md",
-      "summary": "markdown, 326 lines",
-      "tags": [
-        "file"
-      ],
-      "complexity": "simple"
+      "filePath": "DOCTRINE__ALTITUDE_MESH_OPERATING_SYSTEM.md",
+      "summary": "Six-layer altitude mesh operating system (subatomic/micro/meso/macro/VP/founder) defining upward reporting law (work/state/ratification events), PASP upward-wake gate, cadence schedule (continuous to weekly), report shapes, and downward order shapes (intent/decomposition/execution/command).",
+      "tags": ["doctrine", "altitude-mesh", "operating-system", "signal-flow", "governance"],
+      "complexity": "high"
     },
     {
-      "id": "owen-county-GATE_READINESS-md",
+      "id": "gate-readiness",
       "type": "file",
       "name": "GATE_READINESS.md",
-      "filePath": "owen-county-GATE_READINESS-md",
-      "summary": "markdown, 105 lines",
-      "tags": [
-        "file"
-      ],
-      "complexity": "simple"
+      "filePath": "GATE_READINESS.md",
+      "summary": "Gate matrix with 11 gates (A0 through D2). A0 and A1 shell-ready; A2 through D2 blocked. Defines stop rules, 7 validation states, required fields for gate movement, and receipt template.",
+      "tags": ["gates", "validation", "stop-rules", "compliance", "receipt"],
+      "complexity": "high"
     },
     {
-      "id": "owen-county-SOURCE_MAP-md",
+      "id": "source-map",
       "type": "file",
       "name": "SOURCE_MAP.md",
-      "filePath": "owen-county-SOURCE_MAP-md",
-      "summary": "markdown, 90 lines",
-      "tags": [
-        "file"
-      ],
-      "complexity": "simple"
+      "filePath": "SOURCE_MAP.md",
+      "summary": "Source authority map: 10 inputs, 17 original OneDrive folders, 8 system-of-record candidates, 8 first control questions, and 6 missing source evidence items.",
+      "tags": ["source-map", "authority", "onedrive", "sage", "systems"],
+      "complexity": "high"
     },
     {
-      "id": "owen-county-TWIN_STATE-md",
+      "id": "twin-state",
       "type": "file",
       "name": "TWIN_STATE.md",
-      "filePath": "owen-county-TWIN_STATE-md",
-      "summary": "markdown, 95 lines",
-      "tags": [
-        "file"
-      ],
-      "complexity": "simple"
+      "filePath": "TWIN_STATE.md",
+      "summary": "Twin state at Level 1 Shell with project identity, 8 twin object families, 9-item validation queue (VQ-001 through VQ-009), 6 systems state entries, and next safe load sequence.",
+      "tags": ["twin-state", "level-1", "validation-queue", "systems", "posture"],
+      "complexity": "high"
+    },
+    {
+      "id": "digital-twin-shell",
+      "type": "file",
+      "name": "OWEN_COUNTY_PROJECT_DIGITAL_TWIN_SHELL.md",
+      "filePath": "external/OWEN_COUNTY_PROJECT_DIGITAL_TWIN_SHELL.md",
+      "summary": "Project Digital Twin Shell: twin boundary, authority stack, 7 seed records, 9 seed risks, floor maturity (Level 0-7), required starter set of 10 files, and first safe work plan.",
+      "tags": ["digital-twin", "shell", "maturity", "seed-records", "work-plan"],
+      "complexity": "high"
+    },
+    {
+      "id": "live-folder-receipt",
+      "type": "file",
+      "name": "OWEN_COUNTY_LIVE_FOLDER_CURRENTNESS_AND_INVENTORY_RECEIPT.md",
+      "filePath": "external/OWEN_COUNTY_LIVE_FOLDER_CURRENTNESS_AND_INVENTORY_RECEIPT.md",
+      "summary": "Live folder presence check: OneDrive and TCS_OVERLAY confirmed. 25 folders inventoried with 2000+ files total.",
+      "tags": ["inventory", "onedrive", "folder-count", "receipt", "presence-check"],
+      "complexity": "medium"
+    },
+    {
+      "id": "source-work-orders",
+      "type": "file",
+      "name": "OWEN_COUNTY_SOURCE_CURRENTNESS_WORK_ORDERS.md",
+      "filePath": "external/OWEN_COUNTY_SOURCE_CURRENTNESS_WORK_ORDERS.md",
+      "summary": "5 work orders: CWO-001 Contract/Gate (P0), CWO-002 Sage/Commercial (P0), CWO-003 RFI/Submittal (P0), CWO-004 Schedule/3WLA (P1), CWO-005 Safety/QC (P0). Each with review questions and receipt fields.",
+      "tags": ["work-orders", "currentness", "review", "assignment", "compliance"],
+      "complexity": "high"
+    },
+    {
+      "id": "master-spine",
+      "type": "file",
+      "name": "OWEN_COUNTY_MASTER_SPINE.md",
+      "filePath": "external/overlay/OWEN_COUNTY_MASTER_SPINE.md",
+      "summary": "Master spine: 7 signal sources triangulated. Financials: $14.67M original, $15.92M revised. 48 CPR entries with Sage-Tim mismatches. Gen conditions 1,268% over budget.",
+      "tags": ["spine", "triangulation", "financials", "mismatches", "7-systems"],
+      "complexity": "high"
+    },
+    {
+      "id": "qac-minutes",
+      "type": "file",
+      "name": "OWEN_COUNTY_QAC_MINUTES_2026-04-08.md",
+      "filePath": "external/overlay/OWEN_COUNTY_QAC_MINUTES_2026-04-08.md",
+      "summary": "OAC meeting minutes April 8, 2026: CPR status (40, 43, 47), HVAC subcontractor (Sunderland) challenges, field coordination.",
+      "tags": ["meeting", "oac", "field", "cpr", "hvac"],
+      "complexity": "low"
     }
   ],
   "edges": [
-    {
-      "id": "edge-0",
-      "source": "layer-markdown",
-      "target": "owen-county",
-      "type": "related",
-      "direction": "forward",
-      "weight": 0.5,
-      "label": "composes"
-    },
-    {
-      "id": "edge-1",
-      "source": "owen-county-AGENT_BOOT-md",
-      "target": "layer-markdown",
-      "type": "related",
-      "direction": "forward",
-      "weight": 0.5,
-      "label": "belongs_to"
-    },
-    {
-      "id": "edge-2",
-      "source": "owen-county-DOCTRINE__ALTITUDE_MESH_OPERATING_SYSTEM-md",
-      "target": "layer-markdown",
-      "type": "related",
-      "direction": "forward",
-      "weight": 0.5,
-      "label": "belongs_to"
-    },
-    {
-      "id": "edge-3",
-      "source": "owen-county-GATE_READINESS-md",
-      "target": "layer-markdown",
-      "type": "related",
-      "direction": "forward",
-      "weight": 0.5,
-      "label": "belongs_to"
-    },
-    {
-      "id": "edge-4",
-      "source": "owen-county-SOURCE_MAP-md",
-      "target": "layer-markdown",
-      "type": "related",
-      "direction": "forward",
-      "weight": 0.5,
-      "label": "belongs_to"
-    },
-    {
-      "id": "edge-5",
-      "source": "owen-county-TWIN_STATE-md",
-      "target": "layer-markdown",
-      "type": "related",
-      "direction": "forward",
-      "weight": 0.5,
-      "label": "belongs_to"
-    }
-  ],
-  "layers": [
-    {
-      "id": "layer-concept",
-      "name": "Concept Nodes",
-      "description": "2 concept nodes",
-      "nodeIds": [
-        "owen-county",
-        "layer-markdown"
-      ]
-    },
-    {
-      "id": "layer-file",
-      "name": "File Nodes",
-      "description": "5 file nodes",
-      "nodeIds": [
-        "owen-county-AGENT_BOOT-md",
-        "owen-county-DOCTRINE__ALTITUDE_MESH_OPERATING_SYSTEM-md",
-        "owen-county-GATE_READINESS-md",
-        "owen-county-SOURCE_MAP-md",
-        "owen-county-TWIN_STATE-md"
-      ]
-    }
-  ],
-  "tour": []
+    { "source": "agent-boot", "target": "twin-state", "label": "defines identity for" },
+    { "source": "agent-boot", "target": "source-map", "label": "establishes read order for" },
+    { "source": "agent-boot", "target": "gate-readiness", "label": "references stop rules in" },
+    { "source": "doctrine-altitude-mesh", "target": "agent-boot", "label": "governs operations of" },
+    { "source": "doctrine-altitude-mesh", "target": "gate-readiness", "label": "provides governance framework for" },
+    { "source": "gate-readiness", "target": "twin-state", "label": "controls advancement of" },
+    { "source": "gate-readiness", "target": "source-work-orders", "label": "feeds validation requirements to" },
+    { "source": "source-map", "target": "twin-state", "label": "provides source evidence for" },
+    { "source": "source-map", "target": "live-folder-receipt", "label": "folder paths verified by" },
+    { "source": "source-map", "target": "master-spine", "label": "authority references triangulated in" },
+    { "source": "twin-state", "target": "digital-twin-shell", "label": "state tracked in" },
+    { "source": "twin-state", "target": "source-work-orders", "label": "validation seeds drive" },
+    { "source": "digital-twin-shell", "target": "live-folder-receipt", "label": "presence confirmed by" },
+    { "source": "digital-twin-shell", "target": "source-work-orders", "label": "maturity advanced by" },
+    { "source": "live-folder-receipt", "target": "source-work-orders", "label": "inventory enables" },
+    { "source": "master-spine", "target": "twin-state", "label": "seed data feeds" },
+    { "source": "master-spine", "target": "gate-readiness", "label": "mismatches block gates in" },
+    { "source": "qac-minutes", "target": "master-spine", "label": "field evidence supports" }
+  ]
 }

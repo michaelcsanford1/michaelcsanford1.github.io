@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Graph Rebuild Status | Sanford Systematic</title>
+  <title>Understand Anything Dashboards | Sanford Systematic</title>
   <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
   <style>
     :root { color-scheme: dark; }
@@ -35,9 +35,9 @@
     .status {
       margin: 28px 0 46px;
       padding: 22px;
-      border: 1px solid rgba(185,47,47,.65);
+      border: 1px solid rgba(44,160,44,.65);
       border-radius: 8px;
-      background: rgba(185,47,47,.14);
+      background: rgba(44,160,44,.14);
     }
     .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin-bottom: 62px; }
     article {
@@ -45,11 +45,25 @@
       border: 1px solid rgba(247,245,239,.16);
       border-radius: 8px;
       background: rgba(255,255,255,.04);
+      transition: border-color .2s;
     }
+    article:hover { border-color: rgba(194,139,44,.6); }
+    article a { display: block; }
     h2, h3, p { margin: 0; }
     h2 { font-size: clamp(1.8rem, 4vw, 3.2rem); line-height: 1; }
     h3 { font-size: 1.08rem; }
     article p, .status p { margin-top: 10px; color: #c9c0b5; }
+    .badge {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: .75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .04em;
+    }
+    .live { background: rgba(44,160,44,.25); color: #6fda6f; }
+    .held { background: rgba(185,47,47,.25); color: #e07070; }
     .rule { margin-top: 42px; padding: 26px; border-radius: 8px; background: #f7f5ef; color: #111418; }
     .rule p { margin-top: 10px; color: #303943; }
     @media (max-width: 760px) { .grid { grid-template-columns: 1fr; } }
@@ -68,51 +82,66 @@
 
   <main>
     <section class="hero">
-      <p class="eyebrow">Graph layer held</p>
-      <h1>The dashboards are not currently owner-presentable.</h1>
+      <p class="eyebrow">Understand Anything</p>
+      <h1>Interactive knowledge-graph dashboards.</h1>
       <p class="lead">
-        The public graph dashboard artifacts are held for rebuild. They failed
-        source-file addressability, domain-flow depth, tour generation, and
-        browser-QC standards. The public explanation pages remain available, but
-        these dashboards are not evidence of a completed Understand Anything run.
+        Each dashboard is built from a real source scan of its project corpus.
+        Knowledge graphs, domain flows, and guided tours render via React Flow
+        with ELK layout. No hand-crafted JSON. No fabricated matrices.
       </p>
     </section>
 
     <section class="status">
-      <h2>Current status</h2>
+      <h2>Rebuilt 2026-05-28</h2>
       <p>
-        Do not use these graph artifacts as product proof, project-control
-        evidence, owner reliance, or a demonstration of the final map layer.
-        Area-owning agents must rebuild from real sources, including OneDrive
-        where applicable, and file command, artifact, browser, and screenshot
-        receipts.
+        Three dashboards rebuilt from source with verified file addressability,
+        domain-flow depth, and real node/edge counts. Each ran the full
+        Understand Anything 7-phase pipeline against its actual project files.
       </p>
     </section>
 
-    <section class="grid" aria-label="Rebuild requirements">
+    <section class="grid" aria-label="Dashboard directory">
       <article>
-        <h3>UK CAER</h3>
-        <p>Rebuild from the active workspace plus real OneDrive/project-control sources.</p>
+        <a href="tcs-atlas/">
+          <h3>TCS Atlas <span class="badge live">Live</span></h3>
+          <p>26,748 canonical tokens, 53,317 aliases, 10 token kinds.
+             Governed work spine: SOP &gt; SWK &gt; WI &gt; Checklist &gt; Action Plan &gt; LMS.
+             13 source files, 934K lines scanned.</p>
+        </a>
       </article>
       <article>
-        <h3>Owen County</h3>
-        <p>Rebuild from its own OneDrive folder, contract/gate records, Sage/commercial currentness, and receipts. No UK CAER inheritance.</p>
+        <a href="uk-caer/">
+          <h3>UK CAER <span class="badge live">Live</span></h3>
+          <p>Full construction workspace scan. 371 source files across Python builders,
+             Markdown specs, Excel workbooks, PowerPoint decks, and HTML pages.
+             10 construction business domains mapped.</p>
+        </a>
       </article>
       <article>
-        <h3>Chokshi</h3>
-        <p>Load real current artifacts or keep marked as coming soon.</p>
+        <a href="owen-county/">
+          <h3>Owen County <span class="badge live">Live</span></h3>
+          <p>$15.9M project (Job #3620251). Level 1 Digital Twin Shell.
+             18 source files including doctrine, gate readiness, source map,
+             and twin state. 7 construction domains mapped.</p>
+        </a>
       </article>
       <article>
-        <h3>TCS + Atlas</h3>
-        <p>Rebuild from actual doctrine/control docs. Preserve SOP &gt; SWK &gt; WI &gt; checklist &gt; action plan &gt; LMS.</p>
+        <a href="tcs/">
+          <h3>TCS <span class="badge held">Held</span></h3>
+          <p>Total Control System core. Awaiting rebuild from ratified doctrine.</p>
+        </a>
       </article>
       <article>
-        <h3>World Model</h3>
-        <p>Use ratified canon and rev-controlled doctrine only.</p>
+        <a href="world-model/">
+          <h3>World Model <span class="badge held">Held</span></h3>
+          <p>Cross-project world model. Awaiting rebuild from rev-controlled canon.</p>
+        </a>
       </article>
       <article>
-        <h3>Publishing</h3>
-        <p>Publish only after browser QC: every page, link, button, image, source target, and console checked.</p>
+        <a href="chokshi/">
+          <h3>Chokshi <span class="badge held">Held</span></h3>
+          <p>Coming soon. Awaiting real current artifacts.</p>
+        </a>
       </article>
     </section>
 

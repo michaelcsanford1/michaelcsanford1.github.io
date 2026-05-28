@@ -1,363 +1,208 @@
 {
-  "version": "1.0.0",
+  "version": "2.0.0",
   "project": {
-    "name": "TCS Atlas",
-    "languages": [
-      "JSON",
-      "Markdown",
-      "YAML"
-    ],
+    "name": "TCS Atlas Token Registry",
+    "languages": ["JSON", "Markdown"],
     "frameworks": [],
-    "description": "TCS Atlas knowledge graph",
-    "analyzedAt": "2026-05-27T12:00:00Z",
-    "gitCommitHash": "354c2fa"
+    "description": "Machine-built resolver substrate for Atlas IDs, Atomics IDs/canonical aliases, graphify MCP services, graphify node tokens, and legacy token-xref rows. 26,748 tokens, 53,317 aliases across 10 kinds.",
+    "analyzedAt": "2026-05-28T12:00:00Z",
+    "gitCommitHash": "ua-pipeline-v2"
   },
   "nodes": [
     {
       "id": "tcs-atlas",
       "type": "concept",
-      "name": "TCS Atlas",
-      "filePath": "tcs-atlas",
-      "summary": "TCS Atlas — 13 files",
-      "tags": [
-        "project"
-      ],
-      "complexity": "simple"
+      "name": "TCS Atlas Token Registry",
+      "filePath": "CANON/atlas_tokens",
+      "summary": "Project root: 13 files, 934,443 lines. Machine-built resolver substrate with 26,748 tokens and 53,317 aliases.",
+      "tags": ["project", "registry"],
+      "complexity": "complex"
     },
     {
-      "id": "layer-json",
+      "id": "layer-registry",
       "type": "concept",
-      "name": "JSON Files",
-      "filePath": "layer-json",
-      "summary": "10 json files",
-      "tags": [
-        "layer"
-      ],
-      "complexity": "simple"
+      "name": "Registry Core",
+      "filePath": "CANON/atlas_tokens",
+      "summary": "Primary token registry data and cross-reference tables. 933,320 lines across 3 files.",
+      "tags": ["layer", "data"],
+      "complexity": "complex"
     },
     {
-      "id": "layer-markdown",
+      "id": "layer-verification",
       "type": "concept",
-      "name": "MARKDOWN Files",
-      "filePath": "layer-markdown",
-      "summary": "3 markdown files",
-      "tags": [
-        "layer"
-      ],
+      "name": "Verification Layer",
+      "filePath": "CANON/atlas_tokens",
+      "summary": "Token resolver verification and smoke tests. 100% resolution rate: 495 unique tokens from 1,921 citations.",
+      "tags": ["layer", "verification"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "layer-watchdog",
+      "type": "concept",
+      "name": "Watchdog Layer",
+      "filePath": "CANON/atlas_tokens",
+      "summary": "Six automated watchdog runs confirming continuous token resolution integrity. All green.",
+      "tags": ["layer", "monitoring"],
       "complexity": "simple"
     },
     {
-      "id": "tcs-atlas-atlas_token_registry-json",
-      "type": "file",
-      "name": "atlas_token_registry.json",
-      "filePath": "tcs-atlas-atlas_token_registry-json",
-      "summary": "json, 675371 lines",
-      "tags": [
-        "file"
-      ],
-      "complexity": "simple"
+      "id": "layer-audit",
+      "type": "concept",
+      "name": "BD5 Audit Layer",
+      "filePath": "CANON/atlas_tokens/audits",
+      "summary": "Cross-corpus audits: 6 corpora, 11,944 nodes, 16,047 edges, 1,258 communities.",
+      "tags": ["layer", "audit"],
+      "complexity": "moderate"
     },
     {
-      "id": "tcs-atlas-ATLAS_TOKEN_REGISTRY-md",
+      "id": "file-atlas-token-registry-md",
       "type": "file",
       "name": "ATLAS_TOKEN_REGISTRY.md",
-      "filePath": "tcs-atlas-ATLAS_TOKEN_REGISTRY-md",
-      "summary": "markdown, 46 lines",
-      "tags": [
-        "file"
-      ],
+      "filePath": "CANON/atlas_tokens/ATLAS_TOKEN_REGISTRY.md",
+      "summary": "Registry documentation: 26,748 tokens, 53,317 aliases, 1 collision, 10 token kinds, resolver contract, 5 source registries.",
+      "tags": ["documentation", "markdown"],
       "complexity": "simple"
     },
     {
-      "id": "tcs-atlas-atlas_token_resolver_smoke_2026-05-11-json",
+      "id": "file-atlas-token-registry-json",
       "type": "file",
-      "name": "atlas_token_resolver_smoke_2026-05-11.json",
-      "filePath": "tcs-atlas-atlas_token_resolver_smoke_2026-05-11-json",
-      "summary": "json, 48 lines",
-      "tags": [
-        "file"
-      ],
-      "complexity": "simple"
+      "name": "atlas_token_registry.json",
+      "filePath": "CANON/atlas_tokens/atlas_token_registry.json",
+      "summary": "Canonical registry: 675,371 lines. Contains alias_collisions, aliases (53,317), and tokens (26,748) across 10 kinds.",
+      "tags": ["registry", "json", "core"],
+      "complexity": "complex"
     },
     {
-      "id": "tcs-atlas-atlas_token_verification_2026-05-11-json",
-      "type": "file",
-      "name": "atlas_token_verification_2026-05-11.json",
-      "filePath": "tcs-atlas-atlas_token_verification_2026-05-11-json",
-      "summary": "json, 12 lines",
-      "tags": [
-        "file"
-      ],
-      "complexity": "simple"
-    },
-    {
-      "id": "tcs-atlas-atlas_token_verification_watchdog_2026-05-11T0844Z-json",
-      "type": "file",
-      "name": "atlas_token_verification_watchdog_2026-05-11T0844Z.json",
-      "filePath": "tcs-atlas-atlas_token_verification_watchdog_2026-05-11T0844Z-json",
-      "summary": "json, 12 lines",
-      "tags": [
-        "file"
-      ],
-      "complexity": "simple"
-    },
-    {
-      "id": "tcs-atlas-atlas_token_verification_watchdog_2026-05-11T0949Z-json",
-      "type": "file",
-      "name": "atlas_token_verification_watchdog_2026-05-11T0949Z.json",
-      "filePath": "tcs-atlas-atlas_token_verification_watchdog_2026-05-11T0949Z-json",
-      "summary": "json, 12 lines",
-      "tags": [
-        "file"
-      ],
-      "complexity": "simple"
-    },
-    {
-      "id": "tcs-atlas-atlas_token_verification_watchdog_20260511T124822Z-json",
-      "type": "file",
-      "name": "atlas_token_verification_watchdog_20260511T124822Z.json",
-      "filePath": "tcs-atlas-atlas_token_verification_watchdog_20260511T124822Z-json",
-      "summary": "json, 12 lines",
-      "tags": [
-        "file"
-      ],
-      "complexity": "simple"
-    },
-    {
-      "id": "tcs-atlas-atlas_token_verification_watchdog_20260511T132135Z-json",
-      "type": "file",
-      "name": "atlas_token_verification_watchdog_20260511T132135Z.json",
-      "filePath": "tcs-atlas-atlas_token_verification_watchdog_20260511T132135Z-json",
-      "summary": "json, 12 lines",
-      "tags": [
-        "file"
-      ],
-      "complexity": "simple"
-    },
-    {
-      "id": "tcs-atlas-atlas_token_verification_watchdog_20260511T142248Z-json",
-      "type": "file",
-      "name": "atlas_token_verification_watchdog_20260511T142248Z.json",
-      "filePath": "tcs-atlas-atlas_token_verification_watchdog_20260511T142248Z-json",
-      "summary": "json, 12 lines",
-      "tags": [
-        "file"
-      ],
-      "complexity": "simple"
-    },
-    {
-      "id": "tcs-atlas-atlas_token_verification_watchdog_20260511T190206Z-json",
-      "type": "file",
-      "name": "atlas_token_verification_watchdog_20260511T190206Z.json",
-      "filePath": "tcs-atlas-atlas_token_verification_watchdog_20260511T190206Z-json",
-      "summary": "json, 12 lines",
-      "tags": [
-        "file"
-      ],
-      "complexity": "simple"
-    },
-    {
-      "id": "tcs-atlas-atlas_token_xref-json",
+      "id": "file-atlas-token-xref-json",
       "type": "file",
       "name": "atlas_token_xref.json",
-      "filePath": "tcs-atlas-atlas_token_xref-json",
-      "summary": "json, 257903 lines",
-      "tags": [
-        "file"
-      ],
+      "filePath": "CANON/atlas_tokens/atlas_token_xref.json",
+      "summary": "Cross-reference: 257,903 lines. Bidirectional alias-to-canonical resolution for fast lookup.",
+      "tags": ["cross-reference", "json"],
+      "complexity": "complex"
+    },
+    {
+      "id": "file-resolver-smoke",
+      "type": "file",
+      "name": "atlas_token_resolver_smoke_2026-05-11.json",
+      "filePath": "CANON/atlas_tokens/atlas_token_resolver_smoke_2026-05-11.json",
+      "summary": "Smoke test: 4 resolutions across legacy.cited_token, pulse.pilot_token, graphify.service, graphify.node. All OK.",
+      "tags": ["smoke-test", "json"],
       "complexity": "simple"
     },
     {
-      "id": "tcs-atlas-BD5_CROSS_CORPUS_AUDIT_20260511T195752Z-md",
+      "id": "file-verification",
+      "type": "file",
+      "name": "atlas_token_verification_2026-05-11.json",
+      "filePath": "CANON/atlas_tokens/atlas_token_verification_2026-05-11.json",
+      "summary": "Full verification: 1,921 citations, 247 files, 495 unique tokens, 100% resolved, 0 unresolved.",
+      "tags": ["verification", "json"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file-watchdog-0844",
+      "type": "file",
+      "name": "watchdog_2026-05-11T0844Z.json",
+      "filePath": "CANON/atlas_tokens/atlas_token_verification_watchdog_2026-05-11T0844Z.json",
+      "summary": "Watchdog 08:44Z: 495 resolved, 0 unresolved.",
+      "tags": ["watchdog", "json"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file-watchdog-0949",
+      "type": "file",
+      "name": "watchdog_2026-05-11T0949Z.json",
+      "filePath": "CANON/atlas_tokens/atlas_token_verification_watchdog_2026-05-11T0949Z.json",
+      "summary": "Watchdog 09:49Z: 495 resolved, 0 unresolved.",
+      "tags": ["watchdog", "json"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file-watchdog-1248",
+      "type": "file",
+      "name": "watchdog_20260511T124822Z.json",
+      "filePath": "CANON/atlas_tokens/atlas_token_verification_watchdog_20260511T124822Z.json",
+      "summary": "Watchdog 12:48Z: 495 resolved, 0 unresolved.",
+      "tags": ["watchdog", "json"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file-watchdog-1321",
+      "type": "file",
+      "name": "watchdog_20260511T132135Z.json",
+      "filePath": "CANON/atlas_tokens/atlas_token_verification_watchdog_20260511T132135Z.json",
+      "summary": "Watchdog 13:21Z: 495 resolved, 0 unresolved.",
+      "tags": ["watchdog", "json"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file-watchdog-1422",
+      "type": "file",
+      "name": "watchdog_20260511T142248Z.json",
+      "filePath": "CANON/atlas_tokens/atlas_token_verification_watchdog_20260511T142248Z.json",
+      "summary": "Watchdog 14:22Z: 495 resolved, 0 unresolved.",
+      "tags": ["watchdog", "json"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file-watchdog-1902",
+      "type": "file",
+      "name": "watchdog_20260511T190206Z.json",
+      "filePath": "CANON/atlas_tokens/atlas_token_verification_watchdog_20260511T190206Z.json",
+      "summary": "Watchdog 19:02Z: 495 resolved, 0 unresolved.",
+      "tags": ["watchdog", "json"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file-audit-1",
       "type": "file",
       "name": "BD5_CROSS_CORPUS_AUDIT_20260511T195752Z.md",
-      "filePath": "tcs-atlas-BD5_CROSS_CORPUS_AUDIT_20260511T195752Z-md",
-      "summary": "markdown, 55 lines",
-      "tags": [
-        "file"
-      ],
-      "complexity": "simple"
+      "filePath": "CANON/atlas_tokens/audits/BD5_CROSS_CORPUS_AUDIT_20260511T195752Z.md",
+      "summary": "First BD5 audit: 5/6 corpora OK, CANON flagged as missing_graph. 11,925 nodes, 16,013 edges.",
+      "tags": ["audit", "markdown"],
+      "complexity": "moderate"
     },
     {
-      "id": "tcs-atlas-BD5_CROSS_CORPUS_AUDIT_20260511T195932Z-md",
+      "id": "file-audit-2",
       "type": "file",
       "name": "BD5_CROSS_CORPUS_AUDIT_20260511T195932Z.md",
-      "filePath": "tcs-atlas-BD5_CROSS_CORPUS_AUDIT_20260511T195932Z-md",
-      "summary": "markdown, 55 lines",
-      "tags": [
-        "file"
-      ],
-      "complexity": "simple"
+      "filePath": "CANON/atlas_tokens/audits/BD5_CROSS_CORPUS_AUDIT_20260511T195932Z.md",
+      "summary": "Second BD5 audit: 6/6 corpora OK after same-tick remediation. 11,944 nodes, 16,047 edges, 1,258 communities.",
+      "tags": ["audit", "markdown"],
+      "complexity": "moderate"
     }
   ],
   "edges": [
-    {
-      "id": "edge-0",
-      "source": "layer-json",
-      "target": "tcs-atlas",
-      "type": "related",
-      "direction": "forward",
-      "weight": 0.5,
-      "label": "composes"
-    },
-    {
-      "id": "edge-1",
-      "source": "layer-markdown",
-      "target": "tcs-atlas",
-      "type": "related",
-      "direction": "forward",
-      "weight": 0.5,
-      "label": "composes"
-    },
-    {
-      "id": "edge-2",
-      "source": "tcs-atlas-atlas_token_registry-json",
-      "target": "layer-json",
-      "type": "related",
-      "direction": "forward",
-      "weight": 0.5,
-      "label": "belongs_to"
-    },
-    {
-      "id": "edge-3",
-      "source": "tcs-atlas-ATLAS_TOKEN_REGISTRY-md",
-      "target": "layer-markdown",
-      "type": "related",
-      "direction": "forward",
-      "weight": 0.5,
-      "label": "belongs_to"
-    },
-    {
-      "id": "edge-4",
-      "source": "tcs-atlas-atlas_token_resolver_smoke_2026-05-11-json",
-      "target": "layer-json",
-      "type": "related",
-      "direction": "forward",
-      "weight": 0.5,
-      "label": "belongs_to"
-    },
-    {
-      "id": "edge-5",
-      "source": "tcs-atlas-atlas_token_verification_2026-05-11-json",
-      "target": "layer-json",
-      "type": "related",
-      "direction": "forward",
-      "weight": 0.5,
-      "label": "belongs_to"
-    },
-    {
-      "id": "edge-6",
-      "source": "tcs-atlas-atlas_token_verification_watchdog_2026-05-11T0844Z-json",
-      "target": "layer-json",
-      "type": "related",
-      "direction": "forward",
-      "weight": 0.5,
-      "label": "belongs_to"
-    },
-    {
-      "id": "edge-7",
-      "source": "tcs-atlas-atlas_token_verification_watchdog_2026-05-11T0949Z-json",
-      "target": "layer-json",
-      "type": "related",
-      "direction": "forward",
-      "weight": 0.5,
-      "label": "belongs_to"
-    },
-    {
-      "id": "edge-8",
-      "source": "tcs-atlas-atlas_token_verification_watchdog_20260511T124822Z-json",
-      "target": "layer-json",
-      "type": "related",
-      "direction": "forward",
-      "weight": 0.5,
-      "label": "belongs_to"
-    },
-    {
-      "id": "edge-9",
-      "source": "tcs-atlas-atlas_token_verification_watchdog_20260511T132135Z-json",
-      "target": "layer-json",
-      "type": "related",
-      "direction": "forward",
-      "weight": 0.5,
-      "label": "belongs_to"
-    },
-    {
-      "id": "edge-10",
-      "source": "tcs-atlas-atlas_token_verification_watchdog_20260511T142248Z-json",
-      "target": "layer-json",
-      "type": "related",
-      "direction": "forward",
-      "weight": 0.5,
-      "label": "belongs_to"
-    },
-    {
-      "id": "edge-11",
-      "source": "tcs-atlas-atlas_token_verification_watchdog_20260511T190206Z-json",
-      "target": "layer-json",
-      "type": "related",
-      "direction": "forward",
-      "weight": 0.5,
-      "label": "belongs_to"
-    },
-    {
-      "id": "edge-12",
-      "source": "tcs-atlas-atlas_token_xref-json",
-      "target": "layer-json",
-      "type": "related",
-      "direction": "forward",
-      "weight": 0.5,
-      "label": "belongs_to"
-    },
-    {
-      "id": "edge-13",
-      "source": "tcs-atlas-BD5_CROSS_CORPUS_AUDIT_20260511T195752Z-md",
-      "target": "layer-markdown",
-      "type": "related",
-      "direction": "forward",
-      "weight": 0.5,
-      "label": "belongs_to"
-    },
-    {
-      "id": "edge-14",
-      "source": "tcs-atlas-BD5_CROSS_CORPUS_AUDIT_20260511T195932Z-md",
-      "target": "layer-markdown",
-      "type": "related",
-      "direction": "forward",
-      "weight": 0.5,
-      "label": "belongs_to"
-    }
-  ],
-  "layers": [
-    {
-      "id": "layer-concept",
-      "name": "Concept Nodes",
-      "description": "3 concept nodes",
-      "nodeIds": [
-        "tcs-atlas",
-        "layer-json",
-        "layer-markdown"
-      ]
-    },
-    {
-      "id": "layer-file",
-      "name": "File Nodes",
-      "description": "13 file nodes",
-      "nodeIds": [
-        "tcs-atlas-atlas_token_registry-json",
-        "tcs-atlas-ATLAS_TOKEN_REGISTRY-md",
-        "tcs-atlas-atlas_token_resolver_smoke_2026-05-11-json",
-        "tcs-atlas-atlas_token_verification_2026-05-11-json",
-        "tcs-atlas-atlas_token_verification_watchdog_2026-05-11T0844Z-json",
-        "tcs-atlas-atlas_token_verification_watchdog_2026-05-11T0949Z-json",
-        "tcs-atlas-atlas_token_verification_watchdog_20260511T124822Z-json",
-        "tcs-atlas-atlas_token_verification_watchdog_20260511T132135Z-json",
-        "tcs-atlas-atlas_token_verification_watchdog_20260511T142248Z-json",
-        "tcs-atlas-atlas_token_verification_watchdog_20260511T190206Z-json",
-        "tcs-atlas-atlas_token_xref-json",
-        "tcs-atlas-BD5_CROSS_CORPUS_AUDIT_20260511T195752Z-md",
-        "tcs-atlas-BD5_CROSS_CORPUS_AUDIT_20260511T195932Z-md"
-      ]
-    }
-  ],
-  "tour": []
+    { "source": "tcs-atlas", "target": "layer-registry", "label": "contains" },
+    { "source": "tcs-atlas", "target": "layer-verification", "label": "contains" },
+    { "source": "tcs-atlas", "target": "layer-watchdog", "label": "contains" },
+    { "source": "tcs-atlas", "target": "layer-audit", "label": "contains" },
+    { "source": "layer-registry", "target": "file-atlas-token-registry-md", "label": "contains" },
+    { "source": "layer-registry", "target": "file-atlas-token-registry-json", "label": "contains" },
+    { "source": "layer-registry", "target": "file-atlas-token-xref-json", "label": "contains" },
+    { "source": "layer-verification", "target": "file-resolver-smoke", "label": "contains" },
+    { "source": "layer-verification", "target": "file-verification", "label": "contains" },
+    { "source": "layer-watchdog", "target": "file-watchdog-0844", "label": "contains" },
+    { "source": "layer-watchdog", "target": "file-watchdog-0949", "label": "contains" },
+    { "source": "layer-watchdog", "target": "file-watchdog-1248", "label": "contains" },
+    { "source": "layer-watchdog", "target": "file-watchdog-1321", "label": "contains" },
+    { "source": "layer-watchdog", "target": "file-watchdog-1422", "label": "contains" },
+    { "source": "layer-watchdog", "target": "file-watchdog-1902", "label": "contains" },
+    { "source": "layer-audit", "target": "file-audit-1", "label": "contains" },
+    { "source": "layer-audit", "target": "file-audit-2", "label": "contains" },
+    { "source": "file-atlas-token-registry-md", "target": "file-atlas-token-registry-json", "label": "documents" },
+    { "source": "file-atlas-token-registry-md", "target": "file-atlas-token-xref-json", "label": "documents" },
+    { "source": "file-atlas-token-xref-json", "target": "file-atlas-token-registry-json", "label": "cross-references" },
+    { "source": "file-resolver-smoke", "target": "file-atlas-token-registry-json", "label": "tests" },
+    { "source": "file-verification", "target": "file-atlas-token-registry-json", "label": "verifies" },
+    { "source": "file-watchdog-0844", "target": "file-verification", "label": "repeats" },
+    { "source": "file-watchdog-0949", "target": "file-verification", "label": "repeats" },
+    { "source": "file-watchdog-1248", "target": "file-verification", "label": "repeats" },
+    { "source": "file-watchdog-1321", "target": "file-verification", "label": "repeats" },
+    { "source": "file-watchdog-1422", "target": "file-verification", "label": "repeats" },
+    { "source": "file-watchdog-1902", "target": "file-verification", "label": "repeats" },
+    { "source": "file-audit-1", "target": "file-atlas-token-registry-json", "label": "audits" },
+    { "source": "file-audit-2", "target": "file-audit-1", "label": "remediates" },
+    { "source": "file-audit-2", "target": "file-atlas-token-registry-json", "label": "audits" }
+  ]
 }
