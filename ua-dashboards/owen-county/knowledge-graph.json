@@ -1,386 +1,604 @@
 {
-  "version": "2.0.0",
+  "version": "1.0.0",
   "project": {
-    "name": "Owen County Schools Upgrades & Athletics",
-    "languages": ["markdown", "json", "html"],
-    "frameworks": ["TCS Altitude Mesh Operating System", "Devere Project Digital Twin Standard"],
-    "description": "Level 1 Digital Twin Shell for Owen County Schools Upgrades & Athletics (Job #3620251, $15.9M). Managed by Devere Construction under TCS doctrine. Currently in review-only posture with 11 gates defined (A0-D2), 2 shell-ready and 9 blocked. The shell establishes project identity, source chain, gate readiness matrix, and stop rules without authorizing any live project action.",
-    "analyzedAt": "2026-05-28T00:00:00Z",
-    "gitCommitHash": null
+    "name": "owen_county",
+    "languages": [
+      "markdown",
+      "json",
+      "html"
+    ],
+    "frameworks": [],
+    "description": "Owen County Project Digital Twin bring-online shell. Companion to UK CAER under the Devere/TCS Project Digital Twin standard.",
+    "analyzedAt": "2026-05-28T16:39:36.387Z",
+    "gitCommitHash": "9100a641b6849d42baf3cebffc9b7e198f3ba9c1"
   },
   "nodes": [
     {
-      "id": "agent-boot",
+      "id": "file:AGENT_BOOT.md",
       "type": "file",
+      "path": "AGENT_BOOT.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 79,
+      "nonEmptyLines": 58,
+      "summary": "Level 1 Twin Shell agent boot document for the Owen County Schools Upgrades & Athletics project (project number 3620251). Establishes the project identity, the non-inheritance rule blocking UK CAER facts from leaking into this twin, the six-rank authority stack, the required read order for the next agent, the live OneDrive folder pointer, and the stop-rule summary that bounds the shell as review-only.",
+      "tags": [
+        "owen-county",
+        "agent-boot",
+        "level-1-twin-shell",
+        "tcs",
+        "devere",
+        "project-identity",
+        "stop-rules",
+        "non-inheritance",
+        "review-only",
+        "doctrine-entry-point"
+      ],
+      "complexity": "simple",
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 9
+      },
+      "name": "AGENT_BOOT.md"
+    },
+    {
+      "id": "file:DOCTRINE__ALTITUDE_MESH_OPERATING_SYSTEM.md",
+      "type": "file",
+      "path": "DOCTRINE__ALTITUDE_MESH_OPERATING_SYSTEM.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 326,
+      "nonEmptyLines": 217,
+      "summary": "Canon doctrine authored by VP1/Pro defining the Altitude Mesh Operating System: a six-layer signal stack (subatomic, micro, meso, macro, VP exec rollup, founder), the Upward Reporting Law, the Upward-Wake Gate, cadence schedule (continuous, 15min, 60min, cleanpoint edges, twice-daily, weekly, immediate), and the report/order shapes that travel between altitudes. Includes the Keystone Law and the shortest usable version. Filed as canon awaiting Gate ratification.",
+      "tags": [
+        "doctrine",
+        "altitude-mesh",
+        "operating-system",
+        "six-layer-stack",
+        "upward-reporting",
+        "cadence",
+        "canon",
+        "ssu-governance",
+        "pasp",
+        "signal-flow"
+      ],
+      "complexity": "complex",
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 33
+      },
+      "name": "DOCTRINE__ALTITUDE_MESH_OPERATING_SYSTEM.md"
+    },
+    {
+      "id": "file:GATE_READINESS.md",
+      "type": "file",
+      "path": "GATE_READINESS.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 105,
+      "nonEmptyLines": 85,
+      "summary": "Level 1 gate-readiness ledger for Owen County. Declares that no operational gate is passed by this shell and enumerates the A0-D2 gate matrix with current state, blocker, and required evidence to advance. Codifies the stop-rule split between what the agent may do unilaterally versus what requires Michael's approval, lists the canonical validation states (cited, inferred, validated, disputed, stale, superseded, not_authority), the required fields for any gate movement, the receipt template, and the next safest action.",
+      "tags": [
+        "owen-county",
+        "gate-matrix",
+        "level-1",
+        "stop-rules",
+        "validation-states",
+        "receipt-template",
+        "approval-boundary",
+        "review-only",
+        "tcs",
+        "gate-readiness"
+      ],
+      "complexity": "moderate",
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 10
+      },
+      "name": "GATE_READINESS.md"
+    },
+    {
+      "id": "file:SOURCE_MAP.md",
+      "type": "file",
+      "path": "SOURCE_MAP.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 90,
+      "nonEmptyLines": 75,
+      "summary": "Level 1 source-registration document mapping inputs read for the Owen County twin shell, the live OneDrive project folder pointer, the original folder source map (folders 1-18 plus Issues, HERMES_INBOX, TCS_OVERLAY), system-of-record candidates per lane (contract, Sage, submittals, RFIs, schedule, safety/QC, correspondence, PM actions), first control questions, and an explicit list of missing source evidence (executed contract, live Sage, live Submittal Exchange, live Outlook, live OneDrive re-inventory, current May 2026 status).",
+      "tags": [
+        "owen-county",
+        "source-map",
+        "level-1",
+        "onedrive",
+        "folder-inventory",
+        "system-of-record",
+        "sage-cm",
+        "submittal-exchange",
+        "authority-stack",
+        "missing-evidence"
+      ],
+      "complexity": "moderate",
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 7
+      },
+      "name": "SOURCE_MAP.md"
+    },
+    {
+      "id": "file:TWIN_STATE.md",
+      "type": "file",
+      "path": "TWIN_STATE.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 95,
+      "nonEmptyLines": 77,
+      "summary": "Level 1 twin-state ledger for Owen County. Documents Level 1 readiness (identity, source map, gate posture, stop rules all present), project identity rows with fact states, twin object families registered (Project, ProjectGate, ProjectTwinState, Zone, EvidenceToken, ApprovalBoundary, ActionRecord, RiskRecord), the seed validation queue (OWEN-VQ-001..009 covering submittal/RFI conflicts, overdue checklists, CO/CPR split, safety evidence gap, DPO reconciliation, schedule freshness, PM transition, stale cleanpoints), systems state per channel, the review-only operating posture, and the next safe load sequence.",
+      "tags": [
+        "owen-county",
+        "twin-state",
+        "level-1",
+        "validation-queue",
+        "object-families",
+        "evidence-tokens",
+        "sage-snapshot",
+        "review-only",
+        "tcs",
+        "load-sequence"
+      ],
+      "complexity": "moderate",
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 8
+      },
+      "name": "TWIN_STATE.md"
+    },
+    {
+      "id": "document:AGENT_BOOT.md",
+      "type": "document",
       "name": "AGENT_BOOT.md",
       "filePath": "AGENT_BOOT.md",
-      "summary": "Agent initialization file that defines the project mission (bring Owen County online as Level 1 Twin Shell), establishes the non-inheritance rule from UK CAER, documents project identity (name, number, owner, architect, CM, PM, address), defines the 6-rank authority stack from executed contracts down to chats/screenshots, prescribes the required read order for the next agent, and sets hard stop rules against any live project mutation.",
-      "tags": ["project-identity", "agent-boot", "authority-stack", "stop-rules", "read-order", "non-inheritance"],
-      "complexity": 7,
-      "layer": "project-identity",
-      "lines": 79
+      "summary": "Owen County agent boot document defining Level 1 Twin Shell scope, project identity (Owen County Schools Upgrades & Athletics, #3620251), non-inheritance rule from UK CAER, authority stack, and the required read order for the next Owen agent.",
+      "tags": [
+        "documentation",
+        "entry-point",
+        "agent-boot",
+        "twin-shell",
+        "owen-county"
+      ],
+      "complexity": "moderate",
+      "languageNotes": "YAML frontmatter carries TCS twin metadata (id, project, twin_level, status, authority_boundary)."
     },
     {
-      "id": "doctrine",
-      "type": "file",
+      "id": "document:DOCTRINE__ALTITUDE_MESH_OPERATING_SYSTEM.md",
+      "type": "document",
       "name": "DOCTRINE__ALTITUDE_MESH_OPERATING_SYSTEM.md",
       "filePath": "DOCTRINE__ALTITUDE_MESH_OPERATING_SYSTEM.md",
-      "summary": "The Altitude Mesh Operating System doctrine authored by Pro (VP1 seat). Defines the 6-layer altitude stack (subatomic, micro, meso, macro, VP exec rollup, founder), three event classes for upward signal flow (work events to meso, state events to macro, ratification events broadcast), the PASP upward-wake gate, reporting cadences from continuous to weekly, structured report shapes for each altitude boundary (micro-to-meso, meso-to-macro, macro-to-VP), downward order shapes (macro intent, meso decomposition, micro execution, subatomic command), and the Keystone Law of hard edges with soft interior.",
-      "tags": ["doctrine", "altitude-mesh", "six-layer-stack", "signal-flow", "PASP", "reporting-cadence", "keystone-law"],
-      "complexity": 9,
-      "layer": "doctrine",
-      "lines": 326
+      "summary": "Doctrine document specifying the six-layer Altitude Mesh Operating System (Subatomic, Micro, Meso, Macro, VP/Exec Rollup, Founder) with upward reporting law, upward-wake gate, schedule cadences, and report/order shapes between layers.",
+      "tags": [
+        "documentation",
+        "doctrine",
+        "altitude-mesh",
+        "operating-system",
+        "governance"
+      ],
+      "complexity": "complex",
+      "languageNotes": "Heavy hierarchical structure with 33 sections across 6 altitude layers and four cadence bands."
     },
     {
-      "id": "gate-readiness",
-      "type": "file",
+      "id": "document:GATE_READINESS.md",
+      "type": "document",
       "name": "GATE_READINESS.md",
       "filePath": "GATE_READINESS.md",
-      "summary": "Defines the 11-gate readiness matrix (A0 Project Identity through D2 Owner/External View). Gates A0 and A1 are shell-ready; gates A2 through D2 are blocked. Documents what agents may do without approval (read, build inventories, flag conflicts) vs what requires Michael's approval (send emails, submit RFIs, change Sage, pass gates). Defines 7 validation states (cited, inferred, validated, disputed, stale, superseded, not_authority), required fields for gate movement, and a receipt template.",
-      "tags": ["gate-readiness", "11-gate-matrix", "stop-rules", "validation-states", "receipt-template", "approval-boundary"],
-      "complexity": 8,
-      "layer": "gate-readiness",
-      "lines": 105
+      "summary": "Owen County gate readiness matrix covering A0 through D2 lanes, stop rules separating agent-permitted actions from approval-required actions, validation states taxonomy, and required fields for any future gate movement.",
+      "tags": [
+        "documentation",
+        "gate-readiness",
+        "stop-rules",
+        "validation",
+        "owen-county"
+      ],
+      "complexity": "moderate",
+      "languageNotes": "Matrix tables encode gate posture, blocker, and required evidence per lane."
     },
     {
-      "id": "source-map",
-      "type": "file",
+      "id": "document:SOURCE_MAP.md",
+      "type": "document",
       "name": "SOURCE_MAP.md",
       "filePath": "SOURCE_MAP.md",
-      "summary": "Registers all inputs read for the Level 1 shell including 10 source documents from the bring-online packet and overlay snapshot. Maps the live OneDrive project folder structure (17 folders from PreConstruction through Close Out plus Issues, HERMES_INBOX, TCS_OVERLAY). Identifies 8 system-of-record candidates (contract, Sage, submittals, RFIs, schedule, safety, correspondence, PM actions) with their current disputed/missing states. Lists 8 first control questions and 6 categories of missing source evidence.",
-      "tags": ["source-map", "source-authority", "folder-structure", "system-of-record", "control-questions", "missing-evidence"],
-      "complexity": 8,
-      "layer": "project-identity",
-      "lines": 90
+      "summary": "Owen County source map registering Level 1 shell inputs, the live OneDrive project folder pointer, original folder source map by lane, system-of-record candidates, first control questions, and missing source evidence.",
+      "tags": [
+        "documentation",
+        "source-map",
+        "authority-stack",
+        "owen-county",
+        "registry"
+      ],
+      "complexity": "moderate",
+      "languageNotes": "Cross-references the packet handoff docs and overlay snapshot as cited seed sources."
     },
     {
-      "id": "twin-state",
-      "type": "file",
+      "id": "document:TWIN_STATE.md",
+      "type": "document",
       "name": "TWIN_STATE.md",
       "filePath": "TWIN_STATE.md",
-      "summary": "Documents the current Level 1 readiness (identity, source map, gate posture, stop rules all present). Records project identity with fact states. Registers 8 twin object families (Project, ProjectGate, ProjectTwinState, Zone, EvidenceToken, ApprovalBoundary, ActionRecord, RiskRecord). Contains the 9-item P0/P1 validation queue seed covering submittal conflicts, RFI conflicts, overdue checklists, change management splits, safety gaps, DPO reconciliation, schedule freshness, PM transition, and cleanpoint staleness. Tracks 6 systems (Sage, OneDrive, Submittal Exchange, Outlook, schedule files, TCS overlay) and prescribes the next safe load sequence.",
-      "tags": ["twin-state", "level-1", "validation-queue", "object-families", "systems-state", "load-sequence"],
-      "complexity": 8,
-      "layer": "twin-state",
-      "lines": 95
+      "summary": "Owen County twin state document recording Level 1 readiness, project identity state, registered twin object families, the validation queue seed (OWEN-VQ-001..009), systems state, current operating posture, and the next safe load sequence.",
+      "tags": [
+        "documentation",
+        "twin-state",
+        "validation-queue",
+        "owen-county",
+        "level-1"
+      ],
+      "complexity": "moderate",
+      "languageNotes": "Validation queue uses OWEN-VQ-### priority IDs (P0/P1) keyed to packet and overlay sources."
     },
     {
-      "id": "ua-chat-response",
-      "type": "file",
-      "name": "chat-response.json",
-      "filePath": "ua-treatment/chat-response.json",
-      "summary": "Prior UA treatment chat response providing a natural-language answer about the Owen County project, citing doctrine, agent boot, and gate readiness as sources.",
-      "tags": ["treatment", "chat", "query-response"],
-      "complexity": 2,
-      "layer": "treatment-analysis",
-      "lines": 29
-    },
-    {
-      "id": "ua-dashboard",
-      "type": "file",
-      "name": "dashboard.html",
-      "filePath": "ua-treatment/dashboard.html",
-      "summary": "HTML dashboard from prior UA treatment showing 70 nodes, 69 edges, 7 files. Contains a dark-themed visualization with node table and layer counts. From the Qwopus agent run on 2026-05-26.",
-      "tags": ["treatment", "dashboard", "visualization", "html"],
-      "complexity": 3,
-      "layer": "treatment-analysis",
-      "lines": 51
-    },
-    {
-      "id": "ua-diff-analysis",
-      "type": "file",
-      "name": "diff-analysis.json",
-      "filePath": "ua-treatment/diff-analysis.json",
-      "summary": "Diff analysis from prior UA treatment showing recent git commits related to UA treatment phases across Emperor-Palantir surfaces.",
-      "tags": ["treatment", "diff", "git-history"],
-      "complexity": 2,
-      "layer": "treatment-analysis",
-      "lines": 18
-    },
-    {
-      "id": "ua-domain-flow",
-      "type": "file",
-      "name": "domain-flow.json",
-      "filePath": "ua-treatment/domain-flow.json",
-      "summary": "Prior UA treatment domain flow graph with 5 nodes (project initiation, doctrine, agent boot, execution, feedback) and 5 edges showing the project lifecycle from initiation through doctrine to execution and feedback loop.",
-      "tags": ["treatment", "domain-flow", "lifecycle"],
-      "complexity": 3,
-      "layer": "treatment-analysis",
-      "lines": 77
-    },
-    {
-      "id": "ua-explain-doctrine",
-      "type": "file",
-      "name": "explain-doctrine.md",
-      "filePath": "ua-treatment/explain-doctrine.md",
-      "summary": "Markdown deep-dive explanation of the Altitude Mesh Operating System from the prior UA treatment, covering key functions, architecture layers, key components, and call graph.",
-      "tags": ["treatment", "explanation", "doctrine"],
-      "complexity": 3,
-      "layer": "treatment-analysis",
-      "lines": 40
-    },
-    {
-      "id": "ua-knowledge-graph",
-      "type": "file",
-      "name": "knowledge-graph.json",
-      "filePath": "ua-treatment/knowledge-graph.json",
-      "summary": "Prior UA treatment knowledge graph with 70 nodes (1 surface root, 7 file nodes, 62 concept nodes) and 69 edges. Concepts extracted from all 5 core files covering sections like Mission, Authority Stack, Gate Matrix, Six-Layer Stack, etc. Organized in code/concept/surface layers with a 3-step tour.",
-      "tags": ["treatment", "knowledge-graph", "prior-run"],
-      "complexity": 5,
-      "layer": "treatment-analysis",
-      "lines": 1365
-    },
-    {
-      "id": "ua-onboard-guide",
-      "type": "file",
-      "name": "onboard-guide.md",
-      "filePath": "ua-treatment/onboard-guide.md",
-      "summary": "Prior UA treatment onboarding guide providing a getting-started walkthrough of the Owen County project files and their purposes.",
-      "tags": ["treatment", "onboarding", "guide"],
-      "complexity": 2,
-      "layer": "treatment-analysis",
-      "lines": 40
-    },
-    {
-      "id": "ua-receipt",
-      "type": "file",
-      "name": "receipt.json",
-      "filePath": "ua-treatment/receipt.json",
-      "summary": "Receipt from Qwopus agent's prior UA treatment run completed 2026-05-26, listing all 8 evidence artifacts with QC pass status and no blockers.",
-      "tags": ["treatment", "receipt", "qc"],
-      "complexity": 1,
-      "layer": "treatment-analysis",
-      "lines": 16
-    },
-    {
-      "id": "ua-wiki-kg",
-      "type": "file",
-      "name": "wiki-knowledge-graph.json",
-      "filePath": "ua-treatment/wiki-knowledge-graph.json",
-      "summary": "Prior UA treatment wiki knowledge graph index listing 3 wiki pages (Owen County, Altitude Mesh, Agent Boot) as the knowledge wiki output.",
-      "tags": ["treatment", "wiki", "index"],
-      "complexity": 1,
-      "layer": "treatment-analysis",
-      "lines": 26
-    },
-    {
-      "id": "ua-wiki-schema",
-      "type": "file",
+      "id": "document:ua-treatment/wiki/SCHEMA.md",
+      "type": "document",
       "name": "SCHEMA.md",
       "filePath": "ua-treatment/wiki/SCHEMA.md",
-      "summary": "Wiki schema defining conventions for the Owen County knowledge wiki: file naming, frontmatter format, tag taxonomy (Models, People/Orgs, Techniques, Meta), page creation thresholds, and templates for entity vs concept pages.",
-      "tags": ["treatment", "wiki", "schema", "conventions"],
-      "complexity": 3,
-      "layer": "treatment-wiki",
-      "lines": 48
+      "summary": "Defines the wiki authoring conventions, YAML frontmatter format, tag taxonomy, page-creation thresholds, and entity/concept page templates for the Owen County wiki.",
+      "tags": [
+        "documentation",
+        "schema-definition",
+        "conventions",
+        "wiki",
+        "taxonomy"
+      ],
+      "complexity": "simple",
+      "languageNotes": "Markdown schema doc using YAML fenced examples and [[wikilinks]] conventions."
     },
     {
-      "id": "ua-wiki-agent-boot",
-      "type": "file",
+      "id": "document:ua-treatment/wiki/agent-boot.md",
+      "type": "document",
       "name": "agent-boot.md",
       "filePath": "ua-treatment/wiki/agent-boot.md",
-      "summary": "Wiki entity page for Agent Boot with overview, key functions, and wikilink relationships to owen-county, altitude-mesh, and doctrine.",
-      "tags": ["treatment", "wiki", "agent-boot"],
-      "complexity": 2,
-      "layer": "treatment-wiki",
-      "lines": 27
+      "summary": "Entity page describing the agent initialization and boot sequence used by the Owen County project, including key functions and relationships to the governing doctrine.",
+      "tags": [
+        "documentation",
+        "wiki",
+        "entity-page",
+        "agent-boot",
+        "initialization"
+      ],
+      "complexity": "simple"
     },
     {
-      "id": "ua-wiki-altitude-mesh",
-      "type": "file",
+      "id": "document:ua-treatment/wiki/altitude-mesh.md",
+      "type": "document",
       "name": "altitude-mesh.md",
       "filePath": "ua-treatment/wiki/altitude-mesh.md",
-      "summary": "Wiki entity page for the Altitude Mesh Operating System with overview, key concepts, architecture layers, and wikilink relationships to all core files.",
-      "tags": ["treatment", "wiki", "altitude-mesh", "doctrine"],
-      "complexity": 2,
-      "layer": "treatment-wiki",
-      "lines": 39
+      "summary": "Entity page documenting the Altitude Mesh Operating System governing framework, its layered architecture (Doctrine/Agent/Gate/Execution/Feedback), and key concepts driving the Owen County project.",
+      "tags": [
+        "documentation",
+        "wiki",
+        "entity-page",
+        "doctrine",
+        "framework"
+      ],
+      "complexity": "simple"
     },
     {
-      "id": "ua-wiki-index",
-      "type": "file",
+      "id": "document:ua-treatment/wiki/index.md",
+      "type": "document",
       "name": "index.md",
       "filePath": "ua-treatment/wiki/index.md",
-      "summary": "Wiki index page cataloging all wiki pages by type: 3 entities (owen-county, altitude-mesh, agent-boot) and 4 concept stubs (doctrine, gate-readiness, source-map, twin-state).",
-      "tags": ["treatment", "wiki", "index", "catalog"],
-      "complexity": 1,
-      "layer": "treatment-wiki",
-      "lines": 20
+      "summary": "Wiki content catalog listing all entity, concept, comparison, and query pages with one-line summaries, intended as the starting point for any wiki query.",
+      "tags": [
+        "documentation",
+        "wiki",
+        "entry-point",
+        "index",
+        "catalog"
+      ],
+      "complexity": "simple"
     },
     {
-      "id": "ua-wiki-owen-county",
-      "type": "file",
+      "id": "document:ua-treatment/wiki/owen-county.md",
+      "type": "document",
       "name": "owen-county.md",
       "filePath": "ua-treatment/wiki/owen-county.md",
-      "summary": "Wiki entity page for Owen County project with overview, key facts, and wikilink relationships to all core framework components.",
-      "tags": ["treatment", "wiki", "project-overview"],
-      "complexity": 2,
-      "layer": "treatment-wiki",
-      "lines": 30
+      "summary": "Entity page describing the Owen County construction project, its use of the Altitude Mesh Operating System, and its relationships to agent boot, gate readiness, source maps, and twin state.",
+      "tags": [
+        "documentation",
+        "wiki",
+        "entity-page",
+        "project",
+        "construction"
+      ],
+      "complexity": "simple"
     }
   ],
   "edges": [
-    { "source": "agent-boot", "target": "doctrine", "label": "references doctrine as operating standard" },
-    { "source": "agent-boot", "target": "source-map", "label": "prescribes read after this file" },
-    { "source": "agent-boot", "target": "twin-state", "label": "prescribes read order position 3" },
-    { "source": "agent-boot", "target": "gate-readiness", "label": "prescribes read order position 4" },
-    { "source": "source-map", "target": "agent-boot", "label": "cites packet boot as source input" },
-    { "source": "source-map", "target": "gate-readiness", "label": "references stop rules and governance" },
-    { "source": "source-map", "target": "twin-state", "label": "feeds validation queue with source gaps" },
-    { "source": "twin-state", "target": "agent-boot", "label": "confirms identity from agent boot" },
-    { "source": "twin-state", "target": "source-map", "label": "cites source map as Level 1 evidence" },
-    { "source": "twin-state", "target": "gate-readiness", "label": "cites gate readiness as Level 1 evidence" },
-    { "source": "gate-readiness", "target": "agent-boot", "label": "enforces stop rules from boot" },
-    { "source": "gate-readiness", "target": "twin-state", "label": "gates control twin level advancement" },
-    { "source": "gate-readiness", "target": "source-map", "label": "requires source evidence for gate passage" },
-    { "source": "doctrine", "target": "gate-readiness", "label": "PASP gates apply to project gates" },
-    { "source": "doctrine", "target": "agent-boot", "label": "provides operating framework for agent behavior" },
-    { "source": "ua-knowledge-graph", "target": "agent-boot", "label": "extracts concepts from" },
-    { "source": "ua-knowledge-graph", "target": "doctrine", "label": "extracts concepts from" },
-    { "source": "ua-knowledge-graph", "target": "gate-readiness", "label": "extracts concepts from" },
-    { "source": "ua-knowledge-graph", "target": "source-map", "label": "extracts concepts from" },
-    { "source": "ua-knowledge-graph", "target": "twin-state", "label": "extracts concepts from" },
-    { "source": "ua-dashboard", "target": "ua-knowledge-graph", "label": "visualizes" },
-    { "source": "ua-domain-flow", "target": "doctrine", "label": "models lifecycle from" },
-    { "source": "ua-explain-doctrine", "target": "doctrine", "label": "explains" },
-    { "source": "ua-chat-response", "target": "doctrine", "label": "cites as source" },
-    { "source": "ua-chat-response", "target": "agent-boot", "label": "cites as source" },
-    { "source": "ua-chat-response", "target": "gate-readiness", "label": "cites as source" },
-    { "source": "ua-onboard-guide", "target": "agent-boot", "label": "references for onboarding" },
-    { "source": "ua-onboard-guide", "target": "doctrine", "label": "references for onboarding" },
-    { "source": "ua-onboard-guide", "target": "gate-readiness", "label": "references for onboarding" },
-    { "source": "ua-onboard-guide", "target": "source-map", "label": "references for onboarding" },
-    { "source": "ua-onboard-guide", "target": "twin-state", "label": "references for onboarding" },
-    { "source": "ua-receipt", "target": "ua-knowledge-graph", "label": "records completion of" },
-    { "source": "ua-receipt", "target": "ua-dashboard", "label": "records completion of" },
-    { "source": "ua-receipt", "target": "ua-domain-flow", "label": "records completion of" },
-    { "source": "ua-receipt", "target": "ua-chat-response", "label": "records completion of" },
-    { "source": "ua-receipt", "target": "ua-diff-analysis", "label": "records completion of" },
-    { "source": "ua-receipt", "target": "ua-explain-doctrine", "label": "records completion of" },
-    { "source": "ua-receipt", "target": "ua-onboard-guide", "label": "records completion of" },
-    { "source": "ua-receipt", "target": "ua-wiki-kg", "label": "records completion of" },
-    { "source": "ua-wiki-kg", "target": "ua-wiki-owen-county", "label": "indexes" },
-    { "source": "ua-wiki-kg", "target": "ua-wiki-altitude-mesh", "label": "indexes" },
-    { "source": "ua-wiki-kg", "target": "ua-wiki-agent-boot", "label": "indexes" },
-    { "source": "ua-wiki-index", "target": "ua-wiki-owen-county", "label": "catalogs" },
-    { "source": "ua-wiki-index", "target": "ua-wiki-altitude-mesh", "label": "catalogs" },
-    { "source": "ua-wiki-index", "target": "ua-wiki-agent-boot", "label": "catalogs" },
-    { "source": "ua-wiki-schema", "target": "ua-wiki-index", "label": "defines conventions for" },
-    { "source": "ua-wiki-owen-county", "target": "ua-wiki-altitude-mesh", "label": "wikilinks to" },
-    { "source": "ua-wiki-owen-county", "target": "ua-wiki-agent-boot", "label": "wikilinks to" },
-    { "source": "ua-wiki-altitude-mesh", "target": "ua-wiki-owen-county", "label": "wikilinks to" },
-    { "source": "ua-wiki-altitude-mesh", "target": "ua-wiki-agent-boot", "label": "wikilinks to" },
-    { "source": "ua-wiki-agent-boot", "target": "ua-wiki-owen-county", "label": "wikilinks to" },
-    { "source": "ua-wiki-agent-boot", "target": "ua-wiki-altitude-mesh", "label": "wikilinks to" },
-    { "source": "ua-diff-analysis", "target": "ua-knowledge-graph", "label": "tracks changes to" }
-  ],
-  "tours": [
     {
-      "id": "project-onboarding",
-      "name": "Project Onboarding Tour",
-      "description": "Walk through the Owen County Level 1 Digital Twin Shell in the prescribed read order, from agent initialization through source chain to operational governance.",
-      "stops": [
-        {
-          "nodeIds": ["agent-boot"],
-          "title": "1. Agent Boot — Start Here",
-          "narration": "AGENT_BOOT.md is the entry point for any agent working on Owen County. It establishes the project as Job #3620251 ($15.9M Owen County Schools Upgrades & Athletics), sets the non-inheritance rule from UK CAER, documents project identity fields with their fact states, and defines a 6-rank authority stack from executed contracts (Rank 1) down to chats and screenshots (Rank 6). Critically, it sets the review-only posture: no emails, no RFIs, no Sage mutations, no live folder changes without explicit approval."
-        },
-        {
-          "nodeIds": ["source-map"],
-          "title": "2. Source Map — What Was Read",
-          "narration": "SOURCE_MAP.md registers the 10 source documents read for Level 1 and maps the live OneDrive folder structure (17 project folders). It identifies 8 system-of-record candidates and flags conflicts: submittal counts conflict across Sage, Submittal Exchange, and OneDrive; RFI counts/status conflict; Sage snapshot is dated March 2026. Six categories of source evidence are explicitly marked as missing."
-        },
-        {
-          "nodeIds": ["doctrine"],
-          "title": "3. Altitude Mesh Doctrine — The Operating System",
-          "narration": "The Doctrine defines how signals flow through the TCS organism. Six altitude layers (subatomic through founder) with three event classes (work, state, ratification) and the PASP upward-wake gate that prevents macro from waking every time micro sneezes. Cadences range from continuous receipts to twice-daily VP rollups to weekly manifests. Downward orders translate through four layers: macro intent, meso decomposition, micro execution, subatomic command."
-        },
-        {
-          "nodeIds": ["gate-readiness"],
-          "title": "4. Gate Readiness — The 11-Gate Matrix",
-          "narration": "GATE_READINESS.md defines 11 gates from A0 (Project Identity) through D2 (Owner/External View). Only A0 and A1 are shell-ready; all others are blocked by missing source evidence. The file draws a bright line between what agents may do autonomously (read, inventory, flag) and what requires Michael's approval (send, submit, change, pass). Seven validation states track fact confidence."
-        },
-        {
-          "nodeIds": ["twin-state"],
-          "title": "5. Twin State — Current Digital Twin Status",
-          "narration": "TWIN_STATE.md confirms Level 1 readiness: identity, source map, gate posture, and stop rules all present. It registers 8 object families, tracks a 9-item validation queue of P0/P1 items (submittal conflicts, RFI conflicts, overdue checklists, change management splits, safety gaps), maps 6 systems, and prescribes the next safe load sequence for advancing to Level 2."
-        }
-      ]
+      "source": "document:AGENT_BOOT.md",
+      "target": "document:SOURCE_MAP.md",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
     },
     {
-      "id": "gate-readiness-tour",
-      "name": "Gate Readiness Tour",
-      "description": "Walk through each of the 11 gates in the A0-D2 matrix showing current readiness state, blockers, and required evidence to advance.",
-      "stops": [
-        {
-          "nodeIds": ["gate-readiness"],
-          "title": "Gate Overview — Shell-Ready vs Blocked",
-          "narration": "Of 11 gates, 2 are shell-ready (A0 Project Identity, A1 Source Chain) and 9 are blocked. No gate has been passed — this is by design for a Level 1 shell. Every gate passage requires human approval, source evidence, and a receipt."
-        },
-        {
-          "nodeIds": ["gate-readiness", "agent-boot"],
-          "title": "A0 Project Identity — Shell Ready",
-          "narration": "A0 is shell-ready: project name, number, owner, architect, CM, and address are all cited from the packet. Blocker: current live authority not verified against executed contract or Sage identity record. Required to advance: executed contract or approved project record."
-        },
-        {
-          "nodeIds": ["gate-readiness", "source-map"],
-          "title": "A1 Source Chain — Shell Ready",
-          "narration": "A1 is shell-ready: the source map registers all packet inputs and the live folder path. Blocker: live originals not re-inventoried on the target machine. Required to advance: current folder inventory and source authority receipt."
-        },
-        {
-          "nodeIds": ["gate-readiness"],
-          "title": "A2-B3 Commercial & Schedule Gates — Blocked",
-          "narration": "A2 (Contract Posture), B1 (Sage/Commercial), B2 (Schedule), and B3 (Procurement/DPO) are all blocked. The executed contract, NTP, current CO posture, live Sage, baseline schedule, and DPO reconciliation have not been read. These are the commercial foundation gates."
-        },
-        {
-          "nodeIds": ["gate-readiness", "twin-state"],
-          "title": "C1-C3 Field Execution Gates — Blocked",
-          "narration": "C1 (Submittals/RFIs) is blocked by count/status conflicts across systems. C2 (Safety/Quality) is blocked by unknown currentness of safety exposure. C3 (Field Execution) is blocked because the current work plan and next-14-days forecast are unknown. These are the field-truth gates."
-        },
-        {
-          "nodeIds": ["gate-readiness", "twin-state"],
-          "title": "D1-D2 PM & Owner Gates — Blocked",
-          "narration": "D1 (PM Operating Cadence) is blocked because the action register and correspondence have not been validated. D2 (Owner/External View) is blocked pending Michael's explicit approval for any owner/client reliance upgrade. These are the governance gates — they unlock only after all upstream evidence is current."
-        }
-      ]
+      "source": "document:AGENT_BOOT.md",
+      "target": "document:TWIN_STATE.md",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
     },
     {
-      "id": "prior-treatment-tour",
-      "name": "Prior UA Treatment Tour",
-      "description": "Walk through the ua-treatment/ directory to understand what the prior Qwopus agent run produced and how it relates to the core project files.",
-      "stops": [
-        {
-          "nodeIds": ["ua-receipt"],
-          "title": "Receipt — What Was Done",
-          "narration": "The Qwopus agent completed 8 UA treatment deliverables on 2026-05-26 with QC pass. Deliverables span knowledge graph, dashboard, domain flow, chat response, diff analysis, doctrine explanation, onboarding guide, and wiki knowledge graph."
-        },
-        {
-          "nodeIds": ["ua-knowledge-graph", "ua-dashboard"],
-          "title": "Knowledge Graph & Dashboard",
-          "narration": "The prior run produced a 70-node knowledge graph (1 surface, 7 files, 62 concepts) with 69 edges. The dashboard.html renders this as a dark-themed HTML visualization. The graph extracts section headings from all 5 core files as concept nodes."
-        },
-        {
-          "nodeIds": ["ua-wiki-schema", "ua-wiki-index", "ua-wiki-owen-county", "ua-wiki-altitude-mesh", "ua-wiki-agent-boot"],
-          "title": "Wiki Pages",
-          "narration": "A 3-page wiki was created with entity pages for Owen County, Altitude Mesh, and Agent Boot. The schema defines conventions (lowercase filenames, YAML frontmatter, wikilinks, tag taxonomy). The index catalogs all pages by type."
-        }
-      ]
+      "source": "document:AGENT_BOOT.md",
+      "target": "document:GATE_READINESS.md",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:SOURCE_MAP.md",
+      "target": "document:AGENT_BOOT.md",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:TWIN_STATE.md",
+      "target": "document:AGENT_BOOT.md",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:TWIN_STATE.md",
+      "target": "document:SOURCE_MAP.md",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:TWIN_STATE.md",
+      "target": "document:GATE_READINESS.md",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:GATE_READINESS.md",
+      "target": "document:TWIN_STATE.md",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:GATE_READINESS.md",
+      "target": "document:SOURCE_MAP.md",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:DOCTRINE__ALTITUDE_MESH_OPERATING_SYSTEM.md",
+      "target": "document:AGENT_BOOT.md",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:DOCTRINE__ALTITUDE_MESH_OPERATING_SYSTEM.md",
+      "target": "document:GATE_READINESS.md",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:ua-treatment/wiki/index.md",
+      "target": "document:ua-treatment/wiki/owen-county.md",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:ua-treatment/wiki/index.md",
+      "target": "document:ua-treatment/wiki/altitude-mesh.md",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:ua-treatment/wiki/index.md",
+      "target": "document:ua-treatment/wiki/agent-boot.md",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:ua-treatment/wiki/SCHEMA.md",
+      "target": "document:ua-treatment/wiki/index.md",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:ua-treatment/wiki/owen-county.md",
+      "target": "document:ua-treatment/wiki/altitude-mesh.md",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:ua-treatment/wiki/owen-county.md",
+      "target": "document:ua-treatment/wiki/agent-boot.md",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:ua-treatment/wiki/altitude-mesh.md",
+      "target": "document:ua-treatment/wiki/owen-county.md",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:ua-treatment/wiki/altitude-mesh.md",
+      "target": "document:ua-treatment/wiki/agent-boot.md",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:ua-treatment/wiki/agent-boot.md",
+      "target": "document:ua-treatment/wiki/owen-county.md",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:ua-treatment/wiki/agent-boot.md",
+      "target": "document:ua-treatment/wiki/altitude-mesh.md",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
     }
   ],
   "layers": [
-    { "id": "doctrine", "name": "Doctrine", "color": "#8B5CF6", "nodeCount": 1 },
-    { "id": "gate-readiness", "name": "Gate Readiness", "color": "#EF4444", "nodeCount": 1 },
-    { "id": "project-identity", "name": "Project Identity", "color": "#3B82F6", "nodeCount": 2 },
-    { "id": "twin-state", "name": "Twin State", "color": "#10B981", "nodeCount": 1 },
-    { "id": "treatment-analysis", "name": "Treatment / Analysis", "color": "#F59E0B", "nodeCount": 10 },
-    { "id": "treatment-wiki", "name": "Treatment / Wiki", "color": "#EC4899", "nodeCount": 4 }
+    {
+      "id": "layer:project-shell-doctrine",
+      "name": "Project Shell & Doctrine",
+      "description": "Top-level Level 1 Twin Shell entry points and the governing Altitude Mesh doctrine that defines project identity, authority stack, non-inheritance rules, and the operating system the Owen County twin runs on.",
+      "nodeIds": [
+        "file:AGENT_BOOT.md",
+        "document:AGENT_BOOT.md",
+        "file:DOCTRINE__ALTITUDE_MESH_OPERATING_SYSTEM.md",
+        "document:DOCTRINE__ALTITUDE_MESH_OPERATING_SYSTEM.md"
+      ]
+    },
+    {
+      "id": "layer:source-currentness",
+      "name": "Source Currentness & Authority Map",
+      "description": "Source registration and authority-stack mapping for the Owen County twin: live OneDrive folder pointer, original folder source map (folders 1-18 plus Issues, HERMES_INBOX, TCS_OVERLAY), systems-of-record candidates per lane, and the explicit list of missing source evidence that drives source-currentness work orders.",
+      "nodeIds": [
+        "file:SOURCE_MAP.md",
+        "document:SOURCE_MAP.md"
+      ]
+    },
+    {
+      "id": "layer:twin-state-validation",
+      "name": "Twin State & Validation Queue",
+      "description": "Level 1 twin-state ledger recording registered twin object families (Project, ProjectGate, ProjectTwinState, Zone, EvidenceToken, ApprovalBoundary, ActionRecord, RiskRecord), per-channel systems state, and the OWEN-VQ-001..009 validation queue that catalogues live OneDrive/TCS_OVERLAY conflicts awaiting reconciliation.",
+      "nodeIds": [
+        "file:TWIN_STATE.md",
+        "document:TWIN_STATE.md"
+      ]
+    },
+    {
+      "id": "layer:gate-readiness-stop-rules",
+      "name": "Gate Readiness & Stop Rules",
+      "description": "Gate-readiness ledger and approval-boundary controls for the Owen County twin: A0-D2 gate matrix, the unilateral-vs-approval split, validation-state taxonomy (cited, inferred, validated, disputed, stale, superseded, not_authority), and the receipt template required for any gate movement.",
+      "nodeIds": [
+        "file:GATE_READINESS.md",
+        "document:GATE_READINESS.md"
+      ]
+    },
+    {
+      "id": "layer:wiki-knowledge-graph",
+      "name": "Wiki Knowledge Graph",
+      "description": "Understand-Anything treatment wiki for Owen County: schema/authoring conventions, content index/catalog, and entity pages (owen-county, altitude-mesh, agent-boot) that cross-link the shell documents into a browsable knowledge graph.",
+      "nodeIds": [
+        "document:ua-treatment/wiki/SCHEMA.md",
+        "document:ua-treatment/wiki/index.md",
+        "document:ua-treatment/wiki/owen-county.md",
+        "document:ua-treatment/wiki/altitude-mesh.md",
+        "document:ua-treatment/wiki/agent-boot.md"
+      ]
+    }
   ],
-  "stats": {
-    "totalNodes": 19,
-    "totalEdges": 53,
-    "totalLayers": 6,
-    "totalTours": 3,
-    "coverage": 1.0,
-    "qualityScore": 9
-  }
+  "tour": [
+    {
+      "order": 1,
+      "title": "Agent Boot & Project Identity",
+      "description": "Start at AGENT_BOOT.md, the Level 1 Twin Shell entry point for the Owen County Schools Upgrades & Athletics project (#3620251). It establishes the project identity, the non-inheritance rule that blocks UK CAER facts from leaking into this twin, the six-rank authority stack, and the required read order for the next agent. This is the doctrine entry point: every other shell document is reached from here.",
+      "nodeIds": [
+        "file:AGENT_BOOT.md",
+        "document:AGENT_BOOT.md"
+      ],
+      "languageLesson": "Markdown shell docs use YAML frontmatter to carry TCS twin metadata (id, project, twin_level, status, authority_boundary). The frontmatter is machine-readable while the body stays human-readable."
+    },
+    {
+      "order": 2,
+      "title": "Altitude Mesh Operating System",
+      "description": "The doctrine that AGENT_BOOT.md points to. DOCTRINE__ALTITUDE_MESH_OPERATING_SYSTEM.md defines the six-layer signal stack (Subatomic, Micro, Meso, Macro, VP/Exec Rollup, Founder), the Upward Reporting Law, the Upward-Wake Gate, and the cadence schedule (continuous, 15min, 60min, cleanpoint edges, twice-daily, weekly, immediate). Every report and order in the Owen County twin travels through this mesh.",
+      "nodeIds": [
+        "file:DOCTRINE__ALTITUDE_MESH_OPERATING_SYSTEM.md",
+        "document:DOCTRINE__ALTITUDE_MESH_OPERATING_SYSTEM.md"
+      ]
+    },
+    {
+      "order": 3,
+      "title": "Source Map & Authority Stack",
+      "description": "SOURCE_MAP.md registers every input the shell reads. It pins the live OneDrive project folder pointer, lists the original folder source map (folders 1-18 plus Issues, HERMES_INBOX, TCS_OVERLAY), names the system-of-record candidates per lane (contract, Sage, Submittal Exchange, RFIs, schedule, safety/QC, correspondence, PM actions), and explicitly enumerates missing source evidence. This is where source-currentness work orders originate.",
+      "nodeIds": [
+        "file:SOURCE_MAP.md",
+        "document:SOURCE_MAP.md"
+      ]
+    },
+    {
+      "order": 4,
+      "title": "Twin State & Validation Queue",
+      "description": "TWIN_STATE.md is the digital-twin ledger built on the sources from Step 3. It records Level 1 readiness, project identity rows with fact states, registered twin object families (Project, ProjectGate, ProjectTwinState, Zone, EvidenceToken, ApprovalBoundary, ActionRecord, RiskRecord), and the seed validation queue OWEN-VQ-001..009 covering submittal/RFI conflicts, overdue checklists, CO/CPR split, safety evidence gaps, DPO reconciliation, schedule freshness, PM transition, and stale cleanpoints.",
+      "nodeIds": [
+        "file:TWIN_STATE.md",
+        "document:TWIN_STATE.md"
+      ]
+    },
+    {
+      "order": 5,
+      "title": "Gate Readiness & Stop Rules",
+      "description": "GATE_READINESS.md is the approval-boundary control plane. It enumerates the A0-D2 gate matrix with current state, blocker, and required evidence; codifies the stop-rule split between what the agent may do unilaterally versus what requires Michael's approval; defines the canonical validation states (cited, inferred, validated, disputed, stale, superseded, not_authority); and supplies the receipt template required for any gate movement. Together with Step 4, this enforces the review-only posture.",
+      "nodeIds": [
+        "file:GATE_READINESS.md",
+        "document:GATE_READINESS.md"
+      ]
+    },
+    {
+      "order": 6,
+      "title": "Wiki Schema & Catalog",
+      "description": "The Understand-Anything treatment layer begins with the wiki SCHEMA.md (authoring conventions, YAML frontmatter format, tag taxonomy, page-creation thresholds, entity/concept page templates) and the index.md catalog that links every entity, concept, comparison, and query page. These two files define how the shell documents from Steps 1-5 get reprojected as a browsable knowledge graph.",
+      "nodeIds": [
+        "document:ua-treatment/wiki/SCHEMA.md",
+        "document:ua-treatment/wiki/index.md"
+      ],
+      "languageLesson": "Wiki pages use [[wikilinks]] for cross-references and YAML frontmatter for typed metadata. The schema enforces consistent tag taxonomy so entity/concept/comparison/query pages can be queried as a structured graph rather than a loose document pile."
+    },
+    {
+      "order": 7,
+      "title": "Owen County Entity Page",
+      "description": "owen-county.md is the central entity page in the wiki, describing the Owen County construction project, its use of the Altitude Mesh Operating System from Step 2, and its relationships to the agent boot, gate readiness, source map, and twin state documents from Steps 1, 3, 4, and 5. This is the wiki's single best landing page for an agent or human who wants the project at a glance.",
+      "nodeIds": [
+        "document:ua-treatment/wiki/owen-county.md"
+      ]
+    },
+    {
+      "order": 8,
+      "title": "Doctrine & Agent Boot Entity Pages",
+      "description": "Capstone: the altitude-mesh.md and agent-boot.md wiki entity pages reproject Steps 1 and 2 into the knowledge graph. altitude-mesh.md documents the governing framework's layered architecture (Doctrine/Agent/Gate/Execution/Feedback), while agent-boot.md describes the initialization sequence and its relationship to the governing doctrine. With these in place, the full Level 1 Twin Shell is browsable end-to-end.",
+      "nodeIds": [
+        "document:ua-treatment/wiki/altitude-mesh.md",
+        "document:ua-treatment/wiki/agent-boot.md"
+      ]
+    }
+  ]
 }

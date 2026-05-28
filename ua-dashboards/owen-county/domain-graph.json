@@ -1,102 +1,330 @@
 {
-  "version": "2.0.0",
-  "type": "domain-flow",
+  "version": "1.0.0",
   "project": {
-    "name": "Owen County Schools Upgrades & Athletics",
+    "name": "owen_county",
     "languages": ["markdown", "json", "html"],
-    "frameworks": ["TCS Altitude Mesh Operating System", "Devere Project Digital Twin Standard"],
-    "description": "Domain flow for the Owen County Level 1 Digital Twin Shell showing how construction management domains relate and gate each other.",
-    "analyzedAt": "2026-05-28T00:00:00Z",
-    "gitCommitHash": null
+    "frameworks": [],
+    "description": "Owen County Project Digital Twin bring-online shell. Companion to UK CAER under the Devere/TCS Project Digital Twin standard. Domain graph captures the five real business domains: Project Shell & Doctrine, Source Currentness, Live Overlay (OneDrive/TCS_OVERLAY), PM Twin Configuration, and Bring-Online Work Orders.",
+    "analyzedAt": "2026-05-28T16:39:36.387Z",
+    "gitCommitHash": "9100a641b6849d42baf3cebffc9b7e198f3ba9c1"
   },
   "nodes": [
     {
-      "id": "domain-doctrine",
+      "id": "domain:project-shell-doctrine",
       "type": "domain",
-      "name": "Doctrine & Operating System",
-      "filePath": "DOCTRINE__ALTITUDE_MESH_OPERATING_SYSTEM.md",
-      "summary": "The Altitude Mesh 6-layer operating system that governs signal flow, reporting cadences, and order shapes across all project altitude layers.",
-      "tags": ["doctrine", "altitude-mesh", "signal-flow", "governance"],
-      "complexity": 9
+      "name": "Project Shell & Doctrine",
+      "summary": "Top-level Level 1 Twin Shell identity, the non-inheritance rule (no UK CAER fact leakage), the six-rank authority stack, and the Altitude Mesh Operating System doctrine the Owen County twin runs on.",
+      "tags": ["owen-county", "doctrine", "authority-stack", "altitude-mesh", "twin-shell"],
+      "complexity": "moderate"
     },
     {
-      "id": "domain-identity",
+      "id": "domain:source-currentness",
       "type": "domain",
-      "name": "Project Identity & Source Chain",
-      "filePath": "AGENT_BOOT.md",
-      "summary": "Project identification (Job #3620251, Owen County Schools), authority stack, non-inheritance rules, source registration, and read order protocol.",
-      "tags": ["identity", "authority", "source-chain", "boot"],
-      "complexity": 7
+      "name": "Source Currentness",
+      "summary": "Source registration plus the explicit gap-list (missing executed contract, live Sage, live Submittal Exchange, live Outlook, live OneDrive re-inventory, current May 2026 status) that drives all source-currentness work orders.",
+      "tags": ["owen-county", "source-map", "missing-evidence", "authority-stack", "work-orders"],
+      "complexity": "moderate"
     },
     {
-      "id": "domain-gate-control",
+      "id": "domain:live-overlay",
       "type": "domain",
-      "name": "Gate Control & Readiness",
-      "filePath": "GATE_READINESS.md",
-      "summary": "The 11-gate A0-D2 matrix controlling advancement from Level 1 shell through commercial, schedule, field, and governance readiness.",
-      "tags": ["gates", "readiness", "stop-rules", "validation"],
-      "complexity": 8
+      "name": "Live Overlay (OneDrive / TCS_OVERLAY)",
+      "summary": "The live OneDrive project folder pointer ('/Users/michael/Library/CloudStorage/OneDrive-DevereConstruction/03 Running Projects/2025/6. Owen Co Schools Upgrades & Athletics') and the TCS_OVERLAY snapshot (cleanpoints, master spine, Sage CM snapshot). Confirmed present but not yet re-inventoried by Level 1 shell.",
+      "tags": ["owen-county", "onedrive", "tcs-overlay", "cleanpoints", "master-spine", "live-folder"],
+      "complexity": "moderate"
     },
     {
-      "id": "domain-twin-management",
+      "id": "domain:pm-twin-config",
       "type": "domain",
-      "name": "Digital Twin State Management",
-      "filePath": "TWIN_STATE.md",
-      "summary": "Twin level classification, object family registration, validation queue management, systems state tracking, and level advancement protocol.",
-      "tags": ["twin-state", "level-management", "validation-queue", "systems"],
-      "complexity": 8
+      "name": "PM Twin Configuration",
+      "summary": "Twin object families (Project, ProjectGate, ProjectTwinState, Zone, EvidenceToken, ApprovalBoundary, ActionRecord, RiskRecord), the OWEN-VQ-001..009 validation queue, the A0-D2 gate matrix, validation-state taxonomy, and the receipt template required for any gate movement.",
+      "tags": ["owen-county", "twin-state", "validation-queue", "gate-matrix", "object-families", "receipts"],
+      "complexity": "complex"
     },
     {
-      "id": "domain-source-evidence",
+      "id": "domain:bring-online-work-orders",
       "type": "domain",
-      "name": "Source Evidence & Verification",
-      "filePath": "SOURCE_MAP.md",
-      "summary": "Source document registration, folder structure mapping, system-of-record identification, conflict detection, and missing evidence tracking.",
-      "tags": ["source-evidence", "verification", "conflicts", "folder-map"],
-      "complexity": 8
+      "name": "Bring-Online Work Orders",
+      "summary": "The Next Safe Load Sequence that takes the Level 1 review-only shell to Level 2 operational twin: verify live path, read latest cleanpoint, inventory original controls, pull read-only exports from Sage/Submittal Exchange/Outlook, then build first slices for contract/gate, Sage/commercial, schedule, procurement, safety, quality, RFIs/submittals, and PM rhythm.",
+      "tags": ["owen-county", "bring-online", "work-orders", "load-sequence", "level-2-promotion", "next-safe-action"],
+      "complexity": "complex"
+    },
+
+    {
+      "id": "flow:doctrine-boot-flow",
+      "type": "flow",
+      "name": "Doctrine Boot Flow",
+      "summary": "The ordered read-and-bind path an agent follows to register Owen County identity and bind to the Altitude Mesh operating system before any other work is permitted.",
+      "tags": ["doctrine", "agent-boot", "identity", "altitude-mesh", "non-inheritance"],
+      "complexity": "simple"
     },
     {
-      "id": "domain-commercial",
-      "type": "domain",
-      "name": "Commercial / Contract / Sage",
-      "filePath": null,
-      "summary": "Contract posture, Sage CM integration, cost management, billings, change orders, commitments, and DPO reconciliation. Currently blocked at gates A2, B1, B3.",
-      "tags": ["commercial", "contract", "sage", "cost", "blocked"],
-      "complexity": 7
+      "id": "flow:source-currentness-flow",
+      "type": "flow",
+      "name": "Source Currentness Verification Flow",
+      "summary": "The flow that turns SOURCE_MAP.md's Missing Source Evidence list into a current, validated source-of-record map across all eight lanes (contract, Sage, submittals, RFIs, schedule, safety/QC, correspondence, PM actions).",
+      "tags": ["source-map", "missing-evidence", "lane-validation", "system-of-record", "authority-stack"],
+      "complexity": "moderate"
     },
     {
-      "id": "domain-field",
-      "type": "domain",
-      "name": "Field Execution & Safety",
-      "filePath": null,
-      "summary": "Submittals, RFIs, schedule, safety/QC, field operations, and daily work planning. Currently blocked at gates B2, C1, C2, C3.",
-      "tags": ["field", "submittals", "RFIs", "schedule", "safety", "blocked"],
-      "complexity": 7
+      "id": "flow:live-overlay-rehydration-flow",
+      "type": "flow",
+      "name": "Live Overlay Rehydration Flow",
+      "summary": "The flow that re-inventories the live OneDrive folder (folders 1-18 plus Issues, HERMES_INBOX, TCS_OVERLAY), refreshes cleanpoints, and reconciles the TCS_OVERLAY snapshot against the live originals so the twin operates on May 2026 reality, not April packet seed.",
+      "tags": ["onedrive", "tcs-overlay", "cleanpoints", "rehydration", "reinventory", "live-folder"],
+      "complexity": "moderate"
     },
     {
-      "id": "domain-treatment",
-      "type": "domain",
-      "name": "UA Treatment & Analysis",
-      "filePath": "ua-treatment/knowledge-graph.json",
-      "summary": "Prior Understand Anything treatment outputs including knowledge graph, domain flow, dashboard, wiki, and onboarding materials produced by Qwopus agent.",
-      "tags": ["treatment", "analysis", "knowledge-graph", "wiki"],
-      "complexity": 4
+      "id": "flow:pm-twin-config-flow",
+      "type": "flow",
+      "name": "PM Twin Configuration Flow",
+      "summary": "The flow that loads dated evidence tokens against each twin object family, drives the OWEN-VQ-001..009 validation queue from disputed seed to validated/disputed/superseded, and posts gate movement receipts under the A0-D2 matrix.",
+      "tags": ["twin-state", "validation-queue", "evidence-tokens", "gate-receipts", "object-families"],
+      "complexity": "complex"
+    },
+    {
+      "id": "flow:bring-online-sequence-flow",
+      "type": "flow",
+      "name": "Bring-Online Sequence Flow",
+      "summary": "The six-step Next Safe Load Sequence from TWIN_STATE.md that promotes the Owen County twin from Level 1 review-only shell to Level 2 operational twin with first slices across all required lanes.",
+      "tags": ["bring-online", "load-sequence", "level-2", "first-slices", "work-orders"],
+      "complexity": "complex"
+    },
+
+    {
+      "id": "step:boot-identity",
+      "type": "step",
+      "name": "Read AGENT_BOOT.md and register project identity",
+      "summary": "Read AGENT_BOOT.md; register project name (Owen County Schools Upgrades & Athletics), number (3620251), the non-inheritance rule blocking UK CAER facts, the six-rank authority stack, and the required read order for the next agent.",
+      "tags": ["agent-boot", "identity", "non-inheritance", "authority-stack"],
+      "complexity": "simple"
+    },
+    {
+      "id": "step:bind-altitude-mesh",
+      "type": "step",
+      "name": "Bind to Altitude Mesh OS doctrine",
+      "summary": "Load DOCTRINE__ALTITUDE_MESH_OPERATING_SYSTEM.md; bind to the six-layer signal stack (Subatomic, Micro, Meso, Macro, VP/Exec Rollup, Founder), the Upward Reporting Law, the Upward-Wake Gate, and the cadence schedule that all Owen reports/orders must travel.",
+      "tags": ["doctrine", "altitude-mesh", "cadence", "upward-reporting"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "step:enforce-review-only",
+      "type": "step",
+      "name": "Enforce review-only posture and stop rules",
+      "summary": "Adopt the stop-rule split from GATE_READINESS.md: agent may produce review and validation receipts unilaterally; live system touches, gate promotions, and live action packets require Michael's approval.",
+      "tags": ["stop-rules", "review-only", "approval-boundary"],
+      "complexity": "simple"
+    },
+
+    {
+      "id": "step:enumerate-missing-evidence",
+      "type": "step",
+      "name": "Enumerate Missing Source Evidence",
+      "summary": "Read SOURCE_MAP.md Missing Source Evidence section: executed contract + NTP not read, live Sage not accessed (snapshot is March 2026), live Submittal Exchange not accessed, live Outlook not accessed, live OneDrive originals not re-inventoried, current May 2026 status unvalidated.",
+      "tags": ["missing-evidence", "source-gap", "work-order-source"],
+      "complexity": "simple"
+    },
+    {
+      "id": "step:pose-control-questions",
+      "type": "step",
+      "name": "Pose the eight First Control Questions",
+      "summary": "Pose: (1) executed contract value and latest revised contract; (2) which system controls submittals; (3) which system controls RFIs; (4) current schedule baseline and latest 3WLA; (5) which CO/CPR list is current; (6) open safety/QC/checklist exposure; (7) 14-day live work; (8) actions requiring Michael approval.",
+      "tags": ["control-questions", "first-pass", "source-map"],
+      "complexity": "simple"
+    },
+    {
+      "id": "step:resolve-system-of-record",
+      "type": "step",
+      "name": "Resolve System-of-Record per lane",
+      "summary": "Walk the SOURCE_MAP.md System-Of-Record Candidates table; for each lane (contract, cost/Sage, submittals, RFIs, schedule, safety/QC, correspondence, PM actions) decide which system is authoritative and downgrade conflicts to disputed pending reconciliation.",
+      "tags": ["system-of-record", "lane-validation", "authority-stack"],
+      "complexity": "moderate"
+    },
+
+    {
+      "id": "step:verify-live-path",
+      "type": "step",
+      "name": "Verify live OneDrive path exists",
+      "summary": "Step 1 of Next Safe Load Sequence: confirm '/Users/michael/Library/CloudStorage/OneDrive-DevereConstruction/03 Running Projects/2025/6. Owen Co Schools Upgrades & Athletics' is present on the target machine (confirmed live by operator on 2026-05-28).",
+      "tags": ["onedrive", "live-path", "load-sequence-step-1"],
+      "complexity": "simple"
+    },
+    {
+      "id": "step:read-latest-cleanpoint",
+      "type": "step",
+      "name": "Read latest cleanpoint and session handoff",
+      "summary": "Step 2 of Next Safe Load Sequence: read the latest cleanpoint and latest session handoff from TCS_OVERLAY so the twin state is bound to the most recent committed snapshot before re-inventory.",
+      "tags": ["cleanpoint", "tcs-overlay", "handoff", "load-sequence-step-2"],
+      "complexity": "simple"
+    },
+    {
+      "id": "step:reinventory-onedrive",
+      "type": "step",
+      "name": "Re-inventory original OneDrive controls",
+      "summary": "Step 3 of Next Safe Load Sequence: walk folders 1-18 plus Issues, HERMES_INBOX, TCS_OVERLAY in the live OneDrive folder and produce a current control-document inventory (contract set, drawings, specs, RFIs, submittals, schedules, safety, QC).",
+      "tags": ["reinventory", "onedrive", "control-docs", "load-sequence-step-3"],
+      "complexity": "moderate"
+    },
+
+    {
+      "id": "step:load-evidence-tokens",
+      "type": "step",
+      "name": "Load dated evidence tokens against object families",
+      "summary": "For each registered twin object family (Project, ProjectGate, ProjectTwinState, Zone, EvidenceToken, ApprovalBoundary, ActionRecord, RiskRecord) load EvidenceToken rows with source-path, fact-state, last-checked-date.",
+      "tags": ["evidence-tokens", "object-families", "twin-state"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "step:advance-validation-queue",
+      "type": "step",
+      "name": "Advance OWEN-VQ-001..009 validation queue",
+      "summary": "Reconcile each of the nine OWEN-VQ rows against live systems: submittal counts (VQ-001), RFI counts (VQ-002), overdue checklists (VQ-003), CO/CPR split (VQ-004), safety evidence (VQ-005), DPO reconciliation (VQ-006), schedule/3WLA freshness (VQ-007), PM transition correspondence (VQ-008), stale cleanpoints (VQ-009).",
+      "tags": ["validation-queue", "owen-vq", "reconciliation"],
+      "complexity": "complex"
+    },
+    {
+      "id": "step:post-gate-receipts",
+      "type": "step",
+      "name": "Post receipts under A0-D2 gate matrix",
+      "summary": "For any gate movement, supply the GATE_READINESS.md receipt template (gate-id, prior-state, new-state, evidence-paths, fact-state, approver) and mark validation states using the canonical taxonomy (cited, inferred, validated, disputed, stale, superseded, not_authority).",
+      "tags": ["gate-receipts", "a0-d2", "validation-states", "approval"],
+      "complexity": "moderate"
+    },
+
+    {
+      "id": "step:pull-readonly-exports",
+      "type": "step",
+      "name": "Pull read-only Sage / Submittal Exchange / Outlook exports",
+      "summary": "Step 4 of Next Safe Load Sequence: receive or pull read-only exports from Sage CM (current cost, COs, RFIs, submittals, daily logs, checklists), Submittal Exchange, and Outlook PM correspondence to replace the March 2026 packet snapshot.",
+      "tags": ["sage", "submittal-exchange", "outlook", "load-sequence-step-4"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "step:build-first-slices",
+      "type": "step",
+      "name": "Build first slices across required lanes",
+      "summary": "Step 5 of Next Safe Load Sequence: build first slice for each lane (contract/gate, Sage/commercial, schedule, procurement, safety, quality, RFIs/submittals, PM rhythm) using the now-current exports and re-inventoried controls.",
+      "tags": ["first-slices", "lanes", "load-sequence-step-5"],
+      "complexity": "complex"
+    },
+    {
+      "id": "step:mark-rows-with-receipts",
+      "type": "step",
+      "name": "Mark every row with source/authority/fact-state/receipt path",
+      "summary": "Step 6 of Next Safe Load Sequence: every slice row must carry source reference, authority level, fact state, human owner, approval requirement, last checked date, next action, and receipt path. This is the gate from Level 1 review-only shell to Level 2 operational twin.",
+      "tags": ["row-marking", "receipts", "level-2-promotion", "load-sequence-step-6"],
+      "complexity": "complex"
     }
   ],
   "edges": [
-    { "source": "domain-doctrine", "target": "domain-identity", "label": "provides operating framework for" },
-    { "source": "domain-doctrine", "target": "domain-gate-control", "label": "PASP gates apply to" },
-    { "source": "domain-identity", "target": "domain-source-evidence", "label": "establishes authority chain for" },
-    { "source": "domain-identity", "target": "domain-gate-control", "label": "boot stop rules feed into" },
-    { "source": "domain-source-evidence", "target": "domain-twin-management", "label": "source gaps populate validation queue in" },
-    { "source": "domain-source-evidence", "target": "domain-gate-control", "label": "evidence required to unblock" },
-    { "source": "domain-gate-control", "target": "domain-twin-management", "label": "gate passage advances twin level in" },
-    { "source": "domain-gate-control", "target": "domain-commercial", "label": "gates A2, B1, B3 control" },
-    { "source": "domain-gate-control", "target": "domain-field", "label": "gates B2, C1-C3 control" },
-    { "source": "domain-commercial", "target": "domain-twin-management", "label": "feeds commercial object families into" },
-    { "source": "domain-field", "target": "domain-twin-management", "label": "feeds field object families into" },
-    { "source": "domain-treatment", "target": "domain-identity", "label": "analyzes" },
-    { "source": "domain-treatment", "target": "domain-doctrine", "label": "explains" },
-    { "source": "domain-treatment", "target": "domain-gate-control", "label": "maps" }
+    {"source": "domain:project-shell-doctrine", "target": "flow:doctrine-boot-flow", "type": "contains_flow", "direction": "forward", "weight": 1.0},
+    {"source": "domain:source-currentness", "target": "flow:source-currentness-flow", "type": "contains_flow", "direction": "forward", "weight": 1.0},
+    {"source": "domain:live-overlay", "target": "flow:live-overlay-rehydration-flow", "type": "contains_flow", "direction": "forward", "weight": 1.0},
+    {"source": "domain:pm-twin-config", "target": "flow:pm-twin-config-flow", "type": "contains_flow", "direction": "forward", "weight": 1.0},
+    {"source": "domain:bring-online-work-orders", "target": "flow:bring-online-sequence-flow", "type": "contains_flow", "direction": "forward", "weight": 1.0},
+
+    {"source": "flow:doctrine-boot-flow", "target": "step:boot-identity", "type": "flow_step", "direction": "forward", "weight": 1.0},
+    {"source": "flow:doctrine-boot-flow", "target": "step:bind-altitude-mesh", "type": "flow_step", "direction": "forward", "weight": 1.0},
+    {"source": "flow:doctrine-boot-flow", "target": "step:enforce-review-only", "type": "flow_step", "direction": "forward", "weight": 1.0},
+    {"source": "step:boot-identity", "target": "step:bind-altitude-mesh", "type": "flow_step", "direction": "forward", "weight": 1.0},
+    {"source": "step:bind-altitude-mesh", "target": "step:enforce-review-only", "type": "flow_step", "direction": "forward", "weight": 1.0},
+
+    {"source": "flow:source-currentness-flow", "target": "step:enumerate-missing-evidence", "type": "flow_step", "direction": "forward", "weight": 1.0},
+    {"source": "flow:source-currentness-flow", "target": "step:pose-control-questions", "type": "flow_step", "direction": "forward", "weight": 1.0},
+    {"source": "flow:source-currentness-flow", "target": "step:resolve-system-of-record", "type": "flow_step", "direction": "forward", "weight": 1.0},
+    {"source": "step:enumerate-missing-evidence", "target": "step:pose-control-questions", "type": "flow_step", "direction": "forward", "weight": 1.0},
+    {"source": "step:pose-control-questions", "target": "step:resolve-system-of-record", "type": "flow_step", "direction": "forward", "weight": 1.0},
+
+    {"source": "flow:live-overlay-rehydration-flow", "target": "step:verify-live-path", "type": "flow_step", "direction": "forward", "weight": 1.0},
+    {"source": "flow:live-overlay-rehydration-flow", "target": "step:read-latest-cleanpoint", "type": "flow_step", "direction": "forward", "weight": 1.0},
+    {"source": "flow:live-overlay-rehydration-flow", "target": "step:reinventory-onedrive", "type": "flow_step", "direction": "forward", "weight": 1.0},
+    {"source": "step:verify-live-path", "target": "step:read-latest-cleanpoint", "type": "flow_step", "direction": "forward", "weight": 1.0},
+    {"source": "step:read-latest-cleanpoint", "target": "step:reinventory-onedrive", "type": "flow_step", "direction": "forward", "weight": 1.0},
+
+    {"source": "flow:pm-twin-config-flow", "target": "step:load-evidence-tokens", "type": "flow_step", "direction": "forward", "weight": 1.0},
+    {"source": "flow:pm-twin-config-flow", "target": "step:advance-validation-queue", "type": "flow_step", "direction": "forward", "weight": 1.0},
+    {"source": "flow:pm-twin-config-flow", "target": "step:post-gate-receipts", "type": "flow_step", "direction": "forward", "weight": 1.0},
+    {"source": "step:load-evidence-tokens", "target": "step:advance-validation-queue", "type": "flow_step", "direction": "forward", "weight": 1.0},
+    {"source": "step:advance-validation-queue", "target": "step:post-gate-receipts", "type": "flow_step", "direction": "forward", "weight": 1.0},
+
+    {"source": "flow:bring-online-sequence-flow", "target": "step:verify-live-path", "type": "flow_step", "direction": "forward", "weight": 1.0},
+    {"source": "flow:bring-online-sequence-flow", "target": "step:read-latest-cleanpoint", "type": "flow_step", "direction": "forward", "weight": 1.0},
+    {"source": "flow:bring-online-sequence-flow", "target": "step:reinventory-onedrive", "type": "flow_step", "direction": "forward", "weight": 1.0},
+    {"source": "flow:bring-online-sequence-flow", "target": "step:pull-readonly-exports", "type": "flow_step", "direction": "forward", "weight": 1.0},
+    {"source": "flow:bring-online-sequence-flow", "target": "step:build-first-slices", "type": "flow_step", "direction": "forward", "weight": 1.0},
+    {"source": "flow:bring-online-sequence-flow", "target": "step:mark-rows-with-receipts", "type": "flow_step", "direction": "forward", "weight": 1.0},
+    {"source": "step:reinventory-onedrive", "target": "step:pull-readonly-exports", "type": "flow_step", "direction": "forward", "weight": 1.0},
+    {"source": "step:pull-readonly-exports", "target": "step:build-first-slices", "type": "flow_step", "direction": "forward", "weight": 1.0},
+    {"source": "step:build-first-slices", "target": "step:mark-rows-with-receipts", "type": "flow_step", "direction": "forward", "weight": 1.0},
+
+    {"source": "domain:project-shell-doctrine", "target": "domain:source-currentness", "type": "related", "direction": "forward", "weight": 0.7},
+    {"source": "domain:source-currentness", "target": "domain:live-overlay", "type": "related", "direction": "forward", "weight": 0.9},
+    {"source": "domain:live-overlay", "target": "domain:pm-twin-config", "type": "related", "direction": "forward", "weight": 0.8},
+    {"source": "domain:pm-twin-config", "target": "domain:bring-online-work-orders", "type": "related", "direction": "forward", "weight": 0.9},
+    {"source": "domain:source-currentness", "target": "domain:bring-online-work-orders", "type": "related", "direction": "forward", "weight": 0.8}
+  ],
+  "layers": [
+    {
+      "id": "layer:doctrine",
+      "name": "Doctrine Layer",
+      "description": "Project identity, authority stack, non-inheritance rule, and the Altitude Mesh Operating System that governs all Owen County signal flow.",
+      "nodeIds": ["domain:project-shell-doctrine", "flow:doctrine-boot-flow", "step:boot-identity", "step:bind-altitude-mesh", "step:enforce-review-only"]
+    },
+    {
+      "id": "layer:source-authority",
+      "name": "Source Authority Layer",
+      "description": "Source registration, missing-evidence list, control questions, and per-lane system-of-record resolution that drives source-currentness work orders.",
+      "nodeIds": ["domain:source-currentness", "flow:source-currentness-flow", "step:enumerate-missing-evidence", "step:pose-control-questions", "step:resolve-system-of-record"]
+    },
+    {
+      "id": "layer:live-surface",
+      "name": "Live Surface Layer",
+      "description": "Live OneDrive folder, TCS_OVERLAY snapshot, cleanpoints, and the rehydration flow that turns packet-seed knowledge into live May 2026 reality.",
+      "nodeIds": ["domain:live-overlay", "flow:live-overlay-rehydration-flow", "step:verify-live-path", "step:read-latest-cleanpoint", "step:reinventory-onedrive"]
+    },
+    {
+      "id": "layer:twin-config",
+      "name": "PM Twin Configuration Layer",
+      "description": "Twin object families, OWEN-VQ-001..009 validation queue, A0-D2 gate matrix, and gate-receipt posting.",
+      "nodeIds": ["domain:pm-twin-config", "flow:pm-twin-config-flow", "step:load-evidence-tokens", "step:advance-validation-queue", "step:post-gate-receipts"]
+    },
+    {
+      "id": "layer:bring-online-execution",
+      "name": "Bring-Online Execution Layer",
+      "description": "The six-step Next Safe Load Sequence and the row-marking discipline that promotes the shell from Level 1 review-only to Level 2 operational twin.",
+      "nodeIds": ["domain:bring-online-work-orders", "flow:bring-online-sequence-flow", "step:pull-readonly-exports", "step:build-first-slices", "step:mark-rows-with-receipts"]
+    }
+  ],
+  "tour": [
+    {
+      "order": 1,
+      "title": "Doctrine Boot",
+      "description": "Boot identity from AGENT_BOOT.md, bind to Altitude Mesh OS, and enforce review-only posture before any other work.",
+      "nodeIds": ["domain:project-shell-doctrine", "flow:doctrine-boot-flow", "step:boot-identity", "step:bind-altitude-mesh", "step:enforce-review-only"]
+    },
+    {
+      "order": 2,
+      "title": "Source Currentness Verification",
+      "description": "Enumerate the Missing Source Evidence list, pose the eight First Control Questions, and resolve system-of-record per lane.",
+      "nodeIds": ["domain:source-currentness", "flow:source-currentness-flow", "step:enumerate-missing-evidence", "step:pose-control-questions", "step:resolve-system-of-record"]
+    },
+    {
+      "order": 3,
+      "title": "Live Overlay Rehydration",
+      "description": "Verify live OneDrive path, read latest cleanpoint, then re-inventory folders 1-18 plus Issues, HERMES_INBOX, TCS_OVERLAY.",
+      "nodeIds": ["domain:live-overlay", "flow:live-overlay-rehydration-flow", "step:verify-live-path", "step:read-latest-cleanpoint", "step:reinventory-onedrive"]
+    },
+    {
+      "order": 4,
+      "title": "PM Twin Configuration",
+      "description": "Load dated evidence tokens against each object family, advance the OWEN-VQ-001..009 queue, and post A0-D2 gate receipts under the canonical validation-state taxonomy.",
+      "nodeIds": ["domain:pm-twin-config", "flow:pm-twin-config-flow", "step:load-evidence-tokens", "step:advance-validation-queue", "step:post-gate-receipts"]
+    },
+    {
+      "order": 5,
+      "title": "Bring-Online Work Orders",
+      "description": "Execute the six-step Next Safe Load Sequence: verify path, read cleanpoint, re-inventory, pull read-only exports, build first slices, mark every row with receipt path. This is the gate from Level 1 shell to Level 2 operational twin.",
+      "nodeIds": ["domain:bring-online-work-orders", "flow:bring-online-sequence-flow", "step:pull-readonly-exports", "step:build-first-slices", "step:mark-rows-with-receipts"]
+    }
   ]
 }

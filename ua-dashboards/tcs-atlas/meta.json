@@ -1,8 +1,6 @@
 {
-  "project": "TCS Atlas Token Registry",
-  "generated_at": "2026-05-28T16:27:00Z",
-  "demo_mode": false,
-  "pipeline_version": "2.0.0",
-  "phases_completed": 8,
-  "stats": { "nodes": 13, "edges": 25, "layers": 4, "tours": 2, "coverage": 1.0, "quality_score": 9 }
+  "lastAnalyzedAt": "2026-05-28T16:48:04.066Z",
+  "gitCommitHash": "9100a641b6849d42baf3cebffc9b7e198f3ba9c1",
+  "version": "1.0.0",
+  "analyzedFiles": 29
 }

@@ -1,253 +1,653 @@
 {
-  "version": "2.0.0",
-  "type": "domain-flow",
+  "version": "1.0.0",
   "project": {
-    "name": "UK CAER TCS Digital Twin PM Package",
-    "languages": [
-      "Python",
-      "Markdown",
-      "HTML",
-      "JavaScript",
-      "YAML",
-      "JSON"
-    ],
-    "frameworks": [
-      "openpyxl",
-      "TCS 9-Gate Lifecycle",
-      "Sage CM",
-      "NotebookLM"
-    ],
-    "description": "A digital-twin PM operating product for the Lexington UK CAER Outreach & Education Center (DeVere Construction). Contains 51 Python builders generating XLSX workbooks and HTML dashboards across 10 construction domains, plus 225 Markdown specs covering TCS governance, agent boot protocols, and onboarding materials.",
-    "analyzedAt": "2026-05-28T16:29:11.325106",
-    "gitCommitHash": "n/a-local-workbench"
+    "name": "uk-caer-pm-workbench",
+    "languages": ["python", "javascript", "markdown", "html", "json", "yaml", "xlsx"],
+    "frameworks": ["openpyxl", "node-mjs"],
+    "description": "UK CAER PM control workbench: doctrine-grounded Project Digital Twin tooling that turns gate readiness, validation, procurement, cost, high-risk-trade, and owner-reporting evidence into HTML/XLSX command boards and packets.",
+    "analyzedAt": "2026-05-28T00:00:00Z",
+    "gitCommitHash": "cea734709ebe3273070d772c0fab6a1f17e47501"
   },
   "nodes": [
     {
-      "id": "dom-gate-readiness",
+      "id": "domain:project-digital-twin",
+      "type": "domain",
+      "name": "Project Digital Twin Standard",
+      "summary": "Doctrine layer defining the Devere Project Digital Twin: ceiling spec, reviewer-assignment decision packet, maturity map, and product definition. Establishes the governing rules every UK CAER and Owen County package must satisfy.",
+      "tags": ["doctrine", "standard", "digital-twin", "governance"],
+      "complexity": "complex",
+      "domainMeta": {
+        "entities": ["Project Digital Twin", "Ceiling Spec", "Reviewer Assignment", "Maturity Map", "Product Definition"],
+        "businessRules": ["All packages adhere to the Project Digital Twin Standard", "Ceiling spec sets the maturity ceiling per project phase", "Reviewer assignments are packet-traceable"],
+        "crossDomainInteractions": ["Constrains every UK CAER board and packet", "Anchors Owen County Project Digital Twin Shell"]
+      }
+    },
+    {
+      "id": "domain:pm-command-control",
+      "type": "domain",
+      "name": "PM Command & Control",
+      "summary": "Top-level PM operating surface: UK CAER PM Command Center and PM Master Control workbench. Combines hot sheets and action registers into a single command board for the PM.",
+      "tags": ["pm", "command-center", "master-control", "operating-board"],
+      "complexity": "complex",
+      "domainMeta": {
+        "entities": ["Hot Sheet", "Action Register", "Master Control Dashboard", "Update Chain"],
+        "businessRules": ["Hot sheet is the single source of PM-priority items", "Action register is owner/due-date traceable"],
+        "crossDomainInteractions": ["Surfaces gate, validation, procurement, and cost status", "Feeds owner reporting"]
+      }
+    },
+    {
+      "id": "domain:gate-readiness",
       "type": "domain",
       "name": "Gate Readiness",
-      "filePath": "build_uk_caer_9_gate_readiness_board.py",
-      "summary": "9-gate lifecycle control (A0-D2). Gate advancement requires documented evidence, TPM/procurement dependencies met, and validation posture confirmed.",
-      "tags": [
-        "gate",
-        "lifecycle",
-        "A0-D2"
-      ],
-      "complexity": "very-high"
+      "summary": "Nine-gate readiness model for UK CAER with A1/A2 evidence closure, ledger validation, Sage verification, and B1/B2 activation. The backbone of project gate progression.",
+      "tags": ["gates", "a1-a2", "b1-b2", "readiness", "closure"],
+      "complexity": "complex",
+      "domainMeta": {
+        "entities": ["9-Gate Board", "A1/A2 Evidence Closure Packet", "Receipt Validation Ledger", "Sage Verification Package"],
+        "businessRules": ["Each gate has explicit closure evidence", "No gate advances without ledger validation"],
+        "crossDomainInteractions": ["Consumes Validation Pipeline results", "Triggers Procurement Activation on B1/B2 close", "Feeds Owner Reporting"]
+      }
     },
     {
-      "id": "dom-pm-command",
+      "id": "domain:validation-pipeline",
       "type": "domain",
-      "name": "PM Command Center",
-      "filePath": "build_uk_caer_pm_command_center.py",
-      "summary": "Central aggregation hub linking all 10 domains. Single surface for PM status, next actions, and blockers.",
-      "tags": [
-        "command-center",
-        "aggregation",
-        "hub"
-      ],
-      "complexity": "very-high"
+      "name": "Validation Pipeline",
+      "summary": "PM Validation architecture, QC plan, queue-and-zone assignments, and the Validation Zone Board that routes evidence through review patterns (mockup, ITP, peer review) to gate closure.",
+      "tags": ["validation", "qc", "zone-board", "patterns"],
+      "complexity": "complex",
+      "domainMeta": {
+        "entities": ["Validation Queue", "Validation Zone", "Pattern Catalog (Mockup/ITP/Peer Review)", "Zone Transition"],
+        "businessRules": ["Every validation item is assigned a zone and pattern", "Transitions require sign-off"],
+        "crossDomainInteractions": ["Gates depend on validation closure", "Owen County seeds the validation queue"]
+      }
     },
     {
-      "id": "dom-procurement",
+      "id": "domain:procurement-activation",
       "type": "domain",
-      "name": "Procurement",
-      "filePath": "build_uk_caer_b1_b2_procurement_activation_board.py",
-      "summary": "Vendor and material management: B1/B2 activation, buyout sequencing, submittal release, Sage commitment verification, cost/SOV readiness.",
-      "tags": [
-        "procurement",
-        "buyout",
-        "sage",
-        "B1",
-        "B2"
-      ],
-      "complexity": "high"
+      "name": "Procurement Activation",
+      "summary": "B1/B2 procurement activation board with BOQ-to-BOM-to-cost-code mapping. Drives the activation sequence and lane-by-lane procurement readiness for the project.",
+      "tags": ["procurement", "boq", "bom", "cost-code", "b1-b2"],
+      "complexity": "moderate",
+      "domainMeta": {
+        "entities": ["BOQ", "BOM", "Cost Code", "Activation Lane", "Activation Sequence"],
+        "businessRules": ["Every BOM item maps to a cost code", "Activation sequence enforces lane order"],
+        "crossDomainInteractions": ["Triggers Cost & Commitment Tracking", "Closes B1/B2 gates"]
+      }
     },
     {
-      "id": "dom-field-ops",
+      "id": "domain:cost-commitment",
       "type": "domain",
-      "name": "Field Operations",
-      "filePath": "build_uk_caer_field_wi_itp_package.py",
-      "summary": "Site execution: work instructions, inspection/test plans, action plans (Rooter-to-Tooter), high-risk trade and preinstall management.",
-      "tags": [
-        "field",
-        "itp",
-        "action-plan",
-        "rooter",
-        "tooter"
-      ],
-      "complexity": "high"
+      "name": "Cost & Commitment Tracking",
+      "summary": "Cost-SOV-commitment readiness board: rolls cost codes into Schedule of Values lanes, sequences commitments, and surfaces readiness for owner approval.",
+      "tags": ["cost", "sov", "commitment", "readiness"],
+      "complexity": "moderate",
+      "domainMeta": {
+        "entities": ["Schedule of Values (SOV)", "Commitment", "Activation Lane", "Cost Code"],
+        "businessRules": ["SOV lanes match procurement lanes", "Commitments are tied to activation sequence"],
+        "crossDomainInteractions": ["Receives lane data from Procurement Activation", "Reports to Owner Reporting"]
+      }
     },
     {
-      "id": "dom-evidence",
+      "id": "domain:high-risk-trade",
       "type": "domain",
-      "name": "Evidence & Compliance",
-      "filePath": "build_uk_caer_pm_evidence_token_standard.py",
-      "summary": "Documentation and audit trail: evidence tokens, P0 intake, validation architecture, QC plan, zone assignments, package QA audit.",
-      "tags": [
-        "evidence",
-        "compliance",
-        "validation",
-        "qa"
-      ],
-      "complexity": "high"
+      "name": "High-Risk Trade Management",
+      "summary": "High-risk preinstall meeting packets and trade issue packets. Drives preinstall agendas, sign-in, action logs, RFI/submittal/TPM tracking, and inference rows for trades flagged high-risk.",
+      "tags": ["high-risk", "preinstall", "trade", "meeting-packet", "issue-packet"],
+      "complexity": "complex",
+      "domainMeta": {
+        "entities": ["Preinstall Meeting", "Trade Issue Packet", "Agenda", "Action Log", "Sign-In", "Rooter Clearance", "Safety/Quality Item"],
+        "businessRules": ["Every high-risk trade gets a preinstall meeting packet before activation", "Action log items have owners and due dates"],
+        "crossDomainInteractions": ["Inputs to Validation Pipeline", "Gates A1/A2 require preinstall packet evidence"]
+      }
     },
     {
-      "id": "dom-cost",
+      "id": "domain:owner-reporting",
       "type": "domain",
-      "name": "Cost Control",
-      "filePath": "build_uk_caer_boq_bom_cost_mapping.py",
-      "summary": "Budget and cost codes: BOQ/BOM mapping, schedule logic, submittal scheduling, RFI register. No buyout before A2, no pay without evidence.",
-      "tags": [
-        "cost",
-        "budget",
-        "boq",
-        "schedule"
-      ],
-      "complexity": "high"
+      "name": "Owner Reporting",
+      "summary": "Owner-facing surfaces: Owner Progress Review Package, Owner TCS Critical Path Report, Owner Voice session, and the segmented integrated owner view board. Translates internal PM status into an owner-readable storyline.",
+      "tags": ["owner", "reporting", "progress-review", "critical-path", "voice"],
+      "complexity": "moderate",
+      "domainMeta": {
+        "entities": ["Executive Snapshot", "Owner Storyline", "Visual Flow", "TCS Flow", "Next Decision", "Critical Path Report"],
+        "businessRules": ["Owner package surfaces the next decision required", "Critical path is grounded in TCS evidence"],
+        "crossDomainInteractions": ["Aggregates Gate, Validation, Procurement, and Cost status", "Receives PM Command Center hot-sheet items"]
+      }
     },
     {
-      "id": "dom-risk",
+      "id": "domain:owen-county-bring-online",
       "type": "domain",
-      "name": "Risk Management",
-      "filePath": "build_uk_caer_live_action_approval_ledger.py",
-      "summary": "Risk register and mitigation: live action approval ledger, decision/action ledger, deliverables completion roadmap, high-risk flagging.",
-      "tags": [
-        "risk",
-        "approval",
-        "decision",
-        "mitigation"
-      ],
-      "complexity": "medium"
+      "name": "Owen County Bring-Online",
+      "summary": "Owen County Project Digital Twin Shell, source-currentness work orders, and the SLAB Owen Co bring-online overlay snapshot. Workflow for seeding a new project into the workbench (boot, source map, validation queue seed, stop rules, approvals, cleanpoints).",
+      "tags": ["owen-county", "bring-online", "source-currentness", "slab", "overlay"],
+      "complexity": "complex",
+      "domainMeta": {
+        "entities": ["Project Digital Twin Shell", "Source Map", "Validation Queue Seed", "Stop Rule", "Cleanpoint", "Email Extract"],
+        "businessRules": ["No advance past a stop rule without an approval receipt", "Source currentness is verified before queue seeding"],
+        "crossDomainInteractions": ["Seeds the Validation Pipeline", "Adopts the Project Digital Twin Standard"]
+      }
     },
     {
-      "id": "dom-doc-control",
+      "id": "domain:knowledge-os",
       "type": "domain",
-      "name": "Document Control",
-      "filePath": "build_uk_caer_control_doc_revision_board.py",
-      "summary": "Version management: control doc revision board, Sage/OneDrive governance, TCS control pack, package index and manifest.",
-      "tags": [
-        "document",
-        "revision",
-        "governance",
-        "manifest"
-      ],
-      "complexity": "high"
+      "name": "Knowledge OS",
+      "summary": "TCS Avatar Knowledge OS: middleware contract, test fixture pack spec, fixture build decision packet, manual test run, fixture approval, and wiki cite-infer governance. The governance layer for ingestion and citation discipline across all packages.",
+      "tags": ["knowledge-os", "middleware", "fixtures", "citation", "governance"],
+      "complexity": "complex",
+      "domainMeta": {
+        "entities": ["Middleware Contract", "Test Fixture Pack", "Fixture Build Decision Packet", "Manual Test Run", "Cite/Infer Wiki Governance"],
+        "businessRules": ["Citations must follow the cite-infer governance spec", "Fixtures require approval before build"],
+        "crossDomainInteractions": ["Governs evidence used by every other domain", "Backs Validation Pipeline patterns"]
+      }
+    },
+
+    {
+      "id": "flow:digital-twin-doctrine-adoption",
+      "type": "flow",
+      "name": "Digital Twin Doctrine Adoption",
+      "summary": "Adopts the Project Digital Twin Standard on a new package: product definition → ceiling spec → reviewer assignment → maturity map → UK CAER floor/ceiling map.",
+      "tags": ["doctrine", "adoption", "standard"],
+      "complexity": "moderate",
+      "domainMeta": {"entryPoint": "TCS_PM_DIGITAL_TWIN_PRODUCT_DEFINITION.md", "entryType": "manual"}
+    },
+
+    {
+      "id": "flow:pm-command-center-build",
+      "type": "flow",
+      "name": "PM Command Center Build",
+      "summary": "Builds the UK CAER PM Command Center: assembles hot-sheet and action-register rows, writes README, emits the command board.",
+      "tags": ["pm", "command-center", "build"],
+      "complexity": "moderate",
+      "domainMeta": {"entryPoint": "python build_uk_caer_pm_command_center.py", "entryType": "cli"}
     },
     {
-      "id": "dom-hr",
-      "type": "domain",
-      "name": "HR & Training",
-      "filePath": "build_uk_caer_human_pm_onboarding_board.py",
-      "summary": "Personnel and competency: PM onboarding, 8-week syllabus, day1 rollout, training tracker, safety/quality plans.",
-      "tags": [
-        "hr",
-        "training",
-        "onboarding",
-        "safety"
-      ],
-      "complexity": "medium"
+      "id": "flow:pm-master-control-build",
+      "type": "flow",
+      "name": "PM Master Control Build",
+      "summary": "Builds the PM Master Control dashboard (Node/mjs): composes dashboard rows and update-chain rows into the master operating board.",
+      "tags": ["pm", "master-control", "dashboard"],
+      "complexity": "moderate",
+      "domainMeta": {"entryPoint": "node build_uk_caer_pm_master_control.mjs", "entryType": "cli"}
+    },
+
+    {
+      "id": "flow:9-gate-readiness-board",
+      "type": "flow",
+      "name": "9-Gate Readiness Board Build",
+      "summary": "Builds the UK CAER 9-Gate Readiness Board: ingests gate evidence rows, computes metrics, renders HTML, writes README.",
+      "tags": ["gates", "readiness", "board", "build"],
+      "complexity": "moderate",
+      "domainMeta": {"entryPoint": "python build_uk_caer_9_gate_readiness_board.py", "entryType": "cli"}
     },
     {
-      "id": "dom-reporting",
-      "type": "domain",
-      "name": "Reporting",
-      "filePath": "build_uk_caer_daily_pm_operating_board.py",
-      "summary": "Dashboards and status: daily operating board, weekly snapshots, executive overview, owner progress review, productization board, TPM release readiness.",
-      "tags": [
-        "reporting",
-        "dashboard",
-        "owner",
-        "executive"
-      ],
-      "complexity": "high"
-    }
+      "id": "flow:a1-a2-evidence-closure",
+      "type": "flow",
+      "name": "A1-A2 Evidence Closure",
+      "summary": "Closes A1/A2 gates: ingests evidence rows, runs closure checks, applies closure sequence, emits packet HTML and README.",
+      "tags": ["a1-a2", "closure", "evidence"],
+      "complexity": "moderate",
+      "domainMeta": {"entryPoint": "python build_uk_caer_a1_a2_evidence_closure_packet.py", "entryType": "cli"}
+    },
+    {
+      "id": "flow:a1-a2-receipt-validation-ledger",
+      "type": "flow",
+      "name": "A1-A2 Receipt Validation Ledger",
+      "summary": "Generates the A1/A2 receipt register, validation transitions, and approval readiness rows; writes both XLSX ledger and README.",
+      "tags": ["a1-a2", "ledger", "validation", "xlsx"],
+      "complexity": "complex",
+      "domainMeta": {"entryPoint": "python build_uk_caer_a1_a2_receipt_validation_ledger.py", "entryType": "cli"}
+    },
+    {
+      "id": "flow:a1-a2-sage-verification",
+      "type": "flow",
+      "name": "A1-A2 Sage Verification",
+      "summary": "Builds the Sage verification workbook: extracts file rows, computes shared keys across sources, emits verification workbook.",
+      "tags": ["a1-a2", "sage", "verification"],
+      "complexity": "moderate",
+      "domainMeta": {"entryPoint": "python build_uk_caer_a1_a2_sage_verification_package.py", "entryType": "cli"}
+    },
+
+    {
+      "id": "flow:validation-zone-board-build",
+      "type": "flow",
+      "name": "Validation Zone Board Build",
+      "summary": "Builds the Validation Zone Board: zone nodes, validation items, pattern catalog, transitions, metrics, source-area rollup, rendered HTML, README.",
+      "tags": ["validation", "zone-board", "build"],
+      "complexity": "complex",
+      "domainMeta": {"entryPoint": "python build_uk_caer_validation_zone_board.py", "entryType": "cli"}
+    },
+    {
+      "id": "flow:validation-architecture-qc-plan",
+      "type": "flow",
+      "name": "Validation Architecture & QC Plan",
+      "summary": "Doctrine workflow that defines validation architecture and QC plan, then assigns queues to zones for execution.",
+      "tags": ["validation", "architecture", "qc", "queue"],
+      "complexity": "moderate",
+      "domainMeta": {"entryPoint": "UK_CAER_PM_VALIDATION_ARCHITECTURE_AND_QC_PLAN_README.md", "entryType": "manual"}
+    },
+
+    {
+      "id": "flow:b1-b2-procurement-activation",
+      "type": "flow",
+      "name": "B1-B2 Procurement Activation Board",
+      "summary": "Builds the B1/B2 Procurement Activation Board: row ingest → activation sequence → lane rows → metrics → HTML → README.",
+      "tags": ["b1-b2", "procurement", "activation", "build"],
+      "complexity": "moderate",
+      "domainMeta": {"entryPoint": "python build_uk_caer_b1_b2_procurement_activation_board.py", "entryType": "cli"}
+    },
+    {
+      "id": "flow:boq-bom-cost-code-mapping",
+      "type": "flow",
+      "name": "BOQ/BOM Cost Code Mapping",
+      "summary": "Maps Bill of Quantities and Bill of Materials items into Sage cost codes; documents the mapping for procurement and cost lanes.",
+      "tags": ["boq", "bom", "cost-code", "mapping"],
+      "complexity": "moderate",
+      "domainMeta": {"entryPoint": "UK_CAER_BOQ_BOM_COST_CODE_MAPPING_README.md", "entryType": "manual"}
+    },
+
+    {
+      "id": "flow:cost-sov-commitment-readiness",
+      "type": "flow",
+      "name": "Cost-SOV-Commitment Readiness Board",
+      "summary": "Builds the Cost-SOV-Commitment Readiness Board: row ingest → activation sequence → lane rows → HTML → README.",
+      "tags": ["cost", "sov", "commitment", "readiness", "build"],
+      "complexity": "moderate",
+      "domainMeta": {"entryPoint": "python build_uk_caer_cost_sov_commitment_readiness_board.py", "entryType": "cli"}
+    },
+
+    {
+      "id": "flow:high-risk-preinstall-meeting-packet",
+      "type": "flow",
+      "name": "High-Risk Preinstall Meeting Packet",
+      "summary": "Builds the high-risk preinstall packet workbook: meeting queue, agendas, sign-in, rooter clearance, action log, safety/quality, RFI/submittal/TPM, evidence routing, minutes, inferences, visual dashboard.",
+      "tags": ["high-risk", "preinstall", "meeting", "packet"],
+      "complexity": "complex",
+      "domainMeta": {"entryPoint": "python build_uk_caer_high_risk_preinstall_meeting_packets.py", "entryType": "cli"}
+    },
+    {
+      "id": "flow:high-risk-trade-issue-packet",
+      "type": "flow",
+      "name": "High-Risk Trade Issue Packet",
+      "summary": "Documented packet flow for capturing high-risk trade issues, routing them through the validation queue, and tracking closure evidence.",
+      "tags": ["high-risk", "trade", "issue", "packet"],
+      "complexity": "moderate",
+      "domainMeta": {"entryPoint": "UK_CAER_HIGH_RISK_TRADE_ISSUE_PACKETS_README.md", "entryType": "manual"}
+    },
+
+    {
+      "id": "flow:owner-progress-review-package",
+      "type": "flow",
+      "name": "Owner Progress Review Package",
+      "summary": "Builds the Owner Progress Review workbook: executive snapshot, storyline, visual flow, human PM onboarding, TCS flow, progress evidence, next decisions.",
+      "tags": ["owner", "progress", "review", "package"],
+      "complexity": "complex",
+      "domainMeta": {"entryPoint": "python build_uk_caer_owner_progress_review_package.py", "entryType": "cli"}
+    },
+    {
+      "id": "flow:owner-segmented-integrated-board",
+      "type": "flow",
+      "name": "Owner Segmented Integrated Board",
+      "summary": "Renders the segmented integrated owner view board — single HTML that aggregates gate, validation, procurement, cost, and high-risk status segmented for owner consumption.",
+      "tags": ["owner", "segmented", "integrated", "board"],
+      "complexity": "moderate",
+      "domainMeta": {"entryPoint": "python build_uk_caer_devere_owner_view_segmented_integrated_board.py", "entryType": "cli"}
+    },
+    {
+      "id": "flow:owner-critical-path-report",
+      "type": "flow",
+      "name": "Owner TCS Critical Path Report",
+      "summary": "Produces the Owner TCS Critical Path Report and Owner Voice session script: walks the owner through the project's TCS-grounded critical path.",
+      "tags": ["owner", "critical-path", "voice"],
+      "complexity": "moderate",
+      "domainMeta": {"entryPoint": "UK_CAER_OWNER_TCS_CRITICAL_PATH_REPORT.md", "entryType": "manual"}
+    },
+
+    {
+      "id": "flow:owen-county-bring-online-overlay",
+      "type": "flow",
+      "name": "Owen County Bring-Online (SLAB Overlay)",
+      "summary": "SLAB Owen Co bring-online overlay sequence: start-here → agent boot → source map → red-flags/validation queue seed → stop rules/receipts → cleanpoint snapshot.",
+      "tags": ["owen-county", "slab", "bring-online", "overlay"],
+      "complexity": "complex",
+      "domainMeta": {"entryPoint": "SLAB_OWEN_CO_BRING_ONLINE_2026-05-17/00_START_HERE_SLAB.md", "entryType": "manual"}
+    },
+    {
+      "id": "flow:owen-county-source-currentness",
+      "type": "flow",
+      "name": "Owen County Source-Currentness Work Orders",
+      "summary": "Receipts live folder currentness and inventory, then dispatches source-currentness work orders for missing/stale sources.",
+      "tags": ["owen-county", "source-currentness", "work-orders"],
+      "complexity": "moderate",
+      "domainMeta": {"entryPoint": "OWEN_COUNTY_SOURCE_CURRENTNESS_WORK_ORDERS.md", "entryType": "manual"}
+    },
+
+    {
+      "id": "flow:knowledge-os-fixture-acceptance",
+      "type": "flow",
+      "name": "Knowledge OS Fixture Acceptance",
+      "summary": "Fixture pack lifecycle for the Avatar Knowledge OS middleware: pack spec → build decision packet → approval request → first manual test run → middleware acceptance test plan.",
+      "tags": ["knowledge-os", "fixture", "acceptance", "middleware"],
+      "complexity": "complex",
+      "domainMeta": {"entryPoint": "TCS_AVATAR_KNOWLEDGE_OS_TEST_FIXTURE_PACK_SPEC.md", "entryType": "manual"}
+    },
+    {
+      "id": "flow:knowledge-os-cite-infer-governance",
+      "type": "flow",
+      "name": "Knowledge OS Cite/Infer Governance",
+      "summary": "Wiki cite/infer governance flow: define the citation-vs-inference rule, apply it to middleware-emitted answers, audit results.",
+      "tags": ["knowledge-os", "citation", "infer", "governance"],
+      "complexity": "moderate",
+      "domainMeta": {"entryPoint": "TCS_KNOWLEDGE_OS_WIKI_CITE_INFER_GOVERNANCE_SPEC.md", "entryType": "manual"}
+    },
+
+    {"id": "step:digital-twin-doctrine-adoption:read-product-definition", "type": "step", "name": "Read Product Definition", "summary": "Read TCS PM Digital Twin Product Definition to learn target capabilities.", "tags": ["doctrine"], "complexity": "simple", "filePath": "TCS_PM_DIGITAL_TWIN_PRODUCT_DEFINITION.md"},
+    {"id": "step:digital-twin-doctrine-adoption:apply-ceiling-spec", "type": "step", "name": "Apply Ceiling Spec", "summary": "Apply the Devere Project Digital Twin Ceiling Spec to set maturity bounds.", "tags": ["ceiling-spec"], "complexity": "simple", "filePath": "DEVERE_PROJECT_DIGITAL_TWIN_CEILING_SPEC.md"},
+    {"id": "step:digital-twin-doctrine-adoption:reviewer-assignment", "type": "step", "name": "Reviewer Assignment Decision", "summary": "Execute the Reviewer Assignment Decision Packet to assign reviewers per zone.", "tags": ["reviewer"], "complexity": "simple", "filePath": "PROJECT_DIGITAL_TWIN_REVIEWER_ASSIGNMENT_DECISION_PACKET.md"},
+    {"id": "step:digital-twin-doctrine-adoption:floor-ceiling-map", "type": "step", "name": "UK CAER Floor/Ceiling Map", "summary": "Generate the UK CAER Digital Twin Floor/Ceiling Maturity Map for the package.", "tags": ["maturity"], "complexity": "simple", "filePath": "UK_CAER_DIGITAL_TWIN_FLOOR_CEILING_MATURITY_MAP.md"},
+    {"id": "step:digital-twin-doctrine-adoption:apply-to-standard", "type": "step", "name": "Anchor to Standard", "summary": "Anchor the package to the Devere Project Digital Twin Standard.", "tags": ["standard"], "complexity": "simple", "filePath": "DEVERE_PROJECT_DIGITAL_TWIN_STANDARD.md"},
+
+    {"id": "step:pm-command-center-build:hot-sheet", "type": "step", "name": "Hot Sheet", "summary": "Assemble PM hot-sheet rows for top-priority items.", "tags": ["hot-sheet"], "complexity": "simple", "filePath": "build_uk_caer_pm_command_center.py"},
+    {"id": "step:pm-command-center-build:action-register", "type": "step", "name": "Action Register", "summary": "Build the action register rows with owners and due dates.", "tags": ["action-register"], "complexity": "simple", "filePath": "build_uk_caer_pm_command_center.py"},
+    {"id": "step:pm-command-center-build:write-readme", "type": "step", "name": "Write README", "summary": "Write the PM Command Center README that documents the board.", "tags": ["readme"], "complexity": "simple", "filePath": "build_uk_caer_pm_command_center.py"},
+    {"id": "step:pm-command-center-build:build", "type": "step", "name": "Build Command Board", "summary": "Top-level build that wires hot sheet, action register, and README writing.", "tags": ["build"], "complexity": "simple", "filePath": "build_uk_caer_pm_command_center.py"},
+
+    {"id": "step:pm-master-control-build:dashboard-rows", "type": "step", "name": "Dashboard Rows", "summary": "Compose dashboard rows for the master control board.", "tags": ["dashboard"], "complexity": "simple", "filePath": "build_uk_caer_pm_master_control.mjs"},
+    {"id": "step:pm-master-control-build:update-chain-rows", "type": "step", "name": "Update Chain Rows", "summary": "Compose update-chain rows that show propagation between PM surfaces.", "tags": ["update-chain"], "complexity": "simple", "filePath": "build_uk_caer_pm_master_control.mjs"},
+    {"id": "step:pm-master-control-build:build", "type": "step", "name": "Build Master Control", "summary": "Run the top-level master control build that emits the operating board.", "tags": ["build"], "complexity": "simple", "filePath": "build_uk_caer_pm_master_control.mjs"},
+
+    {"id": "step:9-gate-readiness-board:rows-from-sheet", "type": "step", "name": "Read Gate Evidence Rows", "summary": "Read 9-gate evidence rows from the source workbook.", "tags": ["ingest"], "complexity": "simple", "filePath": "build_uk_caer_9_gate_readiness_board.py"},
+    {"id": "step:9-gate-readiness-board:metrics", "type": "step", "name": "Compute Gate Metrics", "summary": "Compute readiness metrics across the nine gates.", "tags": ["metrics"], "complexity": "simple", "filePath": "build_uk_caer_9_gate_readiness_board.py"},
+    {"id": "step:9-gate-readiness-board:build-html", "type": "step", "name": "Render HTML", "summary": "Render the 9-gate readiness HTML dashboard.", "tags": ["render"], "complexity": "simple", "filePath": "build_uk_caer_9_gate_readiness_board.py"},
+    {"id": "step:9-gate-readiness-board:write-readme", "type": "step", "name": "Write README", "summary": "Write the 9-gate readiness README.", "tags": ["readme"], "complexity": "simple", "filePath": "build_uk_caer_9_gate_readiness_board.py"},
+    {"id": "step:9-gate-readiness-board:main", "type": "step", "name": "Main Entry Point", "summary": "Orchestrate load → metrics → HTML → README emission.", "tags": ["entry"], "complexity": "simple", "filePath": "build_uk_caer_9_gate_readiness_board.py"},
+
+    {"id": "step:a1-a2-evidence-closure:rows-from-sheet", "type": "step", "name": "Read Evidence Rows", "summary": "Read A1/A2 evidence rows from the source workbook.", "tags": ["ingest"], "complexity": "simple", "filePath": "build_uk_caer_a1_a2_evidence_closure_packet.py"},
+    {"id": "step:a1-a2-evidence-closure:checks", "type": "step", "name": "Closure Checks", "summary": "Run the closure-rule checks on the evidence rows.", "tags": ["checks"], "complexity": "simple", "filePath": "build_uk_caer_a1_a2_evidence_closure_packet.py"},
+    {"id": "step:a1-a2-evidence-closure:closure-sequence", "type": "step", "name": "Closure Sequence", "summary": "Apply the closure sequence to order the evidence into the packet.", "tags": ["sequence"], "complexity": "simple", "filePath": "build_uk_caer_a1_a2_evidence_closure_packet.py"},
+    {"id": "step:a1-a2-evidence-closure:build-html", "type": "step", "name": "Render HTML", "summary": "Render the A1/A2 evidence closure packet HTML.", "tags": ["render"], "complexity": "simple", "filePath": "build_uk_caer_a1_a2_evidence_closure_packet.py"},
+    {"id": "step:a1-a2-evidence-closure:write-readme", "type": "step", "name": "Write README", "summary": "Write the packet README.", "tags": ["readme"], "complexity": "simple", "filePath": "build_uk_caer_a1_a2_evidence_closure_packet.py"},
+    {"id": "step:a1-a2-evidence-closure:main", "type": "step", "name": "Main Entry Point", "summary": "Orchestrate ingest → checks → sequence → HTML → README.", "tags": ["entry"], "complexity": "simple", "filePath": "build_uk_caer_a1_a2_evidence_closure_packet.py"},
+
+    {"id": "step:a1-a2-receipt-validation-ledger:rows-from-sheet", "type": "step", "name": "Read Receipt Rows", "summary": "Read receipt rows from source sheets.", "tags": ["ingest"], "complexity": "simple", "filePath": "build_uk_caer_a1_a2_receipt_validation_ledger.py"},
+    {"id": "step:a1-a2-receipt-validation-ledger:receipt-register", "type": "step", "name": "Receipt Register", "summary": "Build the receipt register rows.", "tags": ["register"], "complexity": "simple", "filePath": "build_uk_caer_a1_a2_receipt_validation_ledger.py"},
+    {"id": "step:a1-a2-receipt-validation-ledger:validation-transition-rows", "type": "step", "name": "Validation Transitions", "summary": "Build validation-transition rows showing state changes.", "tags": ["transitions"], "complexity": "simple", "filePath": "build_uk_caer_a1_a2_receipt_validation_ledger.py"},
+    {"id": "step:a1-a2-receipt-validation-ledger:approval-readiness-rows", "type": "step", "name": "Approval Readiness", "summary": "Build approval-readiness rows for sign-off.", "tags": ["approval"], "complexity": "simple", "filePath": "build_uk_caer_a1_a2_receipt_validation_ledger.py"},
+    {"id": "step:a1-a2-receipt-validation-ledger:add-sheet", "type": "step", "name": "Add Sheet", "summary": "Add a sheet to the ledger workbook.", "tags": ["xlsx"], "complexity": "simple", "filePath": "build_uk_caer_a1_a2_receipt_validation_ledger.py"},
+    {"id": "step:a1-a2-receipt-validation-ledger:write-xlsx", "type": "step", "name": "Write XLSX", "summary": "Write the ledger XLSX file.", "tags": ["xlsx"], "complexity": "simple", "filePath": "build_uk_caer_a1_a2_receipt_validation_ledger.py"},
+    {"id": "step:a1-a2-receipt-validation-ledger:write-readme", "type": "step", "name": "Write README", "summary": "Write the ledger README.", "tags": ["readme"], "complexity": "simple", "filePath": "build_uk_caer_a1_a2_receipt_validation_ledger.py"},
+    {"id": "step:a1-a2-receipt-validation-ledger:main", "type": "step", "name": "Main Entry Point", "summary": "Orchestrate ingest → register → transitions → approval → XLSX → README.", "tags": ["entry"], "complexity": "simple", "filePath": "build_uk_caer_a1_a2_receipt_validation_ledger.py"},
+
+    {"id": "step:a1-a2-sage-verification:file-rows", "type": "step", "name": "File Rows", "summary": "Extract per-file rows for Sage verification.", "tags": ["ingest"], "complexity": "simple", "filePath": "build_uk_caer_a1_a2_sage_verification_package.py"},
+    {"id": "step:a1-a2-sage-verification:shared-keys", "type": "step", "name": "Shared Keys", "summary": "Compute shared keys across source files for join.", "tags": ["join"], "complexity": "simple", "filePath": "build_uk_caer_a1_a2_sage_verification_package.py"},
+    {"id": "step:a1-a2-sage-verification:build-workbook", "type": "step", "name": "Build Workbook", "summary": "Build the Sage verification workbook.", "tags": ["xlsx"], "complexity": "simple", "filePath": "build_uk_caer_a1_a2_sage_verification_package.py"},
+
+    {"id": "step:validation-zone-board-build:rows-from-sheet", "type": "step", "name": "Read Sheet Rows", "summary": "Read validation zone board rows from the source workbook.", "tags": ["ingest"], "complexity": "simple", "filePath": "build_uk_caer_validation_zone_board.py"},
+    {"id": "step:validation-zone-board-build:zone-nodes", "type": "step", "name": "Zone Nodes", "summary": "Build the list of zone nodes (zone id, area, owner, status).", "tags": ["zones"], "complexity": "simple", "filePath": "build_uk_caer_validation_zone_board.py"},
+    {"id": "step:validation-zone-board-build:validation-items", "type": "step", "name": "Validation Items", "summary": "Shape validation-queue items per zone.", "tags": ["items"], "complexity": "simple", "filePath": "build_uk_caer_validation_zone_board.py"},
+    {"id": "step:validation-zone-board-build:pattern-rows", "type": "step", "name": "Pattern Catalog", "summary": "Build rows describing the validation-pattern catalog (mockup, ITP, peer review).", "tags": ["patterns"], "complexity": "simple", "filePath": "build_uk_caer_validation_zone_board.py"},
+    {"id": "step:validation-zone-board-build:transition-rows", "type": "step", "name": "Transition Rows", "summary": "Build rows describing zone transitions and sign-offs.", "tags": ["transitions"], "complexity": "simple", "filePath": "build_uk_caer_validation_zone_board.py"},
+    {"id": "step:validation-zone-board-build:metrics", "type": "step", "name": "Metrics", "summary": "Aggregate validation throughput, blockers, and zone-readiness metrics.", "tags": ["metrics"], "complexity": "simple", "filePath": "build_uk_caer_validation_zone_board.py"},
+    {"id": "step:validation-zone-board-build:source-area-rollup", "type": "step", "name": "Source-Area Roll-up", "summary": "Roll up validation items by source area/discipline.", "tags": ["rollup"], "complexity": "simple", "filePath": "build_uk_caer_validation_zone_board.py"},
+    {"id": "step:validation-zone-board-build:build-html", "type": "step", "name": "Render HTML", "summary": "Render the complete validation zone board HTML.", "tags": ["render"], "complexity": "simple", "filePath": "build_uk_caer_validation_zone_board.py"},
+    {"id": "step:validation-zone-board-build:write-readme", "type": "step", "name": "Write README", "summary": "Write the zone-board README with review-only boundary.", "tags": ["readme"], "complexity": "simple", "filePath": "build_uk_caer_validation_zone_board.py"},
+    {"id": "step:validation-zone-board-build:main", "type": "step", "name": "Main Entry Point", "summary": "Orchestrate load → rollups → HTML → README.", "tags": ["entry"], "complexity": "simple", "filePath": "build_uk_caer_validation_zone_board.py"},
+
+    {"id": "step:validation-architecture-qc-plan:read-architecture", "type": "step", "name": "Read Architecture & QC Plan", "summary": "Read the PM Validation Architecture and QC Plan README.", "tags": ["architecture"], "complexity": "simple", "filePath": "UK_CAER_PM_VALIDATION_ARCHITECTURE_AND_QC_PLAN_README.md"},
+    {"id": "step:validation-architecture-qc-plan:assign-queue-zones", "type": "step", "name": "Assign Queue/Zone", "summary": "Apply the validation queue and zone assignments.", "tags": ["queue", "zone"], "complexity": "simple", "filePath": "UK_CAER_PM_VALIDATION_QUEUE_AND_ZONE_ASSIGNMENTS_README.md"},
+    {"id": "step:validation-architecture-qc-plan:run-zone-board", "type": "step", "name": "Run Zone Board", "summary": "Run the Validation Zone Board build to surface assignments.", "tags": ["zone-board"], "complexity": "simple", "filePath": "UK_CAER_VALIDATION_ZONE_BOARD_README.md"},
+
+    {"id": "step:b1-b2-procurement-activation:rows-from-sheet", "type": "step", "name": "Read Procurement Rows", "summary": "Read procurement rows from the source workbook.", "tags": ["ingest"], "complexity": "simple", "filePath": "build_uk_caer_b1_b2_procurement_activation_board.py"},
+    {"id": "step:b1-b2-procurement-activation:activation-sequence", "type": "step", "name": "Activation Sequence", "summary": "Build the activation sequence for lanes.", "tags": ["sequence"], "complexity": "simple", "filePath": "build_uk_caer_b1_b2_procurement_activation_board.py"},
+    {"id": "step:b1-b2-procurement-activation:lane-rows", "type": "step", "name": "Lane Rows", "summary": "Build per-lane procurement rows.", "tags": ["lanes"], "complexity": "simple", "filePath": "build_uk_caer_b1_b2_procurement_activation_board.py"},
+    {"id": "step:b1-b2-procurement-activation:metrics", "type": "step", "name": "Metrics", "summary": "Compute procurement readiness metrics.", "tags": ["metrics"], "complexity": "simple", "filePath": "build_uk_caer_b1_b2_procurement_activation_board.py"},
+    {"id": "step:b1-b2-procurement-activation:build-html", "type": "step", "name": "Render HTML", "summary": "Render the B1/B2 procurement activation board HTML.", "tags": ["render"], "complexity": "simple", "filePath": "build_uk_caer_b1_b2_procurement_activation_board.py"},
+    {"id": "step:b1-b2-procurement-activation:write-readme", "type": "step", "name": "Write README", "summary": "Write the procurement activation board README.", "tags": ["readme"], "complexity": "simple", "filePath": "build_uk_caer_b1_b2_procurement_activation_board.py"},
+    {"id": "step:b1-b2-procurement-activation:main", "type": "step", "name": "Main Entry Point", "summary": "Orchestrate ingest → sequence → lanes → metrics → HTML → README.", "tags": ["entry"], "complexity": "simple", "filePath": "build_uk_caer_b1_b2_procurement_activation_board.py"},
+
+    {"id": "step:boq-bom-cost-code-mapping:read-mapping", "type": "step", "name": "Read Mapping Spec", "summary": "Read the BOQ/BOM cost code mapping README.", "tags": ["mapping"], "complexity": "simple", "filePath": "UK_CAER_BOQ_BOM_COST_CODE_MAPPING_README.md"},
+    {"id": "step:boq-bom-cost-code-mapping:map-boq-bom", "type": "step", "name": "Map BOQ to BOM", "summary": "Map BOQ items into BOM items.", "tags": ["boq", "bom"], "complexity": "simple"},
+    {"id": "step:boq-bom-cost-code-mapping:map-to-cost-code", "type": "step", "name": "Map BOM to Cost Code", "summary": "Map BOM items into Sage cost codes for procurement and cost lanes.", "tags": ["cost-code"], "complexity": "simple"},
+
+    {"id": "step:cost-sov-commitment-readiness:rows-from-sheet", "type": "step", "name": "Read SOV Rows", "summary": "Read SOV commitment rows from the source workbook.", "tags": ["ingest"], "complexity": "simple", "filePath": "build_uk_caer_cost_sov_commitment_readiness_board.py"},
+    {"id": "step:cost-sov-commitment-readiness:activation-sequence", "type": "step", "name": "Activation Sequence", "summary": "Build the SOV activation sequence.", "tags": ["sequence"], "complexity": "simple", "filePath": "build_uk_caer_cost_sov_commitment_readiness_board.py"},
+    {"id": "step:cost-sov-commitment-readiness:lane-rows", "type": "step", "name": "Lane Rows", "summary": "Build per-lane SOV commitment rows.", "tags": ["lanes"], "complexity": "simple", "filePath": "build_uk_caer_cost_sov_commitment_readiness_board.py"},
+    {"id": "step:cost-sov-commitment-readiness:build-html", "type": "step", "name": "Render HTML", "summary": "Render the Cost-SOV-Commitment readiness HTML board.", "tags": ["render"], "complexity": "simple", "filePath": "build_uk_caer_cost_sov_commitment_readiness_board.py"},
+    {"id": "step:cost-sov-commitment-readiness:write-readme", "type": "step", "name": "Write README", "summary": "Write the readiness-board README.", "tags": ["readme"], "complexity": "simple", "filePath": "build_uk_caer_cost_sov_commitment_readiness_board.py"},
+    {"id": "step:cost-sov-commitment-readiness:main", "type": "step", "name": "Main Entry Point", "summary": "Orchestrate ingest → sequence → lanes → HTML → README.", "tags": ["entry"], "complexity": "simple", "filePath": "build_uk_caer_cost_sov_commitment_readiness_board.py"},
+
+    {"id": "step:high-risk-preinstall-meeting-packet:meeting-queue-rows", "type": "step", "name": "Meeting Queue", "summary": "Build meeting queue rows for high-risk preinstall meetings.", "tags": ["queue"], "complexity": "simple", "filePath": "build_uk_caer_high_risk_preinstall_meeting_packets.py"},
+    {"id": "step:high-risk-preinstall-meeting-packet:agenda-rows", "type": "step", "name": "Agendas", "summary": "Build agenda rows for each meeting.", "tags": ["agenda"], "complexity": "simple", "filePath": "build_uk_caer_high_risk_preinstall_meeting_packets.py"},
+    {"id": "step:high-risk-preinstall-meeting-packet:packet-agenda-rows", "type": "step", "name": "Packet Agenda", "summary": "Build per-packet agenda rows.", "tags": ["packet"], "complexity": "simple", "filePath": "build_uk_caer_high_risk_preinstall_meeting_packets.py"},
+    {"id": "step:high-risk-preinstall-meeting-packet:signin-rows", "type": "step", "name": "Sign-In", "summary": "Build sign-in rows.", "tags": ["signin"], "complexity": "simple", "filePath": "build_uk_caer_high_risk_preinstall_meeting_packets.py"},
+    {"id": "step:high-risk-preinstall-meeting-packet:rooter-clearance-rows", "type": "step", "name": "Rooter Clearance", "summary": "Build rooter clearance rows.", "tags": ["clearance"], "complexity": "simple", "filePath": "build_uk_caer_high_risk_preinstall_meeting_packets.py"},
+    {"id": "step:high-risk-preinstall-meeting-packet:action-log-rows", "type": "step", "name": "Action Log", "summary": "Build action log rows.", "tags": ["action-log"], "complexity": "simple", "filePath": "build_uk_caer_high_risk_preinstall_meeting_packets.py"},
+    {"id": "step:high-risk-preinstall-meeting-packet:safety-quality-rows", "type": "step", "name": "Safety/Quality", "summary": "Build safety/quality rows.", "tags": ["safety", "quality"], "complexity": "simple", "filePath": "build_uk_caer_high_risk_preinstall_meeting_packets.py"},
+    {"id": "step:high-risk-preinstall-meeting-packet:rfi-submittal-tpm-rows", "type": "step", "name": "RFI/Submittal/TPM", "summary": "Build RFI/submittal/TPM rows.", "tags": ["rfi", "submittal", "tpm"], "complexity": "simple", "filePath": "build_uk_caer_high_risk_preinstall_meeting_packets.py"},
+    {"id": "step:high-risk-preinstall-meeting-packet:evidence-route-rows", "type": "step", "name": "Evidence Routing", "summary": "Build evidence-routing rows.", "tags": ["evidence"], "complexity": "simple", "filePath": "build_uk_caer_high_risk_preinstall_meeting_packets.py"},
+    {"id": "step:high-risk-preinstall-meeting-packet:minutes-template-rows", "type": "step", "name": "Minutes Template", "summary": "Build minutes-template rows.", "tags": ["minutes"], "complexity": "simple", "filePath": "build_uk_caer_high_risk_preinstall_meeting_packets.py"},
+    {"id": "step:high-risk-preinstall-meeting-packet:inference-rows", "type": "step", "name": "Inferences", "summary": "Build inference rows (model-derived assumptions tagged for review).", "tags": ["inference"], "complexity": "simple", "filePath": "build_uk_caer_high_risk_preinstall_meeting_packets.py"},
+    {"id": "step:high-risk-preinstall-meeting-packet:add-visual-dashboard", "type": "step", "name": "Visual Dashboard", "summary": "Add the visual dashboard to the workbook.", "tags": ["dashboard"], "complexity": "simple", "filePath": "build_uk_caer_high_risk_preinstall_meeting_packets.py"},
+    {"id": "step:high-risk-preinstall-meeting-packet:write-readme", "type": "step", "name": "Write README", "summary": "Write the preinstall packet README.", "tags": ["readme"], "complexity": "simple", "filePath": "build_uk_caer_high_risk_preinstall_meeting_packets.py"},
+    {"id": "step:high-risk-preinstall-meeting-packet:build-workbook", "type": "step", "name": "Build Workbook", "summary": "Assemble the final preinstall packet workbook.", "tags": ["build"], "complexity": "simple", "filePath": "build_uk_caer_high_risk_preinstall_meeting_packets.py"},
+
+    {"id": "step:high-risk-trade-issue-packet:read-packet-spec", "type": "step", "name": "Read Packet Spec", "summary": "Read the high-risk trade issue packets README.", "tags": ["spec"], "complexity": "simple", "filePath": "UK_CAER_HIGH_RISK_TRADE_ISSUE_PACKETS_README.md"},
+    {"id": "step:high-risk-trade-issue-packet:capture-issue", "type": "step", "name": "Capture Issue", "summary": "Capture the trade issue with evidence references.", "tags": ["capture"], "complexity": "simple"},
+    {"id": "step:high-risk-trade-issue-packet:route-validation", "type": "step", "name": "Route to Validation", "summary": "Route the issue into the validation queue.", "tags": ["routing"], "complexity": "simple"},
+    {"id": "step:high-risk-trade-issue-packet:track-closure", "type": "step", "name": "Track Closure", "summary": "Track closure evidence and reviewer sign-off.", "tags": ["closure"], "complexity": "simple"},
+
+    {"id": "step:owner-progress-review-package:executive-snapshot-rows", "type": "step", "name": "Executive Snapshot", "summary": "Build the executive snapshot rows.", "tags": ["executive"], "complexity": "simple", "filePath": "build_uk_caer_owner_progress_review_package.py"},
+    {"id": "step:owner-progress-review-package:owner-storyline-rows", "type": "step", "name": "Owner Storyline", "summary": "Build owner storyline rows.", "tags": ["storyline"], "complexity": "simple", "filePath": "build_uk_caer_owner_progress_review_package.py"},
+    {"id": "step:owner-progress-review-package:visual-flow-rows", "type": "step", "name": "Visual Flow", "summary": "Build the visual flow rows.", "tags": ["visual"], "complexity": "simple", "filePath": "build_uk_caer_owner_progress_review_package.py"},
+    {"id": "step:owner-progress-review-package:human-pm-onboarding-rows", "type": "step", "name": "PM Onboarding", "summary": "Build human PM onboarding rows.", "tags": ["onboarding"], "complexity": "simple", "filePath": "build_uk_caer_owner_progress_review_package.py"},
+    {"id": "step:owner-progress-review-package:tcs-flow-rows", "type": "step", "name": "TCS Flow", "summary": "Build the TCS flow rows.", "tags": ["tcs-flow"], "complexity": "simple", "filePath": "build_uk_caer_owner_progress_review_package.py"},
+    {"id": "step:owner-progress-review-package:progress-evidence-rows", "type": "step", "name": "Progress Evidence", "summary": "Build progress-evidence rows.", "tags": ["evidence"], "complexity": "simple", "filePath": "build_uk_caer_owner_progress_review_package.py"},
+    {"id": "step:owner-progress-review-package:next-decision-rows", "type": "step", "name": "Next Decisions", "summary": "Build the next-decision rows.", "tags": ["decisions"], "complexity": "simple", "filePath": "build_uk_caer_owner_progress_review_package.py"},
+    {"id": "step:owner-progress-review-package:build-workbook", "type": "step", "name": "Build Workbook", "summary": "Assemble the owner progress review workbook.", "tags": ["build"], "complexity": "simple", "filePath": "build_uk_caer_owner_progress_review_package.py"},
+    {"id": "step:owner-progress-review-package:write-readme", "type": "step", "name": "Write README", "summary": "Write the owner progress review README.", "tags": ["readme"], "complexity": "simple", "filePath": "build_uk_caer_owner_progress_review_package.py"},
+    {"id": "step:owner-progress-review-package:main", "type": "step", "name": "Main Entry Point", "summary": "Orchestrate the owner progress review package build.", "tags": ["entry"], "complexity": "simple", "filePath": "build_uk_caer_owner_progress_review_package.py"},
+
+    {"id": "step:owner-segmented-integrated-board:read-control", "type": "step", "name": "Read Control Spec", "summary": "Read the segmented integrated control spec.", "tags": ["control"], "complexity": "simple", "filePath": "UK_CAER_DEVERE_OWNER_VIEW_SEGMENTED_INTEGRATED_CONTROL.md"},
+    {"id": "step:owner-segmented-integrated-board:build-segments", "type": "step", "name": "Build Segments", "summary": "Build owner-facing segments (gates, validation, procurement, cost, high-risk).", "tags": ["segments"], "complexity": "simple"},
+    {"id": "step:owner-segmented-integrated-board:render-html", "type": "step", "name": "Render Integrated HTML", "summary": "Render the segmented integrated board HTML output.", "tags": ["render"], "complexity": "simple", "filePath": "UK_CAER_DEVERE_OWNER_VIEW_SEGMENTED_INTEGRATED_BOARD.html"},
+
+    {"id": "step:owner-critical-path-report:read-critical-path", "type": "step", "name": "Read Critical Path Report", "summary": "Read the Owner TCS Critical Path Report.", "tags": ["critical-path"], "complexity": "simple", "filePath": "UK_CAER_OWNER_TCS_CRITICAL_PATH_REPORT.md"},
+    {"id": "step:owner-critical-path-report:audio-script", "type": "step", "name": "Audio Script", "summary": "Use the owner review audio script for voice-session prep.", "tags": ["audio"], "complexity": "simple", "filePath": "UK_CAER_OWNER_REVIEW_AUDIO_SCRIPT.txt"},
+    {"id": "step:owner-critical-path-report:voice-session", "type": "step", "name": "Voice Session", "summary": "Run the Owner Voice session using the setup doc.", "tags": ["voice"], "complexity": "simple", "filePath": "UK_CAER_OWNER_VOICE_SESSION_SETUP.md"},
+
+    {"id": "step:owen-county-bring-online-overlay:start-here", "type": "step", "name": "Start Here SLAB", "summary": "Read the SLAB start-here document for bring-online.", "tags": ["start"], "complexity": "simple", "filePath": "SLAB_OWEN_CO_BRING_ONLINE_2026-05-17/00_START_HERE_SLAB.md"},
+    {"id": "step:owen-county-bring-online-overlay:agent-boot", "type": "step", "name": "Agent Boot", "summary": "Run the Owen Co agent boot start-here.", "tags": ["boot"], "complexity": "simple", "filePath": "SLAB_OWEN_CO_BRING_ONLINE_2026-05-17/01_OWEN_CO_AGENT_BOOT_START_HERE.md"},
+    {"id": "step:owen-county-bring-online-overlay:source-map", "type": "step", "name": "Source Map & First Pass", "summary": "Build the source map and first-pass synthesis.", "tags": ["sources"], "complexity": "simple", "filePath": "SLAB_OWEN_CO_BRING_ONLINE_2026-05-17/02_OWEN_CO_SOURCE_MAP_AND_FIRST_PASS.md"},
+    {"id": "step:owen-county-bring-online-overlay:red-flags-queue-seed", "type": "step", "name": "Red Flags & Queue Seed", "summary": "Surface red flags and seed the validation queue.", "tags": ["red-flags", "queue"], "complexity": "simple", "filePath": "SLAB_OWEN_CO_BRING_ONLINE_2026-05-17/03_OWEN_CO_RED_FLAGS_AND_VALIDATION_QUEUE_SEED.md"},
+    {"id": "step:owen-county-bring-online-overlay:stop-rules-approvals", "type": "step", "name": "Stop Rules & Approvals", "summary": "Apply stop rules, approvals, and receipts.", "tags": ["stop-rules", "approvals"], "complexity": "simple", "filePath": "SLAB_OWEN_CO_BRING_ONLINE_2026-05-17/04_STOP_RULES_APPROVALS_AND_RECEIPTS.md"},
+    {"id": "step:owen-county-bring-online-overlay:cleanpoint", "type": "step", "name": "Cleanpoint", "summary": "Capture the bring-online cleanpoint snapshot.", "tags": ["cleanpoint"], "complexity": "simple", "filePath": "SLAB_OWEN_CO_BRING_ONLINE_2026-05-17/owen_overlay_snapshot/08_DIAGRAMS/SSU_MEETING_MINUTES_QC_FLOW.excalidraw"},
+
+    {"id": "step:owen-county-source-currentness:read-currentness", "type": "step", "name": "Read Currentness Receipt", "summary": "Read live folder currentness and inventory receipt.", "tags": ["currentness"], "complexity": "simple", "filePath": "OWEN_COUNTY_LIVE_FOLDER_CURRENTNESS_AND_INVENTORY_RECEIPT.md"},
+    {"id": "step:owen-county-source-currentness:dispatch-work-orders", "type": "step", "name": "Dispatch Work Orders", "summary": "Dispatch source-currentness work orders for missing/stale sources.", "tags": ["work-orders"], "complexity": "simple", "filePath": "OWEN_COUNTY_SOURCE_CURRENTNESS_WORK_ORDERS.md"},
+    {"id": "step:owen-county-source-currentness:digital-twin-shell", "type": "step", "name": "Project Digital Twin Shell", "summary": "Anchor work into the Owen County Project Digital Twin Shell.", "tags": ["digital-twin"], "complexity": "simple", "filePath": "OWEN_COUNTY_PROJECT_DIGITAL_TWIN_SHELL.md"},
+
+    {"id": "step:knowledge-os-fixture-acceptance:fixture-pack-spec", "type": "step", "name": "Fixture Pack Spec", "summary": "Read the Knowledge OS test-fixture pack spec.", "tags": ["spec"], "complexity": "simple", "filePath": "TCS_AVATAR_KNOWLEDGE_OS_TEST_FIXTURE_PACK_SPEC.md"},
+    {"id": "step:knowledge-os-fixture-acceptance:build-decision-packet", "type": "step", "name": "Build Decision Packet", "summary": "Walk the Fixture Build Decision Packet.", "tags": ["decision"], "complexity": "simple", "filePath": "TCS_AVATAR_KNOWLEDGE_OS_FIXTURE_BUILD_DECISION_PACKET.md"},
+    {"id": "step:knowledge-os-fixture-acceptance:approval-request", "type": "step", "name": "Approval Request", "summary": "File the Fixture Approval Request.", "tags": ["approval"], "complexity": "simple", "filePath": "TCS_AVATAR_KNOWLEDGE_OS_FIXTURE_APPROVAL_REQUEST.md"},
+    {"id": "step:knowledge-os-fixture-acceptance:manual-test-run", "type": "step", "name": "Manual Test Run", "summary": "Execute the first manual test run packet.", "tags": ["test-run"], "complexity": "simple", "filePath": "TCS_AVATAR_KNOWLEDGE_OS_FIRST_MANUAL_TEST_RUN_PACKET.md"},
+    {"id": "step:knowledge-os-fixture-acceptance:middleware-acceptance", "type": "step", "name": "Middleware Acceptance", "summary": "Execute the middleware acceptance test plan against the contract.", "tags": ["middleware", "acceptance"], "complexity": "simple", "filePath": "TCS_AVATAR_KNOWLEDGE_OS_MIDDLEWARE_ACCEPTANCE_TEST_PLAN.md"},
+
+    {"id": "step:knowledge-os-cite-infer-governance:read-governance-spec", "type": "step", "name": "Read Governance Spec", "summary": "Read the cite/infer wiki governance spec.", "tags": ["governance"], "complexity": "simple", "filePath": "TCS_KNOWLEDGE_OS_WIKI_CITE_INFER_GOVERNANCE_SPEC.md"},
+    {"id": "step:knowledge-os-cite-infer-governance:apply-middleware-contract", "type": "step", "name": "Apply Middleware Contract", "summary": "Apply the Knowledge OS middleware contract to citation routing.", "tags": ["contract"], "complexity": "simple", "filePath": "TCS_AVATAR_KNOWLEDGE_OS_MIDDLEWARE_CONTRACT.md"},
+    {"id": "step:knowledge-os-cite-infer-governance:audit-citations", "type": "step", "name": "Audit Citations", "summary": "Audit cited-vs-inferred outputs per the governance spec.", "tags": ["audit"], "complexity": "simple"}
   ],
   "edges": [
-    {
-      "source": "dom-gate-readiness",
-      "target": "dom-pm-command",
-      "label": "gate status feeds"
-    },
-    {
-      "source": "dom-procurement",
-      "target": "dom-gate-readiness",
-      "label": "B1/B2 gates require"
-    },
-    {
-      "source": "dom-field-ops",
-      "target": "dom-gate-readiness",
-      "label": "C1/C2 gates require"
-    },
-    {
-      "source": "dom-evidence",
-      "target": "dom-gate-readiness",
-      "label": "evidence required for all gates"
-    },
-    {
-      "source": "dom-cost",
-      "target": "dom-procurement",
-      "label": "cost codes enable buyout"
-    },
-    {
-      "source": "dom-cost",
-      "target": "dom-gate-readiness",
-      "label": "A2 budget lock gate"
-    },
-    {
-      "source": "dom-risk",
-      "target": "dom-field-ops",
-      "label": "risk flags affect field"
-    },
-    {
-      "source": "dom-risk",
-      "target": "dom-procurement",
-      "label": "approval controls buyout"
-    },
-    {
-      "source": "dom-doc-control",
-      "target": "dom-evidence",
-      "label": "doc versions feed evidence"
-    },
-    {
-      "source": "dom-doc-control",
-      "target": "dom-pm-command",
-      "label": "revision status feeds"
-    },
-    {
-      "source": "dom-hr",
-      "target": "dom-field-ops",
-      "label": "trained personnel enable"
-    },
-    {
-      "source": "dom-hr",
-      "target": "dom-gate-readiness",
-      "label": "competency for B2/C1"
-    },
-    {
-      "source": "dom-reporting",
-      "target": "dom-pm-command",
-      "label": "reports feed command center"
-    },
-    {
-      "source": "dom-pm-command",
-      "target": "dom-reporting",
-      "label": "command center drives reports"
-    },
-    {
-      "source": "dom-field-ops",
-      "target": "dom-evidence",
-      "label": "field evidence captured"
-    },
-    {
-      "source": "dom-procurement",
-      "target": "dom-cost",
-      "label": "commitments flow to cost"
-    },
-    {
-      "source": "dom-evidence",
-      "target": "dom-doc-control",
-      "label": "evidence needs version control"
-    }
-  ]
+    {"source": "domain:project-digital-twin", "target": "flow:digital-twin-doctrine-adoption", "type": "contains_flow", "direction": "forward", "weight": 1.0},
+    {"source": "domain:pm-command-control", "target": "flow:pm-command-center-build", "type": "contains_flow", "direction": "forward", "weight": 1.0},
+    {"source": "domain:pm-command-control", "target": "flow:pm-master-control-build", "type": "contains_flow", "direction": "forward", "weight": 1.0},
+    {"source": "domain:gate-readiness", "target": "flow:9-gate-readiness-board", "type": "contains_flow", "direction": "forward", "weight": 1.0},
+    {"source": "domain:gate-readiness", "target": "flow:a1-a2-evidence-closure", "type": "contains_flow", "direction": "forward", "weight": 1.0},
+    {"source": "domain:gate-readiness", "target": "flow:a1-a2-receipt-validation-ledger", "type": "contains_flow", "direction": "forward", "weight": 1.0},
+    {"source": "domain:gate-readiness", "target": "flow:a1-a2-sage-verification", "type": "contains_flow", "direction": "forward", "weight": 1.0},
+    {"source": "domain:validation-pipeline", "target": "flow:validation-zone-board-build", "type": "contains_flow", "direction": "forward", "weight": 1.0},
+    {"source": "domain:validation-pipeline", "target": "flow:validation-architecture-qc-plan", "type": "contains_flow", "direction": "forward", "weight": 1.0},
+    {"source": "domain:procurement-activation", "target": "flow:b1-b2-procurement-activation", "type": "contains_flow", "direction": "forward", "weight": 1.0},
+    {"source": "domain:procurement-activation", "target": "flow:boq-bom-cost-code-mapping", "type": "contains_flow", "direction": "forward", "weight": 1.0},
+    {"source": "domain:cost-commitment", "target": "flow:cost-sov-commitment-readiness", "type": "contains_flow", "direction": "forward", "weight": 1.0},
+    {"source": "domain:high-risk-trade", "target": "flow:high-risk-preinstall-meeting-packet", "type": "contains_flow", "direction": "forward", "weight": 1.0},
+    {"source": "domain:high-risk-trade", "target": "flow:high-risk-trade-issue-packet", "type": "contains_flow", "direction": "forward", "weight": 1.0},
+    {"source": "domain:owner-reporting", "target": "flow:owner-progress-review-package", "type": "contains_flow", "direction": "forward", "weight": 1.0},
+    {"source": "domain:owner-reporting", "target": "flow:owner-segmented-integrated-board", "type": "contains_flow", "direction": "forward", "weight": 1.0},
+    {"source": "domain:owner-reporting", "target": "flow:owner-critical-path-report", "type": "contains_flow", "direction": "forward", "weight": 1.0},
+    {"source": "domain:owen-county-bring-online", "target": "flow:owen-county-bring-online-overlay", "type": "contains_flow", "direction": "forward", "weight": 1.0},
+    {"source": "domain:owen-county-bring-online", "target": "flow:owen-county-source-currentness", "type": "contains_flow", "direction": "forward", "weight": 1.0},
+    {"source": "domain:knowledge-os", "target": "flow:knowledge-os-fixture-acceptance", "type": "contains_flow", "direction": "forward", "weight": 1.0},
+    {"source": "domain:knowledge-os", "target": "flow:knowledge-os-cite-infer-governance", "type": "contains_flow", "direction": "forward", "weight": 1.0},
+
+    {"source": "flow:digital-twin-doctrine-adoption", "target": "step:digital-twin-doctrine-adoption:read-product-definition", "type": "flow_step", "direction": "forward", "weight": 0.2},
+    {"source": "flow:digital-twin-doctrine-adoption", "target": "step:digital-twin-doctrine-adoption:apply-ceiling-spec", "type": "flow_step", "direction": "forward", "weight": 0.4},
+    {"source": "flow:digital-twin-doctrine-adoption", "target": "step:digital-twin-doctrine-adoption:reviewer-assignment", "type": "flow_step", "direction": "forward", "weight": 0.6},
+    {"source": "flow:digital-twin-doctrine-adoption", "target": "step:digital-twin-doctrine-adoption:floor-ceiling-map", "type": "flow_step", "direction": "forward", "weight": 0.8},
+    {"source": "flow:digital-twin-doctrine-adoption", "target": "step:digital-twin-doctrine-adoption:apply-to-standard", "type": "flow_step", "direction": "forward", "weight": 1.0},
+
+    {"source": "flow:pm-command-center-build", "target": "step:pm-command-center-build:hot-sheet", "type": "flow_step", "direction": "forward", "weight": 0.3},
+    {"source": "flow:pm-command-center-build", "target": "step:pm-command-center-build:action-register", "type": "flow_step", "direction": "forward", "weight": 0.5},
+    {"source": "flow:pm-command-center-build", "target": "step:pm-command-center-build:write-readme", "type": "flow_step", "direction": "forward", "weight": 0.8},
+    {"source": "flow:pm-command-center-build", "target": "step:pm-command-center-build:build", "type": "flow_step", "direction": "forward", "weight": 1.0},
+
+    {"source": "flow:pm-master-control-build", "target": "step:pm-master-control-build:dashboard-rows", "type": "flow_step", "direction": "forward", "weight": 0.3},
+    {"source": "flow:pm-master-control-build", "target": "step:pm-master-control-build:update-chain-rows", "type": "flow_step", "direction": "forward", "weight": 0.7},
+    {"source": "flow:pm-master-control-build", "target": "step:pm-master-control-build:build", "type": "flow_step", "direction": "forward", "weight": 1.0},
+
+    {"source": "flow:9-gate-readiness-board", "target": "step:9-gate-readiness-board:rows-from-sheet", "type": "flow_step", "direction": "forward", "weight": 0.2},
+    {"source": "flow:9-gate-readiness-board", "target": "step:9-gate-readiness-board:metrics", "type": "flow_step", "direction": "forward", "weight": 0.4},
+    {"source": "flow:9-gate-readiness-board", "target": "step:9-gate-readiness-board:build-html", "type": "flow_step", "direction": "forward", "weight": 0.6},
+    {"source": "flow:9-gate-readiness-board", "target": "step:9-gate-readiness-board:write-readme", "type": "flow_step", "direction": "forward", "weight": 0.8},
+    {"source": "flow:9-gate-readiness-board", "target": "step:9-gate-readiness-board:main", "type": "flow_step", "direction": "forward", "weight": 1.0},
+
+    {"source": "flow:a1-a2-evidence-closure", "target": "step:a1-a2-evidence-closure:rows-from-sheet", "type": "flow_step", "direction": "forward", "weight": 0.2},
+    {"source": "flow:a1-a2-evidence-closure", "target": "step:a1-a2-evidence-closure:checks", "type": "flow_step", "direction": "forward", "weight": 0.3},
+    {"source": "flow:a1-a2-evidence-closure", "target": "step:a1-a2-evidence-closure:closure-sequence", "type": "flow_step", "direction": "forward", "weight": 0.5},
+    {"source": "flow:a1-a2-evidence-closure", "target": "step:a1-a2-evidence-closure:build-html", "type": "flow_step", "direction": "forward", "weight": 0.7},
+    {"source": "flow:a1-a2-evidence-closure", "target": "step:a1-a2-evidence-closure:write-readme", "type": "flow_step", "direction": "forward", "weight": 0.8},
+    {"source": "flow:a1-a2-evidence-closure", "target": "step:a1-a2-evidence-closure:main", "type": "flow_step", "direction": "forward", "weight": 1.0},
+
+    {"source": "flow:a1-a2-receipt-validation-ledger", "target": "step:a1-a2-receipt-validation-ledger:rows-from-sheet", "type": "flow_step", "direction": "forward", "weight": 0.1},
+    {"source": "flow:a1-a2-receipt-validation-ledger", "target": "step:a1-a2-receipt-validation-ledger:receipt-register", "type": "flow_step", "direction": "forward", "weight": 0.2},
+    {"source": "flow:a1-a2-receipt-validation-ledger", "target": "step:a1-a2-receipt-validation-ledger:validation-transition-rows", "type": "flow_step", "direction": "forward", "weight": 0.4},
+    {"source": "flow:a1-a2-receipt-validation-ledger", "target": "step:a1-a2-receipt-validation-ledger:approval-readiness-rows", "type": "flow_step", "direction": "forward", "weight": 0.5},
+    {"source": "flow:a1-a2-receipt-validation-ledger", "target": "step:a1-a2-receipt-validation-ledger:add-sheet", "type": "flow_step", "direction": "forward", "weight": 0.6},
+    {"source": "flow:a1-a2-receipt-validation-ledger", "target": "step:a1-a2-receipt-validation-ledger:write-xlsx", "type": "flow_step", "direction": "forward", "weight": 0.8},
+    {"source": "flow:a1-a2-receipt-validation-ledger", "target": "step:a1-a2-receipt-validation-ledger:write-readme", "type": "flow_step", "direction": "forward", "weight": 0.9},
+    {"source": "flow:a1-a2-receipt-validation-ledger", "target": "step:a1-a2-receipt-validation-ledger:main", "type": "flow_step", "direction": "forward", "weight": 1.0},
+
+    {"source": "flow:a1-a2-sage-verification", "target": "step:a1-a2-sage-verification:file-rows", "type": "flow_step", "direction": "forward", "weight": 0.3},
+    {"source": "flow:a1-a2-sage-verification", "target": "step:a1-a2-sage-verification:shared-keys", "type": "flow_step", "direction": "forward", "weight": 0.7},
+    {"source": "flow:a1-a2-sage-verification", "target": "step:a1-a2-sage-verification:build-workbook", "type": "flow_step", "direction": "forward", "weight": 1.0},
+
+    {"source": "flow:validation-zone-board-build", "target": "step:validation-zone-board-build:rows-from-sheet", "type": "flow_step", "direction": "forward", "weight": 0.1},
+    {"source": "flow:validation-zone-board-build", "target": "step:validation-zone-board-build:zone-nodes", "type": "flow_step", "direction": "forward", "weight": 0.2},
+    {"source": "flow:validation-zone-board-build", "target": "step:validation-zone-board-build:validation-items", "type": "flow_step", "direction": "forward", "weight": 0.3},
+    {"source": "flow:validation-zone-board-build", "target": "step:validation-zone-board-build:pattern-rows", "type": "flow_step", "direction": "forward", "weight": 0.4},
+    {"source": "flow:validation-zone-board-build", "target": "step:validation-zone-board-build:transition-rows", "type": "flow_step", "direction": "forward", "weight": 0.5},
+    {"source": "flow:validation-zone-board-build", "target": "step:validation-zone-board-build:metrics", "type": "flow_step", "direction": "forward", "weight": 0.6},
+    {"source": "flow:validation-zone-board-build", "target": "step:validation-zone-board-build:source-area-rollup", "type": "flow_step", "direction": "forward", "weight": 0.7},
+    {"source": "flow:validation-zone-board-build", "target": "step:validation-zone-board-build:build-html", "type": "flow_step", "direction": "forward", "weight": 0.8},
+    {"source": "flow:validation-zone-board-build", "target": "step:validation-zone-board-build:write-readme", "type": "flow_step", "direction": "forward", "weight": 0.9},
+    {"source": "flow:validation-zone-board-build", "target": "step:validation-zone-board-build:main", "type": "flow_step", "direction": "forward", "weight": 1.0},
+
+    {"source": "flow:validation-architecture-qc-plan", "target": "step:validation-architecture-qc-plan:read-architecture", "type": "flow_step", "direction": "forward", "weight": 0.3},
+    {"source": "flow:validation-architecture-qc-plan", "target": "step:validation-architecture-qc-plan:assign-queue-zones", "type": "flow_step", "direction": "forward", "weight": 0.7},
+    {"source": "flow:validation-architecture-qc-plan", "target": "step:validation-architecture-qc-plan:run-zone-board", "type": "flow_step", "direction": "forward", "weight": 1.0},
+
+    {"source": "flow:b1-b2-procurement-activation", "target": "step:b1-b2-procurement-activation:rows-from-sheet", "type": "flow_step", "direction": "forward", "weight": 0.1},
+    {"source": "flow:b1-b2-procurement-activation", "target": "step:b1-b2-procurement-activation:activation-sequence", "type": "flow_step", "direction": "forward", "weight": 0.3},
+    {"source": "flow:b1-b2-procurement-activation", "target": "step:b1-b2-procurement-activation:lane-rows", "type": "flow_step", "direction": "forward", "weight": 0.4},
+    {"source": "flow:b1-b2-procurement-activation", "target": "step:b1-b2-procurement-activation:metrics", "type": "flow_step", "direction": "forward", "weight": 0.6},
+    {"source": "flow:b1-b2-procurement-activation", "target": "step:b1-b2-procurement-activation:build-html", "type": "flow_step", "direction": "forward", "weight": 0.7},
+    {"source": "flow:b1-b2-procurement-activation", "target": "step:b1-b2-procurement-activation:write-readme", "type": "flow_step", "direction": "forward", "weight": 0.9},
+    {"source": "flow:b1-b2-procurement-activation", "target": "step:b1-b2-procurement-activation:main", "type": "flow_step", "direction": "forward", "weight": 1.0},
+
+    {"source": "flow:boq-bom-cost-code-mapping", "target": "step:boq-bom-cost-code-mapping:read-mapping", "type": "flow_step", "direction": "forward", "weight": 0.3},
+    {"source": "flow:boq-bom-cost-code-mapping", "target": "step:boq-bom-cost-code-mapping:map-boq-bom", "type": "flow_step", "direction": "forward", "weight": 0.7},
+    {"source": "flow:boq-bom-cost-code-mapping", "target": "step:boq-bom-cost-code-mapping:map-to-cost-code", "type": "flow_step", "direction": "forward", "weight": 1.0},
+
+    {"source": "flow:cost-sov-commitment-readiness", "target": "step:cost-sov-commitment-readiness:rows-from-sheet", "type": "flow_step", "direction": "forward", "weight": 0.2},
+    {"source": "flow:cost-sov-commitment-readiness", "target": "step:cost-sov-commitment-readiness:activation-sequence", "type": "flow_step", "direction": "forward", "weight": 0.3},
+    {"source": "flow:cost-sov-commitment-readiness", "target": "step:cost-sov-commitment-readiness:lane-rows", "type": "flow_step", "direction": "forward", "weight": 0.5},
+    {"source": "flow:cost-sov-commitment-readiness", "target": "step:cost-sov-commitment-readiness:build-html", "type": "flow_step", "direction": "forward", "weight": 0.7},
+    {"source": "flow:cost-sov-commitment-readiness", "target": "step:cost-sov-commitment-readiness:write-readme", "type": "flow_step", "direction": "forward", "weight": 0.8},
+    {"source": "flow:cost-sov-commitment-readiness", "target": "step:cost-sov-commitment-readiness:main", "type": "flow_step", "direction": "forward", "weight": 1.0},
+
+    {"source": "flow:high-risk-preinstall-meeting-packet", "target": "step:high-risk-preinstall-meeting-packet:meeting-queue-rows", "type": "flow_step", "direction": "forward", "weight": 0.1},
+    {"source": "flow:high-risk-preinstall-meeting-packet", "target": "step:high-risk-preinstall-meeting-packet:agenda-rows", "type": "flow_step", "direction": "forward", "weight": 0.2},
+    {"source": "flow:high-risk-preinstall-meeting-packet", "target": "step:high-risk-preinstall-meeting-packet:packet-agenda-rows", "type": "flow_step", "direction": "forward", "weight": 0.2},
+    {"source": "flow:high-risk-preinstall-meeting-packet", "target": "step:high-risk-preinstall-meeting-packet:signin-rows", "type": "flow_step", "direction": "forward", "weight": 0.3},
+    {"source": "flow:high-risk-preinstall-meeting-packet", "target": "step:high-risk-preinstall-meeting-packet:rooter-clearance-rows", "type": "flow_step", "direction": "forward", "weight": 0.4},
+    {"source": "flow:high-risk-preinstall-meeting-packet", "target": "step:high-risk-preinstall-meeting-packet:action-log-rows", "type": "flow_step", "direction": "forward", "weight": 0.5},
+    {"source": "flow:high-risk-preinstall-meeting-packet", "target": "step:high-risk-preinstall-meeting-packet:safety-quality-rows", "type": "flow_step", "direction": "forward", "weight": 0.6},
+    {"source": "flow:high-risk-preinstall-meeting-packet", "target": "step:high-risk-preinstall-meeting-packet:rfi-submittal-tpm-rows", "type": "flow_step", "direction": "forward", "weight": 0.6},
+    {"source": "flow:high-risk-preinstall-meeting-packet", "target": "step:high-risk-preinstall-meeting-packet:evidence-route-rows", "type": "flow_step", "direction": "forward", "weight": 0.7},
+    {"source": "flow:high-risk-preinstall-meeting-packet", "target": "step:high-risk-preinstall-meeting-packet:minutes-template-rows", "type": "flow_step", "direction": "forward", "weight": 0.7},
+    {"source": "flow:high-risk-preinstall-meeting-packet", "target": "step:high-risk-preinstall-meeting-packet:inference-rows", "type": "flow_step", "direction": "forward", "weight": 0.8},
+    {"source": "flow:high-risk-preinstall-meeting-packet", "target": "step:high-risk-preinstall-meeting-packet:add-visual-dashboard", "type": "flow_step", "direction": "forward", "weight": 0.9},
+    {"source": "flow:high-risk-preinstall-meeting-packet", "target": "step:high-risk-preinstall-meeting-packet:write-readme", "type": "flow_step", "direction": "forward", "weight": 0.9},
+    {"source": "flow:high-risk-preinstall-meeting-packet", "target": "step:high-risk-preinstall-meeting-packet:build-workbook", "type": "flow_step", "direction": "forward", "weight": 1.0},
+
+    {"source": "flow:high-risk-trade-issue-packet", "target": "step:high-risk-trade-issue-packet:read-packet-spec", "type": "flow_step", "direction": "forward", "weight": 0.3},
+    {"source": "flow:high-risk-trade-issue-packet", "target": "step:high-risk-trade-issue-packet:capture-issue", "type": "flow_step", "direction": "forward", "weight": 0.5},
+    {"source": "flow:high-risk-trade-issue-packet", "target": "step:high-risk-trade-issue-packet:route-validation", "type": "flow_step", "direction": "forward", "weight": 0.8},
+    {"source": "flow:high-risk-trade-issue-packet", "target": "step:high-risk-trade-issue-packet:track-closure", "type": "flow_step", "direction": "forward", "weight": 1.0},
+
+    {"source": "flow:owner-progress-review-package", "target": "step:owner-progress-review-package:executive-snapshot-rows", "type": "flow_step", "direction": "forward", "weight": 0.1},
+    {"source": "flow:owner-progress-review-package", "target": "step:owner-progress-review-package:owner-storyline-rows", "type": "flow_step", "direction": "forward", "weight": 0.2},
+    {"source": "flow:owner-progress-review-package", "target": "step:owner-progress-review-package:visual-flow-rows", "type": "flow_step", "direction": "forward", "weight": 0.3},
+    {"source": "flow:owner-progress-review-package", "target": "step:owner-progress-review-package:human-pm-onboarding-rows", "type": "flow_step", "direction": "forward", "weight": 0.4},
+    {"source": "flow:owner-progress-review-package", "target": "step:owner-progress-review-package:tcs-flow-rows", "type": "flow_step", "direction": "forward", "weight": 0.5},
+    {"source": "flow:owner-progress-review-package", "target": "step:owner-progress-review-package:progress-evidence-rows", "type": "flow_step", "direction": "forward", "weight": 0.6},
+    {"source": "flow:owner-progress-review-package", "target": "step:owner-progress-review-package:next-decision-rows", "type": "flow_step", "direction": "forward", "weight": 0.7},
+    {"source": "flow:owner-progress-review-package", "target": "step:owner-progress-review-package:build-workbook", "type": "flow_step", "direction": "forward", "weight": 0.8},
+    {"source": "flow:owner-progress-review-package", "target": "step:owner-progress-review-package:write-readme", "type": "flow_step", "direction": "forward", "weight": 0.9},
+    {"source": "flow:owner-progress-review-package", "target": "step:owner-progress-review-package:main", "type": "flow_step", "direction": "forward", "weight": 1.0},
+
+    {"source": "flow:owner-segmented-integrated-board", "target": "step:owner-segmented-integrated-board:read-control", "type": "flow_step", "direction": "forward", "weight": 0.3},
+    {"source": "flow:owner-segmented-integrated-board", "target": "step:owner-segmented-integrated-board:build-segments", "type": "flow_step", "direction": "forward", "weight": 0.7},
+    {"source": "flow:owner-segmented-integrated-board", "target": "step:owner-segmented-integrated-board:render-html", "type": "flow_step", "direction": "forward", "weight": 1.0},
+
+    {"source": "flow:owner-critical-path-report", "target": "step:owner-critical-path-report:read-critical-path", "type": "flow_step", "direction": "forward", "weight": 0.3},
+    {"source": "flow:owner-critical-path-report", "target": "step:owner-critical-path-report:audio-script", "type": "flow_step", "direction": "forward", "weight": 0.7},
+    {"source": "flow:owner-critical-path-report", "target": "step:owner-critical-path-report:voice-session", "type": "flow_step", "direction": "forward", "weight": 1.0},
+
+    {"source": "flow:owen-county-bring-online-overlay", "target": "step:owen-county-bring-online-overlay:start-here", "type": "flow_step", "direction": "forward", "weight": 0.2},
+    {"source": "flow:owen-county-bring-online-overlay", "target": "step:owen-county-bring-online-overlay:agent-boot", "type": "flow_step", "direction": "forward", "weight": 0.3},
+    {"source": "flow:owen-county-bring-online-overlay", "target": "step:owen-county-bring-online-overlay:source-map", "type": "flow_step", "direction": "forward", "weight": 0.5},
+    {"source": "flow:owen-county-bring-online-overlay", "target": "step:owen-county-bring-online-overlay:red-flags-queue-seed", "type": "flow_step", "direction": "forward", "weight": 0.7},
+    {"source": "flow:owen-county-bring-online-overlay", "target": "step:owen-county-bring-online-overlay:stop-rules-approvals", "type": "flow_step", "direction": "forward", "weight": 0.8},
+    {"source": "flow:owen-county-bring-online-overlay", "target": "step:owen-county-bring-online-overlay:cleanpoint", "type": "flow_step", "direction": "forward", "weight": 1.0},
+
+    {"source": "flow:owen-county-source-currentness", "target": "step:owen-county-source-currentness:read-currentness", "type": "flow_step", "direction": "forward", "weight": 0.3},
+    {"source": "flow:owen-county-source-currentness", "target": "step:owen-county-source-currentness:dispatch-work-orders", "type": "flow_step", "direction": "forward", "weight": 0.7},
+    {"source": "flow:owen-county-source-currentness", "target": "step:owen-county-source-currentness:digital-twin-shell", "type": "flow_step", "direction": "forward", "weight": 1.0},
+
+    {"source": "flow:knowledge-os-fixture-acceptance", "target": "step:knowledge-os-fixture-acceptance:fixture-pack-spec", "type": "flow_step", "direction": "forward", "weight": 0.2},
+    {"source": "flow:knowledge-os-fixture-acceptance", "target": "step:knowledge-os-fixture-acceptance:build-decision-packet", "type": "flow_step", "direction": "forward", "weight": 0.4},
+    {"source": "flow:knowledge-os-fixture-acceptance", "target": "step:knowledge-os-fixture-acceptance:approval-request", "type": "flow_step", "direction": "forward", "weight": 0.6},
+    {"source": "flow:knowledge-os-fixture-acceptance", "target": "step:knowledge-os-fixture-acceptance:manual-test-run", "type": "flow_step", "direction": "forward", "weight": 0.8},
+    {"source": "flow:knowledge-os-fixture-acceptance", "target": "step:knowledge-os-fixture-acceptance:middleware-acceptance", "type": "flow_step", "direction": "forward", "weight": 1.0},
+
+    {"source": "flow:knowledge-os-cite-infer-governance", "target": "step:knowledge-os-cite-infer-governance:read-governance-spec", "type": "flow_step", "direction": "forward", "weight": 0.3},
+    {"source": "flow:knowledge-os-cite-infer-governance", "target": "step:knowledge-os-cite-infer-governance:apply-middleware-contract", "type": "flow_step", "direction": "forward", "weight": 0.7},
+    {"source": "flow:knowledge-os-cite-infer-governance", "target": "step:knowledge-os-cite-infer-governance:audit-citations", "type": "flow_step", "direction": "forward", "weight": 1.0},
+
+    {"source": "domain:project-digital-twin", "target": "domain:gate-readiness", "type": "cross_domain", "direction": "forward", "description": "Doctrine sets the gate readiness ceiling and required closure evidence", "weight": 0.8},
+    {"source": "domain:project-digital-twin", "target": "domain:validation-pipeline", "type": "cross_domain", "direction": "forward", "description": "Standard defines the validation patterns and zone rules", "weight": 0.7},
+    {"source": "domain:project-digital-twin", "target": "domain:owen-county-bring-online", "type": "cross_domain", "direction": "forward", "description": "Owen County adopts the Project Digital Twin Standard via its shell", "weight": 0.8},
+    {"source": "domain:knowledge-os", "target": "domain:validation-pipeline", "type": "cross_domain", "direction": "forward", "description": "Knowledge OS middleware governs the citation patterns used in validation", "weight": 0.6},
+    {"source": "domain:knowledge-os", "target": "domain:owner-reporting", "type": "cross_domain", "direction": "forward", "description": "Cite/infer governance polices what owner reports may claim", "weight": 0.5},
+    {"source": "domain:validation-pipeline", "target": "domain:gate-readiness", "type": "cross_domain", "direction": "forward", "description": "Validation closure unlocks gate closure", "weight": 0.9},
+    {"source": "domain:high-risk-trade", "target": "domain:validation-pipeline", "type": "cross_domain", "direction": "forward", "description": "Preinstall meetings and trade issue packets feed the validation queue", "weight": 0.7},
+    {"source": "domain:gate-readiness", "target": "domain:procurement-activation", "type": "cross_domain", "direction": "forward", "description": "B1/B2 gate closure triggers procurement activation", "weight": 0.8},
+    {"source": "domain:procurement-activation", "target": "domain:cost-commitment", "type": "cross_domain", "direction": "forward", "description": "Procurement lanes feed SOV commitment readiness", "weight": 0.8},
+    {"source": "domain:owen-county-bring-online", "target": "domain:validation-pipeline", "type": "cross_domain", "direction": "forward", "description": "Bring-online seeds the validation queue with red flags", "weight": 0.7},
+    {"source": "domain:pm-command-control", "target": "domain:gate-readiness", "type": "cross_domain", "direction": "forward", "description": "Command center surfaces gate status and action items", "weight": 0.6},
+    {"source": "domain:pm-command-control", "target": "domain:validation-pipeline", "type": "cross_domain", "direction": "forward", "description": "Command center surfaces validation queue blockers", "weight": 0.6},
+    {"source": "domain:pm-command-control", "target": "domain:owner-reporting", "type": "cross_domain", "direction": "forward", "description": "PM command items flow into the owner reporting storyline", "weight": 0.7},
+    {"source": "domain:gate-readiness", "target": "domain:owner-reporting", "type": "cross_domain", "direction": "forward", "description": "Gate status feeds the owner progress review", "weight": 0.7},
+    {"source": "domain:cost-commitment", "target": "domain:owner-reporting", "type": "cross_domain", "direction": "forward", "description": "SOV commitment status feeds the owner critical path", "weight": 0.6}
+  ],
+  "layers": [],
+  "tour": []
 }

@@ -1,273 +1,992 @@
 {
-  "version": "2.0.0",
+  "version": "1.0.0",
   "project": {
-    "name": "TCS Atlas Token Registry",
-    "languages": ["JSON", "Markdown"],
-    "frameworks": ["SSU.AtlasTokens.UnifiedRegistry.v1", "SSU.AtlasTokens.CrossReference.v1"],
-    "description": "Machine-built resolver substrate for Atlas IDs, Atomics IDs/canonical aliases, graphify MCP services, graphify node tokens, and legacy token-xref rows. Contains 26,748 canonical tokens with 53,317 aliases across 10 token kinds, serving as the single source of truth for the TCS construction management token namespace.",
-    "analyzedAt": "2026-05-28T00:00:00Z",
-    "gitCommitHash": null
+    "name": "tcs-atlas-tokens",
+    "languages": [
+      "markdown",
+      "json",
+      "html"
+    ],
+    "frameworks": [],
+    "description": "TCS Atlas — governance-spine corpus preserving the SOP > SWK > WI > checklist > action plan > LMS chain.",
+    "analyzedAt": "2026-05-28T16:48:04.045Z",
+    "gitCommitHash": "9100a641b6849d42baf3cebffc9b7e198f3ba9c1"
   },
   "nodes": [
     {
-      "id": "node-registry-md",
+      "id": "document:ATLAS_TOKEN_REGISTRY.md",
       "type": "document",
       "name": "ATLAS_TOKEN_REGISTRY.md",
-      "filePath": "CANON/atlas_tokens/ATLAS_TOKEN_REGISTRY.md",
-      "summary": "Human-readable governance document for the Atlas Token Registry. Defines the resolver contract, counts by kind (26,748 tokens across 10 kinds), alias collisions, and source registries. Serves as the canonical entry point for understanding the token namespace.",
-      "tags": ["governance", "documentation", "resolver-contract", "token-kinds"],
-      "complexity": 2,
-      "layer": "token-registry-governance",
-      "lines": 46
+      "filePath": "ATLAS_TOKEN_REGISTRY.md",
+      "summary": "Human-readable manifest for the Atlas Tokens unified registry, describing the resolver contract, kind counts, alias collisions, and the upstream source registries that feed the canonical JSON.",
+      "tags": [
+        "documentation",
+        "registry",
+        "atlas-tokens",
+        "resolver",
+        "entry-point"
+      ],
+      "complexity": "simple",
+      "languageNotes": "YAML front-matter (id/type/namespace/status/source_file) typed as an SSU registry artifact."
     },
     {
-      "id": "node-registry-json",
-      "type": "data",
+      "id": "config:atlas_token_registry.json",
+      "type": "config",
       "name": "atlas_token_registry.json",
-      "filePath": "CANON/atlas_tokens/atlas_token_registry.json",
-      "summary": "The master token registry containing 26,748 tokens with 53,317 aliases. Schema SSU.AtlasTokens.UnifiedRegistry.v1. Top-level keys: alias_collisions, aliases, counts, generated_at, root, schema, sources, tokens. Each token entry contains: aliases, artifact_hashes, canonical_artifacts, kind, lifecycle, metadata, source, token. Token kinds span atlas.node (101), atlas.meta (1), atomics.bucket (43), atomics.task (304), atomics.topic_alias (1), graphify.node (26,050), graphify.service (26), legacy.cited_token (123), legacy.xref (89), pulse.pilot_token (10). Sourced from 5 upstream registries.",
-      "tags": ["registry-core", "tokens", "aliases", "resolver", "canonical-source"],
-      "complexity": 9,
-      "layer": "registry-core",
-      "lines": 675371
+      "filePath": "atlas_token_registry.json",
+      "summary": "Canonical Atlas Tokens registry containing 26,748 tokens and 53,317 aliases across atlas/atomics/graphify/legacy/pulse kinds, plus the schema, source manifest, and generation timestamp consumed by the resolver.",
+      "tags": [
+        "registry",
+        "atlas-tokens",
+        "canonical",
+        "data-pipeline",
+        "configuration"
+      ],
+      "complexity": "complex",
+      "languageNotes": "Large generated JSON (~675K lines) with top-level keys: alias_collisions, aliases, counts, generated_at, root, schema, sources, tokens."
     },
     {
-      "id": "node-xref-json",
-      "type": "data",
-      "name": "atlas_token_xref.json",
-      "filePath": "CANON/atlas_tokens/atlas_token_xref.json",
-      "summary": "Cross-reference index for the token registry. Schema SSU.AtlasTokens.CrossReference.v1. Provides bidirectional lookup tables: alias_to_canonical (53,317 entries), canonical_to_aliases (26,748 entries), canonical_to_artifacts (26,748 entries), canonical_to_kind (26,748 entries). Enables O(1) resolution of any alias or canonical token to its artifacts and kind.",
-      "tags": ["registry-core", "cross-reference", "lookup-index", "alias-resolution"],
-      "complexity": 7,
-      "layer": "registry-core",
-      "lines": 257903
-    },
-    {
-      "id": "node-verification",
-      "type": "data",
-      "name": "atlas_token_verification_2026-05-11.json",
-      "filePath": "CANON/atlas_tokens/atlas_token_verification_2026-05-11.json",
-      "summary": "Full corpus verification scan result. Scanned 247 files, found 1,921 citations mapping to 495 unique tokens. All 495 tokens resolved successfully with 0 unresolved and 0 missing artifacts.",
-      "tags": ["verification", "corpus-scan", "citation-count", "zero-unresolved"],
-      "complexity": 3,
-      "layer": "verification-layer",
-      "lines": 12
-    },
-    {
-      "id": "node-smoke-test",
-      "type": "data",
+      "id": "config:atlas_token_resolver_smoke_2026-05-11.json",
+      "type": "config",
       "name": "atlas_token_resolver_smoke_2026-05-11.json",
-      "filePath": "CANON/atlas_tokens/atlas_token_resolver_smoke_2026-05-11.json",
-      "summary": "Smoke test for the token resolver. Tests 4 representative tokens across different kinds: AT:A1-B3:001 (legacy.cited_token), WI:SAGECM:DL-001 (pulse.pilot_token), graphify-atlas (graphify.service), graphify:atlas:atlas_readme_atlas_readme (graphify.node). All 4 resolved successfully.",
-      "tags": ["verification", "smoke-test", "resolver-validation", "cross-namespace"],
-      "complexity": 4,
-      "layer": "verification-layer",
-      "lines": 48
+      "filePath": "atlas_token_resolver_smoke_2026-05-11.json",
+      "summary": "Resolver smoke-test snapshot dated 2026-05-11 capturing a handful of canonical resolutions (legacy cited tokens, pulse pilot tokens, graphify services) against the canonical Atlas Tokens registry.",
+      "tags": [
+        "smoke-test",
+        "resolver",
+        "atlas-tokens",
+        "verification",
+        "snapshot"
+      ],
+      "complexity": "simple"
     },
     {
-      "id": "node-watchdog-0844",
-      "type": "data",
+      "id": "config:atlas_token_verification_2026-05-11.json",
+      "type": "config",
+      "name": "atlas_token_verification_2026-05-11.json",
+      "filePath": "atlas_token_verification_2026-05-11.json",
+      "summary": "Verification report for the canonical Atlas Tokens registry on 2026-05-11, recording scan counts (citations, resolved tokens, scanned files) and unresolved/missing-artifact lists.",
+      "tags": [
+        "verification",
+        "atlas-tokens",
+        "audit",
+        "report",
+        "configuration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:atlas_token_verification_watchdog_2026-05-11T0844Z.json",
+      "type": "config",
       "name": "atlas_token_verification_watchdog_2026-05-11T0844Z.json",
-      "filePath": "CANON/atlas_tokens/atlas_token_verification_watchdog_2026-05-11T0844Z.json",
-      "summary": "Watchdog snapshot at 08:44 UTC. 247 files, 1,921 citations, 495 unique tokens, 0 unresolved, 0 missing artifacts. Registry stable.",
-      "tags": ["watchdog", "periodic-scan", "stability-check"],
-      "complexity": 1,
-      "layer": "verification-layer",
-      "lines": 12
+      "filePath": "atlas_token_verification_watchdog_2026-05-11T0844Z.json",
+      "summary": "Atlas Tokens verification watchdog snapshot captured at 2026-05-11T08:44Z, holding registry pointer, resolutions map, and scan-result counters for the periodic verification job.",
+      "tags": [
+        "watchdog",
+        "verification",
+        "atlas-tokens",
+        "snapshot",
+        "monitoring"
+      ],
+      "complexity": "simple"
     },
     {
-      "id": "node-watchdog-0949",
-      "type": "data",
+      "id": "config:atlas_token_verification_watchdog_2026-05-11T0949Z.json",
+      "type": "config",
       "name": "atlas_token_verification_watchdog_2026-05-11T0949Z.json",
-      "filePath": "CANON/atlas_tokens/atlas_token_verification_watchdog_2026-05-11T0949Z.json",
-      "summary": "Watchdog snapshot at 09:49 UTC. 247 files, 1,921 citations, 495 unique tokens, 0 unresolved. Registry stable.",
-      "tags": ["watchdog", "periodic-scan", "stability-check"],
-      "complexity": 1,
-      "layer": "verification-layer",
-      "lines": 12
+      "filePath": "atlas_token_verification_watchdog_2026-05-11T0949Z.json",
+      "summary": "Atlas Tokens verification watchdog snapshot captured at 2026-05-11T09:49Z, recording the periodic resolver scan state against the canonical registry.",
+      "tags": [
+        "watchdog",
+        "verification",
+        "atlas-tokens",
+        "snapshot",
+        "monitoring"
+      ],
+      "complexity": "simple"
     },
     {
-      "id": "node-watchdog-1248",
-      "type": "data",
+      "id": "config:atlas_token_verification_watchdog_20260511T124822Z.json",
+      "type": "config",
       "name": "atlas_token_verification_watchdog_20260511T124822Z.json",
-      "filePath": "CANON/atlas_tokens/atlas_token_verification_watchdog_20260511T124822Z.json",
-      "summary": "Watchdog snapshot at 12:48 UTC. 247 files, 1,921 citations, 495 unique tokens, 0 unresolved. Registry stable.",
-      "tags": ["watchdog", "periodic-scan", "stability-check"],
-      "complexity": 1,
-      "layer": "verification-layer",
-      "lines": 12
+      "filePath": "atlas_token_verification_watchdog_20260511T124822Z.json",
+      "summary": "Atlas Tokens verification watchdog snapshot captured at 2026-05-11T12:48:22Z, recording the periodic resolver scan state against the canonical registry.",
+      "tags": [
+        "watchdog",
+        "verification",
+        "atlas-tokens",
+        "snapshot",
+        "monitoring"
+      ],
+      "complexity": "simple"
     },
     {
-      "id": "node-watchdog-1321",
-      "type": "data",
+      "id": "config:atlas_token_verification_watchdog_20260511T132135Z.json",
+      "type": "config",
       "name": "atlas_token_verification_watchdog_20260511T132135Z.json",
-      "filePath": "CANON/atlas_tokens/atlas_token_verification_watchdog_20260511T132135Z.json",
-      "summary": "Watchdog snapshot at 13:21 UTC. 247 files, 1,921 citations, 495 unique tokens, 0 unresolved. Registry stable.",
-      "tags": ["watchdog", "periodic-scan", "stability-check"],
-      "complexity": 1,
-      "layer": "verification-layer",
-      "lines": 12
+      "filePath": "atlas_token_verification_watchdog_20260511T132135Z.json",
+      "summary": "Atlas Tokens verification watchdog snapshot at 2026-05-11T13:21:35Z showing 1,921 citations across 247 scanned files with 495 resolved unique tokens and no unresolved entries.",
+      "tags": [
+        "watchdog",
+        "verification",
+        "atlas-tokens",
+        "snapshot",
+        "monitoring"
+      ],
+      "complexity": "simple"
     },
     {
-      "id": "node-watchdog-1422",
-      "type": "data",
+      "id": "config:atlas_token_verification_watchdog_20260511T142248Z.json",
+      "type": "config",
       "name": "atlas_token_verification_watchdog_20260511T142248Z.json",
-      "filePath": "CANON/atlas_tokens/atlas_token_verification_watchdog_20260511T142248Z.json",
-      "summary": "Watchdog snapshot at 14:22 UTC. 247 files, 1,921 citations, 495 unique tokens, 0 unresolved. Registry stable.",
-      "tags": ["watchdog", "periodic-scan", "stability-check"],
-      "complexity": 1,
-      "layer": "verification-layer",
-      "lines": 12
+      "filePath": "atlas_token_verification_watchdog_20260511T142248Z.json",
+      "summary": "Atlas Tokens verification watchdog snapshot at 2026-05-11T14:22:48Z showing the periodic scan against the canonical registry with registry, resolutions, and scan sections.",
+      "tags": [
+        "watchdog",
+        "verification",
+        "atlas-tokens",
+        "snapshot",
+        "monitoring"
+      ],
+      "complexity": "simple"
     },
     {
-      "id": "node-watchdog-1902",
-      "type": "data",
+      "id": "config:atlas_token_verification_watchdog_20260511T190206Z.json",
+      "type": "config",
       "name": "atlas_token_verification_watchdog_20260511T190206Z.json",
-      "filePath": "CANON/atlas_tokens/atlas_token_verification_watchdog_20260511T190206Z.json",
-      "summary": "Watchdog snapshot at 19:02 UTC. 247 files, 1,921 citations, 495 unique tokens, 0 unresolved. Final daily check confirms registry stability.",
-      "tags": ["watchdog", "periodic-scan", "stability-check", "final-daily-check"],
-      "complexity": 1,
-      "layer": "verification-layer",
-      "lines": 12
+      "filePath": "atlas_token_verification_watchdog_20260511T190206Z.json",
+      "summary": "Atlas Tokens verification watchdog snapshot captured at 2026-05-11T19:02:06Z, recording the periodic resolver scan state against the canonical registry.",
+      "tags": [
+        "watchdog",
+        "verification",
+        "atlas-tokens",
+        "snapshot",
+        "monitoring"
+      ],
+      "complexity": "simple"
     },
     {
-      "id": "node-bd5-audit-1",
+      "id": "config:atlas_token_xref.json",
+      "type": "config",
+      "name": "atlas_token_xref.json",
+      "filePath": "atlas_token_xref.json",
+      "summary": "Inverted cross-reference index for the Atlas Tokens registry, providing alias_to_canonical, canonical_to_aliases, canonical_to_artifacts, and canonical_to_kind lookup maps used by the resolver for O(1) token resolution.",
+      "tags": [
+        "registry",
+        "atlas-tokens",
+        "cross-reference",
+        "lookup-index",
+        "configuration"
+      ],
+      "complexity": "complex",
+      "languageNotes": "Companion to the canonical registry — five lookup maps plus schema and generated_at metadata."
+    },
+    {
+      "id": "document:ua-treatment/wiki/SCHEMA.md",
+      "type": "document",
+      "name": "SCHEMA.md",
+      "path": "ua-treatment/wiki/SCHEMA.md",
+      "summary": "Defines the wiki authoring schema for the TCS Atlas Token Registry domain, including file conventions, frontmatter format, tag taxonomy, page thresholds, and required sections for entity vs concept pages.",
+      "complexity": "simple",
+      "tags": [
+        "schema",
+        "wiki",
+        "conventions",
+        "frontmatter",
+        "taxonomy",
+        "documentation-standard",
+        "atlas-token"
+      ],
+      "metadata": {
+        "language": "markdown",
+        "fileCategory": "docs",
+        "totalLines": 48,
+        "nonEmptyLines": 41,
+        "sectionCount": 8,
+        "role": "authoring-spec"
+      }
+    },
+    {
+      "id": "document:ua-treatment/wiki/audits.md",
+      "type": "document",
+      "name": "audits.md",
+      "path": "ua-treatment/wiki/audits.md",
+      "summary": "Entity wiki page describing the Atlas Token Audits component, which audits the atlas tokens; links to tcs-atlas, registry, verification, and watchdog peers.",
+      "complexity": "simple",
+      "tags": [
+        "audits",
+        "atlas-token",
+        "entity-page",
+        "wiki"
+      ],
+      "metadata": {
+        "language": "markdown",
+        "fileCategory": "docs",
+        "totalLines": 26,
+        "nonEmptyLines": 21,
+        "sectionCount": 5,
+        "frontmatterType": "entity",
+        "sources": [
+          "audits/"
+        ]
+      }
+    },
+    {
+      "id": "document:ua-treatment/wiki/index.md",
+      "type": "document",
+      "name": "index.md",
+      "path": "ua-treatment/wiki/index.md",
+      "summary": "Wiki index / table of contents — catalogs every wiki page under Entities, Concepts, Comparisons, and Queries sections; designed as the first-read entry point for any query against the wiki.",
+      "complexity": "simple",
+      "tags": [
+        "index",
+        "wiki",
+        "table-of-contents",
+        "navigation",
+        "atlas-token"
+      ],
+      "metadata": {
+        "language": "markdown",
+        "fileCategory": "docs",
+        "totalLines": 19,
+        "nonEmptyLines": 14,
+        "sectionCount": 5,
+        "role": "wiki-index"
+      }
+    },
+    {
+      "id": "document:ua-treatment/wiki/registry.md",
+      "type": "document",
+      "name": "registry.md",
+      "path": "ua-treatment/wiki/registry.md",
+      "summary": "Entity wiki page for the Atlas Token Registry, which stores the canonical atlas tokens; sourced from atlas_token_registry.json and cross-linked to verification, watchdog, and audits.",
+      "complexity": "simple",
+      "tags": [
+        "registry",
+        "atlas-token",
+        "entity-page",
+        "wiki"
+      ],
+      "metadata": {
+        "language": "markdown",
+        "fileCategory": "docs",
+        "totalLines": 26,
+        "nonEmptyLines": 21,
+        "sectionCount": 5,
+        "frontmatterType": "entity",
+        "sources": [
+          "atlas_token_registry.json"
+        ]
+      }
+    },
+    {
+      "id": "document:ua-treatment/wiki/tcs-atlas.md",
+      "type": "document",
+      "name": "tcs-atlas.md",
+      "path": "ua-treatment/wiki/tcs-atlas.md",
+      "summary": "Top-level entity wiki page describing TCS Atlas — the umbrella system that contains the atlas token registry plus verification, watchdog, and audits subsystems; sourced from ATLAS_TOKEN_REGISTRY.md.",
+      "complexity": "simple",
+      "tags": [
+        "tcs-atlas",
+        "atlas",
+        "entity-page",
+        "wiki",
+        "overview"
+      ],
+      "metadata": {
+        "language": "markdown",
+        "fileCategory": "docs",
+        "totalLines": 28,
+        "nonEmptyLines": 23,
+        "sectionCount": 5,
+        "frontmatterType": "entity",
+        "sources": [
+          "ATLAS_TOKEN_REGISTRY.md"
+        ]
+      }
+    },
+    {
+      "id": "document:ua-treatment/wiki/verification.md",
+      "type": "document",
+      "name": "verification.md",
+      "path": "ua-treatment/wiki/verification.md",
+      "summary": "Entity wiki page for Atlas Token Verification, which verifies the atlas tokens; sourced from atlas_token_verification_2026-05-11.json and linked to tcs-atlas, registry, watchdog, and audits.",
+      "complexity": "simple",
+      "tags": [
+        "verification",
+        "atlas-token",
+        "entity-page",
+        "wiki"
+      ],
+      "metadata": {
+        "language": "markdown",
+        "fileCategory": "docs",
+        "totalLines": 26,
+        "nonEmptyLines": 21,
+        "sectionCount": 5,
+        "frontmatterType": "entity",
+        "sources": [
+          "atlas_token_verification_2026-05-11.json"
+        ]
+      }
+    },
+    {
+      "id": "document:ua-treatment/wiki/watchdog.md",
+      "type": "document",
+      "name": "watchdog.md",
+      "path": "ua-treatment/wiki/watchdog.md",
+      "summary": "Entity wiki page for the Atlas Token Watchdog, which monitors the atlas tokens; sourced from atlas_token_verification_watchdog_2026-05-11T0844Z.json and cross-linked to its peer atlas components.",
+      "complexity": "simple",
+      "tags": [
+        "watchdog",
+        "atlas-token",
+        "monitoring",
+        "entity-page",
+        "wiki"
+      ],
+      "metadata": {
+        "language": "markdown",
+        "fileCategory": "docs",
+        "totalLines": 26,
+        "nonEmptyLines": 21,
+        "sectionCount": 5,
+        "frontmatterType": "entity",
+        "sources": [
+          "atlas_token_verification_watchdog_2026-05-11T0844Z.json"
+        ]
+      }
+    },
+    {
+      "id": "document:audits/BD5_CROSS_CORPUS_AUDIT_20260511T195752Z.md",
       "type": "document",
       "name": "BD5_CROSS_CORPUS_AUDIT_20260511T195752Z.md",
-      "filePath": "CANON/atlas_tokens/audits/BD5_CROSS_CORPUS_AUDIT_20260511T195752Z.md",
-      "summary": "First BD5 cross-corpus audit for M6 substrate v0.2 hardening. Audits 6 corpora. Found TCS/_COMMAND_DEPOT/CANON had missing_graph status. 5 healthy corpora totaled 11,925 nodes, 16,013 edges, 1,254 communities. Token coverage 0.0-0.12% literal.",
-      "tags": ["audit", "BD5", "cross-corpus", "graphify-substrate", "M6-hardening"],
-      "complexity": 6,
-      "layer": "audit-layer",
-      "lines": 55
+      "filePath": "audits/BD5_CROSS_CORPUS_AUDIT_20260511T195752Z.md",
+      "summary": "First BD5 cross-corpus audit snapshot (19:57:52Z) attesting M6 graphify substrate state across ATOMICS, ATLAS, 08_PUBLISH, .claude, and skills corpora, flagging TCS/_COMMAND_DEPOT/CANON as missing_graph.",
+      "tags": [
+        "audit",
+        "documentation",
+        "cross-corpus",
+        "graphify",
+        "m6-substrate"
+      ],
+      "complexity": "simple",
+      "languageNotes": "Markdown audit report with YAML frontmatter (id, type=Audit, status=shipped, owner=openclaw_kimi) and embedded Mermaid corpus-convergence diagram."
     },
     {
-      "id": "node-bd5-audit-2",
+      "id": "document:audits/BD5_CROSS_CORPUS_AUDIT_20260511T195932Z.md",
       "type": "document",
       "name": "BD5_CROSS_CORPUS_AUDIT_20260511T195932Z.md",
-      "filePath": "CANON/atlas_tokens/audits/BD5_CROSS_CORPUS_AUDIT_20260511T195932Z.md",
-      "summary": "Second BD5 audit showing remediation. All 6 corpora ok. CANON finalized same-tick: 19 nodes, 34 edges, 4 communities. Total: 11,944 nodes, 16,047 edges, 1,258 communities. Demonstrates substrate immune-system catch-and-fix cycle.",
-      "tags": ["audit", "BD5", "cross-corpus", "remediation", "immune-system-catch"],
-      "complexity": 6,
-      "layer": "audit-layer",
-      "lines": 55
+      "filePath": "audits/BD5_CROSS_CORPUS_AUDIT_20260511T195932Z.md",
+      "summary": "Second BD5 cross-corpus audit snapshot (19:59:32Z) recording same-tick remediation of TCS/_COMMAND_DEPOT/CANON (19N/34E/4C) now finalized as the fifth formal M6 corpus alongside ATOMICS, ATLAS, 08_PUBLISH, .claude, and skills.",
+      "tags": [
+        "audit",
+        "documentation",
+        "cross-corpus",
+        "graphify",
+        "m6-substrate"
+      ],
+      "complexity": "simple",
+      "languageNotes": "Markdown audit report with YAML frontmatter and Mermaid diagram; supersedes prior snapshot by capturing immune-system catch-and-fix on CANON corpus."
     }
   ],
   "edges": [
-    { "source": "node-registry-md", "target": "node-registry-json", "label": "documents/governs" },
-    { "source": "node-registry-md", "target": "node-xref-json", "label": "documents/governs" },
-    { "source": "node-registry-json", "target": "node-xref-json", "label": "generates-xref-from" },
-    { "source": "node-xref-json", "target": "node-registry-json", "label": "indexes-into" },
-    { "source": "node-verification", "target": "node-registry-json", "label": "validates" },
-    { "source": "node-smoke-test", "target": "node-registry-json", "label": "smoke-tests" },
-    { "source": "node-smoke-test", "target": "node-xref-json", "label": "resolves-via" },
-    { "source": "node-watchdog-0844", "target": "node-registry-json", "label": "watchdog-validates" },
-    { "source": "node-watchdog-0949", "target": "node-registry-json", "label": "watchdog-validates" },
-    { "source": "node-watchdog-1248", "target": "node-registry-json", "label": "watchdog-validates" },
-    { "source": "node-watchdog-1321", "target": "node-registry-json", "label": "watchdog-validates" },
-    { "source": "node-watchdog-1422", "target": "node-registry-json", "label": "watchdog-validates" },
-    { "source": "node-watchdog-1902", "target": "node-registry-json", "label": "watchdog-validates" },
-    { "source": "node-bd5-audit-1", "target": "node-registry-json", "label": "audits-token-coverage" },
-    { "source": "node-bd5-audit-2", "target": "node-registry-json", "label": "audits-token-coverage" },
-    { "source": "node-bd5-audit-2", "target": "node-bd5-audit-1", "label": "remediates-findings-from" },
-    { "source": "node-verification", "target": "node-smoke-test", "label": "complements" },
-    { "source": "node-watchdog-0844", "target": "node-verification", "label": "repeats-scan-of" },
-    { "source": "node-watchdog-0949", "target": "node-watchdog-0844", "label": "succeeds-in-timeline" },
-    { "source": "node-watchdog-1248", "target": "node-watchdog-0949", "label": "succeeds-in-timeline" },
-    { "source": "node-watchdog-1321", "target": "node-watchdog-1248", "label": "succeeds-in-timeline" },
-    { "source": "node-watchdog-1422", "target": "node-watchdog-1321", "label": "succeeds-in-timeline" },
-    { "source": "node-watchdog-1902", "target": "node-watchdog-1422", "label": "succeeds-in-timeline" },
-    { "source": "node-bd5-audit-1", "target": "node-verification", "label": "extends-verification-to-corpus-level" },
-    { "source": "node-bd5-audit-2", "target": "node-verification", "label": "extends-verification-to-corpus-level" }
-  ],
-  "tours": [
     {
-      "id": "tour-registry",
-      "name": "Registry Tour",
-      "description": "Walk through the Atlas Token Registry from governance documentation through the core data files, verification layer, watchdog monitoring, and cross-corpus audits.",
-      "stops": [
+      "source": "document:ATLAS_TOKEN_REGISTRY.md",
+      "target": "config:atlas_token_registry.json",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:ATLAS_TOKEN_REGISTRY.md",
+      "target": "config:atlas_token_xref.json",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "config:atlas_token_xref.json",
+      "target": "config:atlas_token_registry.json",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "config:atlas_token_resolver_smoke_2026-05-11.json",
+      "target": "config:atlas_token_registry.json",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "config:atlas_token_verification_2026-05-11.json",
+      "target": "config:atlas_token_registry.json",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "config:atlas_token_verification_watchdog_2026-05-11T0844Z.json",
+      "target": "config:atlas_token_registry.json",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "config:atlas_token_verification_watchdog_2026-05-11T0949Z.json",
+      "target": "config:atlas_token_registry.json",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "config:atlas_token_verification_watchdog_20260511T124822Z.json",
+      "target": "config:atlas_token_registry.json",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "config:atlas_token_verification_watchdog_20260511T132135Z.json",
+      "target": "config:atlas_token_registry.json",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "config:atlas_token_verification_watchdog_20260511T142248Z.json",
+      "target": "config:atlas_token_registry.json",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "config:atlas_token_verification_watchdog_20260511T190206Z.json",
+      "target": "config:atlas_token_registry.json",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "config:atlas_token_verification_2026-05-11.json",
+      "target": "config:atlas_token_verification_watchdog_2026-05-11T0844Z.json",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "config:atlas_token_verification_watchdog_2026-05-11T0844Z.json",
+      "target": "config:atlas_token_verification_watchdog_2026-05-11T0949Z.json",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "config:atlas_token_verification_watchdog_2026-05-11T0949Z.json",
+      "target": "config:atlas_token_verification_watchdog_20260511T124822Z.json",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "config:atlas_token_verification_watchdog_20260511T124822Z.json",
+      "target": "config:atlas_token_verification_watchdog_20260511T132135Z.json",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "config:atlas_token_verification_watchdog_20260511T132135Z.json",
+      "target": "config:atlas_token_verification_watchdog_20260511T142248Z.json",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "config:atlas_token_verification_watchdog_20260511T142248Z.json",
+      "target": "config:atlas_token_verification_watchdog_20260511T190206Z.json",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:ua-treatment/wiki/index.md",
+      "target": "document:ua-treatment/wiki/tcs-atlas.md",
+      "type": "documents",
+      "confidence": "high",
+      "evidence": "index.md lists [[tcs-atlas]] under Entities",
+      "direction": "forward"
+    },
+    {
+      "source": "document:ua-treatment/wiki/index.md",
+      "target": "document:ua-treatment/wiki/registry.md",
+      "type": "documents",
+      "confidence": "high",
+      "evidence": "index.md lists [[registry]] under Entities",
+      "direction": "forward"
+    },
+    {
+      "source": "document:ua-treatment/wiki/index.md",
+      "target": "document:ua-treatment/wiki/verification.md",
+      "type": "documents",
+      "confidence": "high",
+      "evidence": "index.md lists [[verification]] under Entities",
+      "direction": "forward"
+    },
+    {
+      "source": "document:ua-treatment/wiki/index.md",
+      "target": "document:ua-treatment/wiki/watchdog.md",
+      "type": "documents",
+      "confidence": "high",
+      "evidence": "index.md lists [[watchdog]] under Entities",
+      "direction": "forward"
+    },
+    {
+      "source": "document:ua-treatment/wiki/index.md",
+      "target": "document:ua-treatment/wiki/audits.md",
+      "type": "documents",
+      "confidence": "high",
+      "evidence": "index.md lists [[audits]] under Entities",
+      "direction": "forward"
+    },
+    {
+      "source": "document:ua-treatment/wiki/tcs-atlas.md",
+      "target": "document:ua-treatment/wiki/registry.md",
+      "type": "related",
+      "confidence": "high",
+      "evidence": "tcs-atlas.md Relationships links [[registry]]",
+      "direction": "forward"
+    },
+    {
+      "source": "document:ua-treatment/wiki/tcs-atlas.md",
+      "target": "document:ua-treatment/wiki/verification.md",
+      "type": "related",
+      "confidence": "high",
+      "evidence": "tcs-atlas.md Relationships links [[verification]]",
+      "direction": "forward"
+    },
+    {
+      "source": "document:ua-treatment/wiki/tcs-atlas.md",
+      "target": "document:ua-treatment/wiki/watchdog.md",
+      "type": "related",
+      "confidence": "high",
+      "evidence": "tcs-atlas.md Relationships links [[watchdog]]",
+      "direction": "forward"
+    },
+    {
+      "source": "document:ua-treatment/wiki/tcs-atlas.md",
+      "target": "document:ua-treatment/wiki/audits.md",
+      "type": "related",
+      "confidence": "high",
+      "evidence": "tcs-atlas.md Relationships links [[audits]]",
+      "direction": "forward"
+    },
+    {
+      "source": "document:ua-treatment/wiki/registry.md",
+      "target": "document:ua-treatment/wiki/tcs-atlas.md",
+      "type": "related",
+      "confidence": "high",
+      "evidence": "registry.md Relationships links [[tcs-atlas]]",
+      "direction": "forward"
+    },
+    {
+      "source": "document:ua-treatment/wiki/registry.md",
+      "target": "document:ua-treatment/wiki/verification.md",
+      "type": "related",
+      "confidence": "high",
+      "evidence": "registry.md Relationships links [[verification]]",
+      "direction": "forward"
+    },
+    {
+      "source": "document:ua-treatment/wiki/registry.md",
+      "target": "document:ua-treatment/wiki/watchdog.md",
+      "type": "related",
+      "confidence": "high",
+      "evidence": "registry.md Relationships links [[watchdog]]",
+      "direction": "forward"
+    },
+    {
+      "source": "document:ua-treatment/wiki/registry.md",
+      "target": "document:ua-treatment/wiki/audits.md",
+      "type": "related",
+      "confidence": "high",
+      "evidence": "registry.md Relationships links [[audits]]",
+      "direction": "forward"
+    },
+    {
+      "source": "document:ua-treatment/wiki/verification.md",
+      "target": "document:ua-treatment/wiki/tcs-atlas.md",
+      "type": "related",
+      "confidence": "high",
+      "evidence": "verification.md Relationships links [[tcs-atlas]]",
+      "direction": "forward"
+    },
+    {
+      "source": "document:ua-treatment/wiki/verification.md",
+      "target": "document:ua-treatment/wiki/registry.md",
+      "type": "related",
+      "confidence": "high",
+      "evidence": "verification.md Relationships links [[registry]]",
+      "direction": "forward"
+    },
+    {
+      "source": "document:ua-treatment/wiki/verification.md",
+      "target": "document:ua-treatment/wiki/watchdog.md",
+      "type": "related",
+      "confidence": "high",
+      "evidence": "verification.md Relationships links [[watchdog]]",
+      "direction": "forward"
+    },
+    {
+      "source": "document:ua-treatment/wiki/verification.md",
+      "target": "document:ua-treatment/wiki/audits.md",
+      "type": "related",
+      "confidence": "high",
+      "evidence": "verification.md Relationships links [[audits]]",
+      "direction": "forward"
+    },
+    {
+      "source": "document:ua-treatment/wiki/watchdog.md",
+      "target": "document:ua-treatment/wiki/tcs-atlas.md",
+      "type": "related",
+      "confidence": "high",
+      "evidence": "watchdog.md Relationships links [[tcs-atlas]]",
+      "direction": "forward"
+    },
+    {
+      "source": "document:ua-treatment/wiki/watchdog.md",
+      "target": "document:ua-treatment/wiki/registry.md",
+      "type": "related",
+      "confidence": "high",
+      "evidence": "watchdog.md Relationships links [[registry]]",
+      "direction": "forward"
+    },
+    {
+      "source": "document:ua-treatment/wiki/watchdog.md",
+      "target": "document:ua-treatment/wiki/verification.md",
+      "type": "related",
+      "confidence": "high",
+      "evidence": "watchdog.md Relationships links [[verification]]",
+      "direction": "forward"
+    },
+    {
+      "source": "document:ua-treatment/wiki/watchdog.md",
+      "target": "document:ua-treatment/wiki/audits.md",
+      "type": "related",
+      "confidence": "high",
+      "evidence": "watchdog.md Relationships links [[audits]]",
+      "direction": "forward"
+    },
+    {
+      "source": "document:ua-treatment/wiki/audits.md",
+      "target": "document:ua-treatment/wiki/tcs-atlas.md",
+      "type": "related",
+      "confidence": "high",
+      "evidence": "audits.md Relationships links [[tcs-atlas]]",
+      "direction": "forward"
+    },
+    {
+      "source": "document:ua-treatment/wiki/audits.md",
+      "target": "document:ua-treatment/wiki/registry.md",
+      "type": "related",
+      "confidence": "high",
+      "evidence": "audits.md Relationships links [[registry]]",
+      "direction": "forward"
+    },
+    {
+      "source": "document:ua-treatment/wiki/audits.md",
+      "target": "document:ua-treatment/wiki/verification.md",
+      "type": "related",
+      "confidence": "high",
+      "evidence": "audits.md Relationships links [[verification]]",
+      "direction": "forward"
+    },
+    {
+      "source": "document:ua-treatment/wiki/audits.md",
+      "target": "document:ua-treatment/wiki/watchdog.md",
+      "type": "related",
+      "confidence": "high",
+      "evidence": "audits.md Relationships links [[watchdog]]",
+      "direction": "forward"
+    },
+    {
+      "source": "document:ua-treatment/wiki/SCHEMA.md",
+      "target": "document:ua-treatment/wiki/index.md",
+      "type": "related",
+      "confidence": "medium",
+      "evidence": "SCHEMA.md Conventions mandates every new page be added to index.md",
+      "direction": "forward"
+    },
+    {
+      "source": "document:audits/BD5_CROSS_CORPUS_AUDIT_20260511T195932Z.md",
+      "target": "document:audits/BD5_CROSS_CORPUS_AUDIT_20260511T195752Z.md",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    }
+  ],
+  "layers": [
+    {
+      "id": "layer:canon",
+      "name": "CANON / Governance",
+      "position": 0,
+      "spine_role": "governance",
+      "description": "Canonical authority over the Atlas Tokens corpus. Defines what is real (the published registry manifest) and how the wiki that documents it must be authored (schema, frontmatter, taxonomy). Everything downstream cites these.",
+      "color": "#6B21A8",
+      "node_ids": [
+        "document:ATLAS_TOKEN_REGISTRY.md",
+        "document:ua-treatment/wiki/SCHEMA.md"
+      ]
+    },
+    {
+      "id": "layer:sop",
+      "name": "SOP — Standard Operating Procedure",
+      "position": 1,
+      "spine_role": "SOP",
+      "description": "Umbrella operating doctrine for TCS Atlas: the top-level entity page that names the system (registry + verification + watchdog + audits) and the wiki index that is the mandatory first read for any query. Establishes the procedural frame the rest of the spine works inside.",
+      "color": "#1D4ED8",
+      "node_ids": [
+        "document:ua-treatment/wiki/tcs-atlas.md",
+        "document:ua-treatment/wiki/index.md"
+      ]
+    },
+    {
+      "id": "layer:swk",
+      "name": "SWK — Standard Work Kit",
+      "position": 2,
+      "spine_role": "SWK",
+      "description": "The canonical assets standard work consumes: the resolver's registry (26,748 tokens / 53,317 aliases) and its inverted cross-reference index, plus the wiki entity page that documents the registry. This is the tool kit every WI, checklist, and audit resolves against.",
+      "color": "#0E7490",
+      "node_ids": [
+        "config:atlas_token_registry.json",
+        "config:atlas_token_xref.json",
+        "document:ua-treatment/wiki/registry.md"
+      ]
+    },
+    {
+      "id": "layer:wi",
+      "name": "WI — Work Instruction",
+      "position": 3,
+      "spine_role": "WI",
+      "description": "Procedural verification work performed against the SWK: the resolver smoke test that proves the kit resolves real tokens, the dated verification report that records the result, and the wiki entity page that documents the verification work itself.",
+      "color": "#047857",
+      "node_ids": [
+        "document:ua-treatment/wiki/verification.md",
+        "config:atlas_token_resolver_smoke_2026-05-11.json",
+        "config:atlas_token_verification_2026-05-11.json"
+      ]
+    },
+    {
+      "id": "layer:checklist",
+      "name": "Checklist — Watchdog",
+      "position": 4,
+      "spine_role": "Checklist",
+      "description": "The repeating checklist run by the verification watchdog. Each snapshot is one tick of the periodic check (registry pointer + resolutions map + scan counters) — the same checklist re-applied on a schedule. The wiki watchdog page documents the checklist itself.",
+      "color": "#B45309",
+      "node_ids": [
+        "document:ua-treatment/wiki/watchdog.md",
+        "config:atlas_token_verification_watchdog_2026-05-11T0844Z.json",
+        "config:atlas_token_verification_watchdog_2026-05-11T0949Z.json",
+        "config:atlas_token_verification_watchdog_20260511T124822Z.json",
+        "config:atlas_token_verification_watchdog_20260511T132135Z.json",
+        "config:atlas_token_verification_watchdog_20260511T142248Z.json",
+        "config:atlas_token_verification_watchdog_20260511T190206Z.json"
+      ]
+    },
+    {
+      "id": "layer:action_plan",
+      "name": "Action Plan — Audits & Remediation",
+      "position": 5,
+      "spine_role": "Action Plan",
+      "description": "Catch-and-fix actions triggered when the watchdog checklist surfaces a gap. The first BD5 cross-corpus audit flagged TCS/_COMMAND_DEPOT/CANON as missing_graph; the second — same tick — records the remediation that finalized CANON as the fifth M6 corpus. The wiki audits page documents the action loop.",
+      "color": "#B91C1C",
+      "node_ids": [
+        "document:ua-treatment/wiki/audits.md",
+        "document:audits/BD5_CROSS_CORPUS_AUDIT_20260511T195752Z.md",
+        "document:audits/BD5_CROSS_CORPUS_AUDIT_20260511T195932Z.md"
+      ]
+    },
+    {
+      "id": "layer:lms",
+      "name": "LMS — Learning Loop",
+      "position": 6,
+      "spine_role": "LMS",
+      "description": "Codified learning surface. The second BD5 audit supersedes the first — a captured immune-system lesson preserved as institutional memory. The wiki SCHEMA enforces that future learnings (new pages) must be added to the index, closing the loop back to CANON.",
+      "color": "#0F766E",
+      "node_ids": [],
+      "notes": "No nodes in the current corpus exist exclusively at the LMS layer; learning is realized through the supersession relationship between the two BD5 audits (Action Plan layer) and the SCHEMA convention (CANON layer) that mandates index registration of every new page. When formal LMS artifacts (course modules, learning records) are added to atlas_tokens, they will register here."
+    }
+  ],
+  "tour": [
+    {
+      "id": "step:01-intro-canon",
+      "order": 1,
+      "title": "Intro — CANON / Governance",
+      "spine_role": "CANON",
+      "layer_id": "layer:canon",
+      "narrative": "Start at the top of the stack. ATLAS_TOKEN_REGISTRY.md is the human-readable manifest that names the Atlas Tokens system, declares the resolver contract, and lists the upstream source registries. SCHEMA.md is the wiki authoring law — frontmatter, taxonomy, page thresholds — that every entity page below must obey. These two are the CANON: nothing downstream is legal unless it cites and conforms to them.",
+      "focus_node_ids": [
+        "document:ATLAS_TOKEN_REGISTRY.md",
+        "document:ua-treatment/wiki/SCHEMA.md"
+      ],
+      "key_relationships": [
         {
-          "nodeIds": ["node-registry-md"],
-          "title": "Registry Governance Document",
-          "narration": "Start here. ATLAS_TOKEN_REGISTRY.md is the human-readable governance entry point. It defines the resolver contract: use verify_atlas_tokens.py --resolve <TOKEN> to resolve any cited token. The registry holds 26,748 canonical tokens with 53,317 aliases drawn from 5 upstream source registries. There is exactly 1 alias collision (A1-B1). The document lists counts by kind, with graphify.node (26,050) dominating the namespace."
+          "from": "document:ATLAS_TOKEN_REGISTRY.md",
+          "to": "config:atlas_token_registry.json",
+          "why": "CANON manifest declares the canonical registry asset that the SWK layer holds."
         },
         {
-          "nodeIds": ["node-registry-json"],
-          "title": "The Master Registry",
-          "narration": "atlas_token_registry.json is the 675K-line canonical data store. Schema: SSU.AtlasTokens.UnifiedRegistry.v1. It maps every token to its aliases, artifact hashes, canonical artifacts on disk, kind, lifecycle status, metadata, and source registry. The 10 token kinds span the full construction domain: atlas.node (organizational entities like AI agents), atomics.bucket/task (work breakdown structures), graphify.node/service (knowledge graph substrate), legacy tokens (cited references and xref rows), and pulse.pilot_token (pilot governance tokens)."
-        },
-        {
-          "nodeIds": ["node-xref-json"],
-          "title": "Cross-Reference Index",
-          "narration": "atlas_token_xref.json (258K lines) is the bidirectional lookup companion. Schema: SSU.AtlasTokens.CrossReference.v1. It provides 4 index tables: alias_to_canonical, canonical_to_aliases, canonical_to_artifacts, and canonical_to_kind. This enables O(1) resolution in either direction without scanning the full registry."
-        },
-        {
-          "nodeIds": ["node-verification", "node-smoke-test"],
-          "title": "Verification Layer",
-          "narration": "Two verification files form the initial trust layer. The full verification scan scanned 247 files, found 1,921 token citations mapping to 495 unique tokens, and confirmed 100% resolution with 0 unresolved and 0 missing artifacts. The smoke test tests 4 representative tokens across different kinds and all resolve correctly with artifacts on disk."
-        },
-        {
-          "nodeIds": ["node-watchdog-0844", "node-watchdog-0949", "node-watchdog-1248", "node-watchdog-1321", "node-watchdog-1422", "node-watchdog-1902"],
-          "title": "Watchdog Monitoring Chain",
-          "narration": "Six watchdog snapshots run throughout the day (08:44, 09:49, 12:48, 13:21, 14:22, 19:02 UTC) form a temporal chain confirming registry stability. Each repeats the full corpus scan and produces identical results: 247 files, 1,921 citations, 495 tokens, 0 unresolved. This continuous monitoring is the immune system that would catch any drift."
-        },
-        {
-          "nodeIds": ["node-bd5-audit-1", "node-bd5-audit-2"],
-          "title": "BD5 Cross-Corpus Audits",
-          "narration": "Two BD5 audit reports examine the broader graphify substrate. The first audit found 5 healthy corpora but caught TCS/_COMMAND_DEPOT/CANON with missing_graph status. Two minutes later, the second audit shows the remediation: CANON was finalized same-tick with 19 nodes/34 edges. This catch-and-fix cycle demonstrates the substrate immune system. Token coverage is measured as literal string matches (0.0-0.12%), flagging the need to evolve to canonical token-xref joins."
+          "from": "document:ua-treatment/wiki/SCHEMA.md",
+          "to": "document:ua-treatment/wiki/index.md",
+          "why": "SCHEMA's conventions section mandates that every new wiki page be registered in the SOP index."
         }
       ]
     },
     {
-      "id": "tour-governed-work-spine",
-      "name": "Governed Work Spine Tour",
-      "description": "Trace how the Atlas Token Registry governs the TCS construction work spine: SOP to SWK to WI to Checklist to Action Plan to LMS, with each layer identified and controlled by token kinds.",
-      "stops": [
+      "id": "step:02-sop",
+      "order": 2,
+      "title": "SOP — Standard Operating Procedure",
+      "spine_role": "SOP",
+      "layer_id": "layer:sop",
+      "narrative": "tcs-atlas.md is the SOP: the umbrella entity that names the four subsystems (registry, verification, watchdog, audits) and the order in which an operator engages them. index.md is the procedural entry point — the mandatory first read for any query. Together they answer 'what is this system and how do I approach it' before any actual work begins.",
+      "focus_node_ids": [
+        "document:ua-treatment/wiki/tcs-atlas.md",
+        "document:ua-treatment/wiki/index.md"
+      ],
+      "key_relationships": [
         {
-          "nodeIds": ["node-registry-json"],
-          "title": "Token Kinds Map to the Work Spine",
-          "narration": "The registry's 10 token kinds directly map to layers of the governed work spine. atomics.bucket (43 tokens) represents the high-level work breakdown at the SOP/SWK level where project phases like Gate A1 (contract execution) and Gate A2 (job setup) are defined. atomics.task (304 tokens) represents the WI/Checklist level with individual work instructions within each bucket. pulse.pilot_token (10 tokens) maps to action plans and LMS governance. atlas.node (101 tokens) maps to the organizational layer of AI agents, systems, and infrastructure."
+          "from": "document:ua-treatment/wiki/index.md",
+          "to": "document:ua-treatment/wiki/tcs-atlas.md",
+          "why": "Index lists tcs-atlas as the lead entity — the SOP entry path."
         },
         {
-          "nodeIds": ["node-registry-md"],
-          "title": "The Resolver Contract Binds the Spine",
-          "narration": "The resolver contract states: a citation is valid only when it maps to exactly one canonical token and at least one canonical artifact exists on disk. This means every reference to a work instruction, checklist item, or action plan in any TCS document must resolve through the registry. The 5 source registries feed in: EMPIRE_ATLAS_EXTENDED.json (organizational graph), ATOMICS_REGISTRY.json (work breakdown), _navigator_data.json (navigation metadata), graphify_services.md (MCP services), and DC-REG-TOKEN-XREF-v1.0 (legacy cross-references)."
+          "from": "document:ua-treatment/wiki/tcs-atlas.md",
+          "to": "document:ua-treatment/wiki/registry.md",
+          "why": "SOP delegates downward to the SWK registry entity."
+        }
+      ]
+    },
+    {
+      "id": "step:03-swk",
+      "order": 3,
+      "title": "SWK — Standard Work Kit",
+      "spine_role": "SWK",
+      "layer_id": "layer:swk",
+      "narrative": "The kit. atlas_token_registry.json holds 26,748 tokens and 53,317 aliases across atlas/atomics/graphify/legacy/pulse kinds — the canonical asset every downstream layer resolves against. atlas_token_xref.json is its companion: five lookup maps for O(1) resolution. registry.md is the wiki page that documents the kit. If a WI, checklist, or action plan can't be traced back to a token in this kit, it isn't standard work.",
+      "focus_node_ids": [
+        "config:atlas_token_registry.json",
+        "config:atlas_token_xref.json",
+        "document:ua-treatment/wiki/registry.md"
+      ],
+      "key_relationships": [
+        {
+          "from": "config:atlas_token_xref.json",
+          "to": "config:atlas_token_registry.json",
+          "why": "Xref index points into the canonical registry — the kit is the registry plus its lookup index."
         },
         {
-          "nodeIds": ["node-xref-json"],
-          "title": "Cross-Reference Enables Spine Navigation",
-          "narration": "The xref file makes the work spine navigable. Given any alias like A1-B2 (Bonding and Insurance Validation), the alias_to_canonical table resolves it to tcs.atomic.a1.bonding-and-insurance-validation. The canonical_to_artifacts table then locates the physical work instruction on disk. The canonical_to_kind table confirms it is an atomics.bucket. This three-step resolution is how any document can reference any point in the governed work spine."
+          "from": "document:ua-treatment/wiki/registry.md",
+          "to": "document:ua-treatment/wiki/verification.md",
+          "why": "SWK entity points forward to the WI that exercises it."
+        }
+      ]
+    },
+    {
+      "id": "step:04-wi",
+      "order": 4,
+      "title": "WI — Work Instruction",
+      "spine_role": "WI",
+      "layer_id": "layer:wi",
+      "narrative": "The work itself. atlas_token_resolver_smoke_2026-05-11.json is the smoke test — a small set of canonical resolutions (legacy cited tokens, pulse pilot tokens, graphify services) executed against the SWK kit to prove the resolver behaves. atlas_token_verification_2026-05-11.json is the full verification report for the same day: scan counts, resolved tokens, unresolved/missing-artifact lists. verification.md documents the WI procedure. This is where the kit gets exercised under instruction.",
+      "focus_node_ids": [
+        "document:ua-treatment/wiki/verification.md",
+        "config:atlas_token_resolver_smoke_2026-05-11.json",
+        "config:atlas_token_verification_2026-05-11.json"
+      ],
+      "key_relationships": [
+        {
+          "from": "config:atlas_token_resolver_smoke_2026-05-11.json",
+          "to": "config:atlas_token_registry.json",
+          "why": "WI executes against the SWK registry — the work instruction can only run because the kit exists."
         },
         {
-          "nodeIds": ["node-registry-json"],
-          "title": "Graphify Layer: 26,050 Knowledge Graph Nodes",
-          "narration": "The graphify.node kind (26,050 tokens) and graphify.service kind (26 services) represent the knowledge graph substrate underlying the entire work spine. Each graphify node is a machine-extracted concept from the corpus linked to its source artifacts. The 26 graphify services are MCP endpoints that built and maintain these knowledge graphs. This layer provides the semantic understanding connecting SOPs to WIs, checklists to buckets, and action plans to LMS tracking."
+          "from": "config:atlas_token_verification_2026-05-11.json",
+          "to": "config:atlas_token_verification_watchdog_2026-05-11T0844Z.json",
+          "why": "The first WI run hands off to the watchdog checklist that will repeat the check periodically."
+        }
+      ]
+    },
+    {
+      "id": "step:05-checklist",
+      "order": 5,
+      "title": "Checklist — Watchdog Cadence",
+      "spine_role": "Checklist",
+      "layer_id": "layer:checklist",
+      "narrative": "The WI, repeated. Six watchdog snapshots chained head-to-tail (08:44 → 09:49 → 12:48 → 13:21 → 14:22 → 19:02 Z on 2026-05-11) each capture one tick of the periodic check: registry pointer, resolutions map, scan counters. The 13:21 snapshot records 1,921 citations across 247 files with 495 resolved unique tokens and zero unresolved — the checklist passing. watchdog.md documents the cadence. This is the spine's heartbeat.",
+      "focus_node_ids": [
+        "document:ua-treatment/wiki/watchdog.md",
+        "config:atlas_token_verification_watchdog_2026-05-11T0844Z.json",
+        "config:atlas_token_verification_watchdog_20260511T132135Z.json",
+        "config:atlas_token_verification_watchdog_20260511T190206Z.json"
+      ],
+      "key_relationships": [
+        {
+          "from": "config:atlas_token_verification_watchdog_2026-05-11T0844Z.json",
+          "to": "config:atlas_token_verification_watchdog_2026-05-11T0949Z.json",
+          "why": "Watchdog snapshots form a temporal chain — each tick of the checklist references its predecessor."
         },
         {
-          "nodeIds": ["node-verification", "node-watchdog-0844", "node-watchdog-1902"],
-          "title": "Continuous Verification of the Spine",
-          "narration": "The verification and watchdog layers ensure the work spine never breaks. Every citation in 247 TCS files is continuously validated. The 495 unique tokens actually cited in the corpus represent the active surface of the work spine. The watchdog chain confirms these stay resolved throughout the day. If a work instruction were removed or a token alias changed, the next watchdog run would catch it."
+          "from": "config:atlas_token_verification_watchdog_20260511T190206Z.json",
+          "to": "config:atlas_token_registry.json",
+          "why": "Every watchdog tick resolves back to the SWK registry — the checklist never drifts from the canonical kit."
+        }
+      ]
+    },
+    {
+      "id": "step:06-action-plan",
+      "order": 6,
+      "title": "Action Plan — Catch and Fix",
+      "spine_role": "Action Plan",
+      "layer_id": "layer:action_plan",
+      "narrative": "When the checklist surfaces a gap, the action plan fires. BD5_CROSS_CORPUS_AUDIT_20260511T195752Z.md (19:57:52 Z) attests M6 graphify substrate across five corpora — and flags TCS/_COMMAND_DEPOT/CANON as missing_graph. BD5_CROSS_CORPUS_AUDIT_20260511T195932Z.md (19:59:32 Z, one minute later) records the same-tick remediation: CANON now finalized as the fifth formal M6 corpus (19 nodes / 34 edges / 4 confidence). The action plan was 'add CANON to the substrate' — executed inside the same tick. audits.md documents the action loop.",
+      "focus_node_ids": [
+        "document:ua-treatment/wiki/audits.md",
+        "document:audits/BD5_CROSS_CORPUS_AUDIT_20260511T195752Z.md",
+        "document:audits/BD5_CROSS_CORPUS_AUDIT_20260511T195932Z.md"
+      ],
+      "key_relationships": [
+        {
+          "from": "document:audits/BD5_CROSS_CORPUS_AUDIT_20260511T195932Z.md",
+          "to": "document:audits/BD5_CROSS_CORPUS_AUDIT_20260511T195752Z.md",
+          "why": "Second audit supersedes first — the action plan's outcome record points back at the gap it closed."
+        }
+      ]
+    },
+    {
+      "id": "step:07-lms-and-loop",
+      "order": 7,
+      "title": "LMS — Learning Loop & Cross-Cuts",
+      "spine_role": "LMS",
+      "layer_id": "layer:lms",
+      "narrative": "Close the loop. The supersession between the two BD5 audits is itself the lesson: a captured immune-system catch-and-fix preserved as institutional memory. SCHEMA.md (back in CANON) enforces the LMS contract by mandating that every new wiki page register in index.md — every lesson learned becomes a new entity, becomes a new SOP entry, becomes new SWK to verify. The spine is a cycle, not a one-way pipe. CANON governs, SOP routes, SWK supplies, WI exercises, Checklist repeats, Action Plan remediates, LMS feeds back into CANON.",
+      "focus_node_ids": [
+        "document:ua-treatment/wiki/SCHEMA.md",
+        "document:ua-treatment/wiki/index.md",
+        "document:audits/BD5_CROSS_CORPUS_AUDIT_20260511T195932Z.md",
+        "document:ATLAS_TOKEN_REGISTRY.md"
+      ],
+      "key_relationships": [
+        {
+          "from": "document:ua-treatment/wiki/SCHEMA.md",
+          "to": "document:ua-treatment/wiki/index.md",
+          "why": "LMS contract: every learning artifact must be registered in the SOP index — loop closes back into governance."
         },
         {
-          "nodeIds": ["node-bd5-audit-1", "node-bd5-audit-2"],
-          "title": "Cross-Corpus Integrity of the Spine",
-          "narration": "BD5 audits validate the work spine at the corpus level. They verify the graphify substrate (knowledge graphs built from each corpus section) is complete and consistent. The audit caught a missing graph for CANON and triggered immediate remediation. The token coverage metric (0.0-0.12% literal matches) shows the next evolution is wiring the graphify substrate directly into token-xref resolution, making knowledge graph and token registry fully interoperable."
+          "from": "document:ua-treatment/wiki/audits.md",
+          "to": "document:ua-treatment/wiki/tcs-atlas.md",
+          "why": "Action Plan entity links back to SOP umbrella — cross-cut showing the spine is a closed cycle, not a one-way pipe."
         }
       ]
     }
-  ],
-  "layers": [
-    { "id": "token-registry-governance", "name": "Token Registry Governance", "color": "#2563EB", "nodeCount": 1 },
-    { "id": "registry-core", "name": "Registry Core", "color": "#7C3AED", "nodeCount": 2 },
-    { "id": "verification-layer", "name": "Verification Layer", "color": "#059669", "nodeCount": 8 },
-    { "id": "audit-layer", "name": "Audit Layer (BD5)", "color": "#DC2626", "nodeCount": 2 }
-  ],
-  "stats": {
-    "totalNodes": 13,
-    "totalEdges": 25,
-    "totalLayers": 4,
-    "totalTours": 2,
-    "coverage": 1.0,
-    "qualityScore": 9
-  }
+  ]
 }

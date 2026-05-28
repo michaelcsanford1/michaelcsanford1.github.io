@@ -1,8 +1,6 @@
 {
-  "project": "UK CAER Construction Workspace",
-  "generated_at": "2026-05-28T16:29:00Z",
-  "demo_mode": false,
-  "pipeline_version": "2.0.0",
-  "phases_completed": 8,
-  "stats": { "nodes": 52, "edges": 59, "layers": 9, "tours": 2, "coverage": 1.0, "quality_score": 9 }
+  "lastAnalyzedAt": "2026-05-28T16:23:58.970Z",
+  "gitCommitHash": "cea734709ebe3273070d772c0fab6a1f17e47501",
+  "version": "1.0.0",
+  "analyzedFiles": 381
 }

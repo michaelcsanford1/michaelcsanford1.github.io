@@ -1,135 +1,1604 @@
 {
-  "project": {
-    "name": "TCS",
-    "languages": [],
-    "frameworks": [],
-    "description": "TCS domain graph",
-    "analyzedAt": "2026-05-27T12:30:00Z",
-    "gitCommitHash": "public-dashboard"
-  },
-  "type": "domain-flow",
-  "version": "2.0.0",
-  "generated_at": "2026-05-27T12:30:00Z",
-  "generated_by": "Hermes — construction business domain flow (NOT file-type buckets)",
+  "version": "1.0.0",
+  "type": "domain-graph",
+  "project": "tcs-construction",
   "nodes": [
     {
-      "id": "tcs-domain",
-      "type": "domain",
-      "label": "TCS Business Domains",
-      "description": "Construction business domain flow for TCS",
-      "name": "TCS Business Domains",
-      "filePath": "tcs-domain",
-      "summary": "Construction business domain flow for TCS",
+      "id": "domain:domain-governance-kernel",
+      "type": "concept",
+      "name": "Governance Kernel (Devere TCS Governed-Work Core)",
+      "summary": "The contract layer. The plugin manifest plus the README catalog that declares all 32 Work Instructions, their IDs, and their ownership. Every downstream skill exists because the kernel named it. Source authority for the construction route map.",
       "tags": [
-        "domain"
-      ],
-      "complexity": "simple"
+        "governance",
+        "kernel",
+        "manifest",
+        "contract",
+        "source-authority"
+      ]
     },
     {
-      "id": "construction-skills",
-      "type": "domain",
-      "label": "Construction Skills",
-      "description": "Domain-specific skills for construction project management",
-      "name": "Construction Skills",
-      "filePath": "construction-skills",
-      "summary": "Domain-specific skills for construction project management",
+      "id": "domain:domain-construction-pm",
+      "type": "concept",
+      "name": "Construction PM",
+      "summary": "Project Manager surface. Owns scope, schedule logic, RFI processing, and cross-trade coordination on the CSI-division trade skills. Pulls controls from the kernel, dispatches WIs to trades, and consumes ops-agent receipts.",
       "tags": [
-        "domain"
-      ],
-      "complexity": "simple"
+        "pm",
+        "csi-divisions",
+        "trade-skills",
+        "rfi",
+        "coordination"
+      ]
     },
     {
-      "id": "plugin-framework",
-      "type": "domain",
-      "label": "Plugin Framework",
-      "description": "TCS plugin architecture, skill loading, integration points",
-      "name": "Plugin Framework",
-      "filePath": "plugin-framework",
-      "summary": "TCS plugin architecture, skill loading, integration points",
+      "id": "domain:domain-construction-super",
+      "type": "concept",
+      "name": "Construction Super",
+      "summary": "Field Superintendent surface. Owns daily-of-record execution: morning huddle, daily log, field monitoring, housekeeping, photo doc. Where the PM's plan meets the dirt.",
       "tags": [
-        "domain"
-      ],
-      "complexity": "simple"
+        "super",
+        "field-ops",
+        "daily-log",
+        "huddle",
+        "evidence"
+      ]
     },
     {
-      "id": "project-control",
-      "type": "domain",
-      "label": "Project Control",
-      "description": "Gate management, evidence tracking, deliverable coordination",
-      "name": "Project Control",
-      "filePath": "project-control",
-      "summary": "Gate management, evidence tracking, deliverable coordination",
+      "id": "domain:domain-construction-safety",
+      "type": "concept",
+      "name": "Construction Safety",
+      "summary": "Safety surface. Owns the gates that must close before trade work can fire: huddle, PPE/equipment, post-rain SWPPP. Hard prerequisite enforcement.",
       "tags": [
-        "domain"
-      ],
-      "complexity": "simple"
+        "safety",
+        "ppe",
+        "swppp",
+        "environmental",
+        "gate"
+      ]
+    },
+    {
+      "id": "domain:domain-construction-quality",
+      "type": "concept",
+      "name": "Construction Quality",
+      "summary": "Quality Control surface. Hold-point inspections, QC audits, AHJ inspections, compliance audits and notices. The control loop that pairs with each trade skill.",
+      "tags": [
+        "quality",
+        "hold-point",
+        "qc-audit",
+        "ahj",
+        "compliance"
+      ]
+    },
+    {
+      "id": "domain:domain-construction-cost",
+      "type": "concept",
+      "name": "Construction Cost",
+      "summary": "Cost surface. Material receiving, Go Codes equipment scans, and RFI processing connect spend and logistics to the schedule and the closeout package.",
+      "tags": [
+        "cost",
+        "logistics",
+        "material",
+        "go-codes",
+        "rfi"
+      ]
+    },
+    {
+      "id": "domain:domain-construction-estimating",
+      "type": "concept",
+      "name": "Construction Estimating",
+      "summary": "Estimating surface. Reads the CSI-division trade skills (d03, d05, d22, d23, d26) to scope and price work; consumes RFI outputs to true up estimates against field reality.",
+      "tags": [
+        "estimating",
+        "csi-divisions",
+        "scope",
+        "pricing",
+        "rfi-impact"
+      ]
+    },
+    {
+      "id": "domain:domain-construction-scheduling",
+      "type": "concept",
+      "name": "Construction Scheduling",
+      "summary": "Scheduling surface. The 3-Week Look Ahead is the forward-looking control; the Daily Log is the backward-looking record; Field Monitoring keeps the variance honest.",
+      "tags": [
+        "scheduling",
+        "3wla",
+        "daily-log",
+        "variance",
+        "field-monitoring"
+      ]
+    },
+    {
+      "id": "domain:domain-construction-closeout",
+      "type": "concept",
+      "name": "Construction Closeout",
+      "summary": "Closeout surface. Punchlist Closeout drives defects to zero; As-Built Updates capture field deviations into the record set so the owner inherits a true archive.",
+      "tags": [
+        "closeout",
+        "punchlist",
+        "as-built",
+        "turnover"
+      ]
+    },
+    {
+      "id": "domain:domain-ops-agents",
+      "type": "concept",
+      "name": "Operational Agents (ops-agents)",
+      "summary": "The operational-agents tier referenced by the construction-ops-agents skill family: live-action gate, source-query receipt, contract authority. These agents sit alongside the construction domains and enforce or record the governed controls in real time.",
+      "tags": [
+        "ops-agents",
+        "live-action-gate",
+        "source-query-receipt",
+        "contract-authority",
+        "enforcement"
+      ]
+    },
+    {
+      "id": "flow:flow-kernel-declares-wi-catalog",
+      "type": "concept",
+      "name": "Kernel declares the 32 WI catalog",
+      "summary": "No summary",
+      "tags": [
+        "flow"
+      ]
+    },
+    {
+      "id": "step:flow-kernel-declares-wi-catalog:0",
+      "type": "concept",
+      "name": "Step 0",
+      "summary": "No summary",
+      "tags": [
+        "step"
+      ]
+    },
+    {
+      "id": "step:flow-kernel-declares-wi-catalog:1",
+      "type": "concept",
+      "name": "Step 1",
+      "summary": "No summary",
+      "tags": [
+        "step"
+      ]
+    },
+    {
+      "id": "step:flow-kernel-declares-wi-catalog:2",
+      "type": "concept",
+      "name": "Step 2",
+      "summary": "No summary",
+      "tags": [
+        "step"
+      ]
+    },
+    {
+      "id": "flow:flow-pm-runs-trade-skill",
+      "type": "concept",
+      "name": "PM dispatches a CSI-division trade skill",
+      "summary": "No summary",
+      "tags": [
+        "flow"
+      ]
+    },
+    {
+      "id": "step:flow-pm-runs-trade-skill:0",
+      "type": "concept",
+      "name": "Step 0",
+      "summary": "No summary",
+      "tags": [
+        "step"
+      ]
+    },
+    {
+      "id": "step:flow-pm-runs-trade-skill:1",
+      "type": "concept",
+      "name": "Step 1",
+      "summary": "No summary",
+      "tags": [
+        "step"
+      ]
+    },
+    {
+      "id": "step:flow-pm-runs-trade-skill:2",
+      "type": "concept",
+      "name": "Step 2",
+      "summary": "No summary",
+      "tags": [
+        "step"
+      ]
+    },
+    {
+      "id": "step:flow-pm-runs-trade-skill:3",
+      "type": "concept",
+      "name": "Step 3",
+      "summary": "No summary",
+      "tags": [
+        "step"
+      ]
+    },
+    {
+      "id": "flow:flow-super-daily-loop",
+      "type": "concept",
+      "name": "Super daily heartbeat (Huddle -> Log -> Photo)",
+      "summary": "No summary",
+      "tags": [
+        "flow"
+      ]
+    },
+    {
+      "id": "step:flow-super-daily-loop:0",
+      "type": "concept",
+      "name": "Step 0",
+      "summary": "No summary",
+      "tags": [
+        "step"
+      ]
+    },
+    {
+      "id": "step:flow-super-daily-loop:1",
+      "type": "concept",
+      "name": "Step 1",
+      "summary": "No summary",
+      "tags": [
+        "step"
+      ]
+    },
+    {
+      "id": "step:flow-super-daily-loop:2",
+      "type": "concept",
+      "name": "Step 2",
+      "summary": "No summary",
+      "tags": [
+        "step"
+      ]
+    },
+    {
+      "id": "step:flow-super-daily-loop:3",
+      "type": "concept",
+      "name": "Step 3",
+      "summary": "No summary",
+      "tags": [
+        "step"
+      ]
+    },
+    {
+      "id": "flow:flow-safety-gate-before-trade",
+      "type": "concept",
+      "name": "Safety gate stack before trade work",
+      "summary": "No summary",
+      "tags": [
+        "flow"
+      ]
+    },
+    {
+      "id": "step:flow-safety-gate-before-trade:0",
+      "type": "concept",
+      "name": "Step 0",
+      "summary": "No summary",
+      "tags": [
+        "step"
+      ]
+    },
+    {
+      "id": "step:flow-safety-gate-before-trade:1",
+      "type": "concept",
+      "name": "Step 1",
+      "summary": "No summary",
+      "tags": [
+        "step"
+      ]
+    },
+    {
+      "id": "step:flow-safety-gate-before-trade:2",
+      "type": "concept",
+      "name": "Step 2",
+      "summary": "No summary",
+      "tags": [
+        "step"
+      ]
+    },
+    {
+      "id": "step:flow-safety-gate-before-trade:3",
+      "type": "concept",
+      "name": "Step 3",
+      "summary": "No summary",
+      "tags": [
+        "step"
+      ]
+    },
+    {
+      "id": "flow:flow-quality-hold-point",
+      "type": "concept",
+      "name": "Quality hold-point gate inside a trade WI",
+      "summary": "No summary",
+      "tags": [
+        "flow"
+      ]
+    },
+    {
+      "id": "step:flow-quality-hold-point:0",
+      "type": "concept",
+      "name": "Step 0",
+      "summary": "No summary",
+      "tags": [
+        "step"
+      ]
+    },
+    {
+      "id": "step:flow-quality-hold-point:1",
+      "type": "concept",
+      "name": "Step 1",
+      "summary": "No summary",
+      "tags": [
+        "step"
+      ]
+    },
+    {
+      "id": "step:flow-quality-hold-point:2",
+      "type": "concept",
+      "name": "Step 2",
+      "summary": "No summary",
+      "tags": [
+        "step"
+      ]
+    },
+    {
+      "id": "step:flow-quality-hold-point:3",
+      "type": "concept",
+      "name": "Step 3",
+      "summary": "No summary",
+      "tags": [
+        "step"
+      ]
+    },
+    {
+      "id": "flow:flow-cost-material-to-3wm",
+      "type": "concept",
+      "name": "Cost: Material Receiving feeds the 3-Way Match gate",
+      "summary": "No summary",
+      "tags": [
+        "flow"
+      ]
+    },
+    {
+      "id": "step:flow-cost-material-to-3wm:0",
+      "type": "concept",
+      "name": "Step 0",
+      "summary": "No summary",
+      "tags": [
+        "step"
+      ]
+    },
+    {
+      "id": "step:flow-cost-material-to-3wm:1",
+      "type": "concept",
+      "name": "Step 1",
+      "summary": "No summary",
+      "tags": [
+        "step"
+      ]
+    },
+    {
+      "id": "step:flow-cost-material-to-3wm:2",
+      "type": "concept",
+      "name": "Step 2",
+      "summary": "No summary",
+      "tags": [
+        "step"
+      ]
+    },
+    {
+      "id": "flow:flow-estimating-uses-trade-catalog",
+      "type": "concept",
+      "name": "Estimating builds budget from the trade-skill catalog",
+      "summary": "No summary",
+      "tags": [
+        "flow"
+      ]
+    },
+    {
+      "id": "step:flow-estimating-uses-trade-catalog:0",
+      "type": "concept",
+      "name": "Step 0",
+      "summary": "No summary",
+      "tags": [
+        "step"
+      ]
+    },
+    {
+      "id": "step:flow-estimating-uses-trade-catalog:1",
+      "type": "concept",
+      "name": "Step 1",
+      "summary": "No summary",
+      "tags": [
+        "step"
+      ]
+    },
+    {
+      "id": "step:flow-estimating-uses-trade-catalog:2",
+      "type": "concept",
+      "name": "Step 2",
+      "summary": "No summary",
+      "tags": [
+        "step"
+      ]
+    },
+    {
+      "id": "step:flow-estimating-uses-trade-catalog:3",
+      "type": "concept",
+      "name": "Step 3",
+      "summary": "No summary",
+      "tags": [
+        "step"
+      ]
+    },
+    {
+      "id": "flow:flow-scheduling-3wla-vs-daily-log",
+      "type": "concept",
+      "name": "Scheduling: 3WLA forward vs Daily Log backward",
+      "summary": "No summary",
+      "tags": [
+        "flow"
+      ]
+    },
+    {
+      "id": "step:flow-scheduling-3wla-vs-daily-log:0",
+      "type": "concept",
+      "name": "Step 0",
+      "summary": "No summary",
+      "tags": [
+        "step"
+      ]
+    },
+    {
+      "id": "step:flow-scheduling-3wla-vs-daily-log:1",
+      "type": "concept",
+      "name": "Step 1",
+      "summary": "No summary",
+      "tags": [
+        "step"
+      ]
+    },
+    {
+      "id": "step:flow-scheduling-3wla-vs-daily-log:2",
+      "type": "concept",
+      "name": "Step 2",
+      "summary": "No summary",
+      "tags": [
+        "step"
+      ]
+    },
+    {
+      "id": "flow:flow-closeout-punchlist-to-asbuilt",
+      "type": "concept",
+      "name": "Closeout: Punchlist drives to zero then As-Built freezes the record",
+      "summary": "No summary",
+      "tags": [
+        "flow"
+      ]
+    },
+    {
+      "id": "step:flow-closeout-punchlist-to-asbuilt:0",
+      "type": "concept",
+      "name": "Step 0",
+      "summary": "No summary",
+      "tags": [
+        "step"
+      ]
+    },
+    {
+      "id": "step:flow-closeout-punchlist-to-asbuilt:1",
+      "type": "concept",
+      "name": "Step 1",
+      "summary": "No summary",
+      "tags": [
+        "step"
+      ]
+    },
+    {
+      "id": "step:flow-closeout-punchlist-to-asbuilt:2",
+      "type": "concept",
+      "name": "Step 2",
+      "summary": "No summary",
+      "tags": [
+        "step"
+      ]
+    },
+    {
+      "id": "flow:flow-ops-agents-cross-cutting",
+      "type": "concept",
+      "name": "Ops-agents cross-cut every domain",
+      "summary": "No summary",
+      "tags": [
+        "flow"
+      ]
+    },
+    {
+      "id": "step:flow-ops-agents-cross-cutting:0",
+      "type": "concept",
+      "name": "Step 0",
+      "summary": "No summary",
+      "tags": [
+        "step"
+      ]
+    },
+    {
+      "id": "step:flow-ops-agents-cross-cutting:1",
+      "type": "concept",
+      "name": "Step 1",
+      "summary": "No summary",
+      "tags": [
+        "step"
+      ]
+    },
+    {
+      "id": "step:flow-ops-agents-cross-cutting:2",
+      "type": "concept",
+      "name": "Step 2",
+      "summary": "No summary",
+      "tags": [
+        "step"
+      ]
+    },
+    {
+      "id": "step:flow-ops-agents-cross-cutting:3",
+      "type": "concept",
+      "name": "Step 3",
+      "summary": "No summary",
+      "tags": [
+        "step"
+      ]
     }
   ],
   "edges": [
     {
-      "id": "edge-0",
-      "source": "construction-skills",
-      "target": "tcs-domain",
-      "type": "part_of",
-      "direction": "forward",
-      "weight": 0.5,
-      "label": "part_of"
+      "source": "flow:flow-kernel-declares-wi-catalog",
+      "target": "domain:domain-governance-kernel",
+      "type": "related",
+      "weight": 0.8
     },
     {
-      "id": "edge-1",
-      "source": "plugin-framework",
-      "target": "tcs-domain",
-      "type": "part_of",
-      "direction": "forward",
-      "weight": 0.5,
-      "label": "part_of"
+      "source": "step:flow-kernel-declares-wi-catalog:0",
+      "target": "flow:flow-kernel-declares-wi-catalog",
+      "type": "contains",
+      "weight": 1
     },
     {
-      "id": "edge-2",
-      "source": "project-control",
-      "target": "tcs-domain",
-      "type": "part_of",
-      "direction": "forward",
-      "weight": 0.5,
-      "label": "part_of"
+      "source": "step:flow-kernel-declares-wi-catalog:1",
+      "target": "flow:flow-kernel-declares-wi-catalog",
+      "type": "contains",
+      "weight": 1
     },
     {
-      "id": "edge-3",
-      "source": "plugin-framework",
-      "target": "construction-skills",
-      "type": "hosts",
-      "direction": "forward",
-      "weight": 0.5,
-      "label": "hosts"
+      "source": "step:flow-kernel-declares-wi-catalog:0",
+      "target": "step:flow-kernel-declares-wi-catalog:1",
+      "type": "triggers",
+      "weight": 0.8
     },
     {
-      "id": "edge-4",
-      "source": "construction-skills",
-      "target": "project-control",
-      "type": "implements",
-      "direction": "forward",
-      "weight": 0.5,
-      "label": "implements"
+      "source": "step:flow-kernel-declares-wi-catalog:2",
+      "target": "flow:flow-kernel-declares-wi-catalog",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "step:flow-kernel-declares-wi-catalog:1",
+      "target": "step:flow-kernel-declares-wi-catalog:2",
+      "type": "triggers",
+      "weight": 0.8
+    },
+    {
+      "source": "flow:flow-pm-runs-trade-skill",
+      "target": "domain:domain-construction-pm",
+      "type": "related",
+      "weight": 0.8
+    },
+    {
+      "source": "step:flow-pm-runs-trade-skill:0",
+      "target": "flow:flow-pm-runs-trade-skill",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "step:flow-pm-runs-trade-skill:1",
+      "target": "flow:flow-pm-runs-trade-skill",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "step:flow-pm-runs-trade-skill:0",
+      "target": "step:flow-pm-runs-trade-skill:1",
+      "type": "triggers",
+      "weight": 0.8
+    },
+    {
+      "source": "step:flow-pm-runs-trade-skill:2",
+      "target": "flow:flow-pm-runs-trade-skill",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "step:flow-pm-runs-trade-skill:1",
+      "target": "step:flow-pm-runs-trade-skill:2",
+      "type": "triggers",
+      "weight": 0.8
+    },
+    {
+      "source": "step:flow-pm-runs-trade-skill:3",
+      "target": "flow:flow-pm-runs-trade-skill",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "step:flow-pm-runs-trade-skill:2",
+      "target": "step:flow-pm-runs-trade-skill:3",
+      "type": "triggers",
+      "weight": 0.8
+    },
+    {
+      "source": "flow:flow-super-daily-loop",
+      "target": "domain:domain-construction-super",
+      "type": "related",
+      "weight": 0.8
+    },
+    {
+      "source": "step:flow-super-daily-loop:0",
+      "target": "flow:flow-super-daily-loop",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "step:flow-super-daily-loop:1",
+      "target": "flow:flow-super-daily-loop",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "step:flow-super-daily-loop:0",
+      "target": "step:flow-super-daily-loop:1",
+      "type": "triggers",
+      "weight": 0.8
+    },
+    {
+      "source": "step:flow-super-daily-loop:2",
+      "target": "flow:flow-super-daily-loop",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "step:flow-super-daily-loop:1",
+      "target": "step:flow-super-daily-loop:2",
+      "type": "triggers",
+      "weight": 0.8
+    },
+    {
+      "source": "step:flow-super-daily-loop:3",
+      "target": "flow:flow-super-daily-loop",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "step:flow-super-daily-loop:2",
+      "target": "step:flow-super-daily-loop:3",
+      "type": "triggers",
+      "weight": 0.8
+    },
+    {
+      "source": "flow:flow-safety-gate-before-trade",
+      "target": "domain:domain-construction-safety",
+      "type": "related",
+      "weight": 0.8
+    },
+    {
+      "source": "step:flow-safety-gate-before-trade:0",
+      "target": "flow:flow-safety-gate-before-trade",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "step:flow-safety-gate-before-trade:1",
+      "target": "flow:flow-safety-gate-before-trade",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "step:flow-safety-gate-before-trade:0",
+      "target": "step:flow-safety-gate-before-trade:1",
+      "type": "triggers",
+      "weight": 0.8
+    },
+    {
+      "source": "step:flow-safety-gate-before-trade:2",
+      "target": "flow:flow-safety-gate-before-trade",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "step:flow-safety-gate-before-trade:1",
+      "target": "step:flow-safety-gate-before-trade:2",
+      "type": "triggers",
+      "weight": 0.8
+    },
+    {
+      "source": "step:flow-safety-gate-before-trade:3",
+      "target": "flow:flow-safety-gate-before-trade",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "step:flow-safety-gate-before-trade:2",
+      "target": "step:flow-safety-gate-before-trade:3",
+      "type": "triggers",
+      "weight": 0.8
+    },
+    {
+      "source": "flow:flow-quality-hold-point",
+      "target": "domain:domain-construction-quality",
+      "type": "related",
+      "weight": 0.8
+    },
+    {
+      "source": "step:flow-quality-hold-point:0",
+      "target": "flow:flow-quality-hold-point",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "step:flow-quality-hold-point:1",
+      "target": "flow:flow-quality-hold-point",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "step:flow-quality-hold-point:0",
+      "target": "step:flow-quality-hold-point:1",
+      "type": "triggers",
+      "weight": 0.8
+    },
+    {
+      "source": "step:flow-quality-hold-point:2",
+      "target": "flow:flow-quality-hold-point",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "step:flow-quality-hold-point:1",
+      "target": "step:flow-quality-hold-point:2",
+      "type": "triggers",
+      "weight": 0.8
+    },
+    {
+      "source": "step:flow-quality-hold-point:3",
+      "target": "flow:flow-quality-hold-point",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "step:flow-quality-hold-point:2",
+      "target": "step:flow-quality-hold-point:3",
+      "type": "triggers",
+      "weight": 0.8
+    },
+    {
+      "source": "flow:flow-cost-material-to-3wm",
+      "target": "domain:domain-construction-cost",
+      "type": "related",
+      "weight": 0.8
+    },
+    {
+      "source": "step:flow-cost-material-to-3wm:0",
+      "target": "flow:flow-cost-material-to-3wm",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "step:flow-cost-material-to-3wm:1",
+      "target": "flow:flow-cost-material-to-3wm",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "step:flow-cost-material-to-3wm:0",
+      "target": "step:flow-cost-material-to-3wm:1",
+      "type": "triggers",
+      "weight": 0.8
+    },
+    {
+      "source": "step:flow-cost-material-to-3wm:2",
+      "target": "flow:flow-cost-material-to-3wm",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "step:flow-cost-material-to-3wm:1",
+      "target": "step:flow-cost-material-to-3wm:2",
+      "type": "triggers",
+      "weight": 0.8
+    },
+    {
+      "source": "flow:flow-estimating-uses-trade-catalog",
+      "target": "domain:domain-construction-estimating",
+      "type": "related",
+      "weight": 0.8
+    },
+    {
+      "source": "step:flow-estimating-uses-trade-catalog:0",
+      "target": "flow:flow-estimating-uses-trade-catalog",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "step:flow-estimating-uses-trade-catalog:1",
+      "target": "flow:flow-estimating-uses-trade-catalog",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "step:flow-estimating-uses-trade-catalog:0",
+      "target": "step:flow-estimating-uses-trade-catalog:1",
+      "type": "triggers",
+      "weight": 0.8
+    },
+    {
+      "source": "step:flow-estimating-uses-trade-catalog:2",
+      "target": "flow:flow-estimating-uses-trade-catalog",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "step:flow-estimating-uses-trade-catalog:1",
+      "target": "step:flow-estimating-uses-trade-catalog:2",
+      "type": "triggers",
+      "weight": 0.8
+    },
+    {
+      "source": "step:flow-estimating-uses-trade-catalog:3",
+      "target": "flow:flow-estimating-uses-trade-catalog",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "step:flow-estimating-uses-trade-catalog:2",
+      "target": "step:flow-estimating-uses-trade-catalog:3",
+      "type": "triggers",
+      "weight": 0.8
+    },
+    {
+      "source": "flow:flow-scheduling-3wla-vs-daily-log",
+      "target": "domain:domain-construction-scheduling",
+      "type": "related",
+      "weight": 0.8
+    },
+    {
+      "source": "step:flow-scheduling-3wla-vs-daily-log:0",
+      "target": "flow:flow-scheduling-3wla-vs-daily-log",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "step:flow-scheduling-3wla-vs-daily-log:1",
+      "target": "flow:flow-scheduling-3wla-vs-daily-log",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "step:flow-scheduling-3wla-vs-daily-log:0",
+      "target": "step:flow-scheduling-3wla-vs-daily-log:1",
+      "type": "triggers",
+      "weight": 0.8
+    },
+    {
+      "source": "step:flow-scheduling-3wla-vs-daily-log:2",
+      "target": "flow:flow-scheduling-3wla-vs-daily-log",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "step:flow-scheduling-3wla-vs-daily-log:1",
+      "target": "step:flow-scheduling-3wla-vs-daily-log:2",
+      "type": "triggers",
+      "weight": 0.8
+    },
+    {
+      "source": "flow:flow-closeout-punchlist-to-asbuilt",
+      "target": "domain:domain-construction-closeout",
+      "type": "related",
+      "weight": 0.8
+    },
+    {
+      "source": "step:flow-closeout-punchlist-to-asbuilt:0",
+      "target": "flow:flow-closeout-punchlist-to-asbuilt",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "step:flow-closeout-punchlist-to-asbuilt:1",
+      "target": "flow:flow-closeout-punchlist-to-asbuilt",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "step:flow-closeout-punchlist-to-asbuilt:0",
+      "target": "step:flow-closeout-punchlist-to-asbuilt:1",
+      "type": "triggers",
+      "weight": 0.8
+    },
+    {
+      "source": "step:flow-closeout-punchlist-to-asbuilt:2",
+      "target": "flow:flow-closeout-punchlist-to-asbuilt",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "step:flow-closeout-punchlist-to-asbuilt:1",
+      "target": "step:flow-closeout-punchlist-to-asbuilt:2",
+      "type": "triggers",
+      "weight": 0.8
+    },
+    {
+      "source": "flow:flow-ops-agents-cross-cutting",
+      "target": "domain:domain-ops-agents",
+      "type": "related",
+      "weight": 0.8
+    },
+    {
+      "source": "step:flow-ops-agents-cross-cutting:0",
+      "target": "flow:flow-ops-agents-cross-cutting",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "step:flow-ops-agents-cross-cutting:1",
+      "target": "flow:flow-ops-agents-cross-cutting",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "step:flow-ops-agents-cross-cutting:0",
+      "target": "step:flow-ops-agents-cross-cutting:1",
+      "type": "triggers",
+      "weight": 0.8
+    },
+    {
+      "source": "step:flow-ops-agents-cross-cutting:2",
+      "target": "flow:flow-ops-agents-cross-cutting",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "step:flow-ops-agents-cross-cutting:1",
+      "target": "step:flow-ops-agents-cross-cutting:2",
+      "type": "triggers",
+      "weight": 0.8
+    },
+    {
+      "source": "step:flow-ops-agents-cross-cutting:3",
+      "target": "flow:flow-ops-agents-cross-cutting",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "step:flow-ops-agents-cross-cutting:2",
+      "target": "step:flow-ops-agents-cross-cutting:3",
+      "type": "triggers",
+      "weight": 0.8
     }
   ],
-  "stats": {
-    "total_nodes": 4,
-    "total_edges": 5,
-    "domains": 3,
-    "business_flows": 2
-  },
-  "layers": [
+  "flows": [
     {
-      "id": "layer-domain",
-      "name": "Domain Nodes",
-      "description": "4 domain nodes",
-      "nodeIds": [
-        "tcs-domain",
-        "construction-skills",
-        "plugin-framework",
-        "project-control"
+      "id": "flow:kernel-declares-wi-catalog",
+      "name": "Kernel declares the 32 WI catalog",
+      "domain": "domain:governance-kernel",
+      "steps": [
+        {
+          "from": "config:.claude-plugin/plugin.json",
+          "to": "document:README.md",
+          "edge": "configures",
+          "control": "plugin manifest binds README as the WI catalog"
+        },
+        {
+          "from": "document:README.md",
+          "to": "document:skills/*/SKILL.md",
+          "edge": "documents",
+          "control": "every WI ID in the catalog must resolve to a SKILL.md (32-of-32)"
+        },
+        {
+          "from": "document:README.md",
+          "to": "domain:ops-agents",
+          "edge": "binds",
+          "control": "contract authority for the route map — ops-agents verify each WI exists and is owned"
+        }
+      ],
+      "exitTo": [
+        "domain:construction-pm",
+        "domain:construction-estimating"
+      ],
+      "narrative": "The plugin manifest registers tcs-construction. README declares the 32 WI IDs. construction-contract-authority verifies every declared ID resolves to a SKILL.md. PM and Estimating consume the catalog as their unit-of-work index."
+    },
+    {
+      "id": "flow:pm-runs-trade-skill",
+      "name": "PM dispatches a CSI-division trade skill",
+      "domain": "domain:construction-pm",
+      "steps": [
+        {
+          "from": "document:README.md",
+          "to": "document:skills/d03_1003/SKILL.md",
+          "edge": "documents",
+          "control": "kernel routes the WI to PM"
+        },
+        {
+          "from": "document:skills/d03_1003/SKILL.md",
+          "to": "domain:construction-safety",
+          "edge": "prerequisite",
+          "control": "Morning Huddle + SE Check must close before trade work fires"
+        },
+        {
+          "from": "domain:construction-safety",
+          "to": "domain:construction-quality",
+          "edge": "gates",
+          "control": "Hold Point Inspection gates trade work at the rebar-before-pour milestone"
+        },
+        {
+          "from": "document:skills/d03_1003/SKILL.md",
+          "to": "domain:ops-agents",
+          "edge": "records",
+          "control": "construction-live-action-gate records that the trade WI fired with a passing precondition stack"
+        }
+      ],
+      "exitTo": [
+        "domain:construction-super",
+        "domain:construction-cost"
+      ],
+      "narrative": "PM picks the d03 Concrete Slab Rebar Install WI. Safety domain validates huddle + PPE. Quality domain runs Hold Point Inspection. The live-action-gate ops-agent stamps the receipt. Super takes execution; Cost records material against the PO."
+    },
+    {
+      "id": "flow:super-daily-loop",
+      "name": "Super daily heartbeat (Huddle -> Log -> Photo)",
+      "domain": "domain:construction-super",
+      "steps": [
+        {
+          "from": "document:skills/sagecm_morninghuddle_0001/SKILL.md",
+          "to": "document:skills/sagecm_fieldmonitoring_0001/SKILL.md",
+          "edge": "feeds",
+          "control": "huddle plan informs the day's field monitoring focus"
+        },
+        {
+          "from": "document:skills/sagecm_fieldmonitoring_0001/SKILL.md",
+          "to": "document:skills/sagecm_dl_001/SKILL.md",
+          "edge": "feeds",
+          "control": "field observations populate the Daily Log"
+        },
+        {
+          "from": "document:skills/sagecm_dl_001/SKILL.md",
+          "to": "document:skills/sagecm_photodoc_0001/SKILL.md",
+          "edge": "evidence",
+          "control": "Daily Log entries are backed by Photo Documentation"
+        },
+        {
+          "from": "document:skills/sagecm_dl_001/SKILL.md",
+          "to": "domain:ops-agents",
+          "edge": "records",
+          "control": "construction-source-query-receipt verifies Silence-is-Failure rule"
+        }
+      ],
+      "exitTo": [
+        "domain:construction-pm",
+        "domain:construction-scheduling"
+      ],
+      "narrative": "Super runs the morning huddle, walks the site under Field Monitoring, writes the Daily Log, attaches Photo Doc evidence. source-query-receipt ops-agent enforces the Silence-is-Failure principle. PM ingests the log; Scheduling reconciles against the 3WLA."
+    },
+    {
+      "id": "flow:safety-gate-before-trade",
+      "name": "Safety gate stack before trade work",
+      "domain": "domain:construction-safety",
+      "steps": [
+        {
+          "from": "document:skills/sagecm_morninghuddle_0001/SKILL.md",
+          "to": "document:skills/sagecm_safetyequipment_0001/SKILL.md",
+          "edge": "feeds",
+          "control": "huddle topic informs SE check focus"
+        },
+        {
+          "from": "document:skills/sagecm_safetyequipment_0001/SKILL.md",
+          "to": "document:skills/sagecm_postrainswppp_0001/SKILL.md",
+          "edge": "conditional",
+          "control": "post-rain only fires after a weather event"
+        },
+        {
+          "from": "document:skills/sagecm_safetyequipment_0001/SKILL.md",
+          "to": "domain:construction-pm",
+          "edge": "gates",
+          "control": "trade-skill dispatch is blocked until the gate stack closes"
+        },
+        {
+          "from": "document:skills/sagecm_safetyequipment_0001/SKILL.md",
+          "to": "domain:ops-agents",
+          "edge": "records",
+          "control": "construction-live-action-gate records pass/fail by photo + signature"
+        }
+      ],
+      "exitTo": [
+        "domain:construction-pm"
+      ],
+      "narrative": "Morning Huddle, Safety Equipment Check, and (if weather demanded) Post-Rain SWPPP run as a precondition stack. construction-live-action-gate ops-agent stamps the close. Only then does PM dispatch a trade WI."
+    },
+    {
+      "id": "flow:quality-hold-point",
+      "name": "Quality hold-point gate inside a trade WI",
+      "domain": "domain:construction-quality",
+      "steps": [
+        {
+          "from": "document:skills/d03_1003/SKILL.md",
+          "to": "document:skills/sagecm_holdpointinspection_0001/SKILL.md",
+          "edge": "invokes",
+          "control": "rebar-before-pour hold point pauses the trade WI"
+        },
+        {
+          "from": "document:skills/sagecm_holdpointinspection_0001/SKILL.md",
+          "to": "document:skills/sagecm_qcaudit_0001/SKILL.md",
+          "edge": "escalates",
+          "control": "QC Audit invoked when hold-point findings exceed threshold"
+        },
+        {
+          "from": "document:skills/sagecm_qcaudit_0001/SKILL.md",
+          "to": "document:skills/sagecm_complynotice_0001/SKILL.md",
+          "edge": "issues",
+          "control": "Comply Notice issued when audit fails"
+        },
+        {
+          "from": "document:skills/sagecm_holdpointinspection_0001/SKILL.md",
+          "to": "domain:ops-agents",
+          "edge": "records",
+          "control": "construction-contract-authority binds the hold-point pass back to the kernel contract"
+        }
+      ],
+      "exitTo": [
+        "domain:construction-pm"
+      ],
+      "narrative": "Hold Point Inspection pauses the trade WI. If findings stack up, QC Audit walks spec compliance and Comply Notice issues. construction-contract-authority ops-agent records the audit chain against the WI contract. PM is unblocked when the hold point closes."
+    },
+    {
+      "id": "flow:cost-material-to-3wm",
+      "name": "Cost: Material Receiving feeds the 3-Way Match gate",
+      "domain": "domain:construction-cost",
+      "steps": [
+        {
+          "from": "document:skills/sagecm_materialreceiving_0001/SKILL.md",
+          "to": "document:skills/sagecm_gocodes_0001/SKILL.md",
+          "edge": "feeds",
+          "control": "Go Codes scan tracks equipment alongside material delivery"
+        },
+        {
+          "from": "document:skills/sagecm_materialreceiving_0001/SKILL.md",
+          "to": "document:skills/sagecm_photodoc_0001/SKILL.md",
+          "edge": "evidence",
+          "control": "Photo Doc records the receiving event"
+        },
+        {
+          "from": "document:skills/sagecm_materialreceiving_0001/SKILL.md",
+          "to": "domain:ops-agents",
+          "edge": "records",
+          "control": "construction-source-query-receipt logs the PO-to-physical match for the 3-Way Match gate"
+        }
+      ],
+      "exitTo": [
+        "domain:construction-pm",
+        "domain:construction-closeout"
+      ],
+      "narrative": "Material Receiving runs at the gate; Go Codes scans tag equipment; Photo Doc supplies evidence; source-query-receipt ops-agent records the PO-to-physical match for the downstream 3-Way Match gate. PM updates cost. Closeout inherits the asset record."
+    },
+    {
+      "id": "flow:estimating-uses-trade-catalog",
+      "name": "Estimating builds budget from the trade-skill catalog",
+      "domain": "domain:construction-estimating",
+      "steps": [
+        {
+          "from": "document:README.md",
+          "to": "document:skills/d05_1001/SKILL.md",
+          "edge": "documents",
+          "control": "kernel exposes the d05 Structural Steel WI as a unit-of-work"
+        },
+        {
+          "from": "document:skills/d05_1001/SKILL.md",
+          "to": "document:skills/sagecm_rfi_0001/SKILL.md",
+          "edge": "affects",
+          "control": "RFI outputs may change scope after award"
+        },
+        {
+          "from": "document:skills/sagecm_rfi_0001/SKILL.md",
+          "to": "domain:construction-pm",
+          "edge": "feeds",
+          "control": "PM consumes RFI-driven estimate updates"
+        },
+        {
+          "from": "document:skills/d05_1001/SKILL.md",
+          "to": "domain:ops-agents",
+          "edge": "records",
+          "control": "construction-contract-authority binds the priced WI to the budget baseline"
+        }
+      ],
+      "exitTo": [
+        "domain:construction-pm",
+        "domain:construction-cost"
+      ],
+      "narrative": "Estimating reads the CSI-division WIs as its unit-of-work catalog and prices each. RFI Processing flags scope changes. construction-contract-authority ops-agent stamps the budget baseline. PM and Cost inherit the budget."
+    },
+    {
+      "id": "flow:scheduling-3wla-vs-daily-log",
+      "name": "Scheduling: 3WLA forward vs Daily Log backward",
+      "domain": "domain:construction-scheduling",
+      "steps": [
+        {
+          "from": "document:skills/sagecm_3wla_0001/SKILL.md",
+          "to": "document:skills/sagecm_dl_001/SKILL.md",
+          "edge": "reconciles",
+          "control": "Daily Log compared against 3WLA each cycle"
+        },
+        {
+          "from": "document:skills/sagecm_dl_001/SKILL.md",
+          "to": "document:skills/sagecm_fieldmonitoring_0001/SKILL.md",
+          "edge": "feeds",
+          "control": "Field Monitoring observations refine the next 3WLA"
+        },
+        {
+          "from": "document:skills/sagecm_3wla_0001/SKILL.md",
+          "to": "domain:ops-agents",
+          "edge": "records",
+          "control": "construction-live-action-gate stamps schedule variance for the PM dashboard"
+        }
+      ],
+      "exitTo": [
+        "domain:construction-pm"
+      ],
+      "narrative": "The 3WLA is the forward control; the Daily Log is the backward record; Field Monitoring keeps the variance honest. construction-live-action-gate ops-agent records variance for PM. PM replans into the next 3WLA cycle."
+    },
+    {
+      "id": "flow:closeout-punchlist-to-asbuilt",
+      "name": "Closeout: Punchlist drives to zero then As-Built freezes the record",
+      "domain": "domain:construction-closeout",
+      "steps": [
+        {
+          "from": "document:skills/sagecm_punchlistcloseout_0001/SKILL.md",
+          "to": "document:skills/sagecm_asbuiltupdates_0001/SKILL.md",
+          "edge": "precedes",
+          "control": "Punchlist must reach zero before as-builts freeze"
+        },
+        {
+          "from": "document:skills/sagecm_asbuiltupdates_0001/SKILL.md",
+          "to": "document:README.md",
+          "edge": "closes",
+          "control": "as-built handoff closes the kernel contract"
+        },
+        {
+          "from": "document:skills/sagecm_asbuiltupdates_0001/SKILL.md",
+          "to": "domain:ops-agents",
+          "edge": "records",
+          "control": "construction-source-query-receipt and construction-contract-authority sign the turnover package"
+        }
+      ],
+      "exitTo": [
+        "domain:governance-kernel"
+      ],
+      "narrative": "Punchlist Closeout drives defects to zero. As-Built Updates fold every field deviation back into the drawings. source-query-receipt + contract-authority ops-agents sign the turnover. The kernel contract closes."
+    },
+    {
+      "id": "flow:ops-agents-cross-cutting",
+      "name": "Ops-agents cross-cut every domain",
+      "domain": "domain:ops-agents",
+      "steps": [
+        {
+          "from": "domain:construction-pm",
+          "to": "domain:ops-agents",
+          "edge": "records",
+          "control": "live-action-gate records WI dispatch events"
+        },
+        {
+          "from": "domain:construction-quality",
+          "to": "domain:ops-agents",
+          "edge": "records",
+          "control": "contract-authority binds hold-point and audit results to the kernel"
+        },
+        {
+          "from": "domain:construction-super",
+          "to": "domain:ops-agents",
+          "edge": "records",
+          "control": "source-query-receipt enforces Silence-is-Failure on the Daily Log"
+        },
+        {
+          "from": "domain:construction-closeout",
+          "to": "domain:ops-agents",
+          "edge": "records",
+          "control": "ops-agents sign the turnover package"
+        }
+      ],
+      "exitTo": [
+        "domain:governance-kernel"
+      ],
+      "narrative": "The three ops-agents (live-action-gate, source-query-receipt, contract-authority) cross-cut every skill domain. They record dispatch, audit chains, daily-log compliance, and turnover signatures back into the kernel."
+    }
+  ],
+  "domains": [
+    {
+      "id": "domain:governance-kernel",
+      "name": "Governance Kernel (Devere TCS Governed-Work Core)",
+      "order": 1,
+      "color": "#7c3aed",
+      "kind": "kernel",
+      "summary": "The contract layer. The plugin manifest plus the README catalog that declares all 32 Work Instructions, their IDs, and their ownership. Every downstream skill exists because the kernel named it. Source authority for the construction route map.",
+      "responsibilities": [
+        "Declare the 32 Work Instruction IDs (the WI catalog)",
+        "Register the plugin with Claude Code (SSU Fleet, v1.0.0)",
+        "Hold the governed-work contracts that bind the trade, control, and ops-agent layers",
+        "Define source authority for every control that fires on a project"
+      ],
+      "anchorNodes": [
+        "config:.claude-plugin/plugin.json",
+        "document:README.md"
+      ],
+      "graphLayer": "L1-governance-kernel",
+      "tags": [
+        "governance",
+        "kernel",
+        "manifest",
+        "contract",
+        "source-authority"
+      ]
+    },
+    {
+      "id": "domain:construction-pm",
+      "name": "Construction PM",
+      "order": 2,
+      "color": "#0ea5e9",
+      "kind": "skill-area",
+      "summary": "Project Manager surface. Owns scope, schedule logic, RFI processing, and cross-trade coordination on the CSI-division trade skills. Pulls controls from the kernel, dispatches WIs to trades, and consumes ops-agent receipts.",
+      "responsibilities": [
+        "Coordinate CSI-division trade skills (d03, d05, d22, d23, d26)",
+        "Drive RFI processing and design-question resolution",
+        "Own 3-Week Look Ahead handoff to the Super",
+        "Consume Daily Log + Field Monitoring outputs to update project state"
+      ],
+      "anchorNodes": [
+        "document:skills/d03_1003/SKILL.md",
+        "document:skills/d05_1001/SKILL.md",
+        "document:skills/d22_1001/SKILL.md",
+        "document:skills/d23_1001/SKILL.md",
+        "document:skills/d26_1001/SKILL.md",
+        "document:skills/sagecm_rfi_0001/SKILL.md"
+      ],
+      "graphLayer": "L2-construction-trade-skills",
+      "tags": [
+        "pm",
+        "csi-divisions",
+        "trade-skills",
+        "rfi",
+        "coordination"
+      ]
+    },
+    {
+      "id": "domain:construction-super",
+      "name": "Construction Super",
+      "order": 3,
+      "color": "#0284c7",
+      "kind": "skill-area",
+      "summary": "Field Superintendent surface. Owns daily-of-record execution: morning huddle, daily log, field monitoring, housekeeping, photo doc. Where the PM's plan meets the dirt.",
+      "responsibilities": [
+        "Run Morning Huddle / Toolbox Talk to start the day",
+        "Write the Daily Log (Silence is Failure)",
+        "Monitor field production and call out blockers",
+        "Drive housekeeping and site condition standards"
+      ],
+      "anchorNodes": [
+        "document:skills/sagecm_morninghuddle_0001/SKILL.md",
+        "document:skills/sagecm_dl_001/SKILL.md",
+        "document:skills/sagecm_fieldmonitoring_0001/SKILL.md",
+        "document:skills/sagecm_housekeeping_0001/SKILL.md",
+        "document:skills/sagecm_photodoc_0001/SKILL.md"
+      ],
+      "graphLayer": "L4-cost-scheduling-ops",
+      "tags": [
+        "super",
+        "field-ops",
+        "daily-log",
+        "huddle",
+        "evidence"
+      ]
+    },
+    {
+      "id": "domain:construction-safety",
+      "name": "Construction Safety",
+      "order": 4,
+      "color": "#dc2626",
+      "kind": "skill-area",
+      "summary": "Safety surface. Owns the gates that must close before trade work can fire: huddle, PPE/equipment, post-rain SWPPP. Hard prerequisite enforcement.",
+      "responsibilities": [
+        "Enforce Morning Huddle as a precondition to trade work",
+        "Verify Safety Equipment (PPE, fall protection, etc.)",
+        "Run Post-Rain SWPPP environmental inspection",
+        "Block downstream skills when safety prerequisites fail"
+      ],
+      "anchorNodes": [
+        "document:skills/sagecm_morninghuddle_0001/SKILL.md",
+        "document:skills/sagecm_safetyequipment_0001/SKILL.md",
+        "document:skills/sagecm_postrainswppp_0001/SKILL.md"
+      ],
+      "graphLayer": "L3-safety-quality-control",
+      "tags": [
+        "safety",
+        "ppe",
+        "swppp",
+        "environmental",
+        "gate"
+      ]
+    },
+    {
+      "id": "domain:construction-quality",
+      "name": "Construction Quality",
+      "order": 5,
+      "color": "#b91c1c",
+      "kind": "skill-area",
+      "summary": "Quality Control surface. Hold-point inspections, QC audits, AHJ inspections, compliance audits and notices. The control loop that pairs with each trade skill.",
+      "responsibilities": [
+        "Enforce Hold Points before trade work proceeds (e.g., rebar before pour)",
+        "Run QC Audits against spec compliance",
+        "Coordinate Regulator / AHJ inspections",
+        "Run Compliance Audits and issue Comply Notices"
+      ],
+      "anchorNodes": [
+        "document:skills/sagecm_holdpointinspection_0001/SKILL.md",
+        "document:skills/sagecm_qcaudit_0001/SKILL.md",
+        "document:skills/sagecm_regulatorinspection_0001/SKILL.md",
+        "document:skills/sagecm_complianceaudit_0001/SKILL.md",
+        "document:skills/sagecm_complynotice_0001/SKILL.md"
+      ],
+      "graphLayer": "L3-safety-quality-control",
+      "tags": [
+        "quality",
+        "hold-point",
+        "qc-audit",
+        "ahj",
+        "compliance"
+      ]
+    },
+    {
+      "id": "domain:construction-cost",
+      "name": "Construction Cost",
+      "order": 6,
+      "color": "#f59e0b",
+      "kind": "skill-area",
+      "summary": "Cost surface. Material receiving, Go Codes equipment scans, and RFI processing connect spend and logistics to the schedule and the closeout package.",
+      "responsibilities": [
+        "Confirm Material Receiving matches the PO",
+        "Track equipment in/out via Go Codes QR scans",
+        "Feed cost evidence to the 3-Way Match gate (upstream finance integration)",
+        "Account for RFI-driven cost impacts"
+      ],
+      "anchorNodes": [
+        "document:skills/sagecm_materialreceiving_0001/SKILL.md",
+        "document:skills/sagecm_gocodes_0001/SKILL.md",
+        "document:skills/sagecm_rfi_0001/SKILL.md"
+      ],
+      "graphLayer": "L4-cost-scheduling-ops",
+      "tags": [
+        "cost",
+        "logistics",
+        "material",
+        "go-codes",
+        "rfi"
+      ]
+    },
+    {
+      "id": "domain:construction-estimating",
+      "name": "Construction Estimating",
+      "order": 7,
+      "color": "#eab308",
+      "kind": "skill-area",
+      "summary": "Estimating surface. Reads the CSI-division trade skills (d03, d05, d22, d23, d26) to scope and price work; consumes RFI outputs to true up estimates against field reality.",
+      "responsibilities": [
+        "Use CSI-division trade skills as the unit-of-work catalog",
+        "Price and quantify trade work prior to award",
+        "Update estimates against RFI-driven design changes",
+        "Hand off scope baseline to PM domain at mobilization"
+      ],
+      "anchorNodes": [
+        "document:skills/d03_1003/SKILL.md",
+        "document:skills/d05_1001/SKILL.md",
+        "document:skills/d22_1001/SKILL.md",
+        "document:skills/d23_1001/SKILL.md",
+        "document:skills/d26_1001/SKILL.md",
+        "document:skills/sagecm_rfi_0001/SKILL.md"
+      ],
+      "graphLayer": "L2-construction-trade-skills",
+      "tags": [
+        "estimating",
+        "csi-divisions",
+        "scope",
+        "pricing",
+        "rfi-impact"
+      ]
+    },
+    {
+      "id": "domain:construction-scheduling",
+      "name": "Construction Scheduling",
+      "order": 8,
+      "color": "#d97706",
+      "kind": "skill-area",
+      "summary": "Scheduling surface. The 3-Week Look Ahead is the forward-looking control; the Daily Log is the backward-looking record; Field Monitoring keeps the variance honest.",
+      "responsibilities": [
+        "Author the 3-Week Look Ahead each cycle",
+        "Reconcile the 3WLA against the Daily Log",
+        "Trigger schedule alerts via the Field Monitoring loop",
+        "Provide the schedule input to PM coordination and ops-agent dashboards"
+      ],
+      "anchorNodes": [
+        "document:skills/sagecm_3wla_0001/SKILL.md",
+        "document:skills/sagecm_dl_001/SKILL.md",
+        "document:skills/sagecm_fieldmonitoring_0001/SKILL.md"
+      ],
+      "graphLayer": "L4-cost-scheduling-ops",
+      "tags": [
+        "scheduling",
+        "3wla",
+        "daily-log",
+        "variance",
+        "field-monitoring"
+      ]
+    },
+    {
+      "id": "domain:construction-closeout",
+      "name": "Construction Closeout",
+      "order": 9,
+      "color": "#16a34a",
+      "kind": "skill-area",
+      "summary": "Closeout surface. Punchlist Closeout drives defects to zero; As-Built Updates capture field deviations into the record set so the owner inherits a true archive.",
+      "responsibilities": [
+        "Drive Punchlist Closeout to zero before substantial completion",
+        "Capture As-Built Updates back into the drawing set",
+        "Hand off final records to the turnover package",
+        "Close the governed-work loop opened by the kernel"
+      ],
+      "anchorNodes": [
+        "document:skills/sagecm_punchlistcloseout_0001/SKILL.md",
+        "document:skills/sagecm_asbuiltupdates_0001/SKILL.md"
+      ],
+      "graphLayer": "L5-closeout-records",
+      "tags": [
+        "closeout",
+        "punchlist",
+        "as-built",
+        "turnover"
+      ]
+    },
+    {
+      "id": "domain:ops-agents",
+      "name": "Operational Agents (ops-agents)",
+      "order": 10,
+      "color": "#64748b",
+      "kind": "agent-tier",
+      "summary": "The operational-agents tier referenced by the construction-ops-agents skill family: live-action gate, source-query receipt, contract authority. These agents sit alongside the construction domains and enforce or record the governed controls in real time.",
+      "responsibilities": [
+        "construction-live-action-gate — gate state changes against real-world observation",
+        "construction-source-query-receipt — log and verify the source authority for every claim",
+        "construction-contract-authority — bind controls back to the contract layer in the kernel",
+        "Provide receipts to PM/Super dashboards and to the closeout archive"
+      ],
+      "anchorNodes": [
+        "document:README.md",
+        "config:ua-treatment/receipt.json"
+      ],
+      "graphLayer": "L6-doctrine-reference",
+      "externalSkillRefs": [
+        "construction-ops-agents:construction-live-action-gate",
+        "construction-ops-agents:construction-source-query-receipt",
+        "construction-ops-agents:construction-contract-authority"
+      ],
+      "tags": [
+        "ops-agents",
+        "live-action-gate",
+        "source-query-receipt",
+        "contract-authority",
+        "enforcement"
       ]
     }
   ],
-  "tour": []
+  "metadata": {
+    "convertedFrom": "/Users/michael/Emperor-Palantir/plugins/tcs-construction/.understand-anything/domain-graph.json",
+    "convertedAt": "2026-05-28T17:26:07.660Z"
+  }
 }

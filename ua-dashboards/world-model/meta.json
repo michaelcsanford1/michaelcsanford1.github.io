@@ -1,9 +1,6 @@
 {
-  "project": "world-model",
-  "generated_at": "2026-05-27T12:30:00Z",
-  "demo_mode": true,
-  "files": {
-    "knowledge_graph": "knowledge-graph.json",
-    "domain_graph": "domain-graph.json"
-  }
+  "lastAnalyzedAt": "2026-05-28T17:17:30.639Z",
+  "gitCommitHash": "9100a641b6849d42baf3cebffc9b7e198f3ba9c1",
+  "version": "1.0.0",
+  "analyzedFiles": 258
 }

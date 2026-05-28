@@ -1,806 +1,1447 @@
 {
   "version": "1.0.0",
   "project": {
-    "name": "TCS",
+    "name": "tcs-construction",
     "languages": [
-      "TypeScript",
-      "YAML",
-      "Markdown"
+      "markdown",
+      "json",
+      "html"
     ],
-    "frameworks": [
-      "Node.js"
-    ],
-    "description": "TCS knowledge graph",
-    "analyzedAt": "2026-05-27T12:00:00Z",
-    "gitCommitHash": "354c2fa"
+    "frameworks": [],
+    "description": "TCS Construction plugin — Devere Total Control System governed-work kernel + construction skill/control route map.",
+    "analyzedAt": "2026-05-28T16:56:25.877Z",
+    "gitCommitHash": "9100a641b6849d42baf3cebffc9b7e198f3ba9c1"
   },
   "nodes": [
     {
-      "id": "tcs",
-      "type": "concept",
-      "name": "TCS",
-      "filePath": "tcs",
-      "summary": "TCS — 34 files",
+      "id": "config:ua-treatment/chat-response.json",
+      "type": "config",
+      "name": "chat-response.json",
+      "path": "ua-treatment/chat-response.json",
+      "summary": "Captured response from the /understand-chat grounded-chat command answering 'What is the TCS Construction plugin about?' with sourced excerpts, confidence rating, and inferred facts about the plugin surface.",
       "tags": [
-        "project"
+        "ua-treatment",
+        "understand-anything",
+        "chat-response",
+        "grounded-chat",
+        "qwopus-output",
+        "deliverable"
       ],
-      "complexity": "simple"
+      "complexity": "simple",
+      "language": "json",
+      "fileCategory": "config",
+      "totalLines": 25,
+      "nonEmptyLines": 25
     },
     {
-      "id": "layer-json",
-      "type": "concept",
-      "name": "JSON Files",
-      "filePath": "layer-json",
-      "summary": "1 json files",
-      "tags": [
-        "layer"
-      ],
-      "complexity": "simple"
-    },
-    {
-      "id": "layer-markdown",
-      "type": "concept",
-      "name": "MARKDOWN Files",
-      "filePath": "layer-markdown",
-      "summary": "33 markdown files",
-      "tags": [
-        "layer"
-      ],
-      "complexity": "simple"
-    },
-    {
-      "id": "tcs-plugin-json",
+      "id": "file:ua-treatment/dashboard.html",
       "type": "file",
+      "name": "dashboard.html",
+      "path": "ua-treatment/dashboard.html",
+      "summary": "Static HTML dashboard rendering the TCS Construction knowledge graph — shows node/edge/file counts, the node table, layers breakdown, and a 3-step narrative tour with a dark monospace theme.",
+      "tags": [
+        "ua-treatment",
+        "dashboard",
+        "html",
+        "knowledge-graph-visualization",
+        "static-report",
+        "deliverable"
+      ],
+      "complexity": "simple",
+      "language": "html",
+      "fileCategory": "markup",
+      "totalLines": 51,
+      "nonEmptyLines": 47
+    },
+    {
+      "id": "config:ua-treatment/diff-analysis.json",
+      "type": "config",
+      "name": "diff-analysis.json",
+      "path": "ua-treatment/diff-analysis.json",
+      "summary": "Output of /understand-diff — lists the 10 most recent git commits on the surface (UA treatment phases, WO-BG batches, KIMI orders) with a high-level impact statement.",
+      "tags": [
+        "ua-treatment",
+        "understand-anything",
+        "diff",
+        "git-history",
+        "deliverable"
+      ],
+      "complexity": "simple",
+      "language": "json",
+      "fileCategory": "config",
+      "totalLines": 19,
+      "nonEmptyLines": 19
+    },
+    {
+      "id": "config:ua-treatment/domain-flow.json",
+      "type": "config",
+      "name": "domain-flow.json",
+      "path": "ua-treatment/domain-flow.json",
+      "summary": "Domain flow graph from /understand-domain --full — 3 horizontally-laid-out nodes (plugin, skills, readme) with contains/documented-in edges that capture the plugin's top-level structure.",
+      "tags": [
+        "ua-treatment",
+        "understand-anything",
+        "domain-flow",
+        "graph-data",
+        "deliverable"
+      ],
+      "complexity": "simple",
+      "language": "json",
+      "fileCategory": "config",
+      "totalLines": 49,
+      "nonEmptyLines": 49
+    },
+    {
+      "id": "document:ua-treatment/explain-readme.md",
+      "type": "document",
+      "name": "explain-readme.md",
+      "path": "ua-treatment/explain-readme.md",
+      "summary": "Deep-dive markdown explainer for the plugin's README — 8 sections covering Overview, Key Functions, Architecture, Key Components, Call Graph, Impact, and Sources, produced by /understand-explain.",
+      "tags": [
+        "ua-treatment",
+        "understand-anything",
+        "explainer",
+        "markdown",
+        "documentation",
+        "deliverable"
+      ],
+      "complexity": "simple",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 31,
+      "nonEmptyLines": 24
+    },
+    {
+      "id": "config:ua-treatment/knowledge-graph.json",
+      "type": "config",
+      "name": "knowledge-graph.json",
+      "path": "ua-treatment/knowledge-graph.json",
+      "summary": "Primary knowledge-graph deliverable from /understand --full — 6 nodes (tcs-root plus 5 file children), 6 contains edges, layered into code/surface, with a 3-step guided tour and metadata totals.",
+      "tags": [
+        "ua-treatment",
+        "understand-anything",
+        "knowledge-graph",
+        "primary-deliverable",
+        "graph-data"
+      ],
+      "complexity": "moderate",
+      "language": "json",
+      "fileCategory": "config",
+      "totalLines": 153,
+      "nonEmptyLines": 153
+    },
+    {
+      "id": "document:ua-treatment/onboard-guide.md",
+      "type": "document",
+      "name": "onboard-guide.md",
+      "path": "ua-treatment/onboard-guide.md",
+      "summary": "Onboarding walkthrough for new readers of the TCS Construction plugin — covers welcome, plugin definition, key concepts, getting-started steps, working patterns, key files, and a pointer to the grounded chat for follow-ups.",
+      "tags": [
+        "ua-treatment",
+        "understand-anything",
+        "onboarding",
+        "markdown",
+        "documentation",
+        "deliverable"
+      ],
+      "complexity": "simple",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 30,
+      "nonEmptyLines": 23
+    },
+    {
+      "id": "config:ua-treatment/receipt.json",
+      "type": "config",
+      "name": "receipt.json",
+      "path": "ua-treatment/receipt.json",
+      "summary": "Qwopus completion receipt for the TCS Construction UA treatment — maps the 8 numbered evidence artifacts (knowledge-graph through wiki) to absolute paths, marks QC pass, no blockers.",
+      "tags": [
+        "ua-treatment",
+        "receipt",
+        "evidence-manifest",
+        "qwopus",
+        "qc-record"
+      ],
+      "complexity": "simple",
+      "language": "json",
+      "fileCategory": "config",
+      "totalLines": 17,
+      "nonEmptyLines": 17
+    },
+    {
+      "id": "config:ua-treatment/wiki-knowledge-graph.json",
+      "type": "config",
+      "name": "wiki-knowledge-graph.json",
+      "path": "ua-treatment/wiki-knowledge-graph.json",
+      "summary": "Wiki index from /understand-knowledge — points to a wiki folder with 3 entity pages (TCS Construction, plugin, skills) covering the surface's key concepts.",
+      "tags": [
+        "ua-treatment",
+        "understand-anything",
+        "wiki",
+        "knowledge-index",
+        "deliverable"
+      ],
+      "complexity": "simple",
+      "language": "json",
+      "fileCategory": "config",
+      "totalLines": 27,
+      "nonEmptyLines": 27
+    },
+    {
+      "id": "file:ua-treatment/wiki/SCHEMA.md",
+      "type": "file",
+      "kind": "doc",
+      "path": "ua-treatment/wiki/SCHEMA.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "title": "Wiki Schema",
+      "totalLines": 48,
+      "nonEmptyLines": 41,
+      "sectionCount": 8,
+      "summary": "Schema/conventions for the wiki: frontmatter format, tag taxonomy, page thresholds, entity/concept page templates. Domain: TCS Construction - Construction Management Plugin.",
+      "tags": [
+        "schema",
+        "conventions",
+        "frontmatter",
+        "taxonomy"
+      ],
+      "complexity": "moderate",
+      "name": "ua-treatment/wiki/SCHEMA.md"
+    },
+    {
+      "id": "file:ua-treatment/wiki/index.md",
+      "type": "file",
+      "kind": "doc",
+      "path": "ua-treatment/wiki/index.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "title": "Wiki Index",
+      "totalLines": 17,
+      "nonEmptyLines": 12,
+      "sectionCount": 5,
+      "summary": "Content catalog for the wiki. Lists Entities (tcs-construction, plugin, skills), Concepts (readme), Comparisons, Queries.",
+      "wikilinks": [
+        "tcs-construction",
+        "plugin",
+        "skills",
+        "readme"
+      ],
+      "tags": [
+        "index",
+        "catalog"
+      ],
+      "complexity": "moderate",
+      "name": "ua-treatment/wiki/index.md"
+    },
+    {
+      "id": "file:ua-treatment/wiki/plugin.md",
+      "type": "file",
+      "kind": "doc",
+      "path": "ua-treatment/wiki/plugin.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "title": "TCS Construction Plugin",
+      "totalLines": 26,
+      "nonEmptyLines": 21,
+      "sectionCount": 5,
+      "summary": "Entity page describing the TCS Construction plugin: a construction management plugin for Hermes Agent. Sourced from README.md.",
+      "frontmatter": {
+        "type": "entity",
+        "tags": [
+          "plugin",
+          "tcs-construction"
+        ],
+        "sources": [
+          "README.md"
+        ]
+      },
+      "wikilinks": [
+        "tcs-construction",
+        "skills",
+        "readme"
+      ],
+      "complexity": "moderate",
+      "name": "ua-treatment/wiki/plugin.md",
+      "tags": [
+        "untagged"
+      ]
+    },
+    {
+      "id": "file:ua-treatment/wiki/skills.md",
+      "type": "file",
+      "kind": "doc",
+      "path": "ua-treatment/wiki/skills.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "title": "Plugin Skills",
+      "totalLines": 25,
+      "nonEmptyLines": 20,
+      "sectionCount": 5,
+      "summary": "Entity page describing the plugin skills directory and its construction management capabilities. Sourced from skills/.",
+      "frontmatter": {
+        "type": "entity",
+        "tags": [
+          "skills",
+          "plugin"
+        ],
+        "sources": [
+          "skills/"
+        ]
+      },
+      "wikilinks": [
+        "tcs-construction",
+        "plugin",
+        "readme"
+      ],
+      "complexity": "moderate",
+      "name": "ua-treatment/wiki/skills.md",
+      "tags": [
+        "untagged"
+      ]
+    },
+    {
+      "id": "file:ua-treatment/wiki/tcs-construction.md",
+      "type": "file",
+      "kind": "doc",
+      "path": "ua-treatment/wiki/tcs-construction.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "title": "TCS Construction",
+      "totalLines": 26,
+      "nonEmptyLines": 21,
+      "sectionCount": 5,
+      "summary": "Top-level entity page: TCS Construction is a construction management plugin for Hermes Agent. Sourced from README.md.",
+      "frontmatter": {
+        "type": "entity",
+        "tags": [
+          "plugin",
+          "tcs-construction"
+        ],
+        "sources": [
+          "README.md"
+        ]
+      },
+      "wikilinks": [
+        "plugin",
+        "skills",
+        "readme"
+      ],
+      "complexity": "moderate",
+      "name": "ua-treatment/wiki/tcs-construction.md",
+      "tags": [
+        "untagged"
+      ]
+    },
+    {
+      "id": "config:.claude-plugin/plugin.json",
+      "type": "config",
       "name": "plugin.json",
-      "filePath": "tcs-plugin-json",
-      "summary": "json, 7 lines",
+      "filePath": ".claude-plugin/plugin.json",
+      "summary": "Claude Code plugin manifest declaring the tcs-construction package metadata (name, version 1.0.0, author SSU Fleet) for the TCS Foundation Layer 32-skill bundle.",
       "tags": [
-        "file"
+        "configuration",
+        "plugin-manifest",
+        "claude-plugin"
       ],
       "complexity": "simple"
     },
     {
-      "id": "tcs-README-md",
-      "type": "file",
+      "id": "document:README.md",
+      "type": "document",
       "name": "README.md",
-      "filePath": "tcs-README-md",
-      "summary": "markdown, 48 lines",
+      "filePath": "README.md",
+      "summary": "TCS Construction Plugin overview that catalogs all 32 Work Instruction skills (Atlas STDWORK SOP WI Wiring V1 source) with their ID-to-title mapping for the Foundation Layer.",
       "tags": [
-        "file"
+        "documentation",
+        "entry-point",
+        "overview",
+        "skill-catalog"
       ],
       "complexity": "simple"
     },
     {
-      "id": "tcs-SKILL-md",
-      "type": "file",
+      "id": "document:skills/d03_1003/SKILL.md",
+      "type": "document",
       "name": "SKILL.md",
-      "filePath": "tcs-SKILL-md",
-      "summary": "markdown, 37 lines",
+      "filePath": "skills/d03_1003/SKILL.md",
+      "summary": "Work Instruction skill manifest for 'Concrete Slab Rebar Installation' (d03_1003) — defines trigger, prerequisites, steps, outputs, Jr coaching notes, and quality gates for TCS construction workflow execution.",
       "tags": [
-        "file"
+        "documentation",
+        "work-instruction",
+        "skill-manifest",
+        "concrete",
+        "tcs-foundation"
       ],
       "complexity": "simple"
     },
     {
-      "id": "tcs-SKILL-md",
-      "type": "file",
+      "id": "document:skills/d05_1001/SKILL.md",
+      "type": "document",
       "name": "SKILL.md",
-      "filePath": "tcs-SKILL-md",
-      "summary": "markdown, 37 lines",
+      "filePath": "skills/d05_1001/SKILL.md",
+      "summary": "Work Instruction skill manifest for 'Structural Steel Installation' (d05_1001) — defines trigger, prerequisites, steps, outputs, Jr coaching notes, and quality gates for TCS construction workflow execution.",
       "tags": [
-        "file"
+        "documentation",
+        "work-instruction",
+        "skill-manifest",
+        "structural-steel",
+        "tcs-foundation"
       ],
       "complexity": "simple"
     },
     {
-      "id": "tcs-SKILL-md",
-      "type": "file",
+      "id": "document:skills/d22_1001/SKILL.md",
+      "type": "document",
       "name": "SKILL.md",
-      "filePath": "tcs-SKILL-md",
-      "summary": "markdown, 37 lines",
+      "filePath": "skills/d22_1001/SKILL.md",
+      "summary": "Work Instruction skill manifest for 'Plumbing Rough-In' (d22_1001) — defines trigger, prerequisites, steps, outputs, Jr coaching notes, and quality gates for TCS construction workflow execution.",
       "tags": [
-        "file"
+        "documentation",
+        "work-instruction",
+        "skill-manifest",
+        "plumbing",
+        "tcs-foundation"
       ],
       "complexity": "simple"
     },
     {
-      "id": "tcs-SKILL-md",
-      "type": "file",
+      "id": "document:skills/d23_1001/SKILL.md",
+      "type": "document",
       "name": "SKILL.md",
-      "filePath": "tcs-SKILL-md",
-      "summary": "markdown, 37 lines",
+      "filePath": "skills/d23_1001/SKILL.md",
+      "summary": "Work Instruction skill manifest for 'HVAC Installation' (d23_1001) — defines trigger, prerequisites, steps, outputs, Jr coaching notes, and quality gates for TCS construction workflow execution.",
       "tags": [
-        "file"
+        "documentation",
+        "work-instruction",
+        "skill-manifest",
+        "hvac",
+        "tcs-foundation"
       ],
       "complexity": "simple"
     },
     {
-      "id": "tcs-SKILL-md",
-      "type": "file",
+      "id": "document:skills/d26_1001/SKILL.md",
+      "type": "document",
       "name": "SKILL.md",
-      "filePath": "tcs-SKILL-md",
-      "summary": "markdown, 37 lines",
+      "filePath": "skills/d26_1001/SKILL.md",
+      "summary": "Work Instruction skill manifest for 'Electrical Rough-In' (d26_1001) — defines trigger, prerequisites, steps, outputs, Jr coaching notes, and quality gates for TCS construction workflow execution.",
       "tags": [
-        "file"
+        "documentation",
+        "work-instruction",
+        "skill-manifest",
+        "electrical",
+        "tcs-foundation"
       ],
       "complexity": "simple"
     },
     {
-      "id": "tcs-SKILL-md",
-      "type": "file",
+      "id": "document:skills/sagecm_3wla_0001/SKILL.md",
+      "type": "document",
       "name": "SKILL.md",
-      "filePath": "tcs-SKILL-md",
-      "summary": "markdown, 37 lines",
+      "filePath": "skills/sagecm_3wla_0001/SKILL.md",
+      "summary": "Work Instruction skill manifest for '3-Week Look Ahead' (sagecm_3wla_0001) — defines trigger, prerequisites, steps, outputs, Jr coaching notes, and quality gates for TCS construction workflow execution.",
       "tags": [
-        "file"
+        "documentation",
+        "work-instruction",
+        "skill-manifest",
+        "scheduling",
+        "tcs-foundation"
       ],
       "complexity": "simple"
     },
     {
-      "id": "tcs-SKILL-md",
-      "type": "file",
+      "id": "document:skills/sagecm_asbuiltupdates_0001/SKILL.md",
+      "type": "document",
       "name": "SKILL.md",
-      "filePath": "tcs-SKILL-md",
-      "summary": "markdown, 37 lines",
+      "filePath": "skills/sagecm_asbuiltupdates_0001/SKILL.md",
+      "summary": "Work Instruction skill manifest for 'As-Built Updates' (sagecm_asbuiltupdates_0001) — defines trigger, prerequisites, steps, outputs, Jr coaching notes, and quality gates for TCS construction workflow execution.",
       "tags": [
-        "file"
+        "documentation",
+        "work-instruction",
+        "skill-manifest",
+        "documentation",
+        "tcs-foundation"
       ],
       "complexity": "simple"
     },
     {
-      "id": "tcs-SKILL-md",
-      "type": "file",
+      "id": "document:skills/sagecm_complianceaudit_0001/SKILL.md",
+      "type": "document",
       "name": "SKILL.md",
-      "filePath": "tcs-SKILL-md",
-      "summary": "markdown, 37 lines",
+      "filePath": "skills/sagecm_complianceaudit_0001/SKILL.md",
+      "summary": "Work Instruction skill manifest for 'Compliance Audit' (sagecm_complianceaudit_0001) — defines trigger, prerequisites, steps, outputs, Jr coaching notes, and quality gates for TCS construction workflow execution.",
       "tags": [
-        "file"
+        "documentation",
+        "work-instruction",
+        "skill-manifest",
+        "compliance",
+        "tcs-foundation"
       ],
       "complexity": "simple"
     },
     {
-      "id": "tcs-SKILL-md",
-      "type": "file",
+      "id": "document:skills/sagecm_complynotice_0001/SKILL.md",
+      "type": "document",
       "name": "SKILL.md",
-      "filePath": "tcs-SKILL-md",
-      "summary": "markdown, 37 lines",
+      "filePath": "skills/sagecm_complynotice_0001/SKILL.md",
+      "summary": "Work Instruction skill manifest for 'Comply Notice' (sagecm_complynotice_0001) — defines trigger, prerequisites, steps, outputs, Jr coaching notes, and quality gates for TCS construction workflow execution.",
       "tags": [
-        "file"
+        "documentation",
+        "work-instruction",
+        "skill-manifest",
+        "compliance",
+        "tcs-foundation"
       ],
       "complexity": "simple"
     },
     {
-      "id": "tcs-SKILL-md",
-      "type": "file",
+      "id": "document:skills/sagecm_dl_001/SKILL.md",
+      "type": "document",
       "name": "SKILL.md",
-      "filePath": "tcs-SKILL-md",
-      "summary": "markdown, 37 lines",
+      "filePath": "skills/sagecm_dl_001/SKILL.md",
+      "summary": "Work Instruction skill manifest for 'Daily Log Entry in Sage CM' (sagecm_dl_001) — defines trigger, prerequisites, steps, outputs, Jr coaching notes, and quality gates for TCS construction workflow execution.",
       "tags": [
-        "file"
+        "documentation",
+        "work-instruction",
+        "skill-manifest",
+        "daily-log",
+        "tcs-foundation"
       ],
       "complexity": "simple"
     },
     {
-      "id": "tcs-SKILL-md",
-      "type": "file",
+      "id": "document:skills/sagecm_fieldmonitoring_0001/SKILL.md",
+      "type": "document",
       "name": "SKILL.md",
-      "filePath": "tcs-SKILL-md",
-      "summary": "markdown, 37 lines",
+      "filePath": "skills/sagecm_fieldmonitoring_0001/SKILL.md",
+      "summary": "Work Instruction skill manifest for 'Field Monitoring' (sagecm_fieldmonitoring_0001) — defines trigger, prerequisites, steps, outputs, Jr coaching notes, and quality gates for TCS construction workflow execution.",
       "tags": [
-        "file"
+        "documentation",
+        "work-instruction",
+        "skill-manifest",
+        "field-ops",
+        "tcs-foundation"
       ],
       "complexity": "simple"
     },
     {
-      "id": "tcs-SKILL-md",
-      "type": "file",
+      "id": "document:skills/sagecm_gocodes_0001/SKILL.md",
+      "type": "document",
       "name": "SKILL.md",
-      "filePath": "tcs-SKILL-md",
-      "summary": "markdown, 37 lines",
+      "filePath": "skills/sagecm_gocodes_0001/SKILL.md",
+      "summary": "Work Instruction skill manifest for 'Go Codes Equipment Scan' (sagecm_gocodes_0001) — defines trigger, prerequisites, steps, outputs, Jr coaching notes, and quality gates for TCS construction workflow execution.",
       "tags": [
-        "file"
+        "documentation",
+        "work-instruction",
+        "skill-manifest",
+        "equipment",
+        "tcs-foundation"
       ],
       "complexity": "simple"
     },
     {
-      "id": "tcs-SKILL-md",
-      "type": "file",
+      "id": "document:skills/sagecm_holdpointinspection_0001/SKILL.md",
+      "type": "document",
       "name": "SKILL.md",
-      "filePath": "tcs-SKILL-md",
-      "summary": "markdown, 37 lines",
+      "filePath": "skills/sagecm_holdpointinspection_0001/SKILL.md",
+      "summary": "Work Instruction skill manifest for 'Hold Point Inspection' (sagecm_holdpointinspection_0001) — defines trigger, prerequisites, steps, outputs, Jr coaching notes, and quality gates for TCS construction workflow execution.",
       "tags": [
-        "file"
+        "documentation",
+        "work-instruction",
+        "skill-manifest",
+        "inspection",
+        "tcs-foundation"
       ],
       "complexity": "simple"
     },
     {
-      "id": "tcs-SKILL-md",
-      "type": "file",
+      "id": "document:skills/sagecm_housekeeping_0001/SKILL.md",
+      "type": "document",
       "name": "SKILL.md",
-      "filePath": "tcs-SKILL-md",
-      "summary": "markdown, 37 lines",
+      "filePath": "skills/sagecm_housekeeping_0001/SKILL.md",
+      "summary": "Work Instruction skill manifest for 'Housekeeping' (sagecm_housekeeping_0001) — defines trigger, prerequisites, steps, outputs, Jr coaching notes, and quality gates for TCS construction workflow execution.",
       "tags": [
-        "file"
+        "documentation",
+        "work-instruction",
+        "skill-manifest",
+        "site-ops",
+        "tcs-foundation"
       ],
       "complexity": "simple"
     },
     {
-      "id": "tcs-SKILL-md",
-      "type": "file",
+      "id": "document:skills/sagecm_materialreceiving_0001/SKILL.md",
+      "type": "document",
       "name": "SKILL.md",
-      "filePath": "tcs-SKILL-md",
-      "summary": "markdown, 37 lines",
+      "filePath": "skills/sagecm_materialreceiving_0001/SKILL.md",
+      "summary": "Work Instruction skill manifest for 'Material Receiving' (sagecm_materialreceiving_0001) — defines trigger, prerequisites, steps, outputs, Jr coaching notes, and quality gates for TCS construction workflow execution.",
       "tags": [
-        "file"
+        "documentation",
+        "work-instruction",
+        "skill-manifest",
+        "logistics",
+        "tcs-foundation"
       ],
       "complexity": "simple"
     },
     {
-      "id": "tcs-SKILL-md",
-      "type": "file",
+      "id": "document:skills/sagecm_morninghuddle_0001/SKILL.md",
+      "type": "document",
       "name": "SKILL.md",
-      "filePath": "tcs-SKILL-md",
-      "summary": "markdown, 37 lines",
+      "filePath": "skills/sagecm_morninghuddle_0001/SKILL.md",
+      "summary": "Work Instruction skill manifest for 'Morning Huddle / Toolbox Talk' (sagecm_morninghuddle_0001) — defines trigger, prerequisites, steps, outputs, Jr coaching notes, and quality gates for TCS construction workflow execution.",
       "tags": [
-        "file"
+        "documentation",
+        "work-instruction",
+        "skill-manifest",
+        "safety",
+        "tcs-foundation"
       ],
       "complexity": "simple"
     },
     {
-      "id": "tcs-SKILL-md",
-      "type": "file",
+      "id": "document:skills/sagecm_photodoc_0001/SKILL.md",
+      "type": "document",
       "name": "SKILL.md",
-      "filePath": "tcs-SKILL-md",
-      "summary": "markdown, 37 lines",
+      "filePath": "skills/sagecm_photodoc_0001/SKILL.md",
+      "summary": "Work Instruction skill manifest for 'Photo Documentation' (sagecm_photodoc_0001) — defines trigger, prerequisites, steps, outputs, Jr coaching notes, and quality gates for TCS construction workflow execution.",
       "tags": [
-        "file"
+        "documentation",
+        "work-instruction",
+        "skill-manifest",
+        "documentation",
+        "tcs-foundation"
       ],
       "complexity": "simple"
     },
     {
-      "id": "tcs-SKILL-md",
-      "type": "file",
+      "id": "document:skills/sagecm_postrainswppp_0001/SKILL.md",
+      "type": "document",
       "name": "SKILL.md",
-      "filePath": "tcs-SKILL-md",
-      "summary": "markdown, 37 lines",
+      "filePath": "skills/sagecm_postrainswppp_0001/SKILL.md",
+      "summary": "Work Instruction skill manifest for 'Post-Rain SWPPP Inspection' (sagecm_postrainswppp_0001) — defines trigger, prerequisites, steps, outputs, Jr coaching notes, and quality gates for TCS construction workflow execution.",
       "tags": [
-        "file"
+        "documentation",
+        "work-instruction",
+        "skill-manifest",
+        "environmental",
+        "tcs-foundation"
       ],
       "complexity": "simple"
     },
     {
-      "id": "tcs-SKILL-md",
-      "type": "file",
+      "id": "document:skills/sagecm_punchlistcloseout_0001/SKILL.md",
+      "type": "document",
       "name": "SKILL.md",
-      "filePath": "tcs-SKILL-md",
-      "summary": "markdown, 37 lines",
+      "filePath": "skills/sagecm_punchlistcloseout_0001/SKILL.md",
+      "summary": "Work Instruction skill manifest for 'Punchlist Closeout' (sagecm_punchlistcloseout_0001) — defines trigger, prerequisites, steps, outputs, Jr coaching notes, and quality gates for TCS construction workflow execution.",
       "tags": [
-        "file"
+        "documentation",
+        "work-instruction",
+        "skill-manifest",
+        "closeout",
+        "tcs-foundation"
       ],
       "complexity": "simple"
     },
     {
-      "id": "tcs-SKILL-md",
-      "type": "file",
+      "id": "document:skills/sagecm_qcaudit_0001/SKILL.md",
+      "type": "document",
       "name": "SKILL.md",
-      "filePath": "tcs-SKILL-md",
-      "summary": "markdown, 37 lines",
+      "filePath": "skills/sagecm_qcaudit_0001/SKILL.md",
+      "summary": "Work Instruction skill manifest for 'QC Audit' (sagecm_qcaudit_0001) — defines trigger, prerequisites, steps, outputs, Jr coaching notes, and quality gates for TCS construction workflow execution.",
       "tags": [
-        "file"
+        "documentation",
+        "work-instruction",
+        "skill-manifest",
+        "quality",
+        "tcs-foundation"
       ],
       "complexity": "simple"
     },
     {
-      "id": "tcs-SKILL-md",
-      "type": "file",
+      "id": "document:skills/sagecm_regulatorinspection_0001/SKILL.md",
+      "type": "document",
       "name": "SKILL.md",
-      "filePath": "tcs-SKILL-md",
-      "summary": "markdown, 37 lines",
+      "filePath": "skills/sagecm_regulatorinspection_0001/SKILL.md",
+      "summary": "Work Instruction skill manifest for 'Regulator / AHJ Inspection' (sagecm_regulatorinspection_0001) — defines trigger, prerequisites, steps, outputs, Jr coaching notes, and quality gates for TCS construction workflow execution.",
       "tags": [
-        "file"
+        "documentation",
+        "work-instruction",
+        "skill-manifest",
+        "inspection",
+        "tcs-foundation"
       ],
       "complexity": "simple"
     },
     {
-      "id": "tcs-SKILL-md",
-      "type": "file",
+      "id": "document:skills/sagecm_rfi_0001/SKILL.md",
+      "type": "document",
       "name": "SKILL.md",
-      "filePath": "tcs-SKILL-md",
-      "summary": "markdown, 37 lines",
+      "filePath": "skills/sagecm_rfi_0001/SKILL.md",
+      "summary": "Work Instruction skill manifest for 'RFI Processing' (sagecm_rfi_0001) — defines trigger, prerequisites, steps, outputs, Jr coaching notes, and quality gates for TCS construction workflow execution.",
       "tags": [
-        "file"
+        "documentation",
+        "work-instruction",
+        "skill-manifest",
+        "rfi",
+        "tcs-foundation"
       ],
       "complexity": "simple"
     },
     {
-      "id": "tcs-SKILL-md",
-      "type": "file",
+      "id": "document:skills/sagecm_safetyequipment_0001/SKILL.md",
+      "type": "document",
       "name": "SKILL.md",
-      "filePath": "tcs-SKILL-md",
-      "summary": "markdown, 37 lines",
+      "filePath": "skills/sagecm_safetyequipment_0001/SKILL.md",
+      "summary": "Work Instruction skill manifest for 'Safety Equipment Check' (sagecm_safetyequipment_0001) — defines trigger, prerequisites, steps, outputs, Jr coaching notes, and quality gates for TCS construction workflow execution.",
       "tags": [
-        "file"
-      ],
-      "complexity": "simple"
-    },
-    {
-      "id": "tcs-SKILL-md",
-      "type": "file",
-      "name": "SKILL.md",
-      "filePath": "tcs-SKILL-md",
-      "summary": "markdown, 37 lines",
-      "tags": [
-        "file"
-      ],
-      "complexity": "simple"
-    },
-    {
-      "id": "tcs-SKILL-md",
-      "type": "file",
-      "name": "SKILL.md",
-      "filePath": "tcs-SKILL-md",
-      "summary": "markdown, 37 lines",
-      "tags": [
-        "file"
-      ],
-      "complexity": "simple"
-    },
-    {
-      "id": "tcs-SKILL-md",
-      "type": "file",
-      "name": "SKILL.md",
-      "filePath": "tcs-SKILL-md",
-      "summary": "markdown, 37 lines",
-      "tags": [
-        "file"
-      ],
-      "complexity": "simple"
-    },
-    {
-      "id": "tcs-SKILL-md",
-      "type": "file",
-      "name": "SKILL.md",
-      "filePath": "tcs-SKILL-md",
-      "summary": "markdown, 37 lines",
-      "tags": [
-        "file"
-      ],
-      "complexity": "simple"
-    },
-    {
-      "id": "tcs-SKILL-md",
-      "type": "file",
-      "name": "SKILL.md",
-      "filePath": "tcs-SKILL-md",
-      "summary": "markdown, 37 lines",
-      "tags": [
-        "file"
-      ],
-      "complexity": "simple"
-    },
-    {
-      "id": "tcs-SKILL-md",
-      "type": "file",
-      "name": "SKILL.md",
-      "filePath": "tcs-SKILL-md",
-      "summary": "markdown, 37 lines",
-      "tags": [
-        "file"
-      ],
-      "complexity": "simple"
-    },
-    {
-      "id": "tcs-SKILL-md",
-      "type": "file",
-      "name": "SKILL.md",
-      "filePath": "tcs-SKILL-md",
-      "summary": "markdown, 37 lines",
-      "tags": [
-        "file"
-      ],
-      "complexity": "simple"
-    },
-    {
-      "id": "tcs-SKILL-md",
-      "type": "file",
-      "name": "SKILL.md",
-      "filePath": "tcs-SKILL-md",
-      "summary": "markdown, 37 lines",
-      "tags": [
-        "file"
-      ],
-      "complexity": "simple"
-    },
-    {
-      "id": "tcs-SKILL-md",
-      "type": "file",
-      "name": "SKILL.md",
-      "filePath": "tcs-SKILL-md",
-      "summary": "markdown, 37 lines",
-      "tags": [
-        "file"
+        "documentation",
+        "work-instruction",
+        "skill-manifest",
+        "safety",
+        "tcs-foundation"
       ],
       "complexity": "simple"
     }
   ],
   "edges": [
     {
-      "id": "edge-0",
-      "source": "layer-json",
-      "target": "tcs",
-      "type": "related",
-      "direction": "forward",
-      "weight": 0.5,
-      "label": "composes"
+      "source": "config:ua-treatment/receipt.json",
+      "target": "config:ua-treatment/knowledge-graph.json",
+      "type": "documents",
+      "description": "receipt lists knowledge-graph.json as evidence artifact 1_understand",
+      "direction": "forward"
     },
     {
-      "id": "edge-1",
-      "source": "layer-markdown",
-      "target": "tcs",
-      "type": "related",
-      "direction": "forward",
-      "weight": 0.5,
-      "label": "composes"
+      "source": "config:ua-treatment/receipt.json",
+      "target": "file:ua-treatment/dashboard.html",
+      "type": "documents",
+      "description": "receipt lists dashboard.html as evidence artifact 2_dashboard",
+      "direction": "forward"
     },
     {
-      "id": "edge-2",
-      "source": "tcs-plugin-json",
-      "target": "layer-json",
-      "type": "related",
-      "direction": "forward",
-      "weight": 0.5,
-      "label": "belongs_to"
+      "source": "config:ua-treatment/receipt.json",
+      "target": "config:ua-treatment/domain-flow.json",
+      "type": "documents",
+      "description": "receipt lists domain-flow.json as evidence artifact 3_domain",
+      "direction": "forward"
     },
     {
-      "id": "edge-3",
-      "source": "tcs-README-md",
-      "target": "layer-markdown",
-      "type": "related",
-      "direction": "forward",
-      "weight": 0.5,
-      "label": "belongs_to"
+      "source": "config:ua-treatment/receipt.json",
+      "target": "config:ua-treatment/chat-response.json",
+      "type": "documents",
+      "description": "receipt lists chat-response.json as evidence artifact 4_chat",
+      "direction": "forward"
     },
     {
-      "id": "edge-4",
-      "source": "tcs-SKILL-md",
-      "target": "layer-markdown",
-      "type": "related",
-      "direction": "forward",
-      "weight": 0.5,
-      "label": "belongs_to"
+      "source": "config:ua-treatment/receipt.json",
+      "target": "config:ua-treatment/diff-analysis.json",
+      "type": "documents",
+      "description": "receipt lists diff-analysis.json as evidence artifact 5_diff",
+      "direction": "forward"
     },
     {
-      "id": "edge-5",
-      "source": "tcs-SKILL-md",
-      "target": "layer-markdown",
-      "type": "related",
-      "direction": "forward",
-      "weight": 0.5,
-      "label": "belongs_to"
+      "source": "config:ua-treatment/receipt.json",
+      "target": "document:ua-treatment/explain-readme.md",
+      "type": "documents",
+      "description": "receipt lists explain-readme.md as evidence artifact 6_explain",
+      "direction": "forward"
     },
     {
-      "id": "edge-6",
-      "source": "tcs-SKILL-md",
-      "target": "layer-markdown",
-      "type": "related",
-      "direction": "forward",
-      "weight": 0.5,
-      "label": "belongs_to"
+      "source": "config:ua-treatment/receipt.json",
+      "target": "document:ua-treatment/onboard-guide.md",
+      "type": "documents",
+      "description": "receipt lists onboard-guide.md as evidence artifact 7_onboard",
+      "direction": "forward"
     },
     {
-      "id": "edge-7",
-      "source": "tcs-SKILL-md",
-      "target": "layer-markdown",
-      "type": "related",
-      "direction": "forward",
-      "weight": 0.5,
-      "label": "belongs_to"
+      "source": "config:ua-treatment/receipt.json",
+      "target": "config:ua-treatment/wiki-knowledge-graph.json",
+      "type": "documents",
+      "description": "receipt lists wiki-knowledge-graph.json as evidence artifact 8_knowledge",
+      "direction": "forward"
     },
     {
-      "id": "edge-8",
-      "source": "tcs-SKILL-md",
-      "target": "layer-markdown",
+      "source": "file:ua-treatment/dashboard.html",
+      "target": "config:ua-treatment/knowledge-graph.json",
       "type": "related",
-      "direction": "forward",
-      "weight": 0.5,
-      "label": "belongs_to"
+      "description": "dashboard renders the same node/edge/layer/tour data captured in knowledge-graph.json (6 nodes, 6 edges, identical tour narratives)",
+      "direction": "forward"
     },
     {
-      "id": "edge-9",
-      "source": "tcs-SKILL-md",
-      "target": "layer-markdown",
+      "source": "config:ua-treatment/domain-flow.json",
+      "target": "config:ua-treatment/knowledge-graph.json",
       "type": "related",
-      "direction": "forward",
-      "weight": 0.5,
-      "label": "belongs_to"
+      "description": "domain flow is a simplified 3-node/2-edge projection of the full knowledge graph focused on plugin/skills/readme",
+      "direction": "forward"
     },
     {
-      "id": "edge-10",
-      "source": "tcs-SKILL-md",
-      "target": "layer-markdown",
+      "source": "document:ua-treatment/explain-readme.md",
+      "target": "config:ua-treatment/knowledge-graph.json",
       "type": "related",
-      "direction": "forward",
-      "weight": 0.5,
-      "label": "belongs_to"
+      "description": "explainer narrates the architecture and call graph implied by the knowledge graph",
+      "direction": "forward"
     },
     {
-      "id": "edge-11",
-      "source": "tcs-SKILL-md",
-      "target": "layer-markdown",
+      "source": "document:ua-treatment/onboard-guide.md",
+      "target": "document:ua-treatment/explain-readme.md",
       "type": "related",
-      "direction": "forward",
-      "weight": 0.5,
-      "label": "belongs_to"
+      "description": "onboarding guide and deep-dive explainer cover overlapping plugin-definition and key-files content for different audiences",
+      "direction": "forward"
     },
     {
-      "id": "edge-12",
-      "source": "tcs-SKILL-md",
-      "target": "layer-markdown",
+      "source": "config:ua-treatment/wiki-knowledge-graph.json",
+      "target": "config:ua-treatment/knowledge-graph.json",
       "type": "related",
-      "direction": "forward",
-      "weight": 0.5,
-      "label": "belongs_to"
+      "description": "wiki entity index complements the structural knowledge graph by indexing TCS Construction, plugin, and skills as wiki pages",
+      "direction": "forward"
     },
     {
-      "id": "edge-13",
-      "source": "tcs-SKILL-md",
-      "target": "layer-markdown",
+      "source": "config:ua-treatment/chat-response.json",
+      "target": "config:ua-treatment/knowledge-graph.json",
       "type": "related",
-      "direction": "forward",
-      "weight": 0.5,
-      "label": "belongs_to"
+      "description": "chat response is grounded in the same surface sources (README.md, skills/) that anchor the knowledge graph",
+      "direction": "forward"
     },
     {
-      "id": "edge-14",
-      "source": "tcs-SKILL-md",
-      "target": "layer-markdown",
-      "type": "related",
+      "source": "document:README.md",
+      "target": "config:.claude-plugin/plugin.json",
+      "type": "documents",
       "direction": "forward",
-      "weight": 0.5,
-      "label": "belongs_to"
+      "weight": 0.5
     },
     {
-      "id": "edge-15",
-      "source": "tcs-SKILL-md",
-      "target": "layer-markdown",
-      "type": "related",
+      "source": "document:README.md",
+      "target": "document:skills/d03_1003/SKILL.md",
+      "type": "documents",
       "direction": "forward",
-      "weight": 0.5,
-      "label": "belongs_to"
+      "weight": 0.5
     },
     {
-      "id": "edge-16",
-      "source": "tcs-SKILL-md",
-      "target": "layer-markdown",
-      "type": "related",
+      "source": "document:README.md",
+      "target": "document:skills/d05_1001/SKILL.md",
+      "type": "documents",
       "direction": "forward",
-      "weight": 0.5,
-      "label": "belongs_to"
+      "weight": 0.5
     },
     {
-      "id": "edge-17",
-      "source": "tcs-SKILL-md",
-      "target": "layer-markdown",
-      "type": "related",
+      "source": "document:README.md",
+      "target": "document:skills/d22_1001/SKILL.md",
+      "type": "documents",
       "direction": "forward",
-      "weight": 0.5,
-      "label": "belongs_to"
+      "weight": 0.5
     },
     {
-      "id": "edge-18",
-      "source": "tcs-SKILL-md",
-      "target": "layer-markdown",
-      "type": "related",
+      "source": "document:README.md",
+      "target": "document:skills/d23_1001/SKILL.md",
+      "type": "documents",
       "direction": "forward",
-      "weight": 0.5,
-      "label": "belongs_to"
+      "weight": 0.5
     },
     {
-      "id": "edge-19",
-      "source": "tcs-SKILL-md",
-      "target": "layer-markdown",
-      "type": "related",
+      "source": "document:README.md",
+      "target": "document:skills/d26_1001/SKILL.md",
+      "type": "documents",
       "direction": "forward",
-      "weight": 0.5,
-      "label": "belongs_to"
+      "weight": 0.5
     },
     {
-      "id": "edge-20",
-      "source": "tcs-SKILL-md",
-      "target": "layer-markdown",
-      "type": "related",
+      "source": "document:README.md",
+      "target": "document:skills/sagecm_3wla_0001/SKILL.md",
+      "type": "documents",
       "direction": "forward",
-      "weight": 0.5,
-      "label": "belongs_to"
+      "weight": 0.5
     },
     {
-      "id": "edge-21",
-      "source": "tcs-SKILL-md",
-      "target": "layer-markdown",
-      "type": "related",
+      "source": "document:README.md",
+      "target": "document:skills/sagecm_asbuiltupdates_0001/SKILL.md",
+      "type": "documents",
       "direction": "forward",
-      "weight": 0.5,
-      "label": "belongs_to"
+      "weight": 0.5
     },
     {
-      "id": "edge-22",
-      "source": "tcs-SKILL-md",
-      "target": "layer-markdown",
-      "type": "related",
+      "source": "document:README.md",
+      "target": "document:skills/sagecm_complianceaudit_0001/SKILL.md",
+      "type": "documents",
       "direction": "forward",
-      "weight": 0.5,
-      "label": "belongs_to"
+      "weight": 0.5
     },
     {
-      "id": "edge-23",
-      "source": "tcs-SKILL-md",
-      "target": "layer-markdown",
-      "type": "related",
+      "source": "document:README.md",
+      "target": "document:skills/sagecm_complynotice_0001/SKILL.md",
+      "type": "documents",
       "direction": "forward",
-      "weight": 0.5,
-      "label": "belongs_to"
+      "weight": 0.5
     },
     {
-      "id": "edge-24",
-      "source": "tcs-SKILL-md",
-      "target": "layer-markdown",
-      "type": "related",
+      "source": "document:README.md",
+      "target": "document:skills/sagecm_dl_001/SKILL.md",
+      "type": "documents",
       "direction": "forward",
-      "weight": 0.5,
-      "label": "belongs_to"
+      "weight": 0.5
     },
     {
-      "id": "edge-25",
-      "source": "tcs-SKILL-md",
-      "target": "layer-markdown",
-      "type": "related",
+      "source": "document:README.md",
+      "target": "document:skills/sagecm_fieldmonitoring_0001/SKILL.md",
+      "type": "documents",
       "direction": "forward",
-      "weight": 0.5,
-      "label": "belongs_to"
+      "weight": 0.5
     },
     {
-      "id": "edge-26",
-      "source": "tcs-SKILL-md",
-      "target": "layer-markdown",
-      "type": "related",
+      "source": "document:README.md",
+      "target": "document:skills/sagecm_gocodes_0001/SKILL.md",
+      "type": "documents",
       "direction": "forward",
-      "weight": 0.5,
-      "label": "belongs_to"
+      "weight": 0.5
     },
     {
-      "id": "edge-27",
-      "source": "tcs-SKILL-md",
-      "target": "layer-markdown",
-      "type": "related",
+      "source": "document:README.md",
+      "target": "document:skills/sagecm_holdpointinspection_0001/SKILL.md",
+      "type": "documents",
       "direction": "forward",
-      "weight": 0.5,
-      "label": "belongs_to"
+      "weight": 0.5
     },
     {
-      "id": "edge-28",
-      "source": "tcs-SKILL-md",
-      "target": "layer-markdown",
-      "type": "related",
+      "source": "document:README.md",
+      "target": "document:skills/sagecm_housekeeping_0001/SKILL.md",
+      "type": "documents",
       "direction": "forward",
-      "weight": 0.5,
-      "label": "belongs_to"
+      "weight": 0.5
     },
     {
-      "id": "edge-29",
-      "source": "tcs-SKILL-md",
-      "target": "layer-markdown",
-      "type": "related",
+      "source": "document:README.md",
+      "target": "document:skills/sagecm_materialreceiving_0001/SKILL.md",
+      "type": "documents",
       "direction": "forward",
-      "weight": 0.5,
-      "label": "belongs_to"
+      "weight": 0.5
     },
     {
-      "id": "edge-30",
-      "source": "tcs-SKILL-md",
-      "target": "layer-markdown",
-      "type": "related",
+      "source": "document:README.md",
+      "target": "document:skills/sagecm_morninghuddle_0001/SKILL.md",
+      "type": "documents",
       "direction": "forward",
-      "weight": 0.5,
-      "label": "belongs_to"
+      "weight": 0.5
     },
     {
-      "id": "edge-31",
-      "source": "tcs-SKILL-md",
-      "target": "layer-markdown",
-      "type": "related",
+      "source": "document:README.md",
+      "target": "document:skills/sagecm_photodoc_0001/SKILL.md",
+      "type": "documents",
       "direction": "forward",
-      "weight": 0.5,
-      "label": "belongs_to"
+      "weight": 0.5
     },
     {
-      "id": "edge-32",
-      "source": "tcs-SKILL-md",
-      "target": "layer-markdown",
-      "type": "related",
+      "source": "document:README.md",
+      "target": "document:skills/sagecm_postrainswppp_0001/SKILL.md",
+      "type": "documents",
       "direction": "forward",
-      "weight": 0.5,
-      "label": "belongs_to"
+      "weight": 0.5
     },
     {
-      "id": "edge-33",
-      "source": "tcs-SKILL-md",
-      "target": "layer-markdown",
-      "type": "related",
+      "source": "document:README.md",
+      "target": "document:skills/sagecm_punchlistcloseout_0001/SKILL.md",
+      "type": "documents",
       "direction": "forward",
-      "weight": 0.5,
-      "label": "belongs_to"
+      "weight": 0.5
     },
     {
-      "id": "edge-34",
-      "source": "tcs-SKILL-md",
-      "target": "layer-markdown",
-      "type": "related",
+      "source": "document:README.md",
+      "target": "document:skills/sagecm_qcaudit_0001/SKILL.md",
+      "type": "documents",
       "direction": "forward",
-      "weight": 0.5,
-      "label": "belongs_to"
+      "weight": 0.5
     },
     {
-      "id": "edge-35",
-      "source": "tcs-SKILL-md",
-      "target": "layer-markdown",
+      "source": "document:README.md",
+      "target": "document:skills/sagecm_regulatorinspection_0001/SKILL.md",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:README.md",
+      "target": "document:skills/sagecm_rfi_0001/SKILL.md",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:README.md",
+      "target": "document:skills/sagecm_safetyequipment_0001/SKILL.md",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:skills/d22_1001/SKILL.md",
+      "target": "document:skills/d23_1001/SKILL.md",
       "type": "related",
       "direction": "forward",
-      "weight": 0.5,
-      "label": "belongs_to"
+      "weight": 0.5
+    },
+    {
+      "source": "document:skills/d22_1001/SKILL.md",
+      "target": "document:skills/d26_1001/SKILL.md",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:skills/d23_1001/SKILL.md",
+      "target": "document:skills/d26_1001/SKILL.md",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:skills/d03_1003/SKILL.md",
+      "target": "document:skills/d05_1001/SKILL.md",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:skills/sagecm_morninghuddle_0001/SKILL.md",
+      "target": "document:skills/sagecm_safetyequipment_0001/SKILL.md",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:skills/sagecm_complianceaudit_0001/SKILL.md",
+      "target": "document:skills/sagecm_fieldmonitoring_0001/SKILL.md",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:skills/sagecm_complianceaudit_0001/SKILL.md",
+      "target": "document:skills/sagecm_holdpointinspection_0001/SKILL.md",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:skills/sagecm_complianceaudit_0001/SKILL.md",
+      "target": "document:skills/sagecm_postrainswppp_0001/SKILL.md",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:skills/sagecm_complianceaudit_0001/SKILL.md",
+      "target": "document:skills/sagecm_qcaudit_0001/SKILL.md",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:skills/sagecm_complianceaudit_0001/SKILL.md",
+      "target": "document:skills/sagecm_regulatorinspection_0001/SKILL.md",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:skills/sagecm_fieldmonitoring_0001/SKILL.md",
+      "target": "document:skills/sagecm_holdpointinspection_0001/SKILL.md",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:skills/sagecm_fieldmonitoring_0001/SKILL.md",
+      "target": "document:skills/sagecm_postrainswppp_0001/SKILL.md",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:skills/sagecm_fieldmonitoring_0001/SKILL.md",
+      "target": "document:skills/sagecm_qcaudit_0001/SKILL.md",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:skills/sagecm_fieldmonitoring_0001/SKILL.md",
+      "target": "document:skills/sagecm_regulatorinspection_0001/SKILL.md",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:skills/sagecm_holdpointinspection_0001/SKILL.md",
+      "target": "document:skills/sagecm_postrainswppp_0001/SKILL.md",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:skills/sagecm_holdpointinspection_0001/SKILL.md",
+      "target": "document:skills/sagecm_qcaudit_0001/SKILL.md",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:skills/sagecm_holdpointinspection_0001/SKILL.md",
+      "target": "document:skills/sagecm_regulatorinspection_0001/SKILL.md",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:skills/sagecm_postrainswppp_0001/SKILL.md",
+      "target": "document:skills/sagecm_qcaudit_0001/SKILL.md",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:skills/sagecm_postrainswppp_0001/SKILL.md",
+      "target": "document:skills/sagecm_regulatorinspection_0001/SKILL.md",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:skills/sagecm_qcaudit_0001/SKILL.md",
+      "target": "document:skills/sagecm_regulatorinspection_0001/SKILL.md",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:skills/sagecm_asbuiltupdates_0001/SKILL.md",
+      "target": "document:skills/sagecm_dl_001/SKILL.md",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:skills/sagecm_asbuiltupdates_0001/SKILL.md",
+      "target": "document:skills/sagecm_photodoc_0001/SKILL.md",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:skills/sagecm_dl_001/SKILL.md",
+      "target": "document:skills/sagecm_photodoc_0001/SKILL.md",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:skills/sagecm_gocodes_0001/SKILL.md",
+      "target": "document:skills/sagecm_housekeeping_0001/SKILL.md",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:skills/sagecm_gocodes_0001/SKILL.md",
+      "target": "document:skills/sagecm_materialreceiving_0001/SKILL.md",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:skills/sagecm_housekeeping_0001/SKILL.md",
+      "target": "document:skills/sagecm_materialreceiving_0001/SKILL.md",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:skills/sagecm_complianceaudit_0001/SKILL.md",
+      "target": "document:skills/sagecm_complynotice_0001/SKILL.md",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "config:.claude-plugin/plugin.json",
+      "target": "document:README.md",
+      "type": "configures",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "document:skills/d05_1001/SKILL.md",
+      "target": "document:skills/d22_1001/SKILL.md",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
     }
   ],
   "layers": [
     {
-      "id": "layer-concept",
-      "name": "Concept Nodes",
-      "description": "3 concept nodes",
-      "nodeIds": [
-        "tcs",
-        "layer-json",
-        "layer-markdown"
+      "id": "L1-governance-kernel",
+      "name": "Governance Kernel",
+      "order": 1,
+      "color": "#7c3aed",
+      "description": "The governed-work core: plugin manifest plus the README catalog that declares all 32 Work Instructions and their IDs. This is the contract layer — it defines what the plugin is, who owns it, and which skills must exist.",
+      "members": [
+        "config:.claude-plugin/plugin.json",
+        "document:README.md"
+      ],
+      "entryPoints": [
+        "document:README.md"
+      ],
+      "tags": [
+        "governance",
+        "manifest",
+        "kernel",
+        "contract"
       ]
     },
     {
-      "id": "layer-file",
-      "name": "File Nodes",
-      "description": "34 file nodes",
-      "nodeIds": [
-        "tcs-plugin-json",
-        "tcs-README-md",
-        "tcs-SKILL-md",
-        "tcs-SKILL-md",
-        "tcs-SKILL-md",
-        "tcs-SKILL-md",
-        "tcs-SKILL-md",
-        "tcs-SKILL-md",
-        "tcs-SKILL-md",
-        "tcs-SKILL-md",
-        "tcs-SKILL-md",
-        "tcs-SKILL-md",
-        "tcs-SKILL-md",
-        "tcs-SKILL-md",
-        "tcs-SKILL-md",
-        "tcs-SKILL-md",
-        "tcs-SKILL-md",
-        "tcs-SKILL-md",
-        "tcs-SKILL-md",
-        "tcs-SKILL-md",
-        "tcs-SKILL-md",
-        "tcs-SKILL-md",
-        "tcs-SKILL-md",
-        "tcs-SKILL-md",
-        "tcs-SKILL-md",
-        "tcs-SKILL-md",
-        "tcs-SKILL-md",
-        "tcs-SKILL-md",
-        "tcs-SKILL-md",
-        "tcs-SKILL-md",
-        "tcs-SKILL-md",
-        "tcs-SKILL-md",
-        "tcs-SKILL-md",
-        "tcs-SKILL-md"
+      "id": "L2-construction-trade-skills",
+      "name": "Construction Trade Skills (CSI Divisions)",
+      "order": 2,
+      "color": "#0ea5e9",
+      "description": "Trade-specific Work Instruction skills keyed to CSI MasterFormat divisions: concrete (Div 03), structural steel (Div 05), plumbing (Div 22), HVAC (Div 23), and electrical (Div 26). These are the physical-construction skills — what gets built and how. Maps to the PM/Super/Estimating execution surface.",
+      "members": [
+        "document:skills/d03_1003/SKILL.md",
+        "document:skills/d05_1001/SKILL.md",
+        "document:skills/d22_1001/SKILL.md",
+        "document:skills/d23_1001/SKILL.md",
+        "document:skills/d26_1001/SKILL.md"
+      ],
+      "entryPoints": [
+        "document:skills/d03_1003/SKILL.md",
+        "document:skills/d05_1001/SKILL.md"
+      ],
+      "tags": [
+        "construction",
+        "csi-divisions",
+        "trade-skills",
+        "field-execution",
+        "pm",
+        "super",
+        "estimating"
+      ]
+    },
+    {
+      "id": "L3-safety-quality-control",
+      "name": "Safety & Quality Control Skills",
+      "order": 3,
+      "color": "#dc2626",
+      "description": "Sage CM Work Instructions covering safety, quality, and inspection workflows: morning huddles/toolbox talks, safety equipment checks, hold-point inspections, QC audits, regulator/AHJ inspections, and compliance audits/notices. This is the construction-safety + construction-quality control surface.",
+      "members": [
+        "document:skills/sagecm_morninghuddle_0001/SKILL.md",
+        "document:skills/sagecm_safetyequipment_0001/SKILL.md",
+        "document:skills/sagecm_holdpointinspection_0001/SKILL.md",
+        "document:skills/sagecm_qcaudit_0001/SKILL.md",
+        "document:skills/sagecm_regulatorinspection_0001/SKILL.md",
+        "document:skills/sagecm_complianceaudit_0001/SKILL.md",
+        "document:skills/sagecm_complynotice_0001/SKILL.md",
+        "document:skills/sagecm_postrainswppp_0001/SKILL.md"
+      ],
+      "entryPoints": [
+        "document:skills/sagecm_holdpointinspection_0001/SKILL.md",
+        "document:skills/sagecm_qcaudit_0001/SKILL.md"
+      ],
+      "tags": [
+        "safety",
+        "quality",
+        "inspection",
+        "compliance",
+        "environmental",
+        "control"
+      ]
+    },
+    {
+      "id": "L4-cost-scheduling-ops",
+      "name": "Cost, Scheduling & Field Operations",
+      "order": 4,
+      "color": "#f59e0b",
+      "description": "Sage CM Work Instructions that drive daily operations, scheduling, cost/logistics, and field monitoring: 3-Week Look Ahead, Daily Log Entry, Field Monitoring, Material Receiving, Go Codes equipment scans, Housekeeping, Photo Documentation, and RFI processing. Maps to construction-cost + construction-scheduling + construction-super operations.",
+      "members": [
+        "document:skills/sagecm_3wla_0001/SKILL.md",
+        "document:skills/sagecm_dl_001/SKILL.md",
+        "document:skills/sagecm_fieldmonitoring_0001/SKILL.md",
+        "document:skills/sagecm_materialreceiving_0001/SKILL.md",
+        "document:skills/sagecm_gocodes_0001/SKILL.md",
+        "document:skills/sagecm_housekeeping_0001/SKILL.md",
+        "document:skills/sagecm_photodoc_0001/SKILL.md",
+        "document:skills/sagecm_rfi_0001/SKILL.md"
+      ],
+      "entryPoints": [
+        "document:skills/sagecm_3wla_0001/SKILL.md",
+        "document:skills/sagecm_dl_001/SKILL.md"
+      ],
+      "tags": [
+        "scheduling",
+        "cost",
+        "field-ops",
+        "daily-log",
+        "logistics",
+        "rfi"
+      ]
+    },
+    {
+      "id": "L5-closeout-records",
+      "name": "Closeout & Project Records",
+      "order": 5,
+      "color": "#16a34a",
+      "description": "End-of-job Work Instructions: Punchlist Closeout and As-Built Updates. These finalize the project, freeze records, and feed the construction-closeout surface.",
+      "members": [
+        "document:skills/sagecm_punchlistcloseout_0001/SKILL.md",
+        "document:skills/sagecm_asbuiltupdates_0001/SKILL.md"
+      ],
+      "entryPoints": [
+        "document:skills/sagecm_punchlistcloseout_0001/SKILL.md"
+      ],
+      "tags": [
+        "closeout",
+        "punchlist",
+        "as-built",
+        "records",
+        "turnover"
+      ]
+    },
+    {
+      "id": "L6-doctrine-reference",
+      "name": "Doctrine & UA-Treatment Reference",
+      "order": 6,
+      "color": "#64748b",
+      "description": "Non-runtime documentation and Understand-Anything treatment outputs: the wiki entity/concept pages, schema, index; the explain/onboard markdown guides; the dashboard, knowledge-graph, domain-flow, chat-response, diff-analysis, and receipt manifests. Doctrine + reference material that explains the surface without being part of it.",
+      "members": [
+        "config:ua-treatment/receipt.json",
+        "config:ua-treatment/knowledge-graph.json",
+        "config:ua-treatment/wiki-knowledge-graph.json",
+        "config:ua-treatment/domain-flow.json",
+        "config:ua-treatment/chat-response.json",
+        "config:ua-treatment/diff-analysis.json",
+        "file:ua-treatment/dashboard.html",
+        "document:ua-treatment/explain-readme.md",
+        "document:ua-treatment/onboard-guide.md",
+        "file:ua-treatment/wiki/SCHEMA.md",
+        "file:ua-treatment/wiki/index.md",
+        "file:ua-treatment/wiki/plugin.md",
+        "file:ua-treatment/wiki/skills.md",
+        "file:ua-treatment/wiki/tcs-construction.md"
+      ],
+      "entryPoints": [
+        "document:ua-treatment/onboard-guide.md",
+        "config:ua-treatment/knowledge-graph.json"
+      ],
+      "tags": [
+        "doctrine",
+        "reference",
+        "ua-treatment",
+        "wiki",
+        "documentation",
+        "cross-cutting"
       ]
     }
   ],
-  "tour": []
+  "tour": [
+    {
+      "step": 1,
+      "title": "Start at the Governance Kernel — what the plugin promises",
+      "layer": "L1-governance-kernel",
+      "node": "document:README.md",
+      "supportingNodes": [
+        "config:.claude-plugin/plugin.json"
+      ],
+      "narrative": "The README is the catalog of contracts. It declares all 32 Work Instructions (Atlas STDWORK SOP WI Wiring V1) and maps every WI ID to a title. The plugin.json manifest registers tcs-construction v1.0.0 with Claude Code under SSU Fleet. Everything downstream in the tour exists because the README named it — this is the governed-work kernel for the construction surface.",
+      "why": "You cannot evaluate or extend any skill until you know which skills the plugin claims to own. Start at the contract."
+    },
+    {
+      "step": 2,
+      "title": "Drop into Construction PM — CSI-division trade skills",
+      "layer": "L2-construction-trade-skills",
+      "node": "document:skills/d05_1001/SKILL.md",
+      "supportingNodes": [
+        "document:skills/d03_1003/SKILL.md",
+        "document:skills/d22_1001/SKILL.md",
+        "document:skills/d23_1001/SKILL.md",
+        "document:skills/d26_1001/SKILL.md"
+      ],
+      "narrative": "Each trade skill (Structural Steel d05, Concrete Slab Rebar d03, Plumbing d22, HVAC d23, Electrical d26) follows the same SKILL.md shape: trigger, prerequisites, steps, outputs, Jr coaching notes, and quality gates. This is the PM/Super execution surface — the physical-construction work that has to happen on site.",
+      "why": "These skills define WHAT is built. They are the anchors that every safety, quality, cost, and closeout skill orbits around."
+    },
+    {
+      "step": 3,
+      "title": "Wrap trade work in Safety — morning huddle and SE check",
+      "layer": "L3-safety-quality-control",
+      "node": "document:skills/sagecm_morninghuddle_0001/SKILL.md",
+      "supportingNodes": [
+        "document:skills/sagecm_safetyequipment_0001/SKILL.md",
+        "document:skills/sagecm_postrainswppp_0001/SKILL.md"
+      ],
+      "narrative": "Before any d0X trade skill fires in the field, the Morning Huddle / Toolbox Talk runs the crew through hazards and the daily plan. Safety Equipment Check verifies PPE and gear. Post-Rain SWPPP Inspection handles environmental compliance after weather events. These are the daily safety gates that gate access to the trade skills.",
+      "why": "Construction safety is enforced as a hard prerequisite, not an afterthought. The huddle starts the day; the gear check enforces it."
+    },
+    {
+      "step": 4,
+      "title": "Then Quality Control — hold points, QC audits, AHJ inspections",
+      "layer": "L3-safety-quality-control",
+      "node": "document:skills/sagecm_holdpointinspection_0001/SKILL.md",
+      "supportingNodes": [
+        "document:skills/sagecm_qcaudit_0001/SKILL.md",
+        "document:skills/sagecm_regulatorinspection_0001/SKILL.md",
+        "document:skills/sagecm_complianceaudit_0001/SKILL.md",
+        "document:skills/sagecm_complynotice_0001/SKILL.md"
+      ],
+      "narrative": "Hold Point Inspection blocks trade work until quality is verified at a defined milestone (e.g., rebar before pour, rough-in before close-up). QC Audit walks the spec compliance. Regulator/AHJ Inspection coordinates the outside authority. Compliance Audit + Comply Notice handle program-level compliance. Together these form the construction-quality control loop that pairs with each trade skill in Layer 2.",
+      "why": "Quality control is where TCS turns from a checklist into a governed system — hold points are explicit pauses where work cannot proceed without sign-off."
+    },
+    {
+      "step": 5,
+      "title": "Cost and Scheduling — 3WLA + Daily Log keep the project on rails",
+      "layer": "L4-cost-scheduling-ops",
+      "node": "document:skills/sagecm_3wla_0001/SKILL.md",
+      "supportingNodes": [
+        "document:skills/sagecm_dl_001/SKILL.md",
+        "document:skills/sagecm_fieldmonitoring_0001/SKILL.md",
+        "document:skills/sagecm_rfi_0001/SKILL.md"
+      ],
+      "narrative": "The 3-Week Look Ahead is the forward-looking schedule artifact: what's coming in the next 21 days. The Daily Log is the backward-looking record: what actually happened today (the 'Silence is Failure' principle). Field Monitoring keeps eyes on production. RFI Processing handles design questions that block work. Together these are the cost+schedule heartbeat.",
+      "why": "Schedule is set in the 3WLA and confirmed in the Daily Log. Without both, the surface has no idea whether the trade work is on track."
+    },
+    {
+      "step": 6,
+      "title": "Logistics and field evidence — material receiving, Go Codes, photo doc",
+      "layer": "L4-cost-scheduling-ops",
+      "node": "document:skills/sagecm_materialreceiving_0001/SKILL.md",
+      "supportingNodes": [
+        "document:skills/sagecm_gocodes_0001/SKILL.md",
+        "document:skills/sagecm_housekeeping_0001/SKILL.md",
+        "document:skills/sagecm_photodoc_0001/SKILL.md"
+      ],
+      "narrative": "Material Receiving confirms that ordered material arrived and matches the PO. Go Codes Equipment Scan tracks equipment in/out via QR. Housekeeping enforces site condition standards. Photo Documentation creates the visual evidence trail that backs the Daily Log and the eventual closeout package. These are the supporting field-ops skills that wrap the schedule.",
+      "why": "Construction is a logistics problem. These skills produce the evidence that downstream cost reconciliation and closeout will depend on."
+    },
+    {
+      "step": 7,
+      "title": "Closeout — punchlist and as-built finalize the project record",
+      "layer": "L5-closeout-records",
+      "node": "document:skills/sagecm_punchlistcloseout_0001/SKILL.md",
+      "supportingNodes": [
+        "document:skills/sagecm_asbuiltupdates_0001/SKILL.md"
+      ],
+      "narrative": "When substantial completion approaches, Punchlist Closeout drives the final defect list to zero. As-Built Updates capture every field deviation back into the drawing set so the owner inherits a true record. These are the construction-closeout endpoints — once they fire successfully, the project is governable as a finished record.",
+      "why": "A project is not done until its records are honest. Closeout skills are where the governed-work kernel pays off as a turnover-ready archive."
+    },
+    {
+      "step": 8,
+      "title": "Cross-cutting reference — UA-treatment doctrine and wiki",
+      "layer": "L6-doctrine-reference",
+      "node": "document:ua-treatment/onboard-guide.md",
+      "supportingNodes": [
+        "document:ua-treatment/explain-readme.md",
+        "config:ua-treatment/knowledge-graph.json",
+        "file:ua-treatment/dashboard.html",
+        "config:ua-treatment/receipt.json"
+      ],
+      "narrative": "The Understand-Anything treatment outputs (onboard guide, explainer, knowledge graph, dashboard, wiki pages, and the receipt manifest) sit alongside the skills as reference doctrine. They are how new operators decode the plugin — not part of the runtime surface, but the cross-cutting documentation layer that explains it. Start here on day one; come back here when teaching.",
+      "why": "Skills execute. Doctrine explains. Both ship together so the next operator has a path in."
+    }
+  ]
 }

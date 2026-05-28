@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-05-26T10:03:55+00:00",
+  "updated_at": "2026-05-28T17:26:28.787Z",
   "source": {
     "graph_path": "/Users/michael/Emperor-Palantir/constellation/.understand-anything/knowledge-graph.json",
     "graph_analyzed_at": "2026-05-24T14:15:00Z",
@@ -82,7 +82,7 @@
     {
       "order": 1,
       "title": "Project Overview",
-      "description": "Constellation is a TCS Control Surface \u2014 a thin Flask harness for construction project management. Intelligence lives in markdown skills; execution lives in deterministic Python modules. Start with the main application entry point."
+      "description": "Constellation is a TCS Control Surface — a thin Flask harness for construction project management. Intelligence lives in markdown skills; execution lives in deterministic Python modules. Start with the main application entry point."
     },
     {
       "order": 2,
@@ -91,7 +91,7 @@
     },
     {
       "order": 3,
-      "title": "The Resolver \u2014 Intent Router",
+      "title": "The Resolver — Intent Router",
       "description": "The resolver is the heart of the system. It maps user questions to intents, selects Jr operating modes, loads the right skill markdown files, and builds complete prompts. This is the 'thin harness, fat skills' principle in action."
     },
     {
@@ -101,14 +101,111 @@
     },
     {
       "order": 5,
-      "title": "Skills \u2014 The Intelligence Layer",
+      "title": "Skills — The Intelligence Layer",
       "description": "35+ markdown skill files encode judgment, process, and work instructions. From PM authority rules to 28 SageCM construction work instructions (safety walks, daily logs, QC audits, RFIs, submittals, etc.). Skills are the 'fat' in thin harness, fat skills."
     },
     {
       "order": 6,
-      "title": "UI Layer \u2014 Role-Based Dashboards",
+      "title": "UI Layer — Role-Based Dashboards",
       "description": "Jinja2 templates render role-specific dashboards. Owner sees portfolio snapshot with real UK CAER data. CPO sees command view with fleet status. Other roles see generic dashboards with Jr chat widgets. All templates extend base.html with shared dark theme."
     }
   ],
-  "authority_boundary": "Explanation layer only. Not contract authority, Sage authority, owner approval, field direction, or project-control validation."
+  "authority_boundary": "Explanation layer only. Not contract authority, Sage authority, owner approval, field direction, or project-control validation.",
+  "graph_dashboards": {
+    "rebuilt_at": "2026-05-28",
+    "doctrine_reference": "UA_CORRECT_SKILL_REBUILD_ORDER__2026-05-28.md",
+    "surfaces": [
+      {
+        "surface": "uk-caer",
+        "name": "UK CAER",
+        "status": "Live",
+        "path": "/ua-dashboards/uk-caer/",
+        "source_path": "/Users/michael/Documents/Codex/2026-05-14/why-cant-i-change-my-damn",
+        "files_scanned": 381,
+        "nodes": 680,
+        "edges": 1054,
+        "layers": 6,
+        "tour_steps": 11,
+        "domains": 10,
+        "flows": 21,
+        "receipt": "UA_RECEIPT__UK_CAER__2026-05-28.md"
+      },
+      {
+        "surface": "world-model",
+        "name": "World Model",
+        "status": "Live",
+        "path": "/ua-dashboards/world-model/",
+        "source_path": "/Users/michael/Emperor-Palantir/world_model",
+        "files_scanned": 258,
+        "nodes": 244,
+        "edges": 216,
+        "layers": 7,
+        "tour_steps": 10,
+        "domains": 7,
+        "flows": 7,
+        "receipt": "UA_RECEIPT__WORLD_MODEL__2026-05-28.md"
+      },
+      {
+        "surface": "tcs",
+        "name": "TCS Construction",
+        "status": "Live",
+        "path": "/ua-dashboards/tcs/",
+        "source_path": "/Users/michael/Emperor-Palantir/plugins/tcs-construction",
+        "files_scanned": 48,
+        "nodes": 39,
+        "edges": 67,
+        "layers": 6,
+        "tour_steps": 8,
+        "domains": 10,
+        "flows": 10,
+        "receipt": "UA_RECEIPT__TCS__2026-05-28.md"
+      },
+      {
+        "surface": "tcs-atlas",
+        "name": "TCS Atlas",
+        "status": "Live",
+        "path": "/ua-dashboards/tcs-atlas/",
+        "source_path": "/Users/michael/Emperor-Palantir/CANON/atlas_tokens",
+        "files_scanned": 29,
+        "nodes": 20,
+        "edges": 44,
+        "layers": 7,
+        "tour_steps": 7,
+        "domains": 7,
+        "flows": 7,
+        "receipt": "UA_RECEIPT__TCS_ATLAS__2026-05-28.md"
+      },
+      {
+        "surface": "owen-county",
+        "name": "Owen County",
+        "status": "Live",
+        "path": "/ua-dashboards/owen-county/",
+        "source_path": "/Users/michael/Emperor-Palantir/projects/owen_county",
+        "files_scanned": 19,
+        "nodes": 15,
+        "edges": 21,
+        "layers": 5,
+        "tour_steps": 8,
+        "domains": 5,
+        "flows": 5,
+        "receipt": "UA_RECEIPT__OWEN_COUNTY__2026-05-28.md"
+      },
+      {
+        "surface": "chokshi",
+        "name": "Chokshi",
+        "status": "Limited preview",
+        "path": "/ua-dashboards/chokshi/",
+        "source_path": "/Users/michael/Emperor-Palantir/projects/chokshi",
+        "files_scanned": 16,
+        "nodes": 4,
+        "edges": 3,
+        "layers": 2,
+        "tour_steps": 0,
+        "domains": 0,
+        "flows": 0,
+        "receipt": "UA_RECEIPT__CHOKSHI__2026-05-28.md",
+        "boundary": "Source set is 3 binary office docs; held for rebuild pending control-doc set per UA doctrine."
+      }
+    ]
+  }
 }

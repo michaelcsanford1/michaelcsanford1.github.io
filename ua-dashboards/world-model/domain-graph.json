@@ -1,135 +1,1213 @@
 {
+  "version": "1.0.0",
+  "type": "domain-graph",
   "project": {
-    "name": "World Model",
-    "languages": [],
-    "frameworks": [],
-    "description": "World Model domain graph",
-    "analyzedAt": "2026-05-27T12:30:00Z",
-    "gitCommitHash": "public-dashboard"
+    "name": "world-model",
+    "description": "Emperor-Palantir World Model — doctrine and architecture corpus. Canon discipline governs authority.",
+    "analyzedAt": "2026-05-28T17:17:30.619Z",
+    "gitCommitHash": "9100a641b6849d42baf3cebffc9b7e198f3ba9c1"
   },
-  "type": "domain-flow",
-  "version": "2.0.0",
-  "generated_at": "2026-05-27T12:30:00Z",
-  "generated_by": "Hermes — construction business domain flow (NOT file-type buckets)",
   "nodes": [
     {
-      "id": "world-model-domain",
-      "type": "domain",
-      "label": "World Model Business Domains",
-      "description": "Construction business domain flow for World Model",
-      "name": "World Model Business Domains",
-      "filePath": "world-model-domain",
-      "summary": "Construction business domain flow for World Model",
+      "id": "domain:domain-ssu-charter-stewardship",
+      "type": "concept",
+      "name": "SSU Charter & Stewardship",
+      "summary": "The Scribe/Oracle/Executor/Gate hats, Board-of-Directors shape, seat/suit/hat/hook grammar, reseating discipline, and stewardship doctrine that runs the empire as a Single Sovereign Unit. Source of all authority; every other domain inherits seating and citation discipline from here.",
       "tags": [
-        "domain"
-      ],
-      "complexity": "simple"
+        "ssu",
+        "hats",
+        "seating",
+        "governance",
+        "founder-constitution"
+      ]
     },
     {
-      "id": "doctrine",
-      "type": "domain",
-      "label": "Doctrine & Standards",
-      "description": "Altitude Mesh OS doctrine, world model architecture, domain boundaries",
-      "name": "Doctrine & Standards",
-      "filePath": "doctrine",
-      "summary": "Altitude Mesh OS doctrine, world model architecture, domain boundaries",
+      "id": "domain:domain-architecture-specs",
+      "type": "concept",
+      "name": "Architecture Specs",
+      "summary": "Constitutional architecture and buildspecs that operationalize the empire: parallel loops (execution vs intelligence), FEP loop weaponized downtime, Chain Reaction to Scale propagation runtime, parent twelve-layer architecture. The structural blueprints every runtime concern composes against.",
       "tags": [
-        "domain"
-      ],
-      "complexity": "simple"
+        "architecture",
+        "buildspec",
+        "fep-loop",
+        "parallel-loops"
+      ]
     },
     {
-      "id": "verification",
-      "type": "domain",
-      "label": "Verification & Mapping",
-      "description": "Doctrine verification, mapping validation, consistency checks",
-      "name": "Verification & Mapping",
-      "filePath": "verification",
-      "summary": "Doctrine verification, mapping validation, consistency checks",
+      "id": "domain:domain-altitude-mesh-os",
+      "type": "concept",
+      "name": "Altitude Mesh Operating System",
+      "summary": "The six-layer altitude stack — subatomic → micro → meso → macro → VP exec rollup → founder — that organizes signal flow, wake gates, and reporting laws across the World Model. The vertical backbone every other domain plugs into; defines who hears what, when, in which shape.",
       "tags": [
-        "domain"
-      ],
-      "complexity": "simple"
+        "altitude-mesh",
+        "six-layer-stack",
+        "signal-flow",
+        "wake-gate"
+      ]
     },
     {
-      "id": "ratification",
-      "type": "domain",
-      "label": "Ratification Process",
-      "description": "Doctrine ratification workflow, approval chains, version control",
-      "name": "Ratification Process",
-      "filePath": "ratification",
-      "summary": "Doctrine ratification workflow, approval chains, version control",
+      "id": "domain:domain-babylon-agent-traversal",
+      "type": "concept",
+      "name": "Babylon Agent Traversal",
+      "summary": "How agents move across altitudes and surfaces — Babylon satellite/boring/quilt topology mapped onto agent traversal rules. The horizontal motion layer that complements the altitude mesh: lets a single model achieve deep+shallow cognition through traversal protocol rather than model selection.",
       "tags": [
-        "domain"
-      ],
-      "complexity": "simple"
+        "babylon",
+        "agent-traversal",
+        "satellite-boring-quilt",
+        "horizontal-motion"
+      ]
+    },
+    {
+      "id": "domain:domain-cleanpoint-lattice",
+      "type": "concept",
+      "name": "Cleanpoint Lattice & State Discipline",
+      "summary": "Multi-altitude lattice of verified checkpoints (micro/meso/macro) with declared scope, owner, authority, and conflict-rule. Replaces vibes-based current-state with authority-resolved truth; the substrate that lets the World Model hold its shape under load and roll back cleanly.",
+      "tags": [
+        "cleanpoint",
+        "state-discipline",
+        "lattice",
+        "rollback",
+        "current-state"
+      ]
+    },
+    {
+      "id": "domain:domain-automation-output-discipline",
+      "type": "concept",
+      "name": "Automation Output Discipline",
+      "summary": "The State-Change Gate doctrine governing automation output — automation may only mutate state through declared, owner-attributed cleanpoints with authority resolution. Binds the cleanpoint lattice to runtime side effects; closes the loop between intelligence and execution.",
+      "tags": [
+        "automation",
+        "state-change-gate",
+        "output-discipline",
+        "citation"
+      ]
+    },
+    {
+      "id": "domain:domain-cross-cutting-doctrine-schemas",
+      "type": "concept",
+      "name": "Cross-Cutting Doctrine Schemas",
+      "summary": "The doctrine corpus itself: doctrine-nodes, candidate/ratified indexes, Canon Circulation Protocol, Promotion Law, Doctrine Forge, amendments, and AI-Chat-Full-Capture relational continuity. The schema layer + circulation rules that everything else cites. Includes parser/verifier tooling and UA-treatment artifacts.",
+      "tags": [
+        "doctrine",
+        "canon",
+        "promotion-law",
+        "schema",
+        "harness",
+        "tooling"
+      ]
+    },
+    {
+      "id": "flow:flow-ssu-seating-to-canon",
+      "type": "concept",
+      "name": "SSU Seating → Hat Composition → Canon Citation",
+      "summary": "How a sovereign seat (Slab, Hermes, Codex, OpenClaw) takes a hat (Scribe/Oracle/Executor/Gate), composes with the Composite-Is-Core grammar, and is bound by Citation Discipline to cite from control documents before any state change.",
+      "tags": [
+        "flow"
+      ]
+    },
+    {
+      "id": "step:flow-ssu-seating-to-canon:0",
+      "type": "concept",
+      "name": "Seat takes hat",
+      "summary": "No summary",
+      "tags": [
+        "step"
+      ]
+    },
+    {
+      "id": "step:flow-ssu-seating-to-canon:1",
+      "type": "concept",
+      "name": "Composite core + paint facing applied",
+      "summary": "No summary",
+      "tags": [
+        "step"
+      ]
+    },
+    {
+      "id": "step:flow-ssu-seating-to-canon:2",
+      "type": "concept",
+      "name": "Seating sprays operating context (Hydro-Seating)",
+      "summary": "No summary",
+      "tags": [
+        "step"
+      ]
+    },
+    {
+      "id": "step:flow-ssu-seating-to-canon:3",
+      "type": "concept",
+      "name": "Citation Discipline binds seat to control-doc grounding",
+      "summary": "No summary",
+      "tags": [
+        "step"
+      ]
+    },
+    {
+      "id": "step:flow-ssu-seating-to-canon:4",
+      "type": "concept",
+      "name": "Output emerges into Canon Circulation",
+      "summary": "No summary",
+      "tags": [
+        "step"
+      ]
+    },
+    {
+      "id": "flow:flow-architecture-parallel-loops",
+      "type": "concept",
+      "name": "Execution Loop || Intelligence Loop (Parallel, Different Clocks)",
+      "summary": "Constitutional architecture flow: execution and intelligence run continuously in parallel at different altitudes, never share a clock, and meet only through cleanpoints and FEP weaponized-downtime cycles.",
+      "tags": [
+        "flow"
+      ]
+    },
+    {
+      "id": "step:flow-architecture-parallel-loops:0",
+      "type": "concept",
+      "name": "Execution loop spins on micro/meso altitude",
+      "summary": "No summary",
+      "tags": [
+        "step"
+      ]
+    },
+    {
+      "id": "step:flow-architecture-parallel-loops:1",
+      "type": "concept",
+      "name": "Intelligence loop spins on macro/VP altitude",
+      "summary": "No summary",
+      "tags": [
+        "step"
+      ]
+    },
+    {
+      "id": "step:flow-architecture-parallel-loops:2",
+      "type": "concept",
+      "name": "FEP weaponized downtime enriches Founder Extraction Protocol",
+      "summary": "No summary",
+      "tags": [
+        "step"
+      ]
+    },
+    {
+      "id": "step:flow-architecture-parallel-loops:3",
+      "type": "concept",
+      "name": "Chain Reaction to Scale propagates accumulated canon",
+      "summary": "No summary",
+      "tags": [
+        "step"
+      ]
+    },
+    {
+      "id": "step:flow-architecture-parallel-loops:4",
+      "type": "concept",
+      "name": "Lens adjustment cycles micro↔macro to prevent drift",
+      "summary": "No summary",
+      "tags": [
+        "step"
+      ]
+    },
+    {
+      "id": "flow:flow-altitude-mesh-upward-wake",
+      "type": "concept",
+      "name": "Subatomic → Micro → Meso → Macro → VP → Founder (Upward Wake)",
+      "summary": "The six-layer altitude stack's upward reporting law: every altitude wakes the one above through a bounded upward report; downward orders return through the same gate. Pre-Action Survey Protocol enforces the wake gate universally.",
+      "tags": [
+        "flow"
+      ]
+    },
+    {
+      "id": "step:flow-altitude-mesh-upward-wake:0",
+      "type": "concept",
+      "name": "Subatomic emits receipts (no philosophy)",
+      "summary": "No summary",
+      "tags": [
+        "step"
+      ]
+    },
+    {
+      "id": "step:flow-altitude-mesh-upward-wake:1",
+      "type": "concept",
+      "name": "Micro carries embedded macro/meso context",
+      "summary": "No summary",
+      "tags": [
+        "step"
+      ]
+    },
+    {
+      "id": "step:flow-altitude-mesh-upward-wake:2",
+      "type": "concept",
+      "name": "Meso (Bird's Nest) compacts and orchestrates",
+      "summary": "No summary",
+      "tags": [
+        "step"
+      ]
+    },
+    {
+      "id": "step:flow-altitude-mesh-upward-wake:3",
+      "type": "concept",
+      "name": "Macro holds board, sees strategic drift, issues stake-setting",
+      "summary": "No summary",
+      "tags": [
+        "step"
+      ]
+    },
+    {
+      "id": "step:flow-altitude-mesh-upward-wake:4",
+      "type": "concept",
+      "name": "VP exec rollup synthesizes for founder",
+      "summary": "No summary",
+      "tags": [
+        "step"
+      ]
+    },
+    {
+      "id": "step:flow-altitude-mesh-upward-wake:5",
+      "type": "concept",
+      "name": "Founder governs without manual routing",
+      "summary": "No summary",
+      "tags": [
+        "step"
+      ]
+    },
+    {
+      "id": "flow:flow-babylon-traversal-deep-shallow",
+      "type": "concept",
+      "name": "Agent Traversal — Satellite ↔ Boring ↔ Quilt",
+      "summary": "How a single agent achieves deep+shallow cognition by traversing Babylon topology rather than swapping models. Promotion Law amplifies BAT signals upward.",
+      "tags": [
+        "flow"
+      ]
+    },
+    {
+      "id": "step:flow-babylon-traversal-deep-shallow:0",
+      "type": "concept",
+      "name": "Agent enters at satellite (shallow, broad)",
+      "summary": "No summary",
+      "tags": [
+        "step"
+      ]
+    },
+    {
+      "id": "step:flow-babylon-traversal-deep-shallow:1",
+      "type": "concept",
+      "name": "Boring traversal drills into specific surface",
+      "summary": "No summary",
+      "tags": [
+        "step"
+      ]
+    },
+    {
+      "id": "step:flow-babylon-traversal-deep-shallow:2",
+      "type": "concept",
+      "name": "Quilt traversal stitches across adjacent surfaces",
+      "summary": "No summary",
+      "tags": [
+        "step"
+      ]
+    },
+    {
+      "id": "step:flow-babylon-traversal-deep-shallow:3",
+      "type": "concept",
+      "name": "Promotion Law amplifies BAT signal upward through altitudes",
+      "summary": "No summary",
+      "tags": [
+        "step"
+      ]
+    },
+    {
+      "id": "flow:flow-cleanpoint-declaration-to-rollback",
+      "type": "concept",
+      "name": "Declare Cleanpoint → Authority Resolution → Rollback or Promote",
+      "summary": "Cleanpoint lifecycle across micro/meso/macro altitudes. Each cleanpoint declares scope, owner, timestamp, and conflict-rule; conflicts resolve by declared authority; macro cleanpoints govern strategic state.",
+      "tags": [
+        "flow"
+      ]
+    },
+    {
+      "id": "step:flow-cleanpoint-declaration-to-rollback:0",
+      "type": "concept",
+      "name": "Owner declares cleanpoint with scope + authority",
+      "summary": "No summary",
+      "tags": [
+        "step"
+      ]
+    },
+    {
+      "id": "step:flow-cleanpoint-declaration-to-rollback:1",
+      "type": "concept",
+      "name": "Cleanpoint registered into lattice at correct altitude",
+      "summary": "No summary",
+      "tags": [
+        "step"
+      ]
+    },
+    {
+      "id": "step:flow-cleanpoint-declaration-to-rollback:2",
+      "type": "concept",
+      "name": "Conflicts resolved by declared authority (not vibes)",
+      "summary": "No summary",
+      "tags": [
+        "step"
+      ]
+    },
+    {
+      "id": "step:flow-cleanpoint-declaration-to-rollback:3",
+      "type": "concept",
+      "name": "Promote to macro or roll back through lattice",
+      "summary": "No summary",
+      "tags": [
+        "step"
+      ]
+    },
+    {
+      "id": "flow:flow-automation-state-change-gate",
+      "type": "concept",
+      "name": "Automation Output → State-Change Gate → Cited Mutation",
+      "summary": "Every automation-emitted state change must pass the State-Change Gate: cite source control-doc, attribute owner, attach cleanpoint, and only then mutate. Citation Discipline is fleet-wide.",
+      "tags": [
+        "flow"
+      ]
+    },
+    {
+      "id": "step:flow-automation-state-change-gate:0",
+      "type": "concept",
+      "name": "Automation prepares output",
+      "summary": "No summary",
+      "tags": [
+        "step"
+      ]
+    },
+    {
+      "id": "step:flow-automation-state-change-gate:1",
+      "type": "concept",
+      "name": "State-Change Gate demands cited control-doc reference",
+      "summary": "No summary",
+      "tags": [
+        "step"
+      ]
+    },
+    {
+      "id": "step:flow-automation-state-change-gate:2",
+      "type": "concept",
+      "name": "Citation Discipline enforced fleet-wide",
+      "summary": "No summary",
+      "tags": [
+        "step"
+      ]
+    },
+    {
+      "id": "step:flow-automation-state-change-gate:3",
+      "type": "concept",
+      "name": "Cleanpoint attached; mutation lands",
+      "summary": "No summary",
+      "tags": [
+        "step"
+      ]
+    },
+    {
+      "id": "flow:flow-doctrine-promotion-and-circulation",
+      "type": "concept",
+      "name": "Capture → Candidate → Ratified → Canon Circulation",
+      "summary": "The doctrine corpus lifecycle: a captured doctrine becomes a candidate, gets ratified through Promotion Law, is parsed and verified by tooling, and circulates per Canon Circulation Protocol v0.1.",
+      "tags": [
+        "flow"
+      ]
+    },
+    {
+      "id": "step:flow-doctrine-promotion-and-circulation:0",
+      "type": "concept",
+      "name": "Capture (AI-Chat-Full-Capture Relational Continuity)",
+      "summary": "No summary",
+      "tags": [
+        "step"
+      ]
+    },
+    {
+      "id": "step:flow-doctrine-promotion-and-circulation:1",
+      "type": "concept",
+      "name": "Candidate filed under doctrine/ with node + JSON schema",
+      "summary": "No summary",
+      "tags": [
+        "step"
+      ]
+    },
+    {
+      "id": "step:flow-doctrine-promotion-and-circulation:2",
+      "type": "concept",
+      "name": "Promotion Law ratifies via Gate hat",
+      "summary": "No summary",
+      "tags": [
+        "step"
+      ]
+    },
+    {
+      "id": "step:flow-doctrine-promotion-and-circulation:3",
+      "type": "concept",
+      "name": "Verifier confirms mapping integrity",
+      "summary": "No summary",
+      "tags": [
+        "step"
+      ]
+    },
+    {
+      "id": "step:flow-doctrine-promotion-and-circulation:4",
+      "type": "concept",
+      "name": "Canon Circulation Protocol routes to all SSU seats",
+      "summary": "No summary",
+      "tags": [
+        "step"
+      ]
+    },
+    {
+      "id": "step:flow-doctrine-promotion-and-circulation:5",
+      "type": "concept",
+      "name": "Harness apparatus binds doctrine to runtime",
+      "summary": "No summary",
+      "tags": [
+        "step"
+      ]
     }
   ],
   "edges": [
     {
-      "id": "edge-0",
-      "source": "doctrine",
-      "target": "world-model-domain",
-      "type": "part_of",
-      "direction": "forward",
-      "weight": 0.5,
-      "label": "part_of"
+      "source": "step:flow-ssu-seating-to-canon:0",
+      "target": "flow:flow-ssu-seating-to-canon",
+      "type": "contains",
+      "weight": 1
     },
     {
-      "id": "edge-1",
-      "source": "verification",
-      "target": "world-model-domain",
-      "type": "part_of",
-      "direction": "forward",
-      "weight": 0.5,
-      "label": "part_of"
+      "source": "step:flow-ssu-seating-to-canon:1",
+      "target": "flow:flow-ssu-seating-to-canon",
+      "type": "contains",
+      "weight": 1
     },
     {
-      "id": "edge-2",
-      "source": "ratification",
-      "target": "world-model-domain",
-      "type": "part_of",
-      "direction": "forward",
-      "weight": 0.5,
-      "label": "part_of"
+      "source": "step:flow-ssu-seating-to-canon:0",
+      "target": "step:flow-ssu-seating-to-canon:1",
+      "type": "triggers",
+      "weight": 0.8
     },
     {
-      "id": "edge-3",
-      "source": "doctrine",
-      "target": "verification",
-      "type": "requires",
-      "direction": "forward",
-      "weight": 0.5,
-      "label": "requires"
+      "source": "step:flow-ssu-seating-to-canon:2",
+      "target": "flow:flow-ssu-seating-to-canon",
+      "type": "contains",
+      "weight": 1
     },
     {
-      "id": "edge-4",
-      "source": "verification",
-      "target": "ratification",
-      "type": "enables",
-      "direction": "forward",
-      "weight": 0.5,
-      "label": "enables"
+      "source": "step:flow-ssu-seating-to-canon:1",
+      "target": "step:flow-ssu-seating-to-canon:2",
+      "type": "triggers",
+      "weight": 0.8
+    },
+    {
+      "source": "step:flow-ssu-seating-to-canon:3",
+      "target": "flow:flow-ssu-seating-to-canon",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "step:flow-ssu-seating-to-canon:2",
+      "target": "step:flow-ssu-seating-to-canon:3",
+      "type": "triggers",
+      "weight": 0.8
+    },
+    {
+      "source": "step:flow-ssu-seating-to-canon:4",
+      "target": "flow:flow-ssu-seating-to-canon",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "step:flow-ssu-seating-to-canon:3",
+      "target": "step:flow-ssu-seating-to-canon:4",
+      "type": "triggers",
+      "weight": 0.8
+    },
+    {
+      "source": "step:flow-architecture-parallel-loops:0",
+      "target": "flow:flow-architecture-parallel-loops",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "step:flow-architecture-parallel-loops:1",
+      "target": "flow:flow-architecture-parallel-loops",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "step:flow-architecture-parallel-loops:0",
+      "target": "step:flow-architecture-parallel-loops:1",
+      "type": "triggers",
+      "weight": 0.8
+    },
+    {
+      "source": "step:flow-architecture-parallel-loops:2",
+      "target": "flow:flow-architecture-parallel-loops",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "step:flow-architecture-parallel-loops:1",
+      "target": "step:flow-architecture-parallel-loops:2",
+      "type": "triggers",
+      "weight": 0.8
+    },
+    {
+      "source": "step:flow-architecture-parallel-loops:3",
+      "target": "flow:flow-architecture-parallel-loops",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "step:flow-architecture-parallel-loops:2",
+      "target": "step:flow-architecture-parallel-loops:3",
+      "type": "triggers",
+      "weight": 0.8
+    },
+    {
+      "source": "step:flow-architecture-parallel-loops:4",
+      "target": "flow:flow-architecture-parallel-loops",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "step:flow-architecture-parallel-loops:3",
+      "target": "step:flow-architecture-parallel-loops:4",
+      "type": "triggers",
+      "weight": 0.8
+    },
+    {
+      "source": "step:flow-altitude-mesh-upward-wake:0",
+      "target": "flow:flow-altitude-mesh-upward-wake",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "step:flow-altitude-mesh-upward-wake:1",
+      "target": "flow:flow-altitude-mesh-upward-wake",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "step:flow-altitude-mesh-upward-wake:0",
+      "target": "step:flow-altitude-mesh-upward-wake:1",
+      "type": "triggers",
+      "weight": 0.8
+    },
+    {
+      "source": "step:flow-altitude-mesh-upward-wake:2",
+      "target": "flow:flow-altitude-mesh-upward-wake",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "step:flow-altitude-mesh-upward-wake:1",
+      "target": "step:flow-altitude-mesh-upward-wake:2",
+      "type": "triggers",
+      "weight": 0.8
+    },
+    {
+      "source": "step:flow-altitude-mesh-upward-wake:3",
+      "target": "flow:flow-altitude-mesh-upward-wake",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "step:flow-altitude-mesh-upward-wake:2",
+      "target": "step:flow-altitude-mesh-upward-wake:3",
+      "type": "triggers",
+      "weight": 0.8
+    },
+    {
+      "source": "step:flow-altitude-mesh-upward-wake:4",
+      "target": "flow:flow-altitude-mesh-upward-wake",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "step:flow-altitude-mesh-upward-wake:3",
+      "target": "step:flow-altitude-mesh-upward-wake:4",
+      "type": "triggers",
+      "weight": 0.8
+    },
+    {
+      "source": "step:flow-altitude-mesh-upward-wake:5",
+      "target": "flow:flow-altitude-mesh-upward-wake",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "step:flow-altitude-mesh-upward-wake:4",
+      "target": "step:flow-altitude-mesh-upward-wake:5",
+      "type": "triggers",
+      "weight": 0.8
+    },
+    {
+      "source": "step:flow-babylon-traversal-deep-shallow:0",
+      "target": "flow:flow-babylon-traversal-deep-shallow",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "step:flow-babylon-traversal-deep-shallow:1",
+      "target": "flow:flow-babylon-traversal-deep-shallow",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "step:flow-babylon-traversal-deep-shallow:0",
+      "target": "step:flow-babylon-traversal-deep-shallow:1",
+      "type": "triggers",
+      "weight": 0.8
+    },
+    {
+      "source": "step:flow-babylon-traversal-deep-shallow:2",
+      "target": "flow:flow-babylon-traversal-deep-shallow",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "step:flow-babylon-traversal-deep-shallow:1",
+      "target": "step:flow-babylon-traversal-deep-shallow:2",
+      "type": "triggers",
+      "weight": 0.8
+    },
+    {
+      "source": "step:flow-babylon-traversal-deep-shallow:3",
+      "target": "flow:flow-babylon-traversal-deep-shallow",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "step:flow-babylon-traversal-deep-shallow:2",
+      "target": "step:flow-babylon-traversal-deep-shallow:3",
+      "type": "triggers",
+      "weight": 0.8
+    },
+    {
+      "source": "step:flow-cleanpoint-declaration-to-rollback:0",
+      "target": "flow:flow-cleanpoint-declaration-to-rollback",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "step:flow-cleanpoint-declaration-to-rollback:1",
+      "target": "flow:flow-cleanpoint-declaration-to-rollback",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "step:flow-cleanpoint-declaration-to-rollback:0",
+      "target": "step:flow-cleanpoint-declaration-to-rollback:1",
+      "type": "triggers",
+      "weight": 0.8
+    },
+    {
+      "source": "step:flow-cleanpoint-declaration-to-rollback:2",
+      "target": "flow:flow-cleanpoint-declaration-to-rollback",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "step:flow-cleanpoint-declaration-to-rollback:1",
+      "target": "step:flow-cleanpoint-declaration-to-rollback:2",
+      "type": "triggers",
+      "weight": 0.8
+    },
+    {
+      "source": "step:flow-cleanpoint-declaration-to-rollback:3",
+      "target": "flow:flow-cleanpoint-declaration-to-rollback",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "step:flow-cleanpoint-declaration-to-rollback:2",
+      "target": "step:flow-cleanpoint-declaration-to-rollback:3",
+      "type": "triggers",
+      "weight": 0.8
+    },
+    {
+      "source": "step:flow-automation-state-change-gate:0",
+      "target": "flow:flow-automation-state-change-gate",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "step:flow-automation-state-change-gate:1",
+      "target": "flow:flow-automation-state-change-gate",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "step:flow-automation-state-change-gate:0",
+      "target": "step:flow-automation-state-change-gate:1",
+      "type": "triggers",
+      "weight": 0.8
+    },
+    {
+      "source": "step:flow-automation-state-change-gate:2",
+      "target": "flow:flow-automation-state-change-gate",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "step:flow-automation-state-change-gate:1",
+      "target": "step:flow-automation-state-change-gate:2",
+      "type": "triggers",
+      "weight": 0.8
+    },
+    {
+      "source": "step:flow-automation-state-change-gate:3",
+      "target": "flow:flow-automation-state-change-gate",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "step:flow-automation-state-change-gate:2",
+      "target": "step:flow-automation-state-change-gate:3",
+      "type": "triggers",
+      "weight": 0.8
+    },
+    {
+      "source": "step:flow-doctrine-promotion-and-circulation:0",
+      "target": "flow:flow-doctrine-promotion-and-circulation",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "step:flow-doctrine-promotion-and-circulation:1",
+      "target": "flow:flow-doctrine-promotion-and-circulation",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "step:flow-doctrine-promotion-and-circulation:0",
+      "target": "step:flow-doctrine-promotion-and-circulation:1",
+      "type": "triggers",
+      "weight": 0.8
+    },
+    {
+      "source": "step:flow-doctrine-promotion-and-circulation:2",
+      "target": "flow:flow-doctrine-promotion-and-circulation",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "step:flow-doctrine-promotion-and-circulation:1",
+      "target": "step:flow-doctrine-promotion-and-circulation:2",
+      "type": "triggers",
+      "weight": 0.8
+    },
+    {
+      "source": "step:flow-doctrine-promotion-and-circulation:3",
+      "target": "flow:flow-doctrine-promotion-and-circulation",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "step:flow-doctrine-promotion-and-circulation:2",
+      "target": "step:flow-doctrine-promotion-and-circulation:3",
+      "type": "triggers",
+      "weight": 0.8
+    },
+    {
+      "source": "step:flow-doctrine-promotion-and-circulation:4",
+      "target": "flow:flow-doctrine-promotion-and-circulation",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "step:flow-doctrine-promotion-and-circulation:3",
+      "target": "step:flow-doctrine-promotion-and-circulation:4",
+      "type": "triggers",
+      "weight": 0.8
+    },
+    {
+      "source": "step:flow-doctrine-promotion-and-circulation:5",
+      "target": "flow:flow-doctrine-promotion-and-circulation",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "step:flow-doctrine-promotion-and-circulation:4",
+      "target": "step:flow-doctrine-promotion-and-circulation:5",
+      "type": "triggers",
+      "weight": 0.8
     }
   ],
-  "stats": {
-    "total_nodes": 4,
-    "total_edges": 5,
-    "domains": 3,
-    "business_flows": 2
-  },
-  "layers": [
+  "flows": [
     {
-      "id": "layer-domain",
-      "name": "Domain Nodes",
-      "description": "4 domain nodes",
-      "nodeIds": [
-        "world-model-domain",
-        "doctrine",
-        "verification",
-        "ratification"
+      "id": "flow:ssu-seating-to-canon",
+      "domainId": "domain:ssu-charter-stewardship",
+      "name": "SSU Seating → Hat Composition → Canon Citation",
+      "description": "How a sovereign seat (Slab, Hermes, Codex, OpenClaw) takes a hat (Scribe/Oracle/Executor/Gate), composes with the Composite-Is-Core grammar, and is bound by Citation Discipline to cite from control documents before any state change.",
+      "steps": [
+        {
+          "order": 1,
+          "name": "Seat takes hat",
+          "ref": "document:doctrine/DOCTRINE__FOUR_SEATS_OF_SSU__2026-04-12.md"
+        },
+        {
+          "order": 2,
+          "name": "Composite core + paint facing applied",
+          "ref": "document:doctrine/DOCTRINE__COMPOSITE_IS_CORE_PAINT_IS_FACING__2026-04-11.md"
+        },
+        {
+          "order": 3,
+          "name": "Seating sprays operating context (Hydro-Seating)",
+          "ref": "document:doctrine/DOCTRINE__HYDRO_SEATING_IS_SEEDING__2026-05-04.md"
+        },
+        {
+          "order": 4,
+          "name": "Citation Discipline binds seat to control-doc grounding",
+          "ref": "document:doctrine/DOCTRINE__CITATION_DISCIPLINE__2026-05-14.md"
+        },
+        {
+          "order": 5,
+          "name": "Output emerges into Canon Circulation",
+          "ref": "document:doctrine/DOCTRINE__CANON_CIRCULATION_PROTOCOL_v0_1__2026-04-13.md"
+        }
+      ]
+    },
+    {
+      "id": "flow:architecture-parallel-loops",
+      "domainId": "domain:architecture-specs",
+      "name": "Execution Loop || Intelligence Loop (Parallel, Different Clocks)",
+      "description": "Constitutional architecture flow: execution and intelligence run continuously in parallel at different altitudes, never share a clock, and meet only through cleanpoints and FEP weaponized-downtime cycles.",
+      "steps": [
+        {
+          "order": 1,
+          "name": "Execution loop spins on micro/meso altitude",
+          "ref": "document:doctrine/DOCTRINE__PARALLEL_LOOPS_EXECUTION_AND_INTELLIGENCE__2026-04-18.md"
+        },
+        {
+          "order": 2,
+          "name": "Intelligence loop spins on macro/VP altitude",
+          "ref": "document:doctrine/source_mirror/CANON/DOCTRINE__PARALLEL_LOOPS_EXECUTION_AND_INTELLIGENCE__2026-04-18.md"
+        },
+        {
+          "order": 3,
+          "name": "FEP weaponized downtime enriches Founder Extraction Protocol",
+          "ref": "document:doctrine/DOCTRINE__FEP_LOOP_WEAPONIZED_DOWNTIME__2026-04-21.md"
+        },
+        {
+          "order": 4,
+          "name": "Chain Reaction to Scale propagates accumulated canon",
+          "ref": "document:doctrine/DOCTRINE__CHAIN_REACTION_TO_SCALE__2026-04-16.md"
+        },
+        {
+          "order": 5,
+          "name": "Lens adjustment cycles micro↔macro to prevent drift",
+          "ref": "document:doctrine/DOCTRINE__LENS_ADJUSTMENT_DISCIPLINE__2026-04-21.md"
+        }
+      ]
+    },
+    {
+      "id": "flow:altitude-mesh-upward-wake",
+      "domainId": "domain:altitude-mesh-os",
+      "name": "Subatomic → Micro → Meso → Macro → VP → Founder (Upward Wake)",
+      "description": "The six-layer altitude stack's upward reporting law: every altitude wakes the one above through a bounded upward report; downward orders return through the same gate. Pre-Action Survey Protocol enforces the wake gate universally.",
+      "steps": [
+        {
+          "order": 1,
+          "name": "Subatomic emits receipts (no philosophy)",
+          "ref": "document:doctrine/DOCTRINE__ALTITUDE_MESH_OPERATING_SYSTEM__2026-04-13.md"
+        },
+        {
+          "order": 2,
+          "name": "Micro carries embedded macro/meso context",
+          "ref": "document:DOCTRINE__ALTITUDE_MESH_OPERATING_SYSTEM.md"
+        },
+        {
+          "order": 3,
+          "name": "Meso (Bird's Nest) compacts and orchestrates",
+          "ref": "config:doctrine/ALTITUDE-MESH-OPERATING-SYSTEM.json"
+        },
+        {
+          "order": 4,
+          "name": "Macro holds board, sees strategic drift, issues stake-setting",
+          "ref": "config:doctrine/nodes/NODE__DOCTRINE.ALTITUDE_MESH_OPERATING_SYSTEM.json"
+        },
+        {
+          "order": 5,
+          "name": "VP exec rollup synthesizes for founder",
+          "ref": "document:doctrine/DOCTRINE__PARALLEL_LOOPS_EXECUTION_AND_INTELLIGENCE__2026-04-18.md"
+        },
+        {
+          "order": 6,
+          "name": "Founder governs without manual routing",
+          "ref": "document:doctrine/DOCTRINE__LENS_ADJUSTMENT_DISCIPLINE__2026-04-21.md"
+        }
+      ]
+    },
+    {
+      "id": "flow:babylon-traversal-deep-shallow",
+      "domainId": "domain:babylon-agent-traversal",
+      "name": "Agent Traversal — Satellite ↔ Boring ↔ Quilt",
+      "description": "How a single agent achieves deep+shallow cognition by traversing Babylon topology rather than swapping models. Promotion Law amplifies BAT signals upward.",
+      "steps": [
+        {
+          "order": 1,
+          "name": "Agent enters at satellite (shallow, broad)",
+          "ref": "document:doctrine/DOCTRINE__BABYLON_AGENT_TRAVERSAL__2026-04-12.md"
+        },
+        {
+          "order": 2,
+          "name": "Boring traversal drills into specific surface",
+          "ref": "config:doctrine/BABYLON-AGENT-TRAVERSAL.json"
+        },
+        {
+          "order": 3,
+          "name": "Quilt traversal stitches across adjacent surfaces",
+          "ref": "config:doctrine_ratified/BABYLON-AGENT-TRAVERSAL.json"
+        },
+        {
+          "order": 4,
+          "name": "Promotion Law amplifies BAT signal upward through altitudes",
+          "ref": "document:doctrine/DOCTRINE__PROMOTION_LAW_BAT_SIGNAL_AMPLIFIER__2026-04-21.md"
+        }
+      ]
+    },
+    {
+      "id": "flow:cleanpoint-declaration-to-rollback",
+      "domainId": "domain:cleanpoint-lattice",
+      "name": "Declare Cleanpoint → Authority Resolution → Rollback or Promote",
+      "description": "Cleanpoint lifecycle across micro/meso/macro altitudes. Each cleanpoint declares scope, owner, timestamp, and conflict-rule; conflicts resolve by declared authority; macro cleanpoints govern strategic state.",
+      "steps": [
+        {
+          "order": 1,
+          "name": "Owner declares cleanpoint with scope + authority",
+          "ref": "document:doctrine/DOCTRINE__CLEANPOINT_LATTICE__2026-04-12.md"
+        },
+        {
+          "order": 2,
+          "name": "Cleanpoint registered into lattice at correct altitude",
+          "ref": "config:doctrine/CLEANPOINT-LATTICE.json"
+        },
+        {
+          "order": 3,
+          "name": "Conflicts resolved by declared authority (not vibes)",
+          "ref": "document:doctrine/source_mirror/CANON/DOCTRINE__CLEANPOINT_LATTICE__2026-04-12.md"
+        },
+        {
+          "order": 4,
+          "name": "Promote to macro or roll back through lattice",
+          "ref": "config:doctrine/nodes/NODE__DOCTRINE.CLEANPOINT_LATTICE.json"
+        }
+      ]
+    },
+    {
+      "id": "flow:automation-state-change-gate",
+      "domainId": "domain:automation-output-discipline",
+      "name": "Automation Output → State-Change Gate → Cited Mutation",
+      "description": "Every automation-emitted state change must pass the State-Change Gate: cite source control-doc, attribute owner, attach cleanpoint, and only then mutate. Citation Discipline is fleet-wide.",
+      "steps": [
+        {
+          "order": 1,
+          "name": "Automation prepares output",
+          "ref": "document:doctrine/DOCTRINE__AUTOMATION_OUTPUT_DISCIPLINE_STATE_CHANGE_GATE__2026-05-06.md"
+        },
+        {
+          "order": 2,
+          "name": "State-Change Gate demands cited control-doc reference",
+          "ref": "config:doctrine/SSU.Doctrine.AutomationOutputDiscipline.StateChangeGate.v1.json"
+        },
+        {
+          "order": 3,
+          "name": "Citation Discipline enforced fleet-wide",
+          "ref": "config:doctrine/SSU.Doctrine.CitationDiscipline.v1.0.json"
+        },
+        {
+          "order": 4,
+          "name": "Cleanpoint attached; mutation lands",
+          "ref": "document:doctrine/DOCTRINE__CLEANPOINT_LATTICE__2026-04-12.md"
+        }
+      ]
+    },
+    {
+      "id": "flow:doctrine-promotion-and-circulation",
+      "domainId": "domain:cross-cutting-doctrine-schemas",
+      "name": "Capture → Candidate → Ratified → Canon Circulation",
+      "description": "The doctrine corpus lifecycle: a captured doctrine becomes a candidate, gets ratified through Promotion Law, is parsed and verified by tooling, and circulates per Canon Circulation Protocol v0.1.",
+      "steps": [
+        {
+          "order": 1,
+          "name": "Capture (AI-Chat-Full-Capture Relational Continuity)",
+          "ref": "document:doctrine/DOCTRINE__AI_CHAT_FULL_CAPTURE_RELATIONAL_CONTINUITY__2026-05-03.md"
+        },
+        {
+          "order": 2,
+          "name": "Candidate filed under doctrine/ with node + JSON schema",
+          "ref": "function:parse_doctrine.py"
+        },
+        {
+          "order": 3,
+          "name": "Promotion Law ratifies via Gate hat",
+          "ref": "document:doctrine/DOCTRINE__PROMOTION_LAW_BAT_SIGNAL_AMPLIFIER__2026-04-21.md"
+        },
+        {
+          "order": 4,
+          "name": "Verifier confirms mapping integrity",
+          "ref": "function:verify_mapping.py"
+        },
+        {
+          "order": 5,
+          "name": "Canon Circulation Protocol routes to all SSU seats",
+          "ref": "document:doctrine/DOCTRINE__CANON_CIRCULATION_PROTOCOL_v0_1__2026-04-13.md"
+        },
+        {
+          "order": 6,
+          "name": "Harness apparatus binds doctrine to runtime",
+          "ref": "document:doctrine/DOCTRINE__OHE_BILATERAL_HARNESS_ENGINEERING__v6.1__2026-05-05.md"
+        }
       ]
     }
   ],
-  "tour": []
+  "domains": [
+    {
+      "id": "domain:ssu-charter-stewardship",
+      "name": "SSU Charter & Stewardship",
+      "description": "The Scribe/Oracle/Executor/Gate hats, Board-of-Directors shape, seat/suit/hat/hook grammar, reseating discipline, and stewardship doctrine that runs the empire as a Single Sovereign Unit. Source of all authority; every other domain inherits seating and citation discipline from here.",
+      "owningLayer": "ssu-governance",
+      "primaryNodes": [
+        "document:doctrine/DOCTRINE__FOUR_SEATS_OF_SSU__2026-04-12.md",
+        "document:doctrine/DOCTRINE__HATS_HOOKS_STATIONS__2026-04-12.md",
+        "document:doctrine/DOCTRINE__CITATION_DISCIPLINE__2026-05-14.md",
+        "document:doctrine/DOCTRINE__COMPOSITE_IS_CORE_PAINT_IS_FACING__2026-04-11.md",
+        "document:doctrine/DOCTRINE__HYDRO_SEATING_IS_SEEDING__2026-05-04.md",
+        "document:doctrine/DOCTRINE__CHAIN_REACTION_TO_SCALE__2026-04-16.md",
+        "document:doctrine/DOCTRINE__CLAUDIUS_MAXIMUS_EMERGENCE__2026-04-21.md",
+        "document:doctrine/DOCTRINE__FOUNDER_NOVELTY__2026-04-19.md"
+      ],
+      "tags": [
+        "ssu",
+        "hats",
+        "seating",
+        "governance",
+        "founder-constitution"
+      ]
+    },
+    {
+      "id": "domain:architecture-specs",
+      "name": "Architecture Specs",
+      "description": "Constitutional architecture and buildspecs that operationalize the empire: parallel loops (execution vs intelligence), FEP loop weaponized downtime, Chain Reaction to Scale propagation runtime, parent twelve-layer architecture. The structural blueprints every runtime concern composes against.",
+      "owningLayer": "doctrine-canon",
+      "primaryNodes": [
+        "document:doctrine/DOCTRINE__PARALLEL_LOOPS_EXECUTION_AND_INTELLIGENCE__2026-04-18.md",
+        "document:doctrine/DOCTRINE__FEP_LOOP_WEAPONIZED_DOWNTIME__2026-04-21.md",
+        "document:doctrine/DOCTRINE__CHAIN_REACTION_TO_SCALE__2026-04-16.md",
+        "document:doctrine/DOCTRINE__LENS_ADJUSTMENT_DISCIPLINE__2026-04-21.md",
+        "document:doctrine/DOCTRINE__PROMOTION_LAW_BAT_SIGNAL_AMPLIFIER__2026-04-21.md"
+      ],
+      "tags": [
+        "architecture",
+        "buildspec",
+        "fep-loop",
+        "parallel-loops"
+      ]
+    },
+    {
+      "id": "domain:altitude-mesh-os",
+      "name": "Altitude Mesh Operating System",
+      "description": "The six-layer altitude stack — subatomic → micro → meso → macro → VP exec rollup → founder — that organizes signal flow, wake gates, and reporting laws across the World Model. The vertical backbone every other domain plugs into; defines who hears what, when, in which shape.",
+      "owningLayer": "altitude-mesh",
+      "primaryNodes": [
+        "document:doctrine/DOCTRINE__ALTITUDE_MESH_OPERATING_SYSTEM__2026-04-13.md",
+        "document:DOCTRINE__ALTITUDE_MESH_OPERATING_SYSTEM.md",
+        "document:doctrine/DOCTRINE__LENS_ADJUSTMENT_DISCIPLINE__2026-04-21.md",
+        "document:doctrine/DOCTRINE__PARALLEL_LOOPS_EXECUTION_AND_INTELLIGENCE__2026-04-18.md",
+        "config:doctrine/ALTITUDE-MESH-OPERATING-SYSTEM.json",
+        "config:doctrine/nodes/NODE__DOCTRINE.ALTITUDE_MESH_OPERATING_SYSTEM.json"
+      ],
+      "tags": [
+        "altitude-mesh",
+        "six-layer-stack",
+        "signal-flow",
+        "wake-gate"
+      ]
+    },
+    {
+      "id": "domain:babylon-agent-traversal",
+      "name": "Babylon Agent Traversal",
+      "description": "How agents move across altitudes and surfaces — Babylon satellite/boring/quilt topology mapped onto agent traversal rules. The horizontal motion layer that complements the altitude mesh: lets a single model achieve deep+shallow cognition through traversal protocol rather than model selection.",
+      "owningLayer": "babylon-traversal",
+      "primaryNodes": [
+        "document:doctrine/DOCTRINE__BABYLON_AGENT_TRAVERSAL__2026-04-12.md",
+        "document:doctrine/DOCTRINE__PROMOTION_LAW_BAT_SIGNAL_AMPLIFIER__2026-04-21.md",
+        "config:doctrine/BABYLON-AGENT-TRAVERSAL.json",
+        "config:doctrine/nodes/NODE__DOCTRINE.BABYLON_AGENT_TRAVERSAL.json",
+        "config:doctrine_ratified/BABYLON-AGENT-TRAVERSAL.json"
+      ],
+      "tags": [
+        "babylon",
+        "agent-traversal",
+        "satellite-boring-quilt",
+        "horizontal-motion"
+      ]
+    },
+    {
+      "id": "domain:cleanpoint-lattice",
+      "name": "Cleanpoint Lattice & State Discipline",
+      "description": "Multi-altitude lattice of verified checkpoints (micro/meso/macro) with declared scope, owner, authority, and conflict-rule. Replaces vibes-based current-state with authority-resolved truth; the substrate that lets the World Model hold its shape under load and roll back cleanly.",
+      "owningLayer": "cleanpoint-lattice",
+      "primaryNodes": [
+        "document:doctrine/DOCTRINE__CLEANPOINT_LATTICE__2026-04-12.md",
+        "document:doctrine/source_mirror/CANON/DOCTRINE__CLEANPOINT_LATTICE__2026-04-12.md",
+        "config:doctrine/CLEANPOINT-LATTICE.json",
+        "config:doctrine/doctrine.CLEANPOINT_LATTICE__2026-04-12.json",
+        "config:doctrine/nodes/NODE__DOCTRINE.CLEANPOINT_LATTICE.json"
+      ],
+      "tags": [
+        "cleanpoint",
+        "state-discipline",
+        "lattice",
+        "rollback",
+        "current-state"
+      ]
+    },
+    {
+      "id": "domain:automation-output-discipline",
+      "name": "Automation Output Discipline",
+      "description": "The State-Change Gate doctrine governing automation output — automation may only mutate state through declared, owner-attributed cleanpoints with authority resolution. Binds the cleanpoint lattice to runtime side effects; closes the loop between intelligence and execution.",
+      "owningLayer": "cleanpoint-lattice",
+      "primaryNodes": [
+        "document:doctrine/DOCTRINE__AUTOMATION_OUTPUT_DISCIPLINE_STATE_CHANGE_GATE__2026-05-06.md",
+        "config:doctrine/SSU.Doctrine.AutomationOutputDiscipline.StateChangeGate.v1.json",
+        "config:doctrine/SSU.Doctrine.CitationDiscipline.v1.0.json"
+      ],
+      "tags": [
+        "automation",
+        "state-change-gate",
+        "output-discipline",
+        "citation"
+      ]
+    },
+    {
+      "id": "domain:cross-cutting-doctrine-schemas",
+      "name": "Cross-Cutting Doctrine Schemas",
+      "description": "The doctrine corpus itself: doctrine-nodes, candidate/ratified indexes, Canon Circulation Protocol, Promotion Law, Doctrine Forge, amendments, and AI-Chat-Full-Capture relational continuity. The schema layer + circulation rules that everything else cites. Includes parser/verifier tooling and UA-treatment artifacts.",
+      "owningLayer": "doctrine-canon",
+      "primaryNodes": [
+        "document:doctrine/DOCTRINE__CANON_CIRCULATION_PROTOCOL_v0_1__2026-04-13.md",
+        "document:doctrine/DOCTRINE__AI_CHAT_FULL_CAPTURE_RELATIONAL_CONTINUITY__2026-05-03.md",
+        "document:doctrine/DOCTRINE__OHE_BILATERAL_HARNESS_ENGINEERING__v6.1__2026-05-05.md",
+        "document:doctrine/DOCTRINE__SSU_HARNESS__2026-04-21.md",
+        "document:doctrine/DOCTRINE__WAR_MACHINE_IS_EDGE_NOT_HEARTH__2026-04-19.md",
+        "document:doctrine/DOCTRINE__PUBLIC_HARNESS_LIBRARY__2026-04-21.md",
+        "function:parse_doctrine.py",
+        "function:verify_mapping.py"
+      ],
+      "tags": [
+        "doctrine",
+        "canon",
+        "promotion-law",
+        "schema",
+        "harness",
+        "tooling"
+      ]
+    }
+  ],
+  "metadata": {
+    "convertedFrom": "/Users/michael/Emperor-Palantir/world_model/.understand-anything/domain-graph.json",
+    "convertedAt": "2026-05-28T17:26:07.655Z"
+  }
 }

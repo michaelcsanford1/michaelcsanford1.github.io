@@ -1,112 +1,283 @@
 {
-  "version": "2.0.0",
-  "type": "domain-flow",
+  "version": "2.1.0",
+  "type": "domain-graph",
   "project": {
-    "name": "TCS Atlas Token Registry",
-    "languages": ["JSON", "Markdown"],
+    "name": "TCS Atlas — Governance Spine",
+    "languages": ["markdown", "json", "html"],
     "frameworks": ["SSU.AtlasTokens.UnifiedRegistry.v1", "SSU.AtlasTokens.CrossReference.v1"],
-    "description": "Domain flow showing the governed work spine (SOP->SWK->WI->Checklist->Action Plan->LMS), registry governance, verification, and audit layers.",
+    "description": "Domain graph of the TCS Atlas governance spine: SOP > SWK > WI > Checklist > Action Plan > LMS, plus the CANON layer that authorizes the chain. Derived from .understand-anything/knowledge-graph.json (34 nodes / 44 edges / 7 layers / 7 tour steps).",
     "analyzedAt": "2026-05-28T00:00:00Z",
-    "gitCommitHash": null
+    "gitCommitHash": "9100a641b6849d42baf3cebffc9b7e198f3ba9c1",
+    "source": "knowledge-graph.json"
   },
   "nodes": [
     {
-      "id": "domain-sop",
+      "id": "domain:canon",
       "type": "domain",
-      "name": "SOP Layer (Standard Operating Procedures)",
-      "filePath": null,
-      "summary": "Top-level governance layer. SOPs define the project gates (A1: Contract Execution, A2: Job Setup, etc.). Mapped by atomics.bucket tokens in the registry (43 buckets).",
-      "tags": ["governed-work-spine", "SOP", "project-gates"],
+      "name": "CANON / Governance",
+      "spine_role": "CANON",
+      "layer_id": "layer:canon",
+      "color": "#6B21A8",
+      "summary": "Canonical authority that names what is real and how downstream pages must be authored. Houses ATLAS_TOKEN_REGISTRY.md (the resolver manifest) and SCHEMA.md (the wiki authoring law). Nothing downstream is legal unless it cites and conforms to CANON.",
+      "anchor_node_ids": [
+        "document:ATLAS_TOKEN_REGISTRY.md",
+        "document:ua-treatment/wiki/SCHEMA.md"
+      ],
+      "tags": ["governance", "canon", "authority", "resolver-contract"],
+      "complexity": 2
+    },
+    {
+      "id": "domain:sop",
+      "type": "domain",
+      "name": "SOP — Standard Operating Procedure",
+      "spine_role": "SOP",
+      "layer_id": "layer:sop",
+      "color": "#1D4ED8",
+      "summary": "Umbrella operating doctrine. tcs-atlas.md names the four subsystems (registry, verification, watchdog, audits) and the order in which an operator engages them; index.md is the mandatory first read for any query. Establishes the procedural frame the rest of the spine works inside.",
+      "anchor_node_ids": [
+        "document:ua-treatment/wiki/tcs-atlas.md",
+        "document:ua-treatment/wiki/index.md"
+      ],
+      "tags": ["sop", "doctrine", "entry-point", "routing"],
+      "complexity": 2
+    },
+    {
+      "id": "domain:swk",
+      "type": "domain",
+      "name": "SWK — Standard Work Kit",
+      "spine_role": "SWK",
+      "layer_id": "layer:swk",
+      "color": "#0E7490",
+      "summary": "The canonical assets standard work consumes. atlas_token_registry.json (26,748 tokens / 53,317 aliases across atlas/atomics/graphify/legacy/pulse kinds) is the kit; atlas_token_xref.json is its lookup index; registry.md documents the kit. Every WI, checklist, and audit resolves against this.",
+      "anchor_node_ids": [
+        "config:atlas_token_registry.json",
+        "config:atlas_token_xref.json",
+        "document:ua-treatment/wiki/registry.md"
+      ],
+      "tags": ["swk", "kit", "registry", "canonical-asset"],
+      "complexity": 5
+    },
+    {
+      "id": "domain:wi",
+      "type": "domain",
+      "name": "WI — Work Instruction",
+      "spine_role": "WI",
+      "layer_id": "layer:wi",
+      "color": "#047857",
+      "summary": "Procedural verification performed against the SWK. Resolver smoke test (atlas_token_resolver_smoke_2026-05-11.json) proves the kit resolves real tokens; the dated verification report (atlas_token_verification_2026-05-11.json) records the result; verification.md documents the WI procedure.",
+      "anchor_node_ids": [
+        "document:ua-treatment/wiki/verification.md",
+        "config:atlas_token_resolver_smoke_2026-05-11.json",
+        "config:atlas_token_verification_2026-05-11.json"
+      ],
+      "tags": ["wi", "verification", "smoke-test", "procedure"],
       "complexity": 3
     },
     {
-      "id": "domain-swk",
+      "id": "domain:checklist",
       "type": "domain",
-      "name": "SWK Layer (Standard Work)",
-      "filePath": null,
-      "summary": "Standard work procedures derived from SOPs. Each SWK decomposes a gate bucket into executable work sequences. Linked to atomics.bucket tokens.",
-      "tags": ["governed-work-spine", "SWK", "work-sequences"],
-      "complexity": 3
-    },
-    {
-      "id": "domain-wi",
-      "type": "domain",
-      "name": "WI Layer (Work Instructions)",
-      "filePath": null,
-      "summary": "Individual work instructions that implement SWK procedures. Mapped by atomics.task tokens in the registry (304 tasks). Each WI has a canonical artifact on disk.",
-      "tags": ["governed-work-spine", "WI", "work-instructions"],
+      "name": "Checklist — Watchdog Cadence",
+      "spine_role": "Checklist",
+      "layer_id": "layer:checklist",
+      "color": "#B45309",
+      "summary": "The WI repeated on a schedule. Six watchdog snapshots chained head-to-tail (08:44 -> 09:49 -> 12:48 -> 13:21 -> 14:22 -> 19:02 Z on 2026-05-11) — each captures one tick (registry pointer + resolutions map + scan counters). The 13:21 tick recorded 1,921 citations / 247 files / 495 unique tokens / zero unresolved.",
+      "anchor_node_ids": [
+        "document:ua-treatment/wiki/watchdog.md",
+        "config:atlas_token_verification_watchdog_2026-05-11T0844Z.json",
+        "config:atlas_token_verification_watchdog_2026-05-11T0949Z.json",
+        "config:atlas_token_verification_watchdog_20260511T124822Z.json",
+        "config:atlas_token_verification_watchdog_20260511T132135Z.json",
+        "config:atlas_token_verification_watchdog_20260511T142248Z.json",
+        "config:atlas_token_verification_watchdog_20260511T190206Z.json"
+      ],
+      "tags": ["checklist", "watchdog", "cadence", "heartbeat"],
       "complexity": 4
     },
     {
-      "id": "domain-checklist",
+      "id": "domain:action_plan",
       "type": "domain",
-      "name": "Checklist Layer",
-      "filePath": null,
-      "summary": "Verification checklists that validate WI completion. Each checklist item maps to one or more atomics.task tokens. Checklists are the quality gate within each work instruction.",
-      "tags": ["governed-work-spine", "checklist", "quality-gate"],
-      "complexity": 3
+      "name": "Action Plan — Audits & Remediation",
+      "spine_role": "Action Plan",
+      "layer_id": "layer:action_plan",
+      "color": "#B91C1C",
+      "summary": "Catch-and-fix triggered when the checklist surfaces a gap. BD5 audit at 19:57:52Z flagged CANON as missing_graph; BD5 audit at 19:59:32Z (same tick, +1 min later) records remediation: CANON finalized as the fifth formal M6 corpus (19 nodes / 34 edges / 4 confidence). audits.md documents the loop.",
+      "anchor_node_ids": [
+        "document:ua-treatment/wiki/audits.md",
+        "document:audits/BD5_CROSS_CORPUS_AUDIT_20260511T195752Z.md",
+        "document:audits/BD5_CROSS_CORPUS_AUDIT_20260511T195932Z.md"
+      ],
+      "tags": ["action-plan", "audit", "remediation", "bd5"],
+      "complexity": 5
     },
     {
-      "id": "domain-action-plan",
+      "id": "domain:lms",
       "type": "domain",
-      "name": "Action Plan Layer",
-      "filePath": null,
-      "summary": "Action plans that track remediation and forward work. Mapped by pulse.pilot_token tokens (10 pilot tokens). Action plans bridge from verification findings to LMS tracking.",
-      "tags": ["governed-work-spine", "action-plan", "remediation"],
-      "complexity": 3
+      "name": "LMS — Learning Loop",
+      "spine_role": "LMS",
+      "layer_id": "layer:lms",
+      "color": "#0F766E",
+      "summary": "Codified learning surface. The supersession between the two BD5 audits is itself the captured lesson — an immune-system catch-and-fix preserved as institutional memory. SCHEMA.md (CANON) enforces the LMS contract: every new wiki page must register in index.md, so every lesson becomes a new SOP entry and the cycle closes.",
+      "anchor_node_ids": [
+        "document:ua-treatment/wiki/SCHEMA.md",
+        "document:ua-treatment/wiki/index.md",
+        "document:audits/BD5_CROSS_CORPUS_AUDIT_20260511T195932Z.md"
+      ],
+      "tags": ["lms", "learning-loop", "supersession", "institutional-memory"],
+      "complexity": 3,
+      "notes": "The LMS layer has no nodes exclusively at this layer in the current corpus; the LMS surface is materialized through (a) the supersession relationship between the two BD5 audits and (b) the SCHEMA.md convention that mandates index registration of every new page."
+    }
+  ],
+  "flows": [
+    {
+      "id": "flow:canon-authorizes-sop",
+      "type": "flow",
+      "name": "CANON authorizes the SOP frame",
+      "source_domain": "domain:canon",
+      "target_domain": "domain:sop",
+      "spine_edge": "CANON -> SOP",
+      "summary": "ATLAS_TOKEN_REGISTRY.md (CANON) names the system that tcs-atlas.md (SOP) operationalizes; SCHEMA.md (CANON) mandates that every entity page be registered in index.md (SOP). The SOP layer cannot exist as procedural doctrine without the CANON contract.",
+      "evidence_edges": [
+        { "from": "document:ATLAS_TOKEN_REGISTRY.md", "to": "config:atlas_token_registry.json", "type": "documents" },
+        { "from": "document:ua-treatment/wiki/SCHEMA.md", "to": "document:ua-treatment/wiki/index.md", "type": "related" }
+      ],
+      "steps": [
+        { "order": 1, "label": "CANON manifest names the system", "node_id": "document:ATLAS_TOKEN_REGISTRY.md" },
+        { "order": 2, "label": "SCHEMA mandates SOP index registration", "node_id": "document:ua-treatment/wiki/SCHEMA.md" },
+        { "order": 3, "label": "SOP index opens", "node_id": "document:ua-treatment/wiki/index.md" }
+      ]
     },
     {
-      "id": "domain-lms",
-      "type": "domain",
-      "name": "LMS Layer (Learning Management System)",
-      "filePath": null,
-      "summary": "Training and competency tracking layer. LMS records which personnel have completed training on specific WIs and SOPs. Closes the governance loop back to SOP compliance.",
-      "tags": ["governed-work-spine", "LMS", "training", "competency"],
-      "complexity": 3
+      "id": "flow:sop-delegates-to-swk",
+      "type": "flow",
+      "name": "SOP delegates to the SWK kit",
+      "source_domain": "domain:sop",
+      "target_domain": "domain:swk",
+      "spine_edge": "SOP -> SWK",
+      "summary": "tcs-atlas.md (SOP) routes operators to registry.md (SWK entity page), which documents the canonical kit (atlas_token_registry.json + atlas_token_xref.json). The SOP names the work; the SWK supplies the asset against which the work resolves.",
+      "evidence_edges": [
+        { "from": "document:ua-treatment/wiki/tcs-atlas.md", "to": "document:ua-treatment/wiki/registry.md", "type": "related" },
+        { "from": "document:ua-treatment/wiki/index.md", "to": "document:ua-treatment/wiki/registry.md", "type": "documents" }
+      ],
+      "steps": [
+        { "order": 1, "label": "SOP umbrella points at registry entity", "node_id": "document:ua-treatment/wiki/tcs-atlas.md" },
+        { "order": 2, "label": "SWK entity page describes the kit", "node_id": "document:ua-treatment/wiki/registry.md" },
+        { "order": 3, "label": "Canonical kit available", "node_id": "config:atlas_token_registry.json" }
+      ]
     },
     {
-      "id": "domain-registry",
-      "type": "domain",
-      "name": "Token Registry Core",
-      "filePath": "CANON/atlas_tokens/atlas_token_registry.json",
-      "summary": "The central registry containing 26,748 tokens with 53,317 aliases. Governs every layer of the work spine by providing canonical token resolution for all cited references. Includes the xref index for bidirectional lookup.",
-      "tags": ["registry-core", "token-resolution", "canonical-source"],
-      "complexity": 9
+      "id": "flow:swk-is-exercised-by-wi",
+      "type": "flow",
+      "name": "SWK is exercised by a WI",
+      "source_domain": "domain:swk",
+      "target_domain": "domain:wi",
+      "spine_edge": "SWK -> WI",
+      "summary": "registry.md (SWK) hands off to verification.md (WI); the smoke test (atlas_token_resolver_smoke_2026-05-11.json) and the dated verification report (atlas_token_verification_2026-05-11.json) execute against atlas_token_registry.json. The kit becomes work when a WI exercises it.",
+      "evidence_edges": [
+        { "from": "document:ua-treatment/wiki/registry.md", "to": "document:ua-treatment/wiki/verification.md", "type": "related" },
+        { "from": "config:atlas_token_resolver_smoke_2026-05-11.json", "to": "config:atlas_token_registry.json", "type": "related" },
+        { "from": "config:atlas_token_verification_2026-05-11.json", "to": "config:atlas_token_registry.json", "type": "related" }
+      ],
+      "steps": [
+        { "order": 1, "label": "SWK entity points to verification WI", "node_id": "document:ua-treatment/wiki/registry.md" },
+        { "order": 2, "label": "Smoke test runs", "node_id": "config:atlas_token_resolver_smoke_2026-05-11.json" },
+        { "order": 3, "label": "Verification report recorded", "node_id": "config:atlas_token_verification_2026-05-11.json" }
+      ]
     },
     {
-      "id": "domain-verification",
-      "type": "domain",
-      "name": "Verification + Watchdog Layer",
-      "filePath": "CANON/atlas_tokens/atlas_token_verification_2026-05-11.json",
-      "summary": "Continuous verification layer with corpus scans, smoke tests, and 6 watchdog snapshots. Validates that all 495 cited tokens resolve to canonical entries with artifacts on disk. The immune system of the token namespace.",
-      "tags": ["verification", "watchdog", "immune-system", "continuous-validation"],
-      "complexity": 4
+      "id": "flow:wi-becomes-checklist",
+      "type": "flow",
+      "name": "WI becomes a repeating checklist",
+      "source_domain": "domain:wi",
+      "target_domain": "domain:checklist",
+      "spine_edge": "WI -> Checklist",
+      "summary": "The first WI run (atlas_token_verification_2026-05-11.json) hands off to the first watchdog tick (08:44Z), which initiates a head-to-tail chain of six snapshots through 19:02Z on 2026-05-11. The WI's one-off becomes the checklist's heartbeat.",
+      "evidence_edges": [
+        { "from": "config:atlas_token_verification_2026-05-11.json", "to": "config:atlas_token_verification_watchdog_2026-05-11T0844Z.json", "type": "related" },
+        { "from": "config:atlas_token_verification_watchdog_2026-05-11T0844Z.json", "to": "config:atlas_token_verification_watchdog_2026-05-11T0949Z.json", "type": "related" },
+        { "from": "config:atlas_token_verification_watchdog_20260511T142248Z.json", "to": "config:atlas_token_verification_watchdog_20260511T190206Z.json", "type": "related" }
+      ],
+      "steps": [
+        { "order": 1, "label": "WI report hands off to watchdog", "node_id": "config:atlas_token_verification_2026-05-11.json" },
+        { "order": 2, "label": "First checklist tick 08:44Z", "node_id": "config:atlas_token_verification_watchdog_2026-05-11T0844Z.json" },
+        { "order": 3, "label": "Mid-day tick 13:21Z (495 tokens / 0 unresolved)", "node_id": "config:atlas_token_verification_watchdog_20260511T132135Z.json" },
+        { "order": 4, "label": "Final tick 19:02Z", "node_id": "config:atlas_token_verification_watchdog_20260511T190206Z.json" }
+      ]
     },
     {
-      "id": "domain-audit",
-      "type": "domain",
-      "name": "BD5 Cross-Corpus Audit Layer",
-      "filePath": "CANON/atlas_tokens/audits/BD5_CROSS_CORPUS_AUDIT_20260511T195932Z.md",
-      "summary": "BD5 audits that validate the graphify substrate across 6 corpora (11,944 nodes, 16,047 edges). Measures token coverage, catches missing graphs, and triggers same-tick remediation. The outer ring of the verification immune system.",
-      "tags": ["audit", "BD5", "cross-corpus", "substrate-integrity"],
-      "complexity": 6
+      "id": "flow:checklist-fires-action-plan",
+      "type": "flow",
+      "name": "Checklist fires an Action Plan when a gap appears",
+      "source_domain": "domain:checklist",
+      "target_domain": "domain:action_plan",
+      "spine_edge": "Checklist -> Action Plan",
+      "summary": "When the watchdog cadence surfaces a missing_graph signal, the BD5 cross-corpus audit fires. 19:57:52Z audit flagged CANON missing; 19:59:32Z audit (same tick) records the remediation that finalized CANON as the fifth formal M6 corpus. The checklist's anomaly becomes the action plan's catch-and-fix.",
+      "evidence_edges": [
+        { "from": "config:atlas_token_verification_watchdog_20260511T190206Z.json", "to": "config:atlas_token_registry.json", "type": "related" },
+        { "from": "document:audits/BD5_CROSS_CORPUS_AUDIT_20260511T195932Z.md", "to": "document:audits/BD5_CROSS_CORPUS_AUDIT_20260511T195752Z.md", "type": "related" }
+      ],
+      "steps": [
+        { "order": 1, "label": "Watchdog tick surfaces gap", "node_id": "config:atlas_token_verification_watchdog_20260511T190206Z.json" },
+        { "order": 2, "label": "BD5 audit flags CANON missing_graph", "node_id": "document:audits/BD5_CROSS_CORPUS_AUDIT_20260511T195752Z.md" },
+        { "order": 3, "label": "Same-tick remediation audit", "node_id": "document:audits/BD5_CROSS_CORPUS_AUDIT_20260511T195932Z.md" }
+      ]
+    },
+    {
+      "id": "flow:action-plan-feeds-lms",
+      "type": "flow",
+      "name": "Action Plan feeds the LMS learning loop",
+      "source_domain": "domain:action_plan",
+      "target_domain": "domain:lms",
+      "spine_edge": "Action Plan -> LMS",
+      "summary": "The supersession between BD5_..195752Z (gap) and BD5_..195932Z (fix) is itself the lesson — institutional memory of a captured-and-closed immune-system event. audits.md (Action Plan entity) cross-links to tcs-atlas.md (SOP umbrella), and SCHEMA.md (CANON) requires every new page to register in index.md, closing the loop.",
+      "evidence_edges": [
+        { "from": "document:ua-treatment/wiki/audits.md", "to": "document:ua-treatment/wiki/tcs-atlas.md", "type": "related" },
+        { "from": "document:ua-treatment/wiki/SCHEMA.md", "to": "document:ua-treatment/wiki/index.md", "type": "related" }
+      ],
+      "steps": [
+        { "order": 1, "label": "Audit supersession captured as lesson", "node_id": "document:audits/BD5_CROSS_CORPUS_AUDIT_20260511T195932Z.md" },
+        { "order": 2, "label": "SCHEMA mandates registration of every new page", "node_id": "document:ua-treatment/wiki/SCHEMA.md" },
+        { "order": 3, "label": "Index updated; loop closes to SOP", "node_id": "document:ua-treatment/wiki/index.md" }
+      ]
+    },
+    {
+      "id": "flow:lms-feeds-canon",
+      "type": "flow",
+      "name": "LMS feeds back into CANON (cycle closes)",
+      "source_domain": "domain:lms",
+      "target_domain": "domain:canon",
+      "spine_edge": "LMS -> CANON",
+      "summary": "SCHEMA.md is both a CANON artifact and the contract that converts an LMS-captured lesson into a new CANON page. New pages flow back through CANON -> SOP, so the spine is a closed cycle rather than a one-way pipe. The same artifact is the loop's terminator and its restart.",
+      "evidence_edges": [
+        { "from": "document:ua-treatment/wiki/SCHEMA.md", "to": "document:ua-treatment/wiki/index.md", "type": "related" }
+      ],
+      "steps": [
+        { "order": 1, "label": "Lesson promoted to a new page", "node_id": "document:ua-treatment/wiki/index.md" },
+        { "order": 2, "label": "SCHEMA enforces CANON conformance", "node_id": "document:ua-treatment/wiki/SCHEMA.md" },
+        { "order": 3, "label": "CANON manifest updated; cycle restarts", "node_id": "document:ATLAS_TOKEN_REGISTRY.md" }
+      ]
     }
   ],
   "edges": [
-    { "source": "domain-sop", "target": "domain-swk", "label": "decomposes-into" },
-    { "source": "domain-swk", "target": "domain-wi", "label": "implements-via" },
-    { "source": "domain-wi", "target": "domain-checklist", "label": "verified-by" },
-    { "source": "domain-checklist", "target": "domain-action-plan", "label": "generates" },
-    { "source": "domain-action-plan", "target": "domain-lms", "label": "tracks-in" },
-    { "source": "domain-lms", "target": "domain-sop", "label": "feeds-compliance-back-to" },
-    { "source": "domain-registry", "target": "domain-sop", "label": "governs-tokens-for" },
-    { "source": "domain-registry", "target": "domain-swk", "label": "governs-tokens-for" },
-    { "source": "domain-registry", "target": "domain-wi", "label": "governs-tokens-for" },
-    { "source": "domain-registry", "target": "domain-checklist", "label": "governs-tokens-for" },
-    { "source": "domain-registry", "target": "domain-action-plan", "label": "governs-tokens-for" },
-    { "source": "domain-registry", "target": "domain-lms", "label": "governs-tokens-for" },
-    { "source": "domain-verification", "target": "domain-registry", "label": "validates" },
-    { "source": "domain-audit", "target": "domain-registry", "label": "audits" },
-    { "source": "domain-audit", "target": "domain-verification", "label": "extends" }
-  ]
+    { "source": "domain:canon", "target": "domain:sop", "type": "flow_to", "flow_id": "flow:canon-authorizes-sop", "label": "authorizes" },
+    { "source": "domain:sop", "target": "domain:swk", "type": "flow_to", "flow_id": "flow:sop-delegates-to-swk", "label": "delegates-to" },
+    { "source": "domain:swk", "target": "domain:wi", "type": "flow_to", "flow_id": "flow:swk-is-exercised-by-wi", "label": "exercised-by" },
+    { "source": "domain:wi", "target": "domain:checklist", "type": "flow_to", "flow_id": "flow:wi-becomes-checklist", "label": "repeats-as" },
+    { "source": "domain:checklist", "target": "domain:action_plan", "type": "flow_to", "flow_id": "flow:checklist-fires-action-plan", "label": "fires" },
+    { "source": "domain:action_plan", "target": "domain:lms", "type": "flow_to", "flow_id": "flow:action-plan-feeds-lms", "label": "feeds" },
+    { "source": "domain:lms", "target": "domain:canon", "type": "flow_to", "flow_id": "flow:lms-feeds-canon", "label": "closes-cycle-back-to" }
+  ],
+  "metadata": {
+    "domain_count": 7,
+    "flow_count": 7,
+    "zero_flow_domains": [],
+    "chain": ["CANON", "SOP", "SWK", "WI", "Checklist", "Action Plan", "LMS"],
+    "cycle_closing_flow": "flow:lms-feeds-canon",
+    "derived_from": {
+      "graph_path": ".understand-anything/knowledge-graph.json",
+      "graph_nodes": 34,
+      "graph_edges": 44,
+      "graph_layers": 7,
+      "graph_tour_steps": 7
+    }
+  }
 }
