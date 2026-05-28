@@ -17,8 +17,8 @@
     }
   },
   "live_links": {
-    "constellation": "https://constellation.sanfordsystematic.com",
-    "constellation_dashboard": "https://constellation.sanfordsystematic.com/dashboard",
+    "constellation": "/explain/constellation.html",
+    "constellation_dashboard": "/explain/constellation.html",
     "understand_anything_explainer": "/explain/understand-anything.html",
     "tcs_construction_harness": "/explain/tcs-construction-harness.html",
     "public_graph_dashboards": "/ua-dashboards/"

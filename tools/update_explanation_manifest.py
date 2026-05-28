@@ -45,8 +45,8 @@ def main() -> None:
             "node_types": node_types,
         },
         "live_links": {
-            "constellation": "https://constellation.sanfordsystematic.com",
-            "constellation_dashboard": "https://constellation.sanfordsystematic.com/dashboard",
+            "constellation": "/explain/constellation.html",
+            "constellation_dashboard": "/explain/constellation.html",
         },
         "layers": layers,
         "tour": sorted(tour, key=lambda item: item.get("order") or 999),
