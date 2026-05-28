@@ -1,355 +1,253 @@
 {
+  "version": "2.0.0",
+  "type": "domain-flow",
   "project": {
     "name": "UK CAER TCS Digital Twin PM Package",
-    "languages": ["Python", "JavaScript", "Markdown", "HTML", "XLSX"],
-    "frameworks": ["openpyxl", "Node.js"],
-    "description": "Construction business domain flow for UK CAER — 10 operational domains with directed dependency edges",
-    "analyzedAt": "2026-05-28T14:30:00-04:00",
-    "gitCommitHash": "live-scan"
+    "languages": [
+      "Python",
+      "Markdown",
+      "HTML",
+      "JavaScript",
+      "YAML",
+      "JSON"
+    ],
+    "frameworks": [
+      "openpyxl",
+      "TCS 9-Gate Lifecycle",
+      "Sage CM",
+      "NotebookLM"
+    ],
+    "description": "A digital-twin PM operating product for the Lexington UK CAER Outreach & Education Center (DeVere Construction). Contains 51 Python builders generating XLSX workbooks and HTML dashboards across 10 construction domains, plus 225 Markdown specs covering TCS governance, agent boot protocols, and onboarding materials.",
+    "analyzedAt": "2026-05-28T16:29:11.325106",
+    "gitCommitHash": "n/a-local-workbench"
   },
-  "type": "domain-flow",
-  "version": "2.0.0",
-  "generated_at": "2026-05-28T14:30:00-04:00",
-  "generated_by": "Understand Anything pipeline — construction business domain flow (NOT file-type buckets)",
   "nodes": [
     {
-      "id": "uk-caer-domain",
+      "id": "dom-gate-readiness",
       "type": "domain",
-      "label": "UK CAER Business Domains",
-      "description": "10 operational domains of the TCS digital-twin PM package for UK CAER Outreach & Education Center construction",
-      "name": "UK CAER Business Domains",
-      "filePath": "uk-caer-domain",
-      "summary": "10 operational domains of the TCS digital-twin PM package for UK CAER construction",
-      "tags": ["domain", "root"],
-      "complexity": "complex"
-    },
-    {
-      "id": "gate-readiness",
-      "type": "domain",
-      "label": "Gate Readiness",
-      "description": "A1-C3 gate progression: A1 (contract execution), A2 (Sage setup/budget), B1-B6 (procurement activation/trade NTP), C1-C3 (field readiness/execution/closeout). Each gate requires specific evidence before advancement.",
       "name": "Gate Readiness",
-      "filePath": "gate-readiness",
-      "summary": "A1-C3 gate progression with evidence requirements — 8 files including 9-gate readiness board, premobilization matrix/ledger",
-      "tags": ["domain", "gate-readiness"],
-      "complexity": "complex"
+      "filePath": "build_uk_caer_9_gate_readiness_board.py",
+      "summary": "9-gate lifecycle control (A0-D2). Gate advancement requires documented evidence, TPM/procurement dependencies met, and validation posture confirmed.",
+      "tags": [
+        "gate",
+        "lifecycle",
+        "A0-D2"
+      ],
+      "complexity": "very-high"
     },
     {
-      "id": "pm-command-center",
+      "id": "dom-pm-command",
       "type": "domain",
-      "label": "PM Command Center",
-      "description": "Daily operating nerve center: PM operating board, command center workbook, asset navigator, data spine, product review conductor, agent boot file. Orchestrates daily standups and cross-domain status.",
       "name": "PM Command Center",
-      "filePath": "pm-command-center",
-      "summary": "Daily operating nerve center — 18 files including PM command center, daily board, asset navigator, data spine",
-      "tags": ["domain", "pm-command"],
-      "complexity": "complex"
+      "filePath": "build_uk_caer_pm_command_center.py",
+      "summary": "Central aggregation hub linking all 10 domains. Single surface for PM status, next actions, and blockers.",
+      "tags": [
+        "command-center",
+        "aggregation",
+        "hub"
+      ],
+      "complexity": "very-high"
     },
     {
-      "id": "procurement",
+      "id": "dom-procurement",
       "type": "domain",
-      "label": "Procurement & Contracts",
-      "description": "Prime contract execution, subcontractor packages, BOQ/BOM cost code mapping (740-line builder), B1/B2 procurement activation, vendor compliance, submittal schedule, commitment tracking.",
-      "name": "Procurement & Contracts",
-      "filePath": "procurement",
-      "summary": "Prime contract, subcontractors, BOQ/BOM — 14 files including procurement activation board, cost mapping, submittal schedule",
-      "tags": ["domain", "procurement"],
-      "complexity": "complex"
+      "name": "Procurement",
+      "filePath": "build_uk_caer_b1_b2_procurement_activation_board.py",
+      "summary": "Vendor and material management: B1/B2 activation, buyout sequencing, submittal release, Sage commitment verification, cost/SOV readiness.",
+      "tags": [
+        "procurement",
+        "buyout",
+        "sage",
+        "B1",
+        "B2"
+      ],
+      "complexity": "high"
     },
     {
-      "id": "field-operations",
+      "id": "dom-field-ops",
       "type": "domain",
-      "label": "Field Operations",
-      "description": "Work instructions, inspection test plans (ITPs), preinstall meetings, high-risk trade packets, field WI/ITP checklists, safety plans, quality plans. Governed by Rooter-to-Tooter no-move rules.",
       "name": "Field Operations",
-      "filePath": "field-operations",
-      "summary": "Work instructions, ITPs, preinstall meetings — 16 files including field WI/ITP package, safety/quality plans",
-      "tags": ["domain", "field-ops"],
-      "complexity": "complex"
+      "filePath": "build_uk_caer_field_wi_itp_package.py",
+      "summary": "Site execution: work instructions, inspection/test plans, action plans (Rooter-to-Tooter), high-risk trade and preinstall management.",
+      "tags": [
+        "field",
+        "itp",
+        "action-plan",
+        "rooter",
+        "tooter"
+      ],
+      "complexity": "high"
     },
     {
-      "id": "evidence-compliance",
+      "id": "dom-evidence",
       "type": "domain",
-      "label": "Evidence & Compliance",
-      "description": "Evidence closure packets, receipt validation ledgers, Sage CM verification packages, evidence token standards, validation zone boards, P0 evidence intake pipeline. Governed by no-move rules requiring evidence before gate advancement.",
       "name": "Evidence & Compliance",
-      "filePath": "evidence-compliance",
-      "summary": "Closure packets, receipt validation, Sage verification — 22 files including evidence closure, token standard, validation zone board",
-      "tags": ["domain", "evidence"],
-      "complexity": "complex"
+      "filePath": "build_uk_caer_pm_evidence_token_standard.py",
+      "summary": "Documentation and audit trail: evidence tokens, P0 intake, validation architecture, QC plan, zone assignments, package QA audit.",
+      "tags": [
+        "evidence",
+        "compliance",
+        "validation",
+        "qa"
+      ],
+      "complexity": "high"
     },
     {
-      "id": "cost-control",
+      "id": "dom-cost",
       "type": "domain",
-      "label": "Cost Control",
-      "description": "Schedule of values (SOV), cost/commitment readiness, change order tracking, payment application support, live action approval ledgers, Sage CM financial alignment. No pay support without commitment+evidence+invoice+WBS alignment.",
       "name": "Cost Control",
-      "filePath": "cost-control",
-      "summary": "SOV, commitments, change orders — 10 files including cost/SOV readiness board, live action approval ledger",
-      "tags": ["domain", "cost-control"],
-      "complexity": "moderate"
+      "filePath": "build_uk_caer_boq_bom_cost_mapping.py",
+      "summary": "Budget and cost codes: BOQ/BOM mapping, schedule logic, submittal scheduling, RFI register. No buyout before A2, no pay without evidence.",
+      "tags": [
+        "cost",
+        "budget",
+        "boq",
+        "schedule"
+      ],
+      "complexity": "high"
     },
     {
-      "id": "risk-management",
+      "id": "dom-risk",
       "type": "domain",
-      "label": "Risk Management",
-      "description": "High-risk preinstall meeting management, risk registers, high-risk trade issue packets, mitigation planning, constraint clearing protocols. Governs field operations NTP gates.",
       "name": "Risk Management",
-      "filePath": "risk-management",
-      "summary": "High-risk trade packets, preinstall meetings — 8 files including trade issue packets, preinstall meeting packets",
-      "tags": ["domain", "risk"],
-      "complexity": "moderate"
+      "filePath": "build_uk_caer_live_action_approval_ledger.py",
+      "summary": "Risk register and mitigation: live action approval ledger, decision/action ledger, deliverables completion roadmap, high-risk flagging.",
+      "tags": [
+        "risk",
+        "approval",
+        "decision",
+        "mitigation"
+      ],
+      "complexity": "medium"
     },
     {
-      "id": "document-control",
+      "id": "dom-doc-control",
       "type": "domain",
-      "label": "Document Control",
-      "description": "Control document revision boards, RFI register/management, source registers, Sage/OneDrive governance board, work area map. Maintains document integrity across local/OneDrive boundary.",
       "name": "Document Control",
-      "filePath": "document-control",
-      "summary": "Revision boards, RFIs, source registers — 12 files including revision board, RFI register, Sage/OneDrive governance",
-      "tags": ["domain", "document-control"],
-      "complexity": "moderate"
+      "filePath": "build_uk_caer_control_doc_revision_board.py",
+      "summary": "Version management: control doc revision board, Sage/OneDrive governance, TCS control pack, package index and manifest.",
+      "tags": [
+        "document",
+        "revision",
+        "governance",
+        "manifest"
+      ],
+      "complexity": "high"
     },
     {
-      "id": "human-resources",
+      "id": "dom-hr",
       "type": "domain",
-      "label": "Human Resources",
-      "description": "Day-1 role rollout packages (PM, Superintendent, Foreman), PM onboarding board, training tracker, 8-week TCS syllabus, RACI matrix, competency tracking, project-specific cheat sheets.",
-      "name": "Human Resources",
-      "filePath": "human-resources",
-      "summary": "Day-1 rollout, PM onboarding, training — 20 files including onboarding board, rollout package, training tracker",
-      "tags": ["domain", "hr"],
-      "complexity": "moderate"
+      "name": "HR & Training",
+      "filePath": "build_uk_caer_human_pm_onboarding_board.py",
+      "summary": "Personnel and competency: PM onboarding, 8-week syllabus, day1 rollout, training tracker, safety/quality plans.",
+      "tags": [
+        "hr",
+        "training",
+        "onboarding",
+        "safety"
+      ],
+      "complexity": "medium"
     },
     {
-      "id": "reporting",
+      "id": "dom-reporting",
       "type": "domain",
-      "label": "Reporting & Analytics",
-      "description": "Weekly PM snapshots, executive package overview, owner progress review, deliverables completion roadmap, TCS compliance milestones, voice-trained owner presentations, package QA audit.",
-      "name": "Reporting & Analytics",
-      "filePath": "reporting",
-      "summary": "Weekly snapshots, executive packages, roadmaps — 16 files including snapshot package, executive overview, compliance milestones",
-      "tags": ["domain", "reporting"],
-      "complexity": "moderate"
+      "name": "Reporting",
+      "filePath": "build_uk_caer_daily_pm_operating_board.py",
+      "summary": "Dashboards and status: daily operating board, weekly snapshots, executive overview, owner progress review, productization board, TPM release readiness.",
+      "tags": [
+        "reporting",
+        "dashboard",
+        "owner",
+        "executive"
+      ],
+      "complexity": "high"
     }
   ],
   "edges": [
     {
-      "id": "edge-part-0",
-      "source": "gate-readiness",
-      "target": "uk-caer-domain",
-      "type": "part_of",
-      "direction": "forward",
-      "weight": 0.5,
-      "label": "part_of"
+      "source": "dom-gate-readiness",
+      "target": "dom-pm-command",
+      "label": "gate status feeds"
     },
     {
-      "id": "edge-part-1",
-      "source": "pm-command-center",
-      "target": "uk-caer-domain",
-      "type": "part_of",
-      "direction": "forward",
-      "weight": 0.5,
-      "label": "part_of"
+      "source": "dom-procurement",
+      "target": "dom-gate-readiness",
+      "label": "B1/B2 gates require"
     },
     {
-      "id": "edge-part-2",
-      "source": "procurement",
-      "target": "uk-caer-domain",
-      "type": "part_of",
-      "direction": "forward",
-      "weight": 0.5,
-      "label": "part_of"
+      "source": "dom-field-ops",
+      "target": "dom-gate-readiness",
+      "label": "C1/C2 gates require"
     },
     {
-      "id": "edge-part-3",
-      "source": "field-operations",
-      "target": "uk-caer-domain",
-      "type": "part_of",
-      "direction": "forward",
-      "weight": 0.5,
-      "label": "part_of"
+      "source": "dom-evidence",
+      "target": "dom-gate-readiness",
+      "label": "evidence required for all gates"
     },
     {
-      "id": "edge-part-4",
-      "source": "evidence-compliance",
-      "target": "uk-caer-domain",
-      "type": "part_of",
-      "direction": "forward",
-      "weight": 0.5,
-      "label": "part_of"
+      "source": "dom-cost",
+      "target": "dom-procurement",
+      "label": "cost codes enable buyout"
     },
     {
-      "id": "edge-part-5",
-      "source": "cost-control",
-      "target": "uk-caer-domain",
-      "type": "part_of",
-      "direction": "forward",
-      "weight": 0.5,
-      "label": "part_of"
+      "source": "dom-cost",
+      "target": "dom-gate-readiness",
+      "label": "A2 budget lock gate"
     },
     {
-      "id": "edge-part-6",
-      "source": "risk-management",
-      "target": "uk-caer-domain",
-      "type": "part_of",
-      "direction": "forward",
-      "weight": 0.5,
-      "label": "part_of"
+      "source": "dom-risk",
+      "target": "dom-field-ops",
+      "label": "risk flags affect field"
     },
     {
-      "id": "edge-part-7",
-      "source": "document-control",
-      "target": "uk-caer-domain",
-      "type": "part_of",
-      "direction": "forward",
-      "weight": 0.5,
-      "label": "part_of"
+      "source": "dom-risk",
+      "target": "dom-procurement",
+      "label": "approval controls buyout"
     },
     {
-      "id": "edge-part-8",
-      "source": "human-resources",
-      "target": "uk-caer-domain",
-      "type": "part_of",
-      "direction": "forward",
-      "weight": 0.5,
-      "label": "part_of"
+      "source": "dom-doc-control",
+      "target": "dom-evidence",
+      "label": "doc versions feed evidence"
     },
     {
-      "id": "edge-part-9",
-      "source": "reporting",
-      "target": "uk-caer-domain",
-      "type": "part_of",
-      "direction": "forward",
-      "weight": 0.5,
-      "label": "part_of"
+      "source": "dom-doc-control",
+      "target": "dom-pm-command",
+      "label": "revision status feeds"
     },
     {
-      "id": "edge-flow-0",
-      "source": "gate-readiness",
-      "target": "pm-command-center",
-      "type": "drives",
-      "direction": "forward",
-      "weight": 0.9,
-      "label": "drives"
+      "source": "dom-hr",
+      "target": "dom-field-ops",
+      "label": "trained personnel enable"
     },
     {
-      "id": "edge-flow-1",
-      "source": "procurement",
-      "target": "cost-control",
-      "type": "feeds",
-      "direction": "forward",
-      "weight": 0.9,
-      "label": "feeds"
+      "source": "dom-hr",
+      "target": "dom-gate-readiness",
+      "label": "competency for B2/C1"
     },
     {
-      "id": "edge-flow-2",
-      "source": "field-operations",
-      "target": "evidence-compliance",
-      "type": "generates",
-      "direction": "forward",
-      "weight": 0.9,
-      "label": "generates evidence"
+      "source": "dom-reporting",
+      "target": "dom-pm-command",
+      "label": "reports feed command center"
     },
     {
-      "id": "edge-flow-3",
-      "source": "evidence-compliance",
-      "target": "gate-readiness",
-      "type": "proves",
-      "direction": "forward",
-      "weight": 0.9,
-      "label": "proves"
+      "source": "dom-pm-command",
+      "target": "dom-reporting",
+      "label": "command center drives reports"
     },
     {
-      "id": "edge-flow-4",
-      "source": "cost-control",
-      "target": "reporting",
-      "type": "informs",
-      "direction": "forward",
-      "weight": 0.8,
-      "label": "informs"
+      "source": "dom-field-ops",
+      "target": "dom-evidence",
+      "label": "field evidence captured"
     },
     {
-      "id": "edge-flow-5",
-      "source": "risk-management",
-      "target": "field-operations",
-      "type": "governs",
-      "direction": "forward",
-      "weight": 0.9,
-      "label": "governs"
+      "source": "dom-procurement",
+      "target": "dom-cost",
+      "label": "commitments flow to cost"
     },
     {
-      "id": "edge-flow-6",
-      "source": "document-control",
-      "target": "procurement",
-      "type": "supports",
-      "direction": "forward",
-      "weight": 0.7,
-      "label": "supports"
-    },
-    {
-      "id": "edge-flow-7",
-      "source": "human-resources",
-      "target": "field-operations",
-      "type": "staffs",
-      "direction": "forward",
-      "weight": 0.8,
-      "label": "staffs"
-    },
-    {
-      "id": "edge-flow-8",
-      "source": "pm-command-center",
-      "target": "reporting",
-      "type": "orchestrates",
-      "direction": "forward",
-      "weight": 0.9,
-      "label": "orchestrates"
-    },
-    {
-      "id": "edge-flow-9",
-      "source": "evidence-compliance",
-      "target": "cost-control",
-      "type": "validates",
-      "direction": "forward",
-      "weight": 0.8,
-      "label": "validates pay support"
-    },
-    {
-      "id": "edge-flow-10",
-      "source": "gate-readiness",
-      "target": "procurement",
-      "type": "gates",
-      "direction": "forward",
-      "weight": 0.9,
-      "label": "gates A1/A2 before B-gates"
-    },
-    {
-      "id": "edge-flow-11",
-      "source": "document-control",
-      "target": "evidence-compliance",
-      "type": "tracks",
-      "direction": "forward",
-      "weight": 0.7,
-      "label": "tracks evidence versions"
-    },
-    {
-      "id": "edge-flow-12",
-      "source": "risk-management",
-      "target": "procurement",
-      "type": "constrains",
-      "direction": "forward",
-      "weight": 0.8,
-      "label": "constrains NTP"
-    },
-    {
-      "id": "edge-flow-13",
-      "source": "reporting",
-      "target": "gate-readiness",
-      "type": "measures",
-      "direction": "forward",
-      "weight": 0.7,
-      "label": "measures progress"
+      "source": "dom-evidence",
+      "target": "dom-doc-control",
+      "label": "evidence needs version control"
     }
   ]
 }

@@ -1,9 +1,8 @@
 {
-  "project": "tcs-atlas",
-  "generated_at": "2026-05-28T12:00:00Z",
+  "project": "TCS Atlas Token Registry",
+  "generated_at": "2026-05-28T16:27:00Z",
   "demo_mode": false,
-  "files": {
-    "knowledge_graph": "knowledge-graph.json",
-    "domain_graph": "domain-graph.json"
-  }
+  "pipeline_version": "2.0.0",
+  "phases_completed": 8,
+  "stats": { "nodes": 13, "edges": 25, "layers": 4, "tours": 2, "coverage": 1.0, "quality_score": 9 }
 }

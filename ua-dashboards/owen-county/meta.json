@@ -1,9 +1,8 @@
 {
-  "project": "owen-county",
-  "generated_at": "2026-05-28T00:00:00Z",
+  "project": "Owen County Job #3620251",
+  "generated_at": "2026-05-28T16:26:00Z",
   "demo_mode": false,
-  "files": {
-    "knowledge_graph": "knowledge-graph.json",
-    "domain_graph": "domain-graph.json"
-  }
+  "pipeline_version": "2.0.0",
+  "phases_completed": 8,
+  "stats": { "nodes": 19, "edges": 53, "layers": 6, "tours": 3, "coverage": 1.0, "quality_score": 9 }
 }

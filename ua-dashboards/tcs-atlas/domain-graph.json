@@ -3,112 +3,110 @@
   "type": "domain-flow",
   "project": {
     "name": "TCS Atlas Token Registry",
-    "languages": [],
-    "frameworks": [],
-    "description": "Construction business domain flow: SOP-to-LMS governed work spine with Atlas Token Registry governance layer",
-    "analyzedAt": "2026-05-28T12:00:00Z",
-    "gitCommitHash": "ua-pipeline-v2"
+    "languages": ["JSON", "Markdown"],
+    "frameworks": ["SSU.AtlasTokens.UnifiedRegistry.v1", "SSU.AtlasTokens.CrossReference.v1"],
+    "description": "Domain flow showing the governed work spine (SOP->SWK->WI->Checklist->Action Plan->LMS), registry governance, verification, and audit layers.",
+    "analyzedAt": "2026-05-28T00:00:00Z",
+    "gitCommitHash": null
   },
-  "generated_at": "2026-05-28T12:00:00Z",
-  "generated_by": "Understand Anything Pipeline v2.0 — construction business domain flow (NOT file-type buckets)",
   "nodes": [
     {
-      "id": "sop",
+      "id": "domain-sop",
       "type": "domain",
-      "name": "SOP - Standard Operating Procedure",
-      "filePath": "sop",
-      "summary": "Authoritative control document defining how work is performed. Top of the governed work spine. Establishes the method, safety requirements, and compliance framework for each construction activity.",
-      "tags": ["domain", "spine"],
-      "complexity": "moderate"
+      "name": "SOP Layer (Standard Operating Procedures)",
+      "filePath": null,
+      "summary": "Top-level governance layer. SOPs define the project gates (A1: Contract Execution, A2: Job Setup, etc.). Mapped by atomics.bucket tokens in the registry (43 buckets).",
+      "tags": ["governed-work-spine", "SOP", "project-gates"],
+      "complexity": 3
     },
     {
-      "id": "swk",
+      "id": "domain-swk",
       "type": "domain",
-      "name": "SWK - Safe Work Method Statement",
-      "filePath": "swk",
-      "summary": "Risk assessment and safe work method derived from SOP. Identifies hazards, controls, and PPE requirements for field execution.",
-      "tags": ["domain", "spine"],
-      "complexity": "moderate"
+      "name": "SWK Layer (Standard Work)",
+      "filePath": null,
+      "summary": "Standard work procedures derived from SOPs. Each SWK decomposes a gate bucket into executable work sequences. Linked to atomics.bucket tokens.",
+      "tags": ["governed-work-spine", "SWK", "work-sequences"],
+      "complexity": 3
     },
     {
-      "id": "wi",
+      "id": "domain-wi",
       "type": "domain",
-      "name": "WI - Work Instruction",
-      "filePath": "wi",
-      "summary": "Step-by-step execution instruction verifying SWK compliance. The granular task sequence a worker follows on site.",
-      "tags": ["domain", "spine"],
-      "complexity": "moderate"
+      "name": "WI Layer (Work Instructions)",
+      "filePath": null,
+      "summary": "Individual work instructions that implement SWK procedures. Mapped by atomics.task tokens in the registry (304 tasks). Each WI has a canonical artifact on disk.",
+      "tags": ["governed-work-spine", "WI", "work-instructions"],
+      "complexity": 4
     },
     {
-      "id": "checklist",
+      "id": "domain-checklist",
       "type": "domain",
-      "name": "Checklist",
-      "filePath": "checklist",
-      "summary": "Verification instrument confirming WI steps were executed. Each item maps to a WI step with pass/fail/NA and evidence.",
-      "tags": ["domain", "spine"],
-      "complexity": "simple"
+      "name": "Checklist Layer",
+      "filePath": null,
+      "summary": "Verification checklists that validate WI completion. Each checklist item maps to one or more atomics.task tokens. Checklists are the quality gate within each work instruction.",
+      "tags": ["governed-work-spine", "checklist", "quality-gate"],
+      "complexity": 3
     },
     {
-      "id": "action-plan",
+      "id": "domain-action-plan",
       "type": "domain",
-      "name": "Action Plan",
-      "filePath": "action-plan",
-      "summary": "Training and corrective action plan. Assigns owners, dates, and deliverables to close gaps from checklists or audits.",
-      "tags": ["domain", "spine"],
-      "complexity": "simple"
+      "name": "Action Plan Layer",
+      "filePath": null,
+      "summary": "Action plans that track remediation and forward work. Mapped by pulse.pilot_token tokens (10 pilot tokens). Action plans bridge from verification findings to LMS tracking.",
+      "tags": ["governed-work-spine", "action-plan", "remediation"],
+      "complexity": 3
     },
     {
-      "id": "lms",
+      "id": "domain-lms",
       "type": "domain",
-      "name": "LMS - Learning Management System",
-      "filePath": "lms",
-      "summary": "Training delivery and competency tracking. Certifies personnel have completed required training. Feeds back into SOP review cycle.",
-      "tags": ["domain", "spine"],
-      "complexity": "moderate"
+      "name": "LMS Layer (Learning Management System)",
+      "filePath": null,
+      "summary": "Training and competency tracking layer. LMS records which personnel have completed training on specific WIs and SOPs. Closes the governance loop back to SOP compliance.",
+      "tags": ["governed-work-spine", "LMS", "training", "competency"],
+      "complexity": 3
     },
     {
-      "id": "token-registry",
+      "id": "domain-registry",
       "type": "domain",
-      "name": "Atlas Token Registry",
+      "name": "Token Registry Core",
       "filePath": "CANON/atlas_tokens/atlas_token_registry.json",
-      "summary": "Machine-built resolver substrate: 26,748 canonical tokens, 53,317 aliases, 10 kinds. Governs all document references across the work spine.",
-      "tags": ["domain", "governance", "registry"],
-      "complexity": "complex"
+      "summary": "The central registry containing 26,748 tokens with 53,317 aliases. Governs every layer of the work spine by providing canonical token resolution for all cited references. Includes the xref index for bidirectional lookup.",
+      "tags": ["registry-core", "token-resolution", "canonical-source"],
+      "complexity": 9
     },
     {
-      "id": "verification",
+      "id": "domain-verification",
       "type": "domain",
-      "name": "Token Verification & Watchdog",
-      "filePath": "CANON/atlas_tokens",
-      "summary": "Continuous verification: 1,921 citations, 495 unique tokens, 100% resolution. Six watchdog runs confirmed zero drift on 2026-05-11.",
-      "tags": ["domain", "verification"],
-      "complexity": "moderate"
+      "name": "Verification + Watchdog Layer",
+      "filePath": "CANON/atlas_tokens/atlas_token_verification_2026-05-11.json",
+      "summary": "Continuous verification layer with corpus scans, smoke tests, and 6 watchdog snapshots. Validates that all 495 cited tokens resolve to canonical entries with artifacts on disk. The immune system of the token namespace.",
+      "tags": ["verification", "watchdog", "immune-system", "continuous-validation"],
+      "complexity": 4
     },
     {
-      "id": "bd5-audit",
+      "id": "domain-audit",
       "type": "domain",
-      "name": "BD5 Cross-Corpus Audit",
-      "filePath": "CANON/atlas_tokens/audits",
-      "summary": "M6 substrate hardening across 6 corpora: 11,944 nodes, 16,047 edges, 1,258 communities. Same-tick remediation for CANON corpus.",
-      "tags": ["domain", "audit"],
-      "complexity": "moderate"
+      "name": "BD5 Cross-Corpus Audit Layer",
+      "filePath": "CANON/atlas_tokens/audits/BD5_CROSS_CORPUS_AUDIT_20260511T195932Z.md",
+      "summary": "BD5 audits that validate the graphify substrate across 6 corpora (11,944 nodes, 16,047 edges). Measures token coverage, catches missing graphs, and triggers same-tick remediation. The outer ring of the verification immune system.",
+      "tags": ["audit", "BD5", "cross-corpus", "substrate-integrity"],
+      "complexity": 6
     }
   ],
   "edges": [
-    { "source": "sop", "target": "swk", "label": "derives" },
-    { "source": "swk", "target": "wi", "label": "implements" },
-    { "source": "wi", "target": "checklist", "label": "verifies" },
-    { "source": "checklist", "target": "action-plan", "label": "executes" },
-    { "source": "action-plan", "target": "lms", "label": "trains_for" },
-    { "source": "lms", "target": "sop", "label": "certifies" },
-    { "source": "token-registry", "target": "sop", "label": "governs" },
-    { "source": "token-registry", "target": "swk", "label": "governs" },
-    { "source": "token-registry", "target": "wi", "label": "governs" },
-    { "source": "token-registry", "target": "checklist", "label": "governs" },
-    { "source": "token-registry", "target": "action-plan", "label": "governs" },
-    { "source": "token-registry", "target": "lms", "label": "governs" },
-    { "source": "verification", "target": "token-registry", "label": "validates" },
-    { "source": "bd5-audit", "target": "token-registry", "label": "audits" },
-    { "source": "bd5-audit", "target": "verification", "label": "measures" }
+    { "source": "domain-sop", "target": "domain-swk", "label": "decomposes-into" },
+    { "source": "domain-swk", "target": "domain-wi", "label": "implements-via" },
+    { "source": "domain-wi", "target": "domain-checklist", "label": "verified-by" },
+    { "source": "domain-checklist", "target": "domain-action-plan", "label": "generates" },
+    { "source": "domain-action-plan", "target": "domain-lms", "label": "tracks-in" },
+    { "source": "domain-lms", "target": "domain-sop", "label": "feeds-compliance-back-to" },
+    { "source": "domain-registry", "target": "domain-sop", "label": "governs-tokens-for" },
+    { "source": "domain-registry", "target": "domain-swk", "label": "governs-tokens-for" },
+    { "source": "domain-registry", "target": "domain-wi", "label": "governs-tokens-for" },
+    { "source": "domain-registry", "target": "domain-checklist", "label": "governs-tokens-for" },
+    { "source": "domain-registry", "target": "domain-action-plan", "label": "governs-tokens-for" },
+    { "source": "domain-registry", "target": "domain-lms", "label": "governs-tokens-for" },
+    { "source": "domain-verification", "target": "domain-registry", "label": "validates" },
+    { "source": "domain-audit", "target": "domain-registry", "label": "audits" },
+    { "source": "domain-audit", "target": "domain-verification", "label": "extends" }
   ]
 }

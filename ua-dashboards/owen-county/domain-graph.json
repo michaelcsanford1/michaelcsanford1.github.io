@@ -1,80 +1,102 @@
 {
-  "version": "1.0.0",
+  "version": "2.0.0",
   "type": "domain-flow",
   "project": {
-    "name": "Owen County",
-    "languages": [],
-    "frameworks": [],
-    "description": "Owen County Schools Upgrades & Athletics - Domain flow graph showing 6 construction management domains and their relationships within the Devere/TCS Project Digital Twin framework.",
+    "name": "Owen County Schools Upgrades & Athletics",
+    "languages": ["markdown", "json", "html"],
+    "frameworks": ["TCS Altitude Mesh Operating System", "Devere Project Digital Twin Standard"],
+    "description": "Domain flow for the Owen County Level 1 Digital Twin Shell showing how construction management domains relate and gate each other.",
     "analyzedAt": "2026-05-28T00:00:00Z",
-    "gitCommitHash": "n/a"
+    "gitCommitHash": null
   },
   "nodes": [
     {
-      "id": "gate-readiness",
-      "type": "domain",
-      "name": "Gate Readiness",
-      "filePath": "GATE_READINESS.md",
-      "summary": "11-gate matrix (A0-D2) controlling project advancement. 2 shell-ready, 9 blocked. No gate passes without human approval, cited evidence, and receipt. Gates span project identity, source chain, contract, Sage/commercial, schedule, procurement, submittals/RFIs, safety/quality, field execution, PM cadence, and owner view.",
-      "tags": ["gate", "readiness", "blocked", "approval", "receipt"],
-      "complexity": "high"
-    },
-    {
-      "id": "digital-twin-state",
-      "type": "domain",
-      "name": "Digital Twin State",
-      "filePath": "TWIN_STATE.md",
-      "summary": "Level 1 Twin Shell with identity, source map, gates, and stop rules present. 9-item validation queue tracking disputed/unverified seeds across submittals, RFIs, checklists, change management, safety, DPO, schedule, PM transition, and cleanpoints. 8 twin object families registered. Operating in review-only posture.",
-      "tags": ["twin", "level-1", "shell", "validation-queue", "review-only"],
-      "complexity": "high"
-    },
-    {
-      "id": "doctrine-operating-system",
+      "id": "domain-doctrine",
       "type": "domain",
       "name": "Doctrine & Operating System",
       "filePath": "DOCTRINE__ALTITUDE_MESH_OPERATING_SYSTEM.md",
-      "summary": "Altitude Mesh six-layer stack (subatomic/micro/meso/macro/VP/founder) governing all signal flow. PASP gates every upward wake. Three event classes (work/state/ratification). Cadence from continuous receipts to weekly manifests. Keystone Law: hard edges, soft interior.",
-      "tags": ["doctrine", "altitude-mesh", "six-layer", "pasp", "keystone-law"],
-      "complexity": "high"
+      "summary": "The Altitude Mesh 6-layer operating system that governs signal flow, reporting cadences, and order shapes across all project altitude layers.",
+      "tags": ["doctrine", "altitude-mesh", "signal-flow", "governance"],
+      "complexity": 9
     },
     {
-      "id": "source-chain",
+      "id": "domain-identity",
       "type": "domain",
-      "name": "Source Chain",
+      "name": "Project Identity & Source Chain",
+      "filePath": "AGENT_BOOT.md",
+      "summary": "Project identification (Job #3620251, Owen County Schools), authority stack, non-inheritance rules, source registration, and read order protocol.",
+      "tags": ["identity", "authority", "source-chain", "boot"],
+      "complexity": 7
+    },
+    {
+      "id": "domain-gate-control",
+      "type": "domain",
+      "name": "Gate Control & Readiness",
+      "filePath": "GATE_READINESS.md",
+      "summary": "The 11-gate A0-D2 matrix controlling advancement from Level 1 shell through commercial, schedule, field, and governance readiness.",
+      "tags": ["gates", "readiness", "stop-rules", "validation"],
+      "complexity": 8
+    },
+    {
+      "id": "domain-twin-management",
+      "type": "domain",
+      "name": "Digital Twin State Management",
+      "filePath": "TWIN_STATE.md",
+      "summary": "Twin level classification, object family registration, validation queue management, systems state tracking, and level advancement protocol.",
+      "tags": ["twin-state", "level-management", "validation-queue", "systems"],
+      "complexity": 8
+    },
+    {
+      "id": "domain-source-evidence",
+      "type": "domain",
+      "name": "Source Evidence & Verification",
       "filePath": "SOURCE_MAP.md",
-      "summary": "6-rank authority hierarchy from executed contract to chats/OCR. 17 original OneDrive folders registered. 7 signal sources triangulated in master spine (Sage CM, OneDrive, Submittal Exchange, Tim CPR/DPO/Commitment lists, emails). 8 system-of-record candidates with disputed states. 6 missing evidence items.",
-      "tags": ["source", "authority", "chain", "triangulation", "evidence"],
-      "complexity": "high"
+      "summary": "Source document registration, folder structure mapping, system-of-record identification, conflict detection, and missing evidence tracking.",
+      "tags": ["source-evidence", "verification", "conflicts", "folder-map"],
+      "complexity": 8
     },
     {
-      "id": "field-operations",
+      "id": "domain-commercial",
       "type": "domain",
-      "name": "Field Operations",
-      "filePath": "external/OWEN_COUNTY_QAC_MINUTES_2026-04-08.md",
-      "summary": "Active construction at 1945 KY-22, Owenton, KY 40359. HVAC subcontractor (Sunderland) communication challenges. 48 CPR entries tracked. OAC meetings with PM, superintendent, owner, and architect. Contract end 10/5/2026. Field coordination ongoing for baseball building, dugouts, and turf.",
-      "tags": ["field", "construction", "hvac", "cpr", "coordination"],
-      "complexity": "medium"
+      "name": "Commercial / Contract / Sage",
+      "filePath": null,
+      "summary": "Contract posture, Sage CM integration, cost management, billings, change orders, commitments, and DPO reconciliation. Currently blocked at gates A2, B1, B3.",
+      "tags": ["commercial", "contract", "sage", "cost", "blocked"],
+      "complexity": 7
     },
     {
-      "id": "evidence-compliance",
+      "id": "domain-field",
       "type": "domain",
-      "name": "Evidence & Compliance",
-      "filePath": "external/OWEN_COUNTY_SOURCE_CURRENTNESS_WORK_ORDERS.md",
-      "summary": "5 currentness work orders staged: CWO-001 Contract/Gate (P0), CWO-002 Sage/Commercial (P0), CWO-003 RFI/Submittal (P0), CWO-004 Schedule/3WLA (P1), CWO-005 Safety/QC (P0). Receipt-based validation with 7 fact states. Stop rules enforced: no Sage edits, no email, no file movement, no gate passes without approval.",
-      "tags": ["evidence", "compliance", "work-orders", "validation", "receipts", "stop-rules"],
-      "complexity": "high"
+      "name": "Field Execution & Safety",
+      "filePath": null,
+      "summary": "Submittals, RFIs, schedule, safety/QC, field operations, and daily work planning. Currently blocked at gates B2, C1, C2, C3.",
+      "tags": ["field", "submittals", "RFIs", "schedule", "safety", "blocked"],
+      "complexity": 7
+    },
+    {
+      "id": "domain-treatment",
+      "type": "domain",
+      "name": "UA Treatment & Analysis",
+      "filePath": "ua-treatment/knowledge-graph.json",
+      "summary": "Prior Understand Anything treatment outputs including knowledge graph, domain flow, dashboard, wiki, and onboarding materials produced by Qwopus agent.",
+      "tags": ["treatment", "analysis", "knowledge-graph", "wiki"],
+      "complexity": 4
     }
   ],
   "edges": [
-    { "source": "doctrine-operating-system", "target": "gate-readiness", "label": "PASP governs gate advancement" },
-    { "source": "doctrine-operating-system", "target": "source-chain", "label": "authority rules define source hierarchy" },
-    { "source": "source-chain", "target": "digital-twin-state", "label": "evidence supports twin state claims" },
-    { "source": "source-chain", "target": "evidence-compliance", "label": "source inventory drives work orders" },
-    { "source": "evidence-compliance", "target": "gate-readiness", "label": "validated evidence enables gate passage" },
-    { "source": "gate-readiness", "target": "digital-twin-state", "label": "gate status constrains twin level" },
-    { "source": "field-operations", "target": "evidence-compliance", "label": "field data feeds validation" },
-    { "source": "field-operations", "target": "digital-twin-state", "label": "reality checks twin claims" },
-    { "source": "digital-twin-state", "target": "doctrine-operating-system", "label": "twin posture operates under doctrine" },
-    { "source": "evidence-compliance", "target": "source-chain", "label": "receipts update source currentness" }
+    { "source": "domain-doctrine", "target": "domain-identity", "label": "provides operating framework for" },
+    { "source": "domain-doctrine", "target": "domain-gate-control", "label": "PASP gates apply to" },
+    { "source": "domain-identity", "target": "domain-source-evidence", "label": "establishes authority chain for" },
+    { "source": "domain-identity", "target": "domain-gate-control", "label": "boot stop rules feed into" },
+    { "source": "domain-source-evidence", "target": "domain-twin-management", "label": "source gaps populate validation queue in" },
+    { "source": "domain-source-evidence", "target": "domain-gate-control", "label": "evidence required to unblock" },
+    { "source": "domain-gate-control", "target": "domain-twin-management", "label": "gate passage advances twin level in" },
+    { "source": "domain-gate-control", "target": "domain-commercial", "label": "gates A2, B1, B3 control" },
+    { "source": "domain-gate-control", "target": "domain-field", "label": "gates B2, C1-C3 control" },
+    { "source": "domain-commercial", "target": "domain-twin-management", "label": "feeds commercial object families into" },
+    { "source": "domain-field", "target": "domain-twin-management", "label": "feeds field object families into" },
+    { "source": "domain-treatment", "target": "domain-identity", "label": "analyzes" },
+    { "source": "domain-treatment", "target": "domain-doctrine", "label": "explains" },
+    { "source": "domain-treatment", "target": "domain-gate-control", "label": "maps" }
   ]
 }

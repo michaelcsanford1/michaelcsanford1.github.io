@@ -1,399 +1,1529 @@
 {
-  "version": "1.0.0",
+  "version": "2.0.0",
   "project": {
     "name": "UK CAER TCS Digital Twin PM Package",
-    "languages": ["Python", "JavaScript", "Markdown", "HTML", "XLSX"],
-    "frameworks": ["openpyxl", "Node.js"],
-    "description": "371-file construction PM system implementing TCS (Total Control System) digital-twin package for UK CAER Outreach & Education Center (DeVere Construction). 51 Python builders generate XLSX workbooks and HTML interactive boards across 10 business domains.",
-    "analyzedAt": "2026-05-28T14:30:00-04:00",
-    "gitCommitHash": "live-scan"
+    "languages": [
+      "Python",
+      "Markdown",
+      "HTML",
+      "JavaScript",
+      "YAML",
+      "JSON"
+    ],
+    "frameworks": [
+      "openpyxl",
+      "TCS 9-Gate Lifecycle",
+      "Sage CM",
+      "NotebookLM"
+    ],
+    "description": "A digital-twin PM operating product for the Lexington UK CAER Outreach & Education Center (DeVere Construction). Contains 51 Python builders generating XLSX workbooks and HTML dashboards across 10 construction domains, plus 225 Markdown specs covering TCS governance, agent boot protocols, and onboarding materials.",
+    "analyzedAt": "2026-05-28T16:29:11.325106",
+    "gitCommitHash": "n/a-local-workbench"
   },
   "nodes": [
     {
-      "id": "uk-caer-root",
-      "type": "concept",
-      "name": "UK CAER TCS Package",
-      "filePath": "uk-caer-root",
-      "summary": "371-file digital-twin PM package — 51 Python builders, 36 XLSX workbooks, 22 HTML boards, 225 Markdown docs, 10 business domains",
-      "tags": ["project", "root"],
-      "complexity": "complex"
-    },
-    {
-      "id": "layer-build-scripts",
-      "type": "concept",
-      "name": "Build Scripts (51 Python + 1 JS)",
-      "filePath": "layer-build-scripts",
-      "summary": "51 Python scripts (build_uk_caer_*.py) each generate one TCS deliverable. 1 Node.js orchestrator (build_uk_caer_pm_master_control.mjs) sequences all builds.",
-      "tags": ["layer", "python", "generators"],
-      "complexity": "complex"
-    },
-    {
-      "id": "layer-governance-docs",
-      "type": "concept",
-      "name": "Governance & Control Docs (80+ MD)",
-      "filePath": "layer-governance-docs",
-      "summary": "Gate readiness READMEs, Sage governance brief, validation architecture, PM harness continuity, premobilization ledgers, doctrine, evidence token standards, receipts",
-      "tags": ["layer", "markdown", "governance"],
-      "complexity": "complex"
-    },
-    {
-      "id": "layer-onboarding",
-      "type": "concept",
-      "name": "TCS Onboarding Package (112+ MD)",
-      "filePath": "layer-onboarding",
-      "summary": "8-week syllabus, RACI matrix, exercises, project packs (Richmond, Chokshi, Franklin, Owen County), Day-1 field guides, buildspecs, 6 PPTX slide decks",
-      "tags": ["layer", "markdown", "training"],
-      "complexity": "moderate"
-    },
-    {
-      "id": "layer-generated-workbooks",
-      "type": "concept",
-      "name": "Generated Workbooks (36 XLSX)",
-      "filePath": "layer-generated-workbooks",
-      "summary": "TCS deliverable workbooks: WBS, Control Pack, Schedule Logic, Action Plans, Field WI/ITP, BOQ/BOM, Safety/Quality, RFI Register, PM Command Center, Executive Overview",
-      "tags": ["layer", "xlsx", "deliverables"],
-      "complexity": "complex"
-    },
-    {
-      "id": "layer-interactive-boards",
-      "type": "concept",
-      "name": "Interactive Boards (22 HTML)",
-      "filePath": "layer-interactive-boards",
-      "summary": "16 generated TCS boards (Gate Readiness, Evidence Intake, Procurement, Daily PM, Validation Zone, PM Asset Navigator) + 3 workflow visuals + Owner View + Compliance Milestones",
-      "tags": ["layer", "html", "dashboards"],
-      "complexity": "moderate"
-    },
-    {
-      "id": "layer-source-data",
-      "type": "concept",
-      "name": "Source Data (21 TXT, 4 JSON, 4 PDF)",
-      "filePath": "layer-source-data",
-      "summary": "PDF extraction caches (specs/drawings/addenda), Owen County email transcripts, NotebookLM studio exports, owner review audio script",
-      "tags": ["layer", "txt", "source-data"],
-      "complexity": "simple"
-    },
-    {
-      "id": "layer-skill-drafts",
-      "type": "concept",
-      "name": "Skill Drafts & Agent Configs (3 YAML)",
-      "filePath": "layer-skill-drafts",
-      "summary": "OpenAI agent YAML configs for TCS skills: sage-governance-check, package-qa-audit, source-query-receipt — early productization of PM patterns",
-      "tags": ["layer", "yaml", "agents"],
-      "complexity": "moderate"
-    },
-    {
-      "id": "domain-gate-readiness",
-      "type": "domain",
-      "name": "Gate Readiness",
-      "filePath": "domain-gate-readiness",
-      "summary": "A1-C3 gate progression with evidence requirements and approval workflows. A1/A2: contract/Sage setup. B1-B6: procurement/NTP. C1-C3: field/closeout.",
-      "tags": ["domain", "gate-readiness"],
-      "complexity": "complex"
-    },
-    {
-      "id": "domain-pm-command",
-      "type": "domain",
-      "name": "PM Command Center",
-      "filePath": "domain-pm-command",
-      "summary": "Daily operating nerve center: PM operating board, command center workbook, asset navigator, data spine, product review conductor",
-      "tags": ["domain", "pm-command"],
-      "complexity": "complex"
-    },
-    {
-      "id": "domain-procurement",
-      "type": "domain",
-      "name": "Procurement & Contracts",
-      "filePath": "domain-procurement",
-      "summary": "Prime contract, subcontractor packages, BOQ/BOM cost code mapping, B1/B2 procurement activation, vendor compliance",
-      "tags": ["domain", "procurement"],
-      "complexity": "complex"
-    },
-    {
-      "id": "domain-field-ops",
-      "type": "domain",
-      "name": "Field Operations",
-      "filePath": "domain-field-ops",
-      "summary": "Work instructions, ITPs, preinstall meetings, high-risk trade packets, safety/quality plans for active construction",
-      "tags": ["domain", "field-ops"],
-      "complexity": "complex"
-    },
-    {
-      "id": "domain-evidence",
-      "type": "domain",
-      "name": "Evidence & Compliance",
-      "filePath": "domain-evidence",
-      "summary": "Evidence closure packets, receipt validation, Sage verification, evidence token standards, validation zone boards, P0 intake pipeline",
-      "tags": ["domain", "evidence"],
-      "complexity": "complex"
-    },
-    {
-      "id": "domain-cost",
-      "type": "domain",
-      "name": "Cost Control",
-      "filePath": "domain-cost",
-      "summary": "SOV, commitment readiness, change orders, payment applications, live action approval ledgers, Sage CM financial alignment",
-      "tags": ["domain", "cost-control"],
-      "complexity": "moderate"
-    },
-    {
-      "id": "domain-risk",
-      "type": "domain",
-      "name": "Risk Management",
-      "filePath": "domain-risk",
-      "summary": "High-risk preinstall meetings, risk registers, high-risk trade issue packets, mitigation planning, constraint clearing",
-      "tags": ["domain", "risk"],
-      "complexity": "moderate"
-    },
-    {
-      "id": "domain-doc-control",
-      "type": "domain",
-      "name": "Document Control",
-      "filePath": "domain-doc-control",
-      "summary": "Control document revision boards, RFI register/management, source registers, Sage/OneDrive governance",
-      "tags": ["domain", "document-control"],
-      "complexity": "moderate"
-    },
-    {
-      "id": "domain-hr",
-      "type": "domain",
-      "name": "Human Resources",
-      "filePath": "domain-hr",
-      "summary": "Day-1 role rollout (PM/Super/Foreman), PM onboarding board, training tracker, 8-week syllabus, RACI matrix, competency tracking",
-      "tags": ["domain", "hr"],
-      "complexity": "moderate"
-    },
-    {
-      "id": "domain-reporting",
-      "type": "domain",
-      "name": "Reporting & Analytics",
-      "filePath": "domain-reporting",
-      "summary": "Weekly PM snapshots, executive packages, owner progress review, deliverables completion roadmap, TCS compliance milestones",
-      "tags": ["domain", "reporting"],
-      "complexity": "moderate"
-    },
-    {
-      "id": "file-gate-board",
-      "type": "file",
-      "name": "build_uk_caer_9_gate_readiness_board.py",
+      "id": "build-gate-readiness",
+      "type": "module",
+      "name": "Gate Readiness Builders",
       "filePath": "build_uk_caer_9_gate_readiness_board.py",
-      "summary": "Generates 9-gate readiness board HTML — A1-C3 gate status tracking with evidence requirements and approval workflows",
-      "tags": ["gate-readiness", "python", "builder"],
-      "complexity": "complex"
+      "summary": "Generates the 9-gate readiness HTML board (A0-D2 lifecycle) and A1/A2 evidence closure/receipt validation builders. Reads TPM, A1A2 Sage, Command Center, Events, Validation Queue, QA Audit workbooks. Outputs HTML board + README.",
+      "tags": [
+        "builder",
+        "gate",
+        "html",
+        "lifecycle"
+      ],
+      "complexity": "high",
+      "layer": "build-scripts",
+      "lines": 1384,
+      "fileCount": 3,
+      "files": [
+        "build_uk_caer_9_gate_readiness_board.py",
+        "build_uk_caer_a1_a2_evidence_closure_packet.py",
+        "build_uk_caer_a1_a2_receipt_validation_ledger.py"
+      ]
     },
     {
-      "id": "file-pm-command",
-      "type": "file",
-      "name": "build_uk_caer_pm_command_center.py",
-      "filePath": "build_uk_caer_pm_command_center.py",
-      "summary": "Generates PM Command Center XLSX — daily operating nerve center aggregating all domain status",
-      "tags": ["pm-command", "python", "builder"],
-      "complexity": "complex"
-    },
-    {
-      "id": "file-daily-board",
-      "type": "file",
-      "name": "build_uk_caer_daily_pm_operating_board.py",
-      "filePath": "build_uk_caer_daily_pm_operating_board.py",
-      "summary": "Generates Daily PM Operating Board HTML — real-time operational dashboard for daily standup",
-      "tags": ["pm-command", "python", "builder"],
-      "complexity": "complex"
-    },
-    {
-      "id": "file-evidence-closure",
-      "type": "file",
-      "name": "build_uk_caer_a1_a2_evidence_closure_packet.py",
-      "filePath": "build_uk_caer_a1_a2_evidence_closure_packet.py",
-      "summary": "Generates A1/A2 evidence closure packet HTML — contract execution and Sage verification evidence assembly",
-      "tags": ["evidence", "python", "builder"],
-      "complexity": "complex"
-    },
-    {
-      "id": "file-sage-verify",
-      "type": "file",
-      "name": "build_uk_caer_a1_a2_sage_verification_package.py",
+      "id": "build-sage-verification",
+      "type": "module",
+      "name": "Sage Verification Builder",
       "filePath": "build_uk_caer_a1_a2_sage_verification_package.py",
-      "summary": "Generates Sage CM verification XLSX — validates prime contract, job cost codes, budget setup against live Sage",
-      "tags": ["evidence", "python", "builder"],
-      "complexity": "complex"
+      "summary": "Generates XLSX verifying Sage CM job metadata, cost codes, SOV, and vendor setup status against TCS A1/A2 gate requirements.",
+      "tags": [
+        "builder",
+        "sage",
+        "xlsx",
+        "verification"
+      ],
+      "complexity": "medium",
+      "layer": "build-scripts",
+      "lines": 385
     },
     {
-      "id": "file-procurement-board",
-      "type": "file",
-      "name": "build_uk_caer_b1_b2_procurement_activation_board.py",
+      "id": "build-pm-command-center",
+      "type": "module",
+      "name": "PM Command Center Builder",
+      "filePath": "build_uk_caer_pm_command_center.py",
+      "summary": "Central aggregation builder. Reads WBS, TPM, submittals, schedule, BOQ, safety, RFI, high-risk, weekly snapshot, skill drafts, A1/A2 sage, day1 rollout, exec overview, owner review, QA audit, first review, approval ledger, data spine, event calendar, decision ledger, evidence token, validation workbooks. Outputs master PM Command Center XLSX + README.",
+      "tags": [
+        "builder",
+        "command-center",
+        "xlsx",
+        "aggregation"
+      ],
+      "complexity": "very-high",
+      "layer": "build-scripts",
+      "lines": 621
+    },
+    {
+      "id": "build-pm-package",
+      "type": "module",
+      "name": "PM Package & TPM Builder",
+      "filePath": "build_uk_caer_pm_package.py",
+      "summary": "Master builder creating TPM_AND_GATE_CONTROLS.xlsx with CSI division tracking, 9-gate controls, procurement rows, cost code mapping, and TCS citations. Foundation workbook consumed by most other builders.",
+      "tags": [
+        "builder",
+        "tpm",
+        "xlsx",
+        "master"
+      ],
+      "complexity": "very-high",
+      "layer": "build-scripts",
+      "lines": 494
+    },
+    {
+      "id": "build-procurement",
+      "type": "module",
+      "name": "Procurement Builders",
       "filePath": "build_uk_caer_b1_b2_procurement_activation_board.py",
-      "summary": "Generates B1/B2 Procurement Activation Board HTML — subcontractor/vendor commitment tracking with NTP gates",
-      "tags": ["procurement", "python", "builder"],
-      "complexity": "complex"
+      "summary": "Generates B1/B2 procurement activation HTML board and cost/SOV commitment readiness board. Sequences buyout, submittal release, TPM setup, Rooter prerequisites.",
+      "tags": [
+        "builder",
+        "procurement",
+        "html"
+      ],
+      "complexity": "high",
+      "layer": "build-scripts",
+      "lines": 985,
+      "fileCount": 2,
+      "files": [
+        "build_uk_caer_b1_b2_procurement_activation_board.py",
+        "build_uk_caer_cost_sov_commitment_readiness_board.py"
+      ]
     },
     {
-      "id": "file-boq-bom",
-      "type": "file",
-      "name": "build_uk_caer_boq_bom_cost_mapping.py",
-      "filePath": "build_uk_caer_boq_bom_cost_mapping.py",
-      "summary": "Generates BOQ/BOM Cost Code Mapping XLSX — maps bill of quantities/materials to Sage cost codes (740 lines, largest builder)",
-      "tags": ["cost-control", "procurement", "python", "builder"],
-      "complexity": "complex"
-    },
-    {
-      "id": "file-cost-sov",
-      "type": "file",
-      "name": "build_uk_caer_cost_sov_commitment_readiness_board.py",
-      "filePath": "build_uk_caer_cost_sov_commitment_readiness_board.py",
-      "summary": "Generates Cost/SOV Commitment Readiness Board HTML — schedule of values, commitment tracking, change orders",
-      "tags": ["cost-control", "python", "builder"],
-      "complexity": "complex"
-    },
-    {
-      "id": "file-field-wi-itp",
-      "type": "file",
-      "name": "build_uk_caer_field_wi_itp_package.py",
+      "id": "build-field-ops",
+      "type": "module",
+      "name": "Field Operations Builders",
       "filePath": "build_uk_caer_field_wi_itp_package.py",
-      "summary": "Generates Field WI/ITP Checklist Package XLSX — work instructions, inspection test plans, hold-point checklists",
-      "tags": ["field-ops", "python", "builder"],
-      "complexity": "complex"
+      "summary": "Generates field Work Instruction (WI) and Inspection/Test Plan (ITP) checklist packages, action plan packages, high-risk trade/preinstall meeting packets. Links to Rooter/Setup/Execution/Hold Point/Tooter phases.",
+      "tags": [
+        "builder",
+        "field",
+        "xlsx",
+        "itp",
+        "action-plan"
+      ],
+      "complexity": "high",
+      "layer": "build-scripts",
+      "lines": 2245,
+      "fileCount": 4,
+      "files": [
+        "build_uk_caer_field_wi_itp_package.py",
+        "build_uk_caer_action_plan_package.py",
+        "build_uk_caer_high_risk_trade_packets.py",
+        "build_uk_caer_high_risk_preinstall_meeting_packets.py"
+      ]
     },
     {
-      "id": "file-high-risk",
-      "type": "file",
-      "name": "build_uk_caer_high_risk_trade_packets.py",
-      "filePath": "build_uk_caer_high_risk_trade_packets.py",
-      "summary": "Generates high-risk trade issue packets XLSX — flagged trades requiring enhanced oversight and mitigation",
-      "tags": ["risk", "python", "builder"],
-      "complexity": "moderate"
+      "id": "build-evidence-compliance",
+      "type": "module",
+      "name": "Evidence & Compliance Builders",
+      "filePath": "build_uk_caer_pm_evidence_token_standard.py",
+      "summary": "Generates evidence token standard, P0 evidence intake board, validation architecture/QC plan, validation queue/zone assignments, and package QA audit workbooks.",
+      "tags": [
+        "builder",
+        "evidence",
+        "validation",
+        "qa"
+      ],
+      "complexity": "high",
+      "layer": "build-scripts",
+      "lines": 2888,
+      "fileCount": 5,
+      "files": [
+        "build_uk_caer_pm_evidence_token_standard.py",
+        "build_uk_caer_p0_evidence_intake_board.py",
+        "build_uk_caer_pm_validation_architecture.py",
+        "build_uk_caer_pm_validation_queue.py",
+        "build_uk_caer_package_qa_audit.py"
+      ]
     },
     {
-      "id": "file-rfi-register",
-      "type": "file",
-      "name": "build_uk_caer_rfi_register.py",
-      "filePath": "build_uk_caer_rfi_register.py",
-      "summary": "Generates standalone RFI Register XLSX — RFI tracking with status, responsibility, dates, linked drawings",
-      "tags": ["document-control", "python", "builder"],
-      "complexity": "moderate"
+      "id": "build-cost-control",
+      "type": "module",
+      "name": "Cost Control Builders",
+      "filePath": "build_uk_caer_boq_bom_cost_mapping.py",
+      "summary": "Generates BOQ/BOM cost code mapping (WBS bridge, BOM rows, estimate quantities, Sage review, inference rows), schedule logic chain, submittal schedule, and RFI register.",
+      "tags": [
+        "builder",
+        "cost",
+        "xlsx",
+        "boq",
+        "schedule"
+      ],
+      "complexity": "high",
+      "layer": "build-scripts",
+      "lines": 2075,
+      "fileCount": 4,
+      "files": [
+        "build_uk_caer_boq_bom_cost_mapping.py",
+        "build_uk_caer_schedule_logic.py",
+        "build_uk_caer_submittal_schedule.py",
+        "build_uk_caer_rfi_register.py"
+      ]
     },
     {
-      "id": "file-hr-onboarding",
-      "type": "file",
-      "name": "build_uk_caer_human_pm_onboarding_board.py",
+      "id": "build-document-control",
+      "type": "module",
+      "name": "Document Control Builders",
+      "filePath": "build_uk_caer_control_doc_revision_board.py",
+      "summary": "Generates control document revision board (HTML), Sage/OneDrive governance board, TCS control pack, and package index/manifest.",
+      "tags": [
+        "builder",
+        "doc-control",
+        "html",
+        "governance"
+      ],
+      "complexity": "high",
+      "layer": "build-scripts",
+      "lines": 3205,
+      "fileCount": 4,
+      "files": [
+        "build_uk_caer_control_doc_revision_board.py",
+        "build_uk_caer_sage_onedrive_governance_board.py",
+        "build_uk_caer_tcs_control_pack.py",
+        "build_uk_caer_package_index.py"
+      ]
+    },
+    {
+      "id": "build-reporting",
+      "type": "module",
+      "name": "Reporting & Review Builders",
+      "filePath": "build_uk_caer_daily_pm_operating_board.py",
+      "summary": "Generates daily PM operating board, weekly snapshot, executive overview, owner progress review, first PM product review, PM product review conductor board, PM productization board, and TPM release readiness board.",
+      "tags": [
+        "builder",
+        "reporting",
+        "html",
+        "xlsx",
+        "dashboard"
+      ],
+      "complexity": "high",
+      "layer": "build-scripts",
+      "lines": 4396,
+      "fileCount": 8,
+      "files": [
+        "build_uk_caer_daily_pm_operating_board.py",
+        "build_uk_caer_weekly_pm_snapshot_package.py",
+        "build_uk_caer_executive_package_overview.py",
+        "build_uk_caer_owner_progress_review_package.py",
+        "build_uk_caer_first_pm_product_review_packet.py",
+        "build_uk_caer_pm_product_review_conductor_board.py",
+        "build_uk_caer_pm_productization_board.py",
+        "build_uk_caer_tpm_release_readiness_board.py"
+      ]
+    },
+    {
+      "id": "build-hr-training",
+      "type": "module",
+      "name": "HR & Training Builders",
       "filePath": "build_uk_caer_human_pm_onboarding_board.py",
-      "summary": "Generates Human PM Onboarding Board HTML — PM/Super/Foreman onboarding progress through TCS training",
-      "tags": ["hr", "python", "builder"],
-      "complexity": "moderate"
+      "summary": "Generates human PM onboarding board (HTML), PM training package (runbook + tracker XLSX), day1 role rollout package, and safety/quality plans.",
+      "tags": [
+        "builder",
+        "hr",
+        "training",
+        "onboarding"
+      ],
+      "complexity": "high",
+      "layer": "build-scripts",
+      "lines": 2459,
+      "fileCount": 4,
+      "files": [
+        "build_uk_caer_human_pm_onboarding_board.py",
+        "build_uk_caer_pm_training_package.py",
+        "build_uk_caer_day1_role_rollout_package.py",
+        "build_uk_caer_safety_quality_plans.py"
+      ]
     },
     {
-      "id": "file-weekly-snapshot",
-      "type": "file",
-      "name": "build_uk_caer_weekly_pm_snapshot_package.py",
-      "filePath": "build_uk_caer_weekly_pm_snapshot_package.py",
-      "summary": "Generates Weekly PM Snapshot XLSX — weekly project health summary across all TCS domains",
-      "tags": ["reporting", "python", "builder"],
-      "complexity": "moderate"
+      "id": "build-risk-management",
+      "type": "module",
+      "name": "Risk Management Builders",
+      "filePath": "build_uk_caer_live_action_approval_ledger.py",
+      "summary": "Generates live action approval ledger, PM decision/action ledger, and deliverables completion roadmap.",
+      "tags": [
+        "builder",
+        "risk",
+        "xlsx",
+        "approval"
+      ],
+      "complexity": "medium",
+      "layer": "build-scripts",
+      "lines": 1336,
+      "fileCount": 3,
+      "files": [
+        "build_uk_caer_live_action_approval_ledger.py",
+        "build_uk_caer_pm_decision_action_ledger.py",
+        "build_uk_caer_deliverables_completion_roadmap.py"
+      ]
     },
     {
-      "id": "file-executive-overview",
-      "type": "file",
-      "name": "build_uk_caer_executive_package_overview.py",
-      "filePath": "build_uk_caer_executive_package_overview.py",
-      "summary": "Generates PM Package Executive Overview XLSX — high-level status for owner/executive review",
-      "tags": ["reporting", "python", "builder"],
-      "complexity": "moderate"
+      "id": "build-data-spine",
+      "type": "module",
+      "name": "Data Spine & Navigator Builders",
+      "filePath": "build_uk_caer_pm_data_spine_asset_graph.py",
+      "summary": "Generates PM data spine/asset graph, PM asset navigator (HTML), PM event calendar, validation zone board, and PM harness continuity.",
+      "tags": [
+        "builder",
+        "data-spine",
+        "navigator",
+        "html"
+      ],
+      "complexity": "very-high",
+      "layer": "build-scripts",
+      "lines": 3081,
+      "fileCount": 5,
+      "files": [
+        "build_uk_caer_pm_data_spine_asset_graph.py",
+        "build_uk_caer_pm_asset_navigator.py",
+        "build_uk_caer_pm_event_calendar.py",
+        "build_uk_caer_validation_zone_board.py",
+        "build_uk_caer_pm_harness_continuity.py"
+      ]
     },
     {
-      "id": "file-asset-navigator",
-      "type": "file",
-      "name": "build_uk_caer_pm_asset_navigator.py",
-      "filePath": "build_uk_caer_pm_asset_navigator.py",
-      "summary": "Generates PM Asset Navigator HTML — interactive browser for navigating all PM package assets and relationships",
-      "tags": ["pm-command", "python", "builder"],
-      "complexity": "complex"
+      "id": "build-skill-drafts",
+      "type": "module",
+      "name": "Skill Draft Builders",
+      "filePath": "build_uk_caer_tcs_first_skill_draft_package.py",
+      "summary": "Generates Cowork skill draft packages: tcs-sage-governance-check, tcs-package-qa-audit, tcs-source-query-receipt. Also draft skill forward test packet and reusable skill flow package.",
+      "tags": [
+        "builder",
+        "skill",
+        "cowork",
+        "automation"
+      ],
+      "complexity": "high",
+      "layer": "build-scripts",
+      "lines": 2191,
+      "fileCount": 5,
+      "files": [
+        "build_uk_caer_tcs_first_skill_draft_package.py",
+        "build_uk_caer_package_qa_skill_draft_package.py",
+        "build_uk_caer_source_query_receipt_skill_draft_package.py",
+        "build_uk_caer_draft_skill_forward_test_packet.py",
+        "build_uk_caer_tcs_reusable_skill_flow_package.py"
+      ]
     },
     {
-      "id": "file-master-control",
-      "type": "file",
-      "name": "build_uk_caer_pm_master_control.mjs",
+      "id": "build-wbs",
+      "type": "module",
+      "name": "WBS & TCS Foundation Builder",
+      "filePath": "build_uk_caer_tcs_wbs.py",
+      "summary": "Generates verified WBS/DFOW workbook - the foundational work breakdown structure that all other builders reference.",
+      "tags": [
+        "builder",
+        "wbs",
+        "foundation"
+      ],
+      "complexity": "high",
+      "layer": "build-scripts",
+      "lines": 581
+    },
+    {
+      "id": "build-master-control-mjs",
+      "type": "module",
+      "name": "Master Control Builder (JS)",
       "filePath": "build_uk_caer_pm_master_control.mjs",
-      "summary": "Node.js orchestrator sequencing all 51 Python build scripts to regenerate the complete TCS package",
-      "tags": ["orchestration", "javascript"],
-      "complexity": "moderate"
+      "summary": "JavaScript/Node.js builder for the PM Master Control workbook - separate from Python pipeline.",
+      "tags": [
+        "builder",
+        "javascript",
+        "master-control"
+      ],
+      "complexity": "medium",
+      "layer": "build-scripts",
+      "lines": 0
     },
     {
-      "id": "file-sage-governance",
-      "type": "file",
-      "name": "UK_CAER_SAGE_TCS_GOVERNANCE_BRIEF.md",
-      "filePath": "UK_CAER_SAGE_TCS_GOVERNANCE_BRIEF.md",
-      "summary": "Operating control: Sage CM/OneDrive/TCS system roles, no-move verification rules, UK CAER application status",
-      "tags": ["governance", "evidence", "markdown"],
-      "complexity": "complex"
+      "id": "html-gate-boards",
+      "type": "artifact",
+      "name": "Gate & Lifecycle Boards",
+      "filePath": "tcs_outputs/UK_CAER_9_GATE_READINESS_BOARD.html",
+      "summary": "Generated HTML dashboards: 9-Gate Readiness Board (A0-D2 lifecycle), A1/A2 Evidence Closure Packet, TPM Release Readiness Board. Responsive CSS, metrics panels, gate cards with evidence checklists.",
+      "tags": [
+        "html",
+        "gate",
+        "dashboard",
+        "generated"
+      ],
+      "complexity": "high",
+      "layer": "html-boards",
+      "lines": 0,
+      "fileCount": 3
     },
     {
-      "id": "file-work-area-map",
-      "type": "file",
-      "name": "UK_CAER_PM_WORK_AREA_MAP.md",
-      "filePath": "UK_CAER_PM_WORK_AREA_MAP.md",
-      "summary": "Local disk vs OneDrive operating principle with 21+ numbered folder structure mapping",
-      "tags": ["governance", "document-control", "markdown"],
-      "complexity": "moderate"
+      "id": "html-ops-boards",
+      "type": "artifact",
+      "name": "Operations & PM Boards",
+      "filePath": "tcs_outputs/UK_CAER_DAILY_PM_OPERATING_BOARD.html",
+      "summary": "Daily PM Operating Board, PM Asset Navigator, PM Productization Board, Product Review Conductor Board, Human PM Onboarding Board. Interactive HTML surfaces for daily PM operations.",
+      "tags": [
+        "html",
+        "operations",
+        "dashboard",
+        "generated"
+      ],
+      "complexity": "high",
+      "layer": "html-boards",
+      "lines": 0,
+      "fileCount": 5
     },
     {
-      "id": "file-agent-boot",
-      "type": "file",
-      "name": "UK_CAER_PM_AGENT_BOOT_START_HERE.md",
+      "id": "html-procurement-boards",
+      "type": "artifact",
+      "name": "Procurement & Cost Boards",
+      "filePath": "tcs_outputs/UK_CAER_B1_B2_PROCUREMENT_ACTIVATION_BOARD.html",
+      "summary": "B1/B2 Procurement Activation Board, Cost/SOV Commitment Readiness Board, Sage/OneDrive Governance Board. Track buyout sequencing and financial controls.",
+      "tags": [
+        "html",
+        "procurement",
+        "cost",
+        "dashboard",
+        "generated"
+      ],
+      "complexity": "high",
+      "layer": "html-boards",
+      "lines": 0,
+      "fileCount": 3
+    },
+    {
+      "id": "html-compliance-boards",
+      "type": "artifact",
+      "name": "Compliance & Validation Boards",
+      "filePath": "tcs_outputs/UK_CAER_P0_EVIDENCE_INTAKE_BOARD.html",
+      "summary": "P0 Evidence Intake Board, Validation Zone Board, Control Doc Revision Board. Track evidence collection, validation assignments, and document versioning.",
+      "tags": [
+        "html",
+        "compliance",
+        "validation",
+        "dashboard",
+        "generated"
+      ],
+      "complexity": "high",
+      "layer": "html-boards",
+      "lines": 0,
+      "fileCount": 3
+    },
+    {
+      "id": "html-owner-boards",
+      "type": "artifact",
+      "name": "Owner View Boards",
+      "filePath": "UK_CAER_DEVERE_OWNER_VIEW_SEGMENTED_INTEGRATED_BOARD.html",
+      "summary": "Owner-facing segmented integrated board and Road to TCS Compliance milestones board. Executive-level project visibility for DeVere ownership.",
+      "tags": [
+        "html",
+        "owner",
+        "executive",
+        "dashboard"
+      ],
+      "complexity": "medium",
+      "layer": "html-boards",
+      "lines": 0,
+      "fileCount": 2
+    },
+    {
+      "id": "html-workflow-visuals",
+      "type": "artifact",
+      "name": "TCS Workflow Visual Diagrams",
+      "filePath": "SLAB_OWEN_CO_BRING_ONLINE_2026-05-17/tcs_onboarding_package/05_TRAINING_PM_TCS_v1/TCS_WORKFLOW_VISUALS/",
+      "summary": "PTC Flow Diagram, TCS Execution Chain, TCS Net Change Architecture - interactive HTML workflow visualizations for PM training.",
+      "tags": [
+        "html",
+        "workflow",
+        "training",
+        "visual"
+      ],
+      "complexity": "medium",
+      "layer": "html-boards",
+      "lines": 0,
+      "fileCount": 6
+    },
+    {
+      "id": "xlsx-master-workbooks",
+      "type": "artifact",
+      "name": "Master Control Workbooks",
+      "filePath": "tcs_outputs/UK_CAER_PM_COMMAND_CENTER.xlsx",
+      "summary": "PM Command Center, PM Master Control, TCS Control Pack, PM Package Executive Overview - central aggregation workbooks linking all domains.",
+      "tags": [
+        "xlsx",
+        "master",
+        "aggregation",
+        "generated"
+      ],
+      "complexity": "very-high",
+      "layer": "data-xlsx",
+      "lines": 0,
+      "fileCount": 4
+    },
+    {
+      "id": "xlsx-foundation",
+      "type": "artifact",
+      "name": "Foundation Workbooks",
+      "filePath": "tcs_outputs/UK_CAER_TCS_VERIFIED_WBS_DFOW.xlsx",
+      "summary": "Verified WBS/DFOW, TCS Schedule Logic Chain, TCS Action Plan Package, BOQ/BOM Cost Code Mapping - foundational project data.",
+      "tags": [
+        "xlsx",
+        "wbs",
+        "schedule",
+        "foundation",
+        "generated"
+      ],
+      "complexity": "high",
+      "layer": "data-xlsx",
+      "lines": 0,
+      "fileCount": 4
+    },
+    {
+      "id": "xlsx-procurement-cost",
+      "type": "artifact",
+      "name": "Procurement & Cost Workbooks",
+      "filePath": "tcs_outputs/UK_CAER_A1_A2_SAGE_VERIFICATION_PACKAGE.xlsx",
+      "summary": "A1/A2 Sage Verification, A1/A2 Receipt Validation Ledger, Live Action Approval Ledger, Submittal Schedule - financial and procurement tracking.",
+      "tags": [
+        "xlsx",
+        "procurement",
+        "cost",
+        "sage",
+        "generated"
+      ],
+      "complexity": "high",
+      "layer": "data-xlsx",
+      "lines": 0,
+      "fileCount": 5
+    },
+    {
+      "id": "xlsx-field-risk",
+      "type": "artifact",
+      "name": "Field & Risk Workbooks",
+      "filePath": "tcs_outputs/UK_CAER_FIELD_WI_ITP_CHECKLIST_PACKAGE.xlsx",
+      "summary": "Field WI/ITP Checklist, High Risk Trade Packets, High Risk Preinstall Meeting Packets, Safety/Quality Plans, RFI Register.",
+      "tags": [
+        "xlsx",
+        "field",
+        "risk",
+        "safety",
+        "generated"
+      ],
+      "complexity": "high",
+      "layer": "data-xlsx",
+      "lines": 0,
+      "fileCount": 5
+    },
+    {
+      "id": "xlsx-evidence-validation",
+      "type": "artifact",
+      "name": "Evidence & Validation Workbooks",
+      "filePath": "tcs_outputs/UK_CAER_PM_EVIDENCE_TOKEN_STANDARD.xlsx",
+      "summary": "Evidence Token Standard, Validation Architecture/QC Plan, Validation Queue/Zone Assignments, PM Package QA Audit, Data Spine/Asset Graph.",
+      "tags": [
+        "xlsx",
+        "evidence",
+        "validation",
+        "qa",
+        "generated"
+      ],
+      "complexity": "high",
+      "layer": "data-xlsx",
+      "lines": 0,
+      "fileCount": 5
+    },
+    {
+      "id": "xlsx-reporting",
+      "type": "artifact",
+      "name": "Reporting Workbooks",
+      "filePath": "tcs_outputs/UK_CAER_WEEKLY_PM_SNAPSHOT_PACKAGE.xlsx",
+      "summary": "Weekly PM Snapshot, Owner Progress Review, First PM Product Review, PM Decision/Action Ledger, PM Event Calendar, Day1 Rollout, Deliverables Roadmap, Training Tracker.",
+      "tags": [
+        "xlsx",
+        "reporting",
+        "snapshot",
+        "generated"
+      ],
+      "complexity": "medium",
+      "layer": "data-xlsx",
+      "lines": 0,
+      "fileCount": 8
+    },
+    {
+      "id": "xlsx-skill-packages",
+      "type": "artifact",
+      "name": "Skill Draft Workbooks",
+      "filePath": "tcs_outputs/UK_CAER_TCS_FIRST_SKILL_DRAFT_PACKAGE.xlsx",
+      "summary": "First Skill Draft, Package QA Skill Draft, Source Query Receipt Skill Draft, Draft Skill Forward Test, Reusable Skill Plugin Flow, TCS Package Manifest.",
+      "tags": [
+        "xlsx",
+        "skill",
+        "cowork",
+        "generated"
+      ],
+      "complexity": "medium",
+      "layer": "data-xlsx",
+      "lines": 0,
+      "fileCount": 6
+    },
+    {
+      "id": "docs-product-definition",
+      "type": "spec",
+      "name": "Product Definition & Architecture",
+      "filePath": "TCS_PM_DIGITAL_TWIN_PRODUCT_DEFINITION.md",
+      "summary": "Defines the PM Package as a portable digital-twin PM operating product. Covers agent boot layer, project intelligence layer, governance, evidence discipline, and 9-gate lifecycle.",
+      "tags": [
+        "spec",
+        "architecture",
+        "product",
+        "digital-twin"
+      ],
+      "complexity": "very-high",
+      "layer": "docs-governance",
+      "lines": 0,
+      "fileCount": 3,
+      "files": [
+        "TCS_PM_DIGITAL_TWIN_PRODUCT_DEFINITION.md",
+        "TCS_WORLD_MODEL_ARCHITECTURE.md",
+        "TCS_PM_ONBOARDING_INTEGRATION.md"
+      ]
+    },
+    {
+      "id": "docs-devere-standard",
+      "type": "spec",
+      "name": "DeVere Digital Twin Standard",
+      "filePath": "DEVERE_PROJECT_DIGITAL_TWIN_STANDARD.md",
+      "summary": "Company-wide digital twin standard and ceiling specification. Every DeVere project gets a governed project twin under the company twin.",
+      "tags": [
+        "spec",
+        "standard",
+        "devere",
+        "governance"
+      ],
+      "complexity": "high",
+      "layer": "docs-governance",
+      "lines": 0,
+      "fileCount": 3,
+      "files": [
+        "DEVERE_PROJECT_DIGITAL_TWIN_STANDARD.md",
+        "DEVERE_PROJECT_DIGITAL_TWIN_CEILING_SPEC.md",
+        "PROJECT_DIGITAL_TWIN_REVIEWER_ASSIGNMENT_DECISION_PACKET.md"
+      ]
+    },
+    {
+      "id": "docs-agent-boot",
+      "type": "spec",
+      "name": "Agent Boot & Harness",
       "filePath": "UK_CAER_PM_AGENT_BOOT_START_HERE.md",
-      "summary": "AI agent boot file — context loading, operating constraints, first-action checklist for UK CAER work",
-      "tags": ["governance", "pm-command", "markdown"],
-      "complexity": "moderate"
+      "summary": "Agent boot protocol: read order, source chain, operating doctrine, rules of engagement, current gate posture. Plus PM harness continuity for session handoff.",
+      "tags": [
+        "spec",
+        "agent",
+        "boot",
+        "harness"
+      ],
+      "complexity": "high",
+      "layer": "docs-governance",
+      "lines": 0,
+      "fileCount": 2,
+      "files": [
+        "UK_CAER_PM_AGENT_BOOT_START_HERE.md",
+        "UK_CAER_PM_HARNESS_CONTINUITY.md"
+      ]
+    },
+    {
+      "id": "docs-tcs-doctrine",
+      "type": "spec",
+      "name": "TCS Working Doctrine & Governance",
+      "filePath": "UK_CAER_TCS_WORKING_DOCTRINE.md",
+      "summary": "TCS working doctrine, Sage/TCS governance brief, knowledge OS specs (cite/infer, wiki, middleware contract), human-AI composite relationship model.",
+      "tags": [
+        "spec",
+        "doctrine",
+        "governance",
+        "sage"
+      ],
+      "complexity": "high",
+      "layer": "docs-governance",
+      "lines": 0,
+      "fileCount": 7,
+      "files": [
+        "UK_CAER_TCS_WORKING_DOCTRINE.md",
+        "UK_CAER_SAGE_TCS_GOVERNANCE_BRIEF.md",
+        "TCS_KNOWLEDGE_OS_WIKI_CITE_INFER_GOVERNANCE_SPEC.md",
+        "TCS_HUMAN_AI_COMPOSITE_RELATIONSHIP_MODEL.md",
+        "TCS_AVATAR_KNOWLEDGE_OS_MIDDLEWARE_CONTRACT.md",
+        "TCS_AVATAR_KNOWLEDGE_OS_TEST_FIXTURE_PACK_SPEC.md",
+        "TCS_AVATAR_KNOWLEDGE_OS_FIXTURE_BUILD_DECISION_PACKET.md"
+      ]
+    },
+    {
+      "id": "docs-deliverable-readmes",
+      "type": "docs",
+      "name": "Deliverable README Collection",
+      "filePath": "UK_CAER_PM_COMMAND_CENTER_README.md",
+      "summary": "~40 README files documenting each generated deliverable: purpose, source chain, boundary statement, sheets/sections, and usage. One README per XLSX/HTML output.",
+      "tags": [
+        "docs",
+        "readme",
+        "deliverable"
+      ],
+      "complexity": "medium",
+      "layer": "docs-deliverables",
+      "lines": 0,
+      "fileCount": 40
+    },
+    {
+      "id": "docs-receipts-evidence",
+      "type": "docs",
+      "name": "Receipts & Evidence Documents",
+      "filePath": "UK_CAER_ATLAS_FOUNDATION_ABSORPTION_RECEIPT.md",
+      "summary": "Evidence receipts, validation receipts, visual asset receipts, QA receipts, commissioning receipts, and evidence intake packets. Track what has been verified and by whom.",
+      "tags": [
+        "docs",
+        "receipt",
+        "evidence",
+        "audit-trail"
+      ],
+      "complexity": "medium",
+      "layer": "docs-evidence",
+      "lines": 0,
+      "fileCount": 12,
+      "files": [
+        "UK_CAER_ATLAS_FOUNDATION_ABSORPTION_RECEIPT.md",
+        "UK_CAER_ATLAS_NAVIGATOR_USAGE_RECEIPT.md",
+        "UK_CAER_PROJECT_ATLAS_MAPPING_RECEIPT.md",
+        "UK_CAER_PM_ASSET_NAVIGATOR_BROWSER_QA_RECEIPT.md",
+        "UK_CAER_NOTEBOOKLM_LIVE_VISUAL_SOURCE_RECEIPT.md",
+        "UK_CAER_NOTEBOOKLM_STUDIO_CANVA_VISUAL_ASSET_RECEIPT.md",
+        "UK_CAER_VISUAL_ASSET_LOCAL_EVIDENCE_RECEIPT.md",
+        "UK_CAER_ZONE_QC_SME_COMMISSIONING_RECEIPT.md",
+        "UK_CAER_11_POLICIES_DOC_CONTROL_CLEANUP_RECEIPT.md"
+      ]
+    },
+    {
+      "id": "docs-pm-operations",
+      "type": "docs",
+      "name": "PM Operational Documents",
+      "filePath": "UK_CAER_P0_DECISION_QUEUE.md",
+      "summary": "Decision queues, review agendas, premobilization matrices, zone commission launch packets, work area maps, critical path briefs, owner voice session setup.",
+      "tags": [
+        "docs",
+        "pm",
+        "operations",
+        "decision"
+      ],
+      "complexity": "medium",
+      "layer": "docs-deliverables",
+      "lines": 0,
+      "fileCount": 12
+    },
+    {
+      "id": "docs-compliance-plans",
+      "type": "docs",
+      "name": "Compliance & Quality Plans",
+      "filePath": "UK_CAER_STANDALONE_QUALITY_PLAN.md",
+      "summary": "Standalone safety plan, quality plan, road to TCS compliance milestones, digital twin maturity map, and owner TCS critical path report.",
+      "tags": [
+        "docs",
+        "compliance",
+        "quality",
+        "safety"
+      ],
+      "complexity": "medium",
+      "layer": "docs-deliverables",
+      "lines": 0,
+      "fileCount": 6
+    },
+    {
+      "id": "slab-owen-county",
+      "type": "module",
+      "name": "Owen County Bring-Online Package",
+      "filePath": "SLAB_OWEN_CO_BRING_ONLINE_2026-05-17/00_START_HERE_SLAB.md",
+      "summary": "Complete cold-start packet for Owen County Schools project. Agent boot, source map, red flags, validation queue seed, stop rules, build receipt. Includes overlay snapshot with cleanpoints, action register, meeting briefs, agendas, email extracts, Sage CM snapshots, spine state.",
+      "tags": [
+        "owen-county",
+        "slab",
+        "handoff",
+        "agent-boot"
+      ],
+      "complexity": "high",
+      "layer": "owen-county",
+      "lines": 0,
+      "fileCount": 25
+    },
+    {
+      "id": "owen-overlay-snapshot",
+      "type": "data",
+      "name": "Owen County Overlay Snapshot",
+      "filePath": "SLAB_OWEN_CO_BRING_ONLINE_2026-05-17/owen_overlay_snapshot/",
+      "summary": "Live project state snapshot: cleanpoints, action register, meeting briefs (QAC), agendas, email extracts with daily summaries/transcripts, Sage CM current state, master spine, Opie session handoffs.",
+      "tags": [
+        "owen-county",
+        "snapshot",
+        "sage",
+        "meetings"
+      ],
+      "complexity": "medium",
+      "layer": "owen-county",
+      "lines": 0,
+      "fileCount": 20
+    },
+    {
+      "id": "onboarding-core",
+      "type": "module",
+      "name": "TCS PM Onboarding Package",
+      "filePath": "SLAB_OWEN_CO_BRING_ONLINE_2026-05-17/tcs_onboarding_package/00_START_HERE__READ_FIRST.md",
+      "summary": "Complete PM onboarding: master index, 8-week syllabus, employee training plan, NLM spec. Canonical TCS training content duplicated in external_sources/.",
+      "tags": [
+        "onboarding",
+        "training",
+        "syllabus"
+      ],
+      "complexity": "high",
+      "layer": "onboarding",
+      "lines": 0,
+      "fileCount": 5
+    },
+    {
+      "id": "onboarding-training-v1",
+      "type": "module",
+      "name": "PM TCS Training v1",
+      "filePath": "SLAB_OWEN_CO_BRING_ONLINE_2026-05-17/tcs_onboarding_package/05_TRAINING_PM_TCS_v1/INDEX.md",
+      "summary": "Training materials: PM TCS 60-min session, RACI matrix, standard work (foreman/superintendent), submittal register template, constraint log, closeout checklist, warranty tracking, Butler questions rubric, cheat sheets, D07 protocol scoring, and exercises (daily log scoring, net change interpretation, change order tracking).",
+      "tags": [
+        "training",
+        "exercises",
+        "templates",
+        "standard-work"
+      ],
+      "complexity": "medium",
+      "layer": "onboarding",
+      "lines": 0,
+      "fileCount": 15
+    },
+    {
+      "id": "onboarding-rollout",
+      "type": "module",
+      "name": "SO-019 Rollout Package",
+      "filePath": "SLAB_OWEN_CO_BRING_ONLINE_2026-05-17/tcs_onboarding_package/06_SO-019_ROLLOUT/",
+      "summary": "Day1 field guides (PM, superintendent, foreman), TCS overview 30-min, training asset inventory. Project-specific packs for Chokshi, Franklin, Owen County, Richmond with foreman cheat sheets.",
+      "tags": [
+        "rollout",
+        "field-guide",
+        "project-packs"
+      ],
+      "complexity": "medium",
+      "layer": "onboarding",
+      "lines": 0,
+      "fileCount": 14
+    },
+    {
+      "id": "onboarding-action-plan",
+      "type": "module",
+      "name": "Action Plan Deep Dive",
+      "filePath": "SLAB_OWEN_CO_BRING_ONLINE_2026-05-17/tcs_onboarding_package/07_action_plan_deep_dive/MODULE_OUTLINE.md",
+      "summary": "Rooter-to-Tooter end-to-end flow, cheat sheet, slide blueprint, talk track for action plan deep dive module.",
+      "tags": [
+        "training",
+        "action-plan",
+        "deep-dive"
+      ],
+      "complexity": "medium",
+      "layer": "onboarding",
+      "lines": 0,
+      "fileCount": 5
+    },
+    {
+      "id": "onboarding-buildspecs",
+      "type": "module",
+      "name": "Build Specifications",
+      "filePath": "SLAB_OWEN_CO_BRING_ONLINE_2026-05-17/tcs_onboarding_package/08_BUILDSPECS/",
+      "summary": "Mode-C PM Interview, TCS Closer Product, TCS PM Product buildspecs - defining how to build new PM products.",
+      "tags": [
+        "buildspec",
+        "product"
+      ],
+      "complexity": "medium",
+      "layer": "onboarding",
+      "lines": 0,
+      "fileCount": 3
+    },
+    {
+      "id": "skill-drafts",
+      "type": "module",
+      "name": "Cowork Skill Drafts",
+      "filePath": "tcs_outputs/Skill Drafts/",
+      "summary": "Three Cowork skill packages: tcs-package-qa-audit (package quality audit), tcs-sage-governance-check (Sage CM governance verification), tcs-source-query-receipt (source query receipt generation). Each has SKILL.md, agent configs, and reference docs.",
+      "tags": [
+        "skill",
+        "cowork",
+        "automation",
+        "agent"
+      ],
+      "complexity": "medium",
+      "layer": "config-skills",
+      "lines": 0,
+      "fileCount": 15
+    },
+    {
+      "id": "config-json-data",
+      "type": "data",
+      "name": "NotebookLM & Config Data",
+      "filePath": "tcs_outputs/notebooklm_notebook_list_2026-05-20.json",
+      "summary": "NotebookLM metadata JSONs (notebook list, studio assets for DeVere brand, TCS framework, UK CAER), YAML agent configs for skill drafts, .gitignore.",
+      "tags": [
+        "config",
+        "json",
+        "notebooklm",
+        "yaml"
+      ],
+      "complexity": "low",
+      "layer": "config-skills",
+      "lines": 0,
+      "fileCount": 8
+    },
+    {
+      "id": "text-extracts",
+      "type": "data",
+      "name": "Source Text Extracts",
+      "filePath": "UK_CAER_specs_extracted_pages.txt",
+      "summary": "Extracted text from UK CAER bid specs, drawings, and addenda. Plus owner review audio script, Owen County email extracts and daily summaries/transcripts.",
+      "tags": [
+        "data",
+        "text",
+        "extraction",
+        "source"
+      ],
+      "complexity": "low",
+      "layer": "data-xlsx",
+      "lines": 0,
+      "fileCount": 21
+    },
+    {
+      "id": "assets-presentations",
+      "type": "asset",
+      "name": "Training Slide Decks",
+      "filePath": "SLAB_OWEN_CO_BRING_ONLINE_2026-05-17/tcs_onboarding_package/09_SLIDE_DECKS/",
+      "summary": "PowerPoint decks: TCS PM Training, TCS System Summary, TCS Training Rollout. Duplicated in external_sources/.",
+      "tags": [
+        "pptx",
+        "training",
+        "presentation"
+      ],
+      "complexity": "low",
+      "layer": "onboarding",
+      "lines": 0,
+      "fileCount": 6
+    },
+    {
+      "id": "assets-visual-qa",
+      "type": "asset",
+      "name": "Visual QA Screenshots",
+      "filePath": "tcs_outputs/navigator_visual_qa_2026-05-20/",
+      "summary": "PNG screenshots from PM Asset Navigator visual QA testing session.",
+      "tags": [
+        "png",
+        "qa",
+        "screenshot"
+      ],
+      "complexity": "low",
+      "layer": "config-skills",
+      "lines": 0,
+      "fileCount": 10
+    },
+    {
+      "id": "external-sources",
+      "type": "module",
+      "name": "External Sources (Canonical Copy)",
+      "filePath": "external_sources/TCS_PM_ONBOARDING_PACKAGE_v1.0/",
+      "summary": "Canonical v1.0 copy of TCS PM Onboarding Package. Mirrors SLAB onboarding content. Serves as reference baseline.",
+      "tags": [
+        "external",
+        "canonical",
+        "reference"
+      ],
+      "complexity": "low",
+      "layer": "onboarding",
+      "lines": 0,
+      "fileCount": 30
+    },
+    {
+      "id": "root-readme",
+      "type": "docs",
+      "name": "Project README & Index",
+      "filePath": "README.md",
+      "summary": "Top-level project README describing the workbench, current control position, start-here files, boundaries, evidence discipline, and sensitive material notice.",
+      "tags": [
+        "readme",
+        "index",
+        "entry-point"
+      ],
+      "complexity": "low",
+      "layer": "docs-governance",
+      "lines": 0,
+      "fileCount": 2,
+      "files": [
+        "README.md",
+        "UK_CAER_TCS_DELIVERABLES_INDEX.md"
+      ]
+    },
+    {
+      "id": "docs-avatar-specs",
+      "type": "spec",
+      "name": "Avatar & Knowledge OS Specs",
+      "filePath": "TCS_AVATAR_KNOWLEDGE_OS_MIDDLEWARE_CONTRACT.md",
+      "summary": "TCS Avatar Knowledge OS specifications: middleware contract, fixture build decision packet, fixture approval request, first manual test run packet, middleware acceptance test plan, test fixture pack spec. Defines how AI agents interface with the TCS knowledge system.",
+      "tags": [
+        "spec",
+        "avatar",
+        "knowledge-os",
+        "middleware"
+      ],
+      "complexity": "high",
+      "layer": "docs-governance",
+      "lines": 0,
+      "fileCount": 6
     }
   ],
   "edges": [
-    { "source": "layer-build-scripts", "target": "uk-caer-root", "label": "part_of" },
-    { "source": "layer-governance-docs", "target": "uk-caer-root", "label": "part_of" },
-    { "source": "layer-onboarding", "target": "uk-caer-root", "label": "part_of" },
-    { "source": "layer-generated-workbooks", "target": "uk-caer-root", "label": "part_of" },
-    { "source": "layer-interactive-boards", "target": "uk-caer-root", "label": "part_of" },
-    { "source": "layer-source-data", "target": "uk-caer-root", "label": "part_of" },
-    { "source": "layer-skill-drafts", "target": "uk-caer-root", "label": "part_of" },
-    { "source": "layer-build-scripts", "target": "layer-generated-workbooks", "label": "generates" },
-    { "source": "layer-build-scripts", "target": "layer-interactive-boards", "label": "generates" },
-    { "source": "layer-source-data", "target": "layer-build-scripts", "label": "feeds_data_to" },
-    { "source": "layer-governance-docs", "target": "layer-build-scripts", "label": "governs" },
-    { "source": "domain-gate-readiness", "target": "uk-caer-root", "label": "domain_of" },
-    { "source": "domain-pm-command", "target": "uk-caer-root", "label": "domain_of" },
-    { "source": "domain-procurement", "target": "uk-caer-root", "label": "domain_of" },
-    { "source": "domain-field-ops", "target": "uk-caer-root", "label": "domain_of" },
-    { "source": "domain-evidence", "target": "uk-caer-root", "label": "domain_of" },
-    { "source": "domain-cost", "target": "uk-caer-root", "label": "domain_of" },
-    { "source": "domain-risk", "target": "uk-caer-root", "label": "domain_of" },
-    { "source": "domain-doc-control", "target": "uk-caer-root", "label": "domain_of" },
-    { "source": "domain-hr", "target": "uk-caer-root", "label": "domain_of" },
-    { "source": "domain-reporting", "target": "uk-caer-root", "label": "domain_of" },
-    { "source": "file-gate-board", "target": "domain-gate-readiness", "label": "implements" },
-    { "source": "file-pm-command", "target": "domain-pm-command", "label": "implements" },
-    { "source": "file-daily-board", "target": "domain-pm-command", "label": "implements" },
-    { "source": "file-asset-navigator", "target": "domain-pm-command", "label": "implements" },
-    { "source": "file-evidence-closure", "target": "domain-evidence", "label": "implements" },
-    { "source": "file-sage-verify", "target": "domain-evidence", "label": "implements" },
-    { "source": "file-procurement-board", "target": "domain-procurement", "label": "implements" },
-    { "source": "file-boq-bom", "target": "domain-procurement", "label": "implements" },
-    { "source": "file-boq-bom", "target": "domain-cost", "label": "feeds" },
-    { "source": "file-cost-sov", "target": "domain-cost", "label": "implements" },
-    { "source": "file-field-wi-itp", "target": "domain-field-ops", "label": "implements" },
-    { "source": "file-high-risk", "target": "domain-risk", "label": "implements" },
-    { "source": "file-rfi-register", "target": "domain-doc-control", "label": "implements" },
-    { "source": "file-hr-onboarding", "target": "domain-hr", "label": "implements" },
-    { "source": "file-weekly-snapshot", "target": "domain-reporting", "label": "implements" },
-    { "source": "file-executive-overview", "target": "domain-reporting", "label": "implements" },
-    { "source": "file-master-control", "target": "layer-build-scripts", "label": "orchestrates" },
-    { "source": "file-sage-governance", "target": "domain-evidence", "label": "governs" },
-    { "source": "file-sage-governance", "target": "domain-gate-readiness", "label": "governs" },
-    { "source": "file-work-area-map", "target": "domain-doc-control", "label": "governs" },
-    { "source": "file-agent-boot", "target": "domain-pm-command", "label": "bootstraps" },
-    { "source": "domain-gate-readiness", "target": "domain-pm-command", "label": "drives" },
-    { "source": "domain-procurement", "target": "domain-cost", "label": "feeds" },
-    { "source": "domain-field-ops", "target": "domain-evidence", "label": "generates_evidence" },
-    { "source": "domain-evidence", "target": "domain-gate-readiness", "label": "proves" },
-    { "source": "domain-cost", "target": "domain-reporting", "label": "informs" },
-    { "source": "domain-risk", "target": "domain-field-ops", "label": "governs" },
-    { "source": "domain-doc-control", "target": "domain-procurement", "label": "supports" },
-    { "source": "domain-hr", "target": "domain-field-ops", "label": "staffs" },
-    { "source": "domain-pm-command", "target": "domain-reporting", "label": "orchestrates" }
-  ]
+    {
+      "source": "build-wbs",
+      "target": "xlsx-foundation",
+      "label": "generates"
+    },
+    {
+      "source": "build-pm-package",
+      "target": "xlsx-foundation",
+      "label": "generates TPM/Gate Controls"
+    },
+    {
+      "source": "build-pm-command-center",
+      "target": "xlsx-master-workbooks",
+      "label": "generates"
+    },
+    {
+      "source": "build-gate-readiness",
+      "target": "html-gate-boards",
+      "label": "generates"
+    },
+    {
+      "source": "build-procurement",
+      "target": "html-procurement-boards",
+      "label": "generates"
+    },
+    {
+      "source": "build-field-ops",
+      "target": "xlsx-field-risk",
+      "label": "generates"
+    },
+    {
+      "source": "build-evidence-compliance",
+      "target": "xlsx-evidence-validation",
+      "label": "generates"
+    },
+    {
+      "source": "build-evidence-compliance",
+      "target": "html-compliance-boards",
+      "label": "generates"
+    },
+    {
+      "source": "build-cost-control",
+      "target": "xlsx-foundation",
+      "label": "generates cost/schedule"
+    },
+    {
+      "source": "build-document-control",
+      "target": "html-compliance-boards",
+      "label": "generates doc control"
+    },
+    {
+      "source": "build-document-control",
+      "target": "xlsx-master-workbooks",
+      "label": "generates control pack"
+    },
+    {
+      "source": "build-reporting",
+      "target": "html-ops-boards",
+      "label": "generates"
+    },
+    {
+      "source": "build-reporting",
+      "target": "xlsx-reporting",
+      "label": "generates"
+    },
+    {
+      "source": "build-hr-training",
+      "target": "html-ops-boards",
+      "label": "generates onboarding board"
+    },
+    {
+      "source": "build-hr-training",
+      "target": "xlsx-reporting",
+      "label": "generates training tracker"
+    },
+    {
+      "source": "build-risk-management",
+      "target": "xlsx-reporting",
+      "label": "generates"
+    },
+    {
+      "source": "build-data-spine",
+      "target": "html-ops-boards",
+      "label": "generates navigator"
+    },
+    {
+      "source": "build-data-spine",
+      "target": "xlsx-evidence-validation",
+      "label": "generates data spine"
+    },
+    {
+      "source": "build-skill-drafts",
+      "target": "xlsx-skill-packages",
+      "label": "generates"
+    },
+    {
+      "source": "build-skill-drafts",
+      "target": "skill-drafts",
+      "label": "generates skill dirs"
+    },
+    {
+      "source": "build-sage-verification",
+      "target": "xlsx-procurement-cost",
+      "label": "generates"
+    },
+    {
+      "source": "build-master-control-mjs",
+      "target": "xlsx-master-workbooks",
+      "label": "generates master control"
+    },
+    {
+      "source": "xlsx-foundation",
+      "target": "build-pm-command-center",
+      "label": "consumed by"
+    },
+    {
+      "source": "xlsx-foundation",
+      "target": "build-gate-readiness",
+      "label": "consumed by"
+    },
+    {
+      "source": "xlsx-foundation",
+      "target": "build-procurement",
+      "label": "consumed by"
+    },
+    {
+      "source": "xlsx-foundation",
+      "target": "build-field-ops",
+      "label": "consumed by"
+    },
+    {
+      "source": "xlsx-foundation",
+      "target": "build-evidence-compliance",
+      "label": "consumed by"
+    },
+    {
+      "source": "xlsx-foundation",
+      "target": "build-cost-control",
+      "label": "consumed by"
+    },
+    {
+      "source": "xlsx-foundation",
+      "target": "build-reporting",
+      "label": "consumed by"
+    },
+    {
+      "source": "xlsx-foundation",
+      "target": "build-data-spine",
+      "label": "consumed by"
+    },
+    {
+      "source": "docs-product-definition",
+      "target": "docs-agent-boot",
+      "label": "defines product for"
+    },
+    {
+      "source": "docs-devere-standard",
+      "target": "docs-product-definition",
+      "label": "company standard frames"
+    },
+    {
+      "source": "docs-tcs-doctrine",
+      "target": "docs-product-definition",
+      "label": "doctrine feeds"
+    },
+    {
+      "source": "docs-agent-boot",
+      "target": "build-pm-command-center",
+      "label": "governs"
+    },
+    {
+      "source": "docs-tcs-doctrine",
+      "target": "build-gate-readiness",
+      "label": "governs gates"
+    },
+    {
+      "source": "docs-deliverable-readmes",
+      "target": "xlsx-master-workbooks",
+      "label": "documents"
+    },
+    {
+      "source": "docs-deliverable-readmes",
+      "target": "html-gate-boards",
+      "label": "documents"
+    },
+    {
+      "source": "docs-receipts-evidence",
+      "target": "xlsx-evidence-validation",
+      "label": "validates"
+    },
+    {
+      "source": "onboarding-core",
+      "target": "onboarding-training-v1",
+      "label": "contains"
+    },
+    {
+      "source": "onboarding-core",
+      "target": "onboarding-rollout",
+      "label": "contains"
+    },
+    {
+      "source": "onboarding-core",
+      "target": "onboarding-action-plan",
+      "label": "contains"
+    },
+    {
+      "source": "onboarding-core",
+      "target": "onboarding-buildspecs",
+      "label": "contains"
+    },
+    {
+      "source": "onboarding-core",
+      "target": "assets-presentations",
+      "label": "contains"
+    },
+    {
+      "source": "external-sources",
+      "target": "onboarding-core",
+      "label": "canonical copy of"
+    },
+    {
+      "source": "onboarding-core",
+      "target": "build-hr-training",
+      "label": "feeds training data"
+    },
+    {
+      "source": "slab-owen-county",
+      "target": "owen-overlay-snapshot",
+      "label": "contains"
+    },
+    {
+      "source": "docs-product-definition",
+      "target": "slab-owen-county",
+      "label": "defines framework for"
+    },
+    {
+      "source": "onboarding-core",
+      "target": "slab-owen-county",
+      "label": "onboarding content for"
+    },
+    {
+      "source": "build-reporting",
+      "target": "html-owner-boards",
+      "label": "generates owner view"
+    },
+    {
+      "source": "xlsx-master-workbooks",
+      "target": "html-owner-boards",
+      "label": "feeds data to"
+    },
+    {
+      "source": "docs-avatar-specs",
+      "target": "skill-drafts",
+      "label": "specifies interface for"
+    },
+    {
+      "source": "docs-avatar-specs",
+      "target": "docs-tcs-doctrine",
+      "label": "extends"
+    },
+    {
+      "source": "config-json-data",
+      "target": "skill-drafts",
+      "label": "configures"
+    },
+    {
+      "source": "text-extracts",
+      "target": "build-pm-package",
+      "label": "source data for"
+    },
+    {
+      "source": "html-workflow-visuals",
+      "target": "onboarding-training-v1",
+      "label": "training visuals for"
+    },
+    {
+      "source": "docs-pm-operations",
+      "target": "build-reporting",
+      "label": "operational docs feed"
+    },
+    {
+      "source": "docs-compliance-plans",
+      "target": "build-evidence-compliance",
+      "label": "compliance plans feed"
+    },
+    {
+      "source": "assets-visual-qa",
+      "target": "build-data-spine",
+      "label": "QA screenshots for navigator"
+    },
+    {
+      "source": "root-readme",
+      "target": "docs-agent-boot",
+      "label": "entry point to"
+    }
+  ],
+  "tours": [
+    {
+      "id": "build-pipeline-tour",
+      "name": "Build Pipeline Tour",
+      "description": "Follow the data flow from source extracts through Python builders to generated XLSX workbooks and HTML dashboards",
+      "stops": [
+        {
+          "nodeIds": [
+            "text-extracts",
+            "config-json-data"
+          ],
+          "title": "1. Source Data",
+          "narration": "The pipeline starts with extracted text from UK CAER bid specs, drawings, and addenda, plus NotebookLM metadata JSONs that configure notebook sources."
+        },
+        {
+          "nodeIds": [
+            "build-wbs",
+            "build-pm-package"
+          ],
+          "title": "2. Foundation Builders",
+          "narration": "The WBS builder creates the verified Work Breakdown Structure/DFOW. The PM Package builder creates the master TPM_AND_GATE_CONTROLS.xlsx with CSI division tracking, 9-gate controls, and TCS citations. These are consumed by all downstream builders."
+        },
+        {
+          "nodeIds": [
+            "build-pm-command-center",
+            "build-gate-readiness",
+            "build-procurement",
+            "build-field-ops"
+          ],
+          "title": "3. Domain Builders",
+          "narration": "51 Python builders use openpyxl to read foundation workbooks and generate domain-specific outputs. Each builder declares BOUNDARY text, SOURCE_CHAIN citations, and OUT_XLSX/OUT_HTML/OUT_MD output paths. They write to both OneDrive (TCS_DIR) and local (tcs_outputs/)."
+        },
+        {
+          "nodeIds": [
+            "xlsx-master-workbooks",
+            "xlsx-foundation",
+            "xlsx-procurement-cost"
+          ],
+          "title": "4. Generated XLSX Workbooks",
+          "narration": "36 Excel workbooks are generated: master control/command center aggregations, foundation WBS/schedule/action plan data, procurement/cost tracking, field/risk registers, evidence/validation structures, and reporting snapshots."
+        },
+        {
+          "nodeIds": [
+            "html-gate-boards",
+            "html-ops-boards",
+            "html-procurement-boards",
+            "html-compliance-boards"
+          ],
+          "title": "5. Generated HTML Dashboards",
+          "narration": "14 HTML dashboards are generated with responsive CSS, metrics panels, and interactive sections. Gate readiness, daily operations, procurement activation, evidence intake, validation zones, and owner-facing boards."
+        },
+        {
+          "nodeIds": [
+            "html-owner-boards"
+          ],
+          "title": "6. Owner-Facing Outputs",
+          "narration": "The pipeline culminates in owner-facing boards and executive overviews that DeVere ownership uses to track project compliance and TCS lifecycle progress."
+        },
+        {
+          "nodeIds": [
+            "docs-deliverable-readmes"
+          ],
+          "title": "7. Documentation",
+          "narration": "Each generated deliverable gets a README.md documenting purpose, source chain, boundary statement, sheet descriptions, and usage instructions."
+        }
+      ]
+    },
+    {
+      "id": "construction-domain-tour",
+      "name": "Construction Domain Tour",
+      "description": "Walk through all 10 business domains of the TCS Digital Twin PM Package",
+      "stops": [
+        {
+          "nodeIds": [
+            "build-gate-readiness",
+            "html-gate-boards"
+          ],
+          "title": "1. Gate Readiness",
+          "narration": "The canonical TCS 9-gate lifecycle (A0 Pre-Bid through D2 Warranty) governs all project advancement. The Gate Readiness Board shows evidence gaps, TPM/procurement dependencies, and validation posture for each gate. No gate passes without documented evidence."
+        },
+        {
+          "nodeIds": [
+            "build-pm-command-center",
+            "xlsx-master-workbooks",
+            "html-ops-boards"
+          ],
+          "title": "2. PM Command Center",
+          "narration": "The central aggregation hub linking all domains. The PM Command Center XLSX and daily operating board HTML provide the PM with a single surface for project status, next actions, and blockers."
+        },
+        {
+          "nodeIds": [
+            "build-procurement",
+            "html-procurement-boards",
+            "xlsx-procurement-cost"
+          ],
+          "title": "3. Procurement",
+          "narration": "B1/B2 Procurement Activation Board sequences buyout, submittal release, TPM setup, and Rooter prerequisites. Cost/SOV Commitment Readiness Board tracks financial controls. Sage verification ensures CM metadata alignment."
+        },
+        {
+          "nodeIds": [
+            "build-field-ops",
+            "xlsx-field-risk"
+          ],
+          "title": "4. Field Operations",
+          "narration": "Field WI/ITP checklist packages, action plan packages (Rooter/Setup/Execution/Hold Point/Tooter phases), high-risk trade packets, and preinstall meeting packets. Each action plan maps to exactly one DFOW."
+        },
+        {
+          "nodeIds": [
+            "build-evidence-compliance",
+            "xlsx-evidence-validation",
+            "html-compliance-boards",
+            "docs-receipts-evidence"
+          ],
+          "title": "5. Evidence & Compliance",
+          "narration": "Evidence token standard, P0 evidence intake board, validation architecture/QC plan, validation queue/zone assignments, and package QA audit. Every material fact must be cited, inferred, validated, or marked with its evidence state."
+        },
+        {
+          "nodeIds": [
+            "build-cost-control",
+            "xlsx-foundation"
+          ],
+          "title": "6. Cost Control",
+          "narration": "BOQ/BOM cost code mapping bridges WBS to estimate quantities. Schedule logic chain provides sequencing. Submittal schedule and RFI register track document flow. No buyout before A2, no pay without evidence."
+        },
+        {
+          "nodeIds": [
+            "build-risk-management"
+          ],
+          "title": "7. Risk Management",
+          "narration": "Live action approval ledger controls what can happen. PM decision/action ledger tracks choices. Deliverables completion roadmap shows what remains. High-risk trade and preinstall packets flag critical work sequences."
+        },
+        {
+          "nodeIds": [
+            "build-document-control",
+            "html-compliance-boards"
+          ],
+          "title": "8. Document Control",
+          "narration": "Control document revision board tracks all document versions. Sage/OneDrive governance board manages file system authority. TCS control pack and package index/manifest provide the complete deliverable inventory."
+        },
+        {
+          "nodeIds": [
+            "build-hr-training",
+            "onboarding-core",
+            "onboarding-training-v1",
+            "onboarding-rollout"
+          ],
+          "title": "9. HR & Training",
+          "narration": "Human PM onboarding board, 8-week training syllabus, day1 role rollout packages, safety/quality plans. Project-specific packs for Chokshi, Franklin, Owen County, and Richmond with foreman cheat sheets."
+        },
+        {
+          "nodeIds": [
+            "build-reporting",
+            "xlsx-reporting",
+            "html-owner-boards"
+          ],
+          "title": "10. Reporting",
+          "narration": "Daily PM operating board, weekly snapshots, executive overview, owner progress review, PM product review conductor, productization board, and TPM release readiness board. Cascading from daily ops to executive visibility."
+        }
+      ]
+    }
+  ],
+  "layers": [
+    {
+      "id": "build-scripts",
+      "name": "Build Scripts (Python)",
+      "color": "#3B82F6",
+      "nodeCount": 16
+    },
+    {
+      "id": "html-boards",
+      "name": "HTML Dashboards",
+      "color": "#10B981",
+      "nodeCount": 6
+    },
+    {
+      "id": "data-xlsx",
+      "name": "XLSX Data & Text",
+      "color": "#F59E0B",
+      "nodeCount": 7
+    },
+    {
+      "id": "docs-governance",
+      "name": "Governance & Architecture",
+      "color": "#8B5CF6",
+      "nodeCount": 7
+    },
+    {
+      "id": "docs-deliverables",
+      "name": "Deliverable Docs",
+      "color": "#6366F1",
+      "nodeCount": 4
+    },
+    {
+      "id": "docs-evidence",
+      "name": "Evidence & Receipts",
+      "color": "#EC4899",
+      "nodeCount": 1
+    },
+    {
+      "id": "onboarding",
+      "name": "TCS Onboarding & Training",
+      "color": "#14B8A6",
+      "nodeCount": 7
+    },
+    {
+      "id": "owen-county",
+      "name": "Owen County Project",
+      "color": "#F97316",
+      "nodeCount": 2
+    },
+    {
+      "id": "config-skills",
+      "name": "Config & Skill Drafts",
+      "color": "#64748B",
+      "nodeCount": 3
+    }
+  ],
+  "stats": {
+    "totalNodes": 52,
+    "totalEdges": 59,
+    "totalLayers": 9,
+    "totalTours": 2,
+    "coverage": 0.96,
+    "qualityScore": 0.91
+  }
 }

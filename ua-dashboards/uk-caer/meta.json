@@ -1,9 +1,8 @@
 {
-  "project": "uk-caer",
-  "generated_at": "2026-05-28T14:30:00-04:00",
+  "project": "UK CAER Construction Workspace",
+  "generated_at": "2026-05-28T16:29:00Z",
   "demo_mode": false,
-  "files": {
-    "knowledge_graph": "knowledge-graph.json",
-    "domain_graph": "domain-graph.json"
-  }
+  "pipeline_version": "2.0.0",
+  "phases_completed": 8,
+  "stats": { "nodes": 52, "edges": 59, "layers": 9, "tours": 2, "coverage": 1.0, "quality_score": 9 }
 }
